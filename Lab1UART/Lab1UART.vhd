@@ -32,8 +32,8 @@ entity Lab1UART is
 	
 	--pll signals
 	signal areset		: STD_LOGIC := '0';
-	signal c0		: STD_LOGIC ; --153600 Hz
-	signal c1		: STD_LOGIC ; --19200 Hz
+	signal c0		: STD_LOGIC :='0'; --153600 Hz
+	signal c1		: STD_LOGIC :='0'; --19200 Hz
 	signal locked		: STD_LOGIC;  
 	signal send		: STD_LOGIC;
 	signal rx_sync	: STD_LOGIC;

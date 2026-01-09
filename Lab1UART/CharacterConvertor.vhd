@@ -6,8 +6,8 @@ use ieee.numeric_std.all;
 entity CharacterConvertor is
 		port
 			(
-				InChar in : unsigned (7 downto 0);
-				OutChar out : unsigned (7 downto 0)
+				InChar : in  unsigned (7 downto 0);
+				OutChar : out unsigned (7 downto 0)
 			);
 		end entity CharacterConvertor;
 		
@@ -18,9 +18,9 @@ entity CharacterConvertor is
 		
 		process(InChar)
 		begin
-			if x"60" < InChar < x"7B" then
+			if (x"60" < InChar and InChar < x"7B") then
 				OutChar <= InChar - x"20";
-			elsif x"40" < InChar < x"5B" then
+			elsif (x"40" < InChar and InChar < x"5B") then
 				OutChar <= InChar +x"20";
 			else
 				OutChar <= x"45";
