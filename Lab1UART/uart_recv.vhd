@@ -26,7 +26,7 @@ begin
 
 process (c1, rst)
 begin
-if rst = '0' then
+if rst = '1' then
     state <= IDLE;
     counter <= 0;
 elsif rising_edge(c1) then
