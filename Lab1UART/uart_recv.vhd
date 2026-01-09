@@ -3,7 +3,8 @@ entity UART_reciever is
 	(
 		c1 : in std_logic;
 		rx_sync : inout std_logic;
-		char : out unsigned (7 downto 0)
+		char : out unsigned (7 downto 0);
+        send_flag : out std_logic;
 	);
 					
 end entity UART_reciever;
@@ -24,6 +25,7 @@ if rising_edge(c1) then
 	case state is
 	
 	when IDLE =>
+        send_flag <= '0';
 		if rx_sync = 0 then
 			counter <= 0;
 			state <= START;
@@ -36,6 +38,7 @@ if rising_edge(c1) then
             counter <= counter +1;
             state <= START;
         else 
+            send_flag <= '1';
             state <= IDLE;
 		end if;
 
