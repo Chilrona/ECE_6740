@@ -2,7 +2,7 @@ entity UART_reciever is
 	port 
 	(
 		c1 : in std_logic;
-		rx : inout std_logic;
+		rx_sync : inout std_logic;
 		char : out unsigned (7 downto 0)
 	);
 					
@@ -24,7 +24,7 @@ if rising_edge(c1) then
 	case state is
 	
 	when IDLE =>
-		if rx = 0 then
+		if rx_sync = 0 then
 			counter <= 0;
 			state <= START;
 		else
@@ -32,7 +32,7 @@ if rising_edge(c1) then
 		
 	when START =>
         if counter < 8 then
-            data(counter) <= rx;
+            data(counter) <= rx_sync;
             counter <= counter +1;
             state <= START;
         else 
