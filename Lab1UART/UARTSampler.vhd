@@ -29,6 +29,20 @@ entity UARTSampler is
 	
 	begin
 	
+	U2: entity work.my_fifo
+	PORT MAP
+	(
+		data=> r1,
+		rdclk=> c0,
+		rdreq=> '1',
+		wrclk => c1,
+		wrreq=> ,
+		q=> q,
+		rdempty => rdempty,
+		wrfull	=>wrfull
+	);
+
+
 	process(c0, KEY(0))
 	begin
 		if counter = 7 then
