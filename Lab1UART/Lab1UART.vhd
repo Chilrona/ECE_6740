@@ -83,6 +83,15 @@ entity Lab1UART is
 				OutChar=> new_char
 			);
 
+	U5: entity work.UARTSampler
+		PORT MAP
+		(
+			rst=> KEY(0),
+			rx=> GPIO(X),
+			outdata=> rx_sync
+			
+		);
+
 	
 	
 	process()

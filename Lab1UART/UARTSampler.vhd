@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 entity UARTSampler is
 		port 
 		(
-			KEY : in unsigned(1 downto 0);
+			rst : in std_logic;
 			rx : in std_logic;
 			outdata		: out std_logic
 			
@@ -44,7 +44,7 @@ entity UARTSampler is
 	);
 
 
-	process(c0, KEY(0))
+	process(c0, rst)
 	begin
 		if counter = 7 then
 			wrreq <= '1';
@@ -66,7 +66,7 @@ entity UARTSampler is
 		end if;
 	end process;
 	
-	process(c1, KEY(0)) 
+	process(c1, rst) 
 	begin
 		if (rdempty ='0') then
 			rdreq <= '1';
