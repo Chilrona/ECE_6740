@@ -6,6 +6,8 @@ use ieee.numeric_std.all;
 entity UARTSampler is
 		port 
 		(
+			c0 : in std_logic;
+			c1 : in std_logic;
 			rst : in std_logic;
 			rx : in std_logic;
 			outdata		: out std_logic

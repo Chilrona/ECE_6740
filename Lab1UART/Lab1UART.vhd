@@ -43,7 +43,7 @@ entity Lab1UART is
 	
 	
 	begin
-	rx = GPIO(X);
+	-- rx = GPIO(X);
 	--enter port maps here:
 	
 	U1: entity work.pll 
@@ -62,35 +62,38 @@ entity Lab1UART is
 		c1=> c1,
 		rx_sync=> rx_sync,
 		char=> char,
+		send_flag=> send,
 		rst => KEY(0)
 	);
 
 	U3: entity work.UART_trans
-		PORT MAP 
-		(
-			c1=> c1,
-			rst=> KEY(0),
-			send=> send,
-            data_in=> new_char,
-            tx=> GPIO(X)
-			
-		);
+	PORT MAP 
+	(
+		c1=> c1,
+		rst=> KEY(0),
+		send=> send,
+		data_in=> new_char,
+		tx=> GPIO(1)
+		
+	);
 	
 	U4: entity work.CharacterConvertor
-		PORT MAP
-			(
-				InChar=> char,
-				OutChar=> new_char
-			);
+	PORT MAP
+	(
+		InChar=> char,
+		OutChar=> new_char
+	);
 
 	U5: entity work.UARTSampler
-		PORT MAP
-		(
-			rst=> KEY(0),
-			rx=> GPIO(X),
-			outdata=> rx_sync
-			
-		);
+	PORT MAP
+	(
+		c0=> c0,
+		c1=> c1,
+		rst=> KEY(0),
+		rx=> GPIO(0),
+		outdata=> rx_sync
+		
+	);
 
 	
 	
