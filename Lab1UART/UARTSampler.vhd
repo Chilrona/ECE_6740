@@ -4,15 +4,15 @@ use ieee.numeric_std.all;
 
 
 entity UARTSampler is
-		port 
-		(
-			rst : in std_logic;
-			rx : in std_logic;
-			outdata		: out std_logic
-			
-		);
+	port 
+	(
+		rst : in std_logic;
+		rx : in std_logic;
+		outdata		: out std_logic
+		
+	);
 						
-	end entity UARTSampler;	
+end entity UARTSampler;	
 	
 						
 	architecture Behavioral of UARTSampler is
