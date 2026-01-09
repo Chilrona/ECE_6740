@@ -8,6 +8,7 @@ entity UARTSampler is
 		(
 			KEY : in unsigned(1 downto 0);
 			GPIO : inout unsigned(35 downto 0);
+			--which one do we actually want to look at?
 			outdata		: out std_logic
 			
 		);
@@ -23,6 +24,9 @@ entity UARTSampler is
 	signal wrfull : std_logic;
 	signal wrreq : std_logic;
 
+	--need the location of the gpio we are unsigned
+	signal rx : std_logic;
+
 	signal counter, zeros, ones : integer;
 	
 	begin
@@ -34,7 +38,7 @@ entity UARTSampler is
 		rdclk=> c0,
 		rdreq=> '1',
 		wrclk => c1,
-		wrreq=> ,
+		wrreq=> wrreq,
 		q=> q,
 		rdempty => rdempty,
 		wrfull	=>wrfull
