@@ -8,14 +8,6 @@ entity UARTSampler is
 		(
 			KEY : in unsigned(1 downto 0);
 			GPIO : inout unsigned(35 downto 0);
-			data		: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
-			rdclk		: IN STD_LOGIC ;
-			rdreq		: IN STD_LOGIC ;
-			wrclk		: IN STD_LOGIC ;
-			wrreq		: IN STD_LOGIC ;
-			q		: OUT STD_LOGIC_VECTOR (0 DOWNTO 0);
-			rdempty		: OUT STD_LOGIC ;
-			wrfull		: OUT STD_LOGIC;
 			outdata		: out std_logic
 			
 		);
@@ -25,6 +17,12 @@ entity UARTSampler is
 						
 	architecture Behavioral of UARTSampler is
 	
+	--fifo signals
+	signal rdempty : std_logic;
+	signal q : std_logic;
+	signal wrfull : std_logic;
+	signal wrreq : std_logic;
+
 	signal counter, zeros, ones : integer;
 	
 	begin

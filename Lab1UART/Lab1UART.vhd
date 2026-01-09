@@ -37,12 +37,6 @@ entity Lab1UART is
 	signal locked		: STD_LOGIC;  
 
 	
-	--fifo signals
-	signal rdempty : std_logic;
-	signal q : std_logic;
-	signal wrfull : std_logic;
-	signal wrreq : std_logic;
-	
 	
 	begin
 	rx = GPIO(X);
