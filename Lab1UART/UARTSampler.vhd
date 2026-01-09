@@ -14,7 +14,7 @@ entity UARTSampler is
 			
 		);
 						
-	end entity UARTSampler;	
+end entity UARTSampler;	
 	
 						
 	architecture Behavioral of UARTSampler is
