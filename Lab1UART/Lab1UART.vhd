@@ -94,13 +94,5 @@ entity Lab1UART is
 		outdata=> rx_sync
 		
 	);
-
-	
-	
-	process()
-	begin
-	
-	
-	end process;
 	
 	end Behavioral;
