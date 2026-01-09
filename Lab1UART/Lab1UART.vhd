@@ -61,7 +61,8 @@ entity Lab1UART is
 	(
 		c1=> c1,
 		rx_sync=> rx_sync,
-		char=> char
+		char=> char,
+		rst => KEY(0)
 	);
 
 	U3: entity work.UART_trans
