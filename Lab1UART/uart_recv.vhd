@@ -1,4 +1,4 @@
-entity UART_reciever is
+entity uart_recv is
 	port 
 	(
 		c1 : in std_logic;
@@ -7,7 +7,7 @@ entity UART_reciever is
         send_flag : out std_logic;
 	);
 					
-end entity UART_reciever;
+end entity uart_recv;
 
 architecture Behavioral of UART_reciever is
 
