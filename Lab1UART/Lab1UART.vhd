@@ -59,20 +59,6 @@ entity Lab1UART is
 	);
 
 	
-	U2: entity work.my_fifo
-	PORT MAP
-	(
-		data=> r1,
-		rdclk=> c0,
-		rdreq=> '1',
-		wrclk => c1,
-		wrreq=> ,
-		q=> q,
-		rdempty => rdempty,
-		wrfull	=>wrfull
-	);
-
-	
 	
 	process()
 	begin
