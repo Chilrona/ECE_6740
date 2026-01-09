@@ -35,6 +35,10 @@ entity Lab1UART is
 	signal c0		: STD_LOGIC ; --153600 Hz
 	signal c1		: STD_LOGIC ; --19200 Hz
 	signal locked		: STD_LOGIC;  
+	signal send		: STD_LOGIC;
+	signal rx_sync	: STD_LOGIC;
+	signal char		: unsigned(7 downto 0);
+	signal new_char	: unsigned(7 downto 0);
 
 	
 	
@@ -51,6 +55,32 @@ entity Lab1UART is
 		c1=>c1,
 		locked=>locked
 	);
+
+	U2: entity work.uart_recv
+	PORT MAP
+	(
+		c1=> c1,
+		rx_sync=> rx_sync,
+		char=> char
+	);
+
+	U3: entity work.UART_trans
+		PORT MAP 
+		(
+			c1=> c1,
+			rst=> KEY(0),
+			send=> send,
+            data_in=> new_char,
+            tx=> GPIO(X)
+			
+		);
+	
+	U4: entity work.CharacterConvertor
+		PORT MAP
+			(
+				InChar=> char,
+				OutChar=> new_char
+			);
 
 	
 	

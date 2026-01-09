@@ -6,7 +6,8 @@ use ieee.numeric_std.all;
 entity UART_trans is
 		port 
 		(
-			rst         : in unsigned;
+			c1          : in std_logic;
+            rst         : in std_logic;
 			send        : in unsigned;
             data_in     : in std_logic_vector(7 downto 0);
             tx          : out std_logic
@@ -16,16 +17,15 @@ entity UART_trans is
 	end entity UART_trans;	
 					
 	architecture Behavioral of UART_trans is
-	constant IDLE : integer := 0;
-    constant TRANSMIT : integer := 1; 
-	signal state : integer := IDLE;
+    type state_type is (IDLE, TRANSMIT);
+	signal state : state_type := IDLE;
     signal counter : integer := 0;
 	
 	begin
 	
-	process(c1, KEY(0))
+	process(c1, rst)
 	begin
-		if KEY(0) = '1' then
+		if rst = '1' then
             state <= IDLE;
             counter <= 0;
         elsif rising_edge(c1) then

@@ -7,8 +7,7 @@ entity UARTSampler is
 		port 
 		(
 			KEY : in unsigned(1 downto 0);
-			GPIO : inout unsigned(35 downto 0);
-			--which one do we actually want to look at?
+			rx : in std_logic;
 			outdata		: out std_logic
 			
 		);
