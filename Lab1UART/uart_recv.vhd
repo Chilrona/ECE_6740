@@ -10,7 +10,7 @@ entity uart_recv is
 		rx_sync : in std_logic;
 		char : out unsigned (7 downto 0);
       send_flag : out std_logic;
-      rst : in std_logic
+      rst_l : in std_logic
 	);
 					
 end entity uart_recv;
@@ -24,9 +24,9 @@ signal data : unsigned(7 downto 0) :=(others => '0');
 
 begin
 
-process (c1, rst)
+process (c1, rst_l)
 begin
-if rst = '1' then
+if rst_l = '0' then
     state <= IDLE;
     counter <= 0;
 elsif rising_edge(c1) then

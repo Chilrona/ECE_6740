@@ -8,7 +8,7 @@ entity UARTSampler is
 		(
 			c0 : in std_logic;
 			c1 : in std_logic;
-			rst : in std_logic;
+			rst_l : in std_logic;
 			rx : in std_logic;
 			rx_sync		: out std_logic
 			
@@ -48,11 +48,12 @@ end entity UARTSampler;
 	);
 
 
-	process(c0, rst)
+	process(c0, rst_l)
+	begin
 	rx1 <= rx;
 	rx2 <= rx1;
-	begin
-		if rst = '1' then
+	
+		if rst_l = '0' then
 			counter <= 0;
 			zeros <= 0;
 			ones <= 0;
