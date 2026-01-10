@@ -10,7 +10,7 @@ entity UARTSampler is
 			c1 : in std_logic;
 			rst : in std_logic;
 			rx : in std_logic;
-			outdata		: out std_logic
+			rx_sync		: out std_logic
 			
 		);
 						
@@ -25,9 +25,12 @@ end entity UARTSampler;
 	signal wrfull : std_logic;
 	signal wrreq : std_logic;
 	signal data : std_logic_vector (0 downto 0);
-	signal rdreq : std_logic;
-
-	signal counter, zeros, ones : integer;
+	signal rdreq : std_logic:='0';
+	signal counter : integer:=0;
+	signal zeros : integer:=0;
+	signal ones : integer:=0;
+	signal rx1 : std_logic;
+	signal rx2 : std_logic;
 	
 	begin
 	
@@ -36,7 +39,7 @@ end entity UARTSampler;
 	(
 		data=> data,
 		rdclk=> c1,
-		rdreq=> '1',
+		rdreq=> rdreq,
 		wrclk => c0,
 		wrreq=> wrreq,
 		q=> q,
@@ -45,35 +48,50 @@ end entity UARTSampler;
 	);
 
 
-	process(c0)
+	process(c0, rst)
+	rx1 <= rx;
+	rx2 <= rx1;
 	begin
-	if rising_edge(c0) then
-		if counter = 7 then
-			wrreq <= '1';
+		if rst = '1' then
 			counter <= 0;
 			zeros <= 0;
-			if zeros>ones then
-				data(0) <= '0';
-			else
-				data(0) <='1';
-			end if;
-		else
+			ones <= 0;
 			wrreq <= '0';
-			counter <=counter +1;
-			if rx = '0' then
-				zeros <= zeros + 1;
-			else
-				ones <= ones + 1;
+		else
+			if rising_edge(c0) then
+				if counter = 7 then
+					if wrfull = '0' then
+						wrreq <= '1';
+					end if;
+					counter <= 0;
+					zeros <= 0;
+					ones <= 0;
+					if zeros>ones then
+						data(0) <= '0';
+					else
+						data(0) <='1';
+					end if;
+				else
+					wrreq <= '0';
+					counter <= counter +1;
+					if rx2 = '0' then
+						zeros <= zeros + 1;
+					else
+						ones <= ones + 1;
+					end if;
+				end if;
 			end if;
 		end if;
-	end if;
 	end process;
 	
 	process(c1) 
 	begin
 	if rising_edge(c1) then
 		if (rdempty ='0') then
-			outdata <= q(0);
+			rdreq <= '1';
+			rx_sync <= q(0);
+		else
+			rdreq <= '0';
 		end if;
 	end if;
 	end process;
