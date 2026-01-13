@@ -13,8 +13,6 @@ int main(int argc, char* argv[])
     //defining and opening the output files
     FILE *outdata= fopen(argv[2], 'w');
     FILE *outcode= fopen(argv[3], 'w');
-    fopen outdata;
-    fopen outcode;
     while(fgets(line, sizeof(line), inputfile))
     {
 
