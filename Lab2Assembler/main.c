@@ -7,6 +7,20 @@ int main(int argc, char* argv[])
         printf("not enough files");
         return 0;
     }
+    //defining the input file
+    FILE *inputfile= fopen(argv[1], 'r');
+    char line[256];
+    //defining and opening the output files
+    FILE *outdata= fopen(argv[2], 'w');
+    FILE *outcode= fopen(argv[3], 'w');
+    fopen outdata;
+    fopen outcode;
+    while(fgets(line, sizeof(line), inputfile))
+    {
+
+
+
+    }
 
 
 
