@@ -7,7 +7,7 @@ entity UART_trans is
 		port 
 		(
 				c1          : in std_logic;
-            rst_l         : in std_logic;
+            rst         : in std_logic;
 				send       	: in std_logic;
             data_in     : in unsigned(7 downto 0);
             tx          : out std_logic
@@ -23,9 +23,9 @@ entity UART_trans is
 	
 	begin
 	
-	process(c1, rst_l)
+	process(c1, rst)
 	begin
-		if rst_l = '0' then
+		if rst = '1' then
             state <= IDLE;
             counter <= 0;
         elsif rising_edge(c1) then
@@ -43,9 +43,9 @@ entity UART_trans is
                         tx <= data_in(counter);
                         counter <= counter + 1;
                     else
+                        state <= IDLE;
                         tx <= '1';
                         counter <= 0;
-								state <= IDLE;
 							end if;
                 when others =>
                     state <= IDLE;
