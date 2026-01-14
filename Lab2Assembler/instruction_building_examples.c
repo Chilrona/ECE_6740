@@ -16,13 +16,15 @@ if op_word == ADDI
 }
 instruction = (instruction & RS_CLEAR) | source_reg;
 
+
+// This is another way of building out the instruction.
 union 
 {
-    uint32_t full;
+    uint32_t full; // Represents the full instruction
     struct
     {
-        uint16_t immediate : 16;
-        uint8_t rs1 : 5;
+        uint16_t immediate : 16; // Here are the fields
+        uint8_t rs1 : 5;        // As well as their bit lengths
         uint8_t rd : 5;
         uint8_t opcode : 6;
     } fields;
