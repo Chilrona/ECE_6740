@@ -5,22 +5,6 @@
 #define JUMP 4
 
 
-#define ADDI_OPCODE 0x10000000
-#define R1_SOURCE 0x00010000
-#define R1_DEST 0x00200000
-#define RD_CLEAR
-#define RS_CLEAR 0xFFE0FFFF
-uint32_t instruction = 0;
-source_reg = R0;
-dest_reg = R1;
-if op_word == ADDI
-{
-    instruction = (instruction & 0x03FFFFFF) | ADDI_OPCODE;
-
-}
-instruction = (instruction & RS_CLEAR) | source_reg;
-
-
 
 void strip(char *s)
 {
