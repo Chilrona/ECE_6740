@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdint.h>
+
 #define ADDI_OPCODE 0x10000000
 #define R1_SOURCE 0x00010000
 #define R1_DEST 0x00200000
@@ -6,34 +9,41 @@
 
 // Here are s ome examples if using masking to
 // build an instruction.
-uint32_t instruction = 0;
-source_reg = R0;
-dest_reg = R1;
-if op_word == ADDI
+// uint32_t instruction = 0;
+// source_reg = R0;
+// dest_reg = R1;
+// if op_word == ADDI
+// {
+//     instruction = (instruction & 0x03FFFFFF) | ADDI_OPCODE;
+
+// }
+// instruction = (instruction & RS_CLEAR) | source_reg;
+
+int main (void)
 {
-    instruction = (instruction & 0x03FFFFFF) | ADDI_OPCODE;
-
-}
-instruction = (instruction & RS_CLEAR) | source_reg;
-
-
-// This is another way of building out the instruction.
-union 
-{
-    uint32_t full; // Represents the full instruction
-    struct
+        // This is another way of building out the instruction.
+    typedef union 
     {
-        uint16_t immediate : 16; // Here are the fields
-        uint8_t rs1 : 5;        // As well as their bit lengths
-        uint8_t rd : 5;
-        uint8_t opcode : 6;
-    } fields;
-} imm_instruction;
+        uint32_t full; // Represents the full instruction
+        struct
+        {
+            uint16_t immediate : 16; // Here are the fields
+            uint8_t opcode : 6;
+            uint8_t rs1 : 5;        // As well as their bit lengths
+            uint8_t rd : 5;
+        } fields;
+    } imm_instruction;
 
-// This instruction adds the value in R2 to 0x1234
-// and stores it in R1.
-imm_instruction inst = {0};
-inst.fields.opcode = 0x04;
-inst.fields.rd = 1;
-inst.fields.rs1 = 2;
-inst.fields.immediate = 0x1234;
+    // This instruction adds the value in R2 to 0x1234
+    // and stores it in R1.
+    imm_instruction inst = {0};
+    inst.fields.opcode = 0x3f;
+    printf("0x%08X\n", (unsigned)inst.full);
+    inst.fields.rd = 1;
+    printf("0x%08X\n", (unsigned)inst.full);
+    inst.fields.rs1 = 2;
+    printf("0x%08X\n", (unsigned)inst.full);
+    inst.fields.immediate = 0x1234;
+    printf("0x%08X\n", (unsigned)inst.full);
+    return(0);
+}
