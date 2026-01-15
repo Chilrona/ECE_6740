@@ -64,38 +64,39 @@
 #define JAL_OPCODE      0xBC000000
 #define JALR_OPCODE     0xC0000000
 
-//Source Registers
-#define R1_SOURCE 0x00010000
-#define R2_SOURCE
-#define R3_SOURCE
-#define R4_SOURCE
-#define R5_SOURCE
-#define R6_SOURCE
-#define R7_SOURCE
-#define R8_SOURCE
-#define R9_SOURCE
-#define R10_SOURCE
-#define R11_SOURCE
-#define R12_SOURCE
-#define R13_SOURCE
-#define R14_SOURCE
-#define R15_SOURCE
-#define R16_SOURCE
-#define R17_SOURCE
-#define R18_SOURCE
-#define R19_SOURCE
-#define R20_SOURCE
-#define R21_SOURCE
-#define R22_SOURCE
-#define R23_SOURCE
-#define R24_SOURCE
-#define R25_SOURCE
-#define R26_SOURCE
-#define R27_SOURCE
-#define R28_SOURCE
-#define R29_SOURCE
-#define R30_SOURCE
-#define R31_SOURCE
+//Source Registers for Rs1
+#define R1_SOURCE_1 0x00010000
+#define R2_SOURCE_1
+#define R2_SOURCE_1
+#define R3_SOURCE_1
+#define R4_SOURCE_1
+#define R5_SOURCE_1
+#define R6_SOURCE_1
+#define R7_SOURCE_1
+#define R8_SOURCE_1
+#define R9_SOURCE_1
+#define R10_SOURCE_1
+#define R11_SOURCE_1
+#define R12_SOURCE_1
+#define R13_SOURCE_1
+#define R14_SOURCE_1
+#define R15_SOURCE_1
+#define R16_SOURCE_1
+#define R17_SOURCE_1
+#define R18_SOURCE_1
+#define R19_SOURCE_1
+#define R20_SOURCE_1
+#define R21_SOURCE_1
+#define R22_SOURCE_1
+#define R23_SOURCE_1
+#define R24_SOURCE_1
+#define R25_SOURCE_1
+#define R26_SOURCE_1
+#define R27_SOURCE_1
+#define R28_SOURCE_1
+#define R29_SOURCE_1
+#define R30_SOURCE_1
+#define R31_SOURCE_1
 
 // Destination Registers
 #define R1_DEST 0x00200000
