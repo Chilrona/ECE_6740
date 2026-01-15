@@ -8,8 +8,8 @@ char* parseREGISTER(char* line)
         case 'A': //this is going to be ADD ADDU or AND
 
         case 'S'://this is going to be SUB SUBU
-        case '':
-        case '':
+        case 'O':
+        case 'X':
         case '':
         case '':
 
