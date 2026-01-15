@@ -1,4 +1,5 @@
 #include "stdio.h"
+
 // OPCODES
 #define NOP_OPCODE      0x00000000
 
@@ -66,71 +67,78 @@
 
 //Source Registers for Rs1
 #define R1_SOURCE_1 0x00010000
-#define R2_SOURCE_1
-#define R2_SOURCE_1
-#define R3_SOURCE_1
-#define R4_SOURCE_1
-#define R5_SOURCE_1
-#define R6_SOURCE_1
-#define R7_SOURCE_1
-#define R8_SOURCE_1
-#define R9_SOURCE_1
-#define R10_SOURCE_1
-#define R11_SOURCE_1
-#define R12_SOURCE_1
-#define R13_SOURCE_1
-#define R14_SOURCE_1
-#define R15_SOURCE_1
-#define R16_SOURCE_1
-#define R17_SOURCE_1
-#define R18_SOURCE_1
-#define R19_SOURCE_1
-#define R20_SOURCE_1
-#define R21_SOURCE_1
-#define R22_SOURCE_1
-#define R23_SOURCE_1
-#define R24_SOURCE_1
-#define R25_SOURCE_1
-#define R26_SOURCE_1
-#define R27_SOURCE_1
-#define R28_SOURCE_1
-#define R29_SOURCE_1
-#define R30_SOURCE_1
-#define R31_SOURCE_1
+#define R2_SOURCE_1 0x00020000
+#define R3_SOURCE_1 0x00030000
+#define R4_SOURCE_1 0x00040000
+#define R5_SOURCE_1 0x00050000
+#define R6_SOURCE_1 0x00060000
+#define R7_SOURCE_1 0x00070000
+#define R8_SOURCE_1 0x00080000
+#define R9_SOURCE_1 0x00090000
+#define R10_SOURCE_1 0x000A0000
+#define R11_SOURCE_1 0x000B0000
+#define R12_SOURCE_1 0x000C0000
+#define R13_SOURCE_1 0x000D0000
+#define R14_SOURCE_1 0x000E0000
+#define R15_SOURCE_1 0x000F0000
+#define R16_SOURCE_1 0x00100000
+#define R17_SOURCE_1 0x00110000
+#define R18_SOURCE_1 0x00120000
+#define R19_SOURCE_1 0x00130000
+#define R20_SOURCE_1 0x00140000
+#define R21_SOURCE_1 0x00150000
+#define R22_SOURCE_1 0x00160000
+#define R23_SOURCE_1 0x00170000
+#define R24_SOURCE_1 0x00180000
+#define R25_SOURCE_1 0x00190000
+#define R26_SOURCE_1 0x001A0000
+#define R27_SOURCE_1 0x001B0000
+#define R28_SOURCE_1 0x001C0000
+#define R29_SOURCE_1 0x001D0000
+#define R30_SOURCE_1 0x001E0000
+#define R31_SOURCE_1 0x001F0000
+
+// Source Registers for RS2
+
+
 
 // Destination Registers
 #define R1_DEST 0x00200000
-#define R2_DEST
-#define R3_DEST
-#define R4_DEST
-#define R5_DEST
-#define R6_DEST
-#define R7_DEST
-#define R8_DEST
-#define R9_DEST
-#define R10_DEST
-#define R11_DEST
-#define R12_DEST
-#define R13_DEST
-#define R14_DEST
-#define R15_DEST
-#define R16_DEST
-#define R17_DEST
-#define R18_DEST
-#define R19_DEST
-#define R20_DEST
-#define R21_DEST
-#define R22_DEST
-#define R23_DEST
-#define R24_DEST
-#define R25_DEST
-#define R26_DEST
-#define R27_DEST
-#define R28_DEST
-#define R29_DEST
-#define R30_DEST
-#define R31_DEST
+#define R2_DEST 0x00400000
+#define R3_DEST 0x00600000
+#define R4_DEST 0x00800000
+#define R5_DEST 0x00A00000
+#define R6_DEST 0x00C00000
+#define R7_DEST 0x00E00000
+#define R8_DEST 0x01000000
+#define R9_DEST 0x01200000
+#define R10_DEST 0x01400000
+#define R11_DEST 0x01600000
+#define R12_DEST 0x01800000
+#define R13_DEST 0x01A00000
+#define R14_DEST 0x01C00000
+#define R15_DEST 0x01E00000
+#define R16_DEST 0x02000000
+#define R17_DEST 0x02200000
+#define R18_DEST 0x02400000
+#define R19_DEST 0x02600000
+#define R20_DEST 0x02800000
+#define R21_DEST 0x02A00000
+#define R22_DEST 0x02C00000
+#define R23_DEST 0x02E00000
+#define R24_DEST 0x03000000
+#define R25_DEST 0x03200000
+#define R26_DEST 0x03400000
+#define R27_DEST 0x03600000
+#define R28_DEST 0x03800000
+#define R29_DEST 0x03A00000
+#define R30_DEST 0x03C00000
+#define R31_DEST 0x03E00000
 
 //Field clear bits
-#define RD_CLEAR
-#define RS_CLEAR 0xFFE0FFFF
+
+#define OPCODE_CLEAR 0x03FFFFFF
+#define RD_CLEAR 0xFC0FFFFFF
+#define RS_CLEAR_1 0xFFE0FFFF
+#define RS_CLEAR_2 0xFFFF03FF
+#define IMMEDIATE_CLEAR 0xFFFF0000
