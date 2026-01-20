@@ -11,16 +11,13 @@
 
 #endif
 
-
-
-
 using namespace std;
 
 struct Instruction {
     string opcode;
     string regOut;
     string regPri;
-    string regSec;
+    string Immediate;
 };
 
 vector<Instruction> parseInstructionLine(const string& line)
@@ -29,21 +26,32 @@ vector<Instruction> parseInstructionLine(const string& line)
     string cleaned = line;
 
     // Remove commas from the line
-    cleaned.erase(std::remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
+    cleaned.erase(remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
     istringstream iss(cleaned);
     vector<Instruction> result;
 
     Instruction inst;
-    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.regSec)
+    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.Immediate)
         result.push_back(inst);
 
     return result;
 }
 
+uint32_t encodeImm(const string& immStr) {
+    int value = stoi(immStr);
+
+    if (value < 0 || value > 0xFFFF) {
+        throw std::out_of_range("Immediate out of range (0–65535)");
+    }
+
+    return static_cast<uint32_t>(value);
+}
+
+
 int main()
 {
-	uint32_t opcode, Rdest, RPri, RSec;
+	uint32_t opcode, Rdest, RPri, immediate;
     string line = "ADD R3, R1, R2";
 
     auto instructions = parseInstructionLine(line);

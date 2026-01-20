@@ -1,6 +1,5 @@
 //include function calls of files we will use in the main file
 #include "stdio.h"
-#include Instruction_Macros.h
 #include <unordered_map>
 #include <string>
 #include <cstdint>
@@ -145,8 +144,6 @@ const std::unordered_map<std::string, uint32_t> rs1Table = {
     {"R31", 0x001F0000}
 };
 
-
-
 const std::unordered_map<std::string, uint32_t> rs2Table = {
     {"R1",  0x00000F00},
     {"R2",  0x00001000},
@@ -180,4 +177,5 @@ const std::unordered_map<std::string, uint32_t> rs2Table = {
     {"R30", 0x00002C00},
     {"R31", 0x00002D00}
 };
+
 
