@@ -1,79 +1,72 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <algorithm>  // required for std::
+
+#ifndef MOTHERSHIP_H
+#define MOTHERSHIP_H
+
 #include "mothership.h"
-#include "Instrucion_Macros.h"
-#include "stdint.h"
-/*Pseudocode:
-split into 4 different strings
-sort by op code
-figure out which destination register we want
-figure out which primary input register we want
-figure out which secondary input register we want
-complete binary or to get the resulting line
-*/
 
-char* parseREGISTER(char* line)
+#endif
+
+
+
+
+using namespace std;
+
+struct Instruction {
+    string opcode;
+    string regOut;
+    string regPri;
+    string regSec;
+};
+
+vector<Instruction> parseInstructionLine(const string& line)
 {
-    uint32_t op_code;
-    uint32_t RS, R_pri, R_sec;
-    //split the line between the 4 parts
-    //create a look up table and use it to get the marcros of each
-    //return the value in this format '10200000;'
+    // Make a local copy so we can modify it
+    string cleaned = line;
 
+    // Remove commas from the line
+    cleaned.erase(std::remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
+    istringstream iss(cleaned);
+    vector<Instruction> result;
 
-    switch (line[0]) 
-    {
-        case 'A': //this is going to be ADD ADDU or AND
-            if(line[1]=='D') 
-            {
-                if(line[3]=='U')
-                {
-                    opcode = ADDU_OPCODE;
-                }
-                  opcode = ADD_OPCODE;
-            }
-            else 
-            {
-              opcode = AND_OPCODE;  
-            }
-        break;
+    Instruction inst;
+    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.regSec)
+        result.push_back(inst);
 
-        case 'S'://this is going to be SUB SUBU
-        if(line[1]=='U')
-        {
+    return result;
+}
 
+int main()
+{
+	uint32_t opcode, Rdest, RPri, RSec;
+    string line = "ADD R3, R1, R2";
 
-        }
-        else if(line[1]=='L')
-        {
-
-        }
-        else if(line[1]=='G')
-        {
-
-
-        }
-        else if(line[1]=='N')
-        {
-
-            
-        }
-        else if(line[1]=='R')
-        {
-
-            
-        }
-        break;
-        case 'O':
-        break;
-        case 'X':
-        break;
-        case '':
-        break;
-        case '':
-        break;
-        default:
-        break;
-
+    auto instructions = parseInstructionLine(line);
+	
+for (const auto& inst : instructions) {
+    auto it = opcodeTable.find(inst.opcode);
+    if (it == opcodeTable.end()) {
+        cerr << "Unknown opcode: " << inst.opcode << endl;
+        continue;
     }
-    return 
+
+    opcode = it->second;
+    cout << "Opcode = 0x" << hex << opcode << endl;
+}
+
+
+
+    for (const auto& inst : instructions) {
+        cout << opcode << " "
+             << inst.regOut << " "
+             << inst.regPri << " "
+             << inst.regSec << endl;
+    }
+
+    return 0;
 }
