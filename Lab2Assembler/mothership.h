@@ -1,5 +1,6 @@
 //include function calls of files we will use in the main file
 #include "stdio.h"
+#include Instruction_Macros.h
 #include <unordered_map>
 #include <string>
 #include <cstdint>

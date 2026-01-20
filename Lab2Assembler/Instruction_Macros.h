@@ -66,6 +66,7 @@
 #define JALR_OPCODE     0xC0000000
 
 //Source Registers for Rs1
+#define R0_SOURCE_1 0x00000000
 #define R1_SOURCE_1 0x00010000
 #define R2_SOURCE_1 0x00020000
 #define R3_SOURCE_1 0x00030000
@@ -99,6 +100,7 @@
 #define R31_SOURCE_1 0x001F0000
 
 // Source Registers for RS2
+#define R0_SOURCE_2 0x00000000
 #define R1_SOURCE_2   0x00000F00
 #define R2_SOURCE_2   0x00001000
 #define R3_SOURCE_2   0x00001100
