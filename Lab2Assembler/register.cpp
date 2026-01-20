@@ -41,14 +41,15 @@ vector<Instruction> parseInstructionLine(const string& line)
     return result;
 }
 
-int main()
+uint32_t parseREGISTER()
 {
-	uint32_t opcode, Rdest, RPri, RSec;
+	uint32_t opcode, regOut, regPri, regSec, finalresult;
     string line = "ADD R3, R1, R2";
 
     auto instructions = parseInstructionLine(line);
-	
-for (const auto& inst : instructions) {
+	//opcode 
+for (const auto& inst : instructions) 
+    {
     auto it = opcodeTable.find(inst.opcode);
     if (it == opcodeTable.end()) {
         cerr << "Unknown opcode: " << inst.opcode << endl;
@@ -56,17 +57,59 @@ for (const auto& inst : instructions) {
     }
 
     opcode = it->second;
-    cout << "Opcode = 0x" << hex << opcode << endl;
-}
+    //cout << "Opcode = 0x" << hex << opcode << endl;
+    }
+
+    //destination register
+    for (const auto& inst : instructions) 
+    {
+    auto it = destRegTable.find(inst.regOut);
+    if (it == destRegTable.end()) {
+        cerr << "Unknown Destination Register: " << inst.regOut << endl;
+        continue;
+    }
+
+    regOut = it->second;
+    //cout << "Destination Register = 0x" << hex << regOut << endl;
+    }
+
+    //source 1 register
+    for (const auto& inst : instructions) 
+    {
+    auto it = rs1Table.find(inst.regPri);
+    if (it == rs1Table.end()) {
+        cerr << "Unknown Destination Register: " << inst.regPri << endl;
+        continue;
+    }
+
+    regPri = it->second;
+    //cout << "Source 1 Register = 0x" << hex << regPri << endl;
+    }
+    //source 2 register
+    for (const auto& inst : instructions) 
+    {
+    auto it = rs2Table.find(inst.regSec);
+    if (it == rs2Table.end()) {
+        cerr << "Unknown Destination Register: " << inst.regSec << endl;
+        continue;
+    }
+
+    regSec = it->second;
+    //cout << "Source 2 Register = 0x" << hex << regSec << endl;
+    }
+
+    //OR them together
+    finalresult = opcode | regOut | regPri | regSec;
+    cout << "0x" << hex << finalresult << endl;
 
 
-
+/* just printing out the line piece by piece
     for (const auto& inst : instructions) {
         cout << opcode << " "
              << inst.regOut << " "
              << inst.regPri << " "
              << inst.regSec << endl;
     }
-
-    return 0;
+*/
+    return finalresult;
 }
