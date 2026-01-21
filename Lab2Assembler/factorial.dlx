@@ -1,0 +1,39 @@
+;baseline of factorial 
+;not yet done
+	
+	.data
+	
+m 10 1 2 3 4 5 6 7 8 9 10
+result	1	0
+
+	.text
+	
+	ADDI	R1, R0, 0
+	ADDI	R2, R0, 1
+	LW		R10, n(R0)
+	
+top
+;pseudocode for factorial
+;start by initializing total at 1
+    LW 
+;load in our factorial value(ex 4! we load in 4)
+    LW 
+;start a loop that checks for if our loop variable is the load value (ex if i>4)
+;we have a special variable that we load in the temp value of total
+;another loop that loops through until (j>i)
+;add the temp value to the total
+;end program
+	SLEI	R11, R10, 1
+	BNEZ	R11, exit
+	ADD		R3, R1, R2
+	ADDI	R1, R2, 0
+	ADDI	R2, R3, 0
+	SUBI	R10, R10, 1
+	J		top
+	
+exit
+	SW		result(R0), R3
+	
+done
+	J		done
+	
