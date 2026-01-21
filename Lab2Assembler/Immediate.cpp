@@ -27,7 +27,7 @@ vector<Instruction> parseInstructionLine(const string& line)
     string cleaned = line;
 
     // Remove commas from the line
-    cleaned.erase(remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
+    //cleaned.erase(remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
     istringstream iss(cleaned);
     vector<Instruction> result;
@@ -39,26 +39,15 @@ vector<Instruction> parseInstructionLine(const string& line)
     return result;
 }
 
-uint32_t encodeImm(const string& immStr) 
+uint32_t parseImmediate(char* line_ptr)
 {
-    int value = stoi(immStr);
+    string line = line_ptr;
+	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
+    //string line = "ADDI R2, R1, 5";
 
-    if (value < 0 || value > 0xFFFF) {
-        throw std::out_of_range("Immediate out of range (0–65535)");
-    }
-
-    return static_cast<uint32_t>(value); // 5 -> 0x00000005
-}
-
-
-uint32_t parseImmediate(const string& line)
-{
-	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode;
-    string line = "ADDI R2, R1, 5";
-
-    auto instructions = parseInstructionLine(line);
+    vector<Instruction> instructions = parseInstructionLine(line);
 	// 1) opcode
-for (const auto& inst : instructions) 
+for (const Instruction& inst : instructions) 
 {
     auto opIt = opcodeTable.find(inst.opcode);
     if (opIt == opcodeTable.end()) 
@@ -93,7 +82,7 @@ for (const auto& inst : instructions)
 
     try
     {
-        immBits = encodeImm(inst.immStr) & 0xFFFF; //keep low 16 bits
+        immBits = static_cast<uint32_t>(stoi(inst.immStr));
     }
     catch(const exception& e)
     {
