@@ -74,7 +74,6 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
     linevec_init(&data_lines);
     linevec_init(&text_lines);
     uint16_t pc = 0;
-    uint16_t data_addr = 0;
     int label_idx = 0;
     int line_num = -1;
     Section mode = SEC_NONE;
@@ -108,7 +107,8 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
             linevec_push(&text_lines, line_num, pc++, line);
         } else if (mode == SEC_DATA)
         {
-            linevec_push(&data_lines, line_num, data_addr++, line);
+            linevec_push(&data_lines, line_num, 0, line);   // Push The data line to the record.
+                                                            // All addresses will initialize to 0, that will be corrected on the second pass.
         }
     }
 }
@@ -119,6 +119,10 @@ void pass_two_inst(FILE* out_code, label* label_table, var* data_table, line_vec
     for (int i = 0; i < text_lines->len; i++)
     {
         inst_type type = lookup_mnemonic(text_lines->items[i].text)->type;
+        if (type == NULL)
+        {
+            error("Instruction not found.");
+        }
         uint32_t instruction;
         switch (type)
         {
@@ -135,19 +139,21 @@ void pass_two_inst(FILE* out_code, label* label_table, var* data_table, line_vec
                 instruction = parse_jump(text_lines->items[i].text);
                 break;
             default:
-                instruction = 0; //NOP
+                instruction = 0; //NOP if we somehow get here.
                 break;
         }
-        fprintf(out_code, "%03X : %08X; --%s", text_lines->items[i].addr, instruction, text_lines->items[i].text);
+        fprintf(out_code, "%03X : %08X; --%s\n", text_lines->items[i].addr, instruction, text_lines->items[i].text);
     }
     fprintf(out_code, "\nEND;\n");
 }
 
 void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 {
+    uint16_t data_addr = 0;
     for (int i = 0; i < data_lines->len; i++)
     {
         char* save = NULL;
+        data_lines->items[i].addr = data_addr;
         line_rec curr_line = data_lines->items[i];
         char* line_walk = curr_line.text;
         data_table[i].name = strtok_r(line_walk, " ", &save);   // get var name
@@ -161,8 +167,9 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
         {
             num_str = strtok(NULL, " ");   // 
             data = (uint32_t)strtol(num_str, NULL, 10);
-            fprintf(out_data, "%03X : %08X; --%s[%d]", data_table[i].addr, data, data_table[i].name, j);
+            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_table[i].addr, data, data_table[i].name, j);
         }
+        data_addr += data_table[i].size;
     }
     fprintf(out_data, "\nEND;\n");
 }
