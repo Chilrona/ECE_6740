@@ -15,7 +15,7 @@ typedef struct {
     uint32_t size;
     }var;
 
-typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP} inst_type;
+typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
 
 using namespace std;
 

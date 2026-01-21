@@ -1,9 +1,12 @@
 #include "stdio.h"
-#include "line_vec.c"
+#include "line_vec.cpp"
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <stddef.h>   // size_t
+#include <string.h>   // strcmp
+#include "mnemonic.cpp"
 
 #ifndef MOTHERSHIP_H
 #define MOTHERSHIP_H
@@ -53,7 +56,19 @@ void strip(char *s)
     *dst = '\0';
 }
 
-void passOne(FILE infile, label* label_table, line_vec* data_lines, line_vec* text_lines)
+char* try_parse_label(char* line)
+{
+    if (lookup_mnemonic(line) == NULL)
+    {
+        char* save = NULL;
+        char* label = strtok_r(line, " ", &save);
+        line = strtok_r(NULL, "\0", &save);
+        return (label);
+    }
+    return(NULL);
+}
+
+void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* text_lines)
 {
     char line[256];
     linevec_init(&data_lines);
@@ -82,7 +97,7 @@ void passOne(FILE infile, label* label_table, line_vec* data_lines, line_vec* te
 
         if (mode == SEC_TEXT)
         {
-            char* label_name = tryParseLabel(&line); // looks for a label, if so
+            char* label_name = try_parse_label(&line); // looks for a label, if so
                                                     // trim it off the front
             if (label_name)
             {
@@ -98,37 +113,37 @@ void passOne(FILE infile, label* label_table, line_vec* data_lines, line_vec* te
     }
 }
 
-void passTwoInst(FILE out_code, label* label_table, var* data_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, label* label_table, var* data_table, line_vec* text_lines)
 {
     // Instruction pass two
     for (int i = 0; i < text_lines->len; i++)
     {
-        inst_type type = getType(text_lines->items[i].text);
+        inst_type type = lookup_mnemonic(text_lines->items[i].text)->type;
         uint32_t instruction;
         switch (type)
         {
             case IMMEDIATE:
-                instruction = parseImmediate(text_lines->items[i].text);
+                instruction = parse_immediate(text_lines->items[i].text);
                 break;
             case MEMORY:
-                instruction = parseMemory(text_lines->items[i].text, data_table);
+                instruction = parse_memory(text_lines->items[i].text, data_table);
                 break;
             case REGISTER:
-                instruction = parseRegister(text_lines->items[i].text);
+                instruction = parse_register(text_lines->items[i].text);
                 break;
             case JUMP:
-                instruction = parseJump(text_lines->items[i].text);
+                instruction = parse_jump(text_lines->items[i].text);
                 break;
             default:
                 instruction = 0; //NOP
                 break;
         }
-        writeCodeLine(out_code, text_lines->items[i], instruction);
+        fprintf(out_code, "%03X : %08X; --%s", text_lines->items[i].addr, instruction, text_lines->items[i].text);
     }
     fprintf(out_code, "\nEND;\n");
 }
 
-void passTwoData(FILE out_data, line_vec* data_lines, var* data_table)
+void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 {
     for (int i = 0; i < data_lines->len; i++)
     {
@@ -164,12 +179,29 @@ int main(int argc, char* argv[])
     //defining and opening the output files
     FILE *out_data= fopen(argv[2], 'w');
     FILE *out_code= fopen(argv[3], 'w');
+
+    fprintf(out_code,   "DEPTH = 1024;\n
+                        WIDTH = 32;\n
+                        ADDRESS_RADIX = HEX;\n
+                        DATA_RADIX = HEX;\n
+                        CONTENT\n
+                        BEGIN\n\n");
+    fprintf(out_data,   "DEPTH = 1024;\n
+                        WIDTH = 32;\n
+                        ADDRESS_RADIX = HEX;\n
+                        DATA_RADIX = HEX;\n
+                        CONTENT\n
+                        BEGIN\n\n");
+
     label label_table[16];
     line_vec data_lines, text_lines;
-    passOne(input_file, label_table, &data_lines, &text_lines);
+    pass_one(input_file, label_table, &data_lines, &text_lines);
     var data_table[data_lines.len];
-    passTwoData(out_data, data_lines, data_table);
-    passTwoInst(out_code, label_table, data_table, text_lines);
+    pass_two_data(out_data, data_lines, data_table);
+    pass_two_inst(out_code, label_table, data_table, text_lines);
+
+    fclose(out_data);
+    fclose(out_code);
 
 
     return 0;
