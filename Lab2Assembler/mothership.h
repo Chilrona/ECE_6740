@@ -4,6 +4,19 @@
 #include <string>
 #include <cstdint>
 
+typedef struct {
+        char name[64];
+        uint16_t addr;
+    }label;
+
+typedef struct {
+    char name[64];
+    uint16_t addr;
+    uint32_t size;
+    }var;
+
+typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP} inst_type;
+
 using namespace std;
 
 const unordered_map<string, uint32_t> opcodeTable = {

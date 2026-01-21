@@ -42,7 +42,7 @@ vector<Instruction> parseInstructionLine(const string& line)
 
     return result;
 }
-
+// Added a pointer to the beginning of the line. -Jackson
 uint32_t parseREGISTER(char* line_ptr)
 {
 	uint32_t opcode, regOut, regPri, regSec, finalresult;

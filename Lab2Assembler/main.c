@@ -5,21 +5,12 @@
 #include <limits.h>
 #include <stdlib.h>
 
-typedef struct {
-        char name[64];
-        uint16_t addr;
-    }label;
+#ifndef MOTHERSHIP_H
+#define MOTHERSHIP_H
 
-typedef struct {
-    char name[64];
-    uint16_t addr;
-    uint32_t size;
-    }var;
+#include "mothership.h"
 
-typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP} inst_type;
-
-
-
+#endif
 
 void strip(char *s)
 {
@@ -117,16 +108,16 @@ void passTwoInst(FILE out_code, label* label_table, var* data_table, line_vec* t
         switch (type)
         {
             case IMMEDIATE:
-                instruction = parseImmediate(text_lines->items[i].text, data_table);
+                instruction = parseImmediate(text_lines->items[i].text);
                 break;
             case MEMORY:
                 instruction = parseMemory(text_lines->items[i].text, data_table);
                 break;
             case REGISTER:
-                instruction = parseRegister(text_lines->items[i].text, data_table);
+                instruction = parseRegister(text_lines->items[i].text);
                 break;
             case JUMP:
-                instruction = parseJump(text_lines->items[i].text, data_table);
+                instruction = parseJump(text_lines->items[i].text);
                 break;
             default:
                 instruction = 0; //NOP
