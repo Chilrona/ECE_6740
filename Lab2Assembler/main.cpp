@@ -7,6 +7,8 @@
 #include <stddef.h>   // size_t
 #include <string.h>   // strcmp
 #include "mnemonic.cpp"
+#include "register.cpp"
+#include "immediate.cpp"
 
 #ifndef MOTHERSHIP_H
 #define MOTHERSHIP_H

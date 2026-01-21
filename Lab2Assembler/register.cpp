@@ -16,14 +16,14 @@
 
 using namespace std;
 
-struct Instruction {
+struct Instruction_Register {
     string opcode;
     string regOut;
     string regPri;
     string regSec;
 };
 
-vector<Instruction> parseInstructionLine(const string& line)
+vector<Instruction_Register> parseInstructionLine1(const string& line)
 {
     // Make a local copy so we can modify it
     string cleaned = line;
@@ -34,9 +34,9 @@ vector<Instruction> parseInstructionLine(const string& line)
     cleaned.erase(std::remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
     istringstream iss(cleaned);
-    vector<Instruction> result;
+    vector<Instruction_Register> result;
 
-    Instruction inst;
+    Instruction_Register inst;
     if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.regSec)
         result.push_back(inst);
 
@@ -50,12 +50,9 @@ uint32_t parseREGISTER(char* line_ptr)
     string line = line_ptr; // This is how you convert from C style strings
                             // to C++ style strings. -Jackson
 
-    auto instructions = parseInstructionLine(line);
+    auto instructions = parseInstructionLine1(line);
 
-    if(opcode == "NOP")
-    {
-        return 0;
-    }
+
 
 	//opcode 
 for (const auto& inst : instructions) 
@@ -67,6 +64,10 @@ for (const auto& inst : instructions)
     }
 
     opcode = it->second;
+        if(it->first == "NOP")
+    {
+        return 0;
+    }
     //cout << "Opcode = 0x" << hex << opcode << endl;
     }
 
