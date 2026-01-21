@@ -26,15 +26,15 @@ static const mnemonic_entry MNEMONICS[] =
 { "AND",   REGISTER },
 { "ANDI",  IMMEDIATE },
 
-{ "BEQZ",  REGISTER },
-{ "BNEZ",  REGISTER },
+{ "BEQZ",  MEMORY },
+{ "BNEZ",  MEMORY },
 
 { "J",     JUMP },
 { "JAL",   JUMP },
 { "JALR",  JUMP },
 { "JR",    JUMP },
 
-{ "LW",    REGISTER },
+{ "LW",    MEMORY },
 
 { "NOP",   REGISTER },
 
@@ -81,7 +81,7 @@ static const mnemonic_entry MNEMONICS[] =
 { "SUBU",  REGISTER },
 { "SUBUI", IMMEDIATE },
 
-{ "SW",    REGISTER },
+{ "SW",    MEMORY },
 
 { "XOR",   REGISTER },
 { "XORI",  IMMEDIATE }
