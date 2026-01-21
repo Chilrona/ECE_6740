@@ -39,14 +39,18 @@ Instruction_Register parseInstructionLine1(const string& line)
 uint32_t parseREGISTER(char* line_ptr)
 {
 	uint32_t opcode, regOut, regPri, regSec, finalresult;
-    // string line = "ADD R3, R1, R2";
     string line = line_ptr; // This is how you convert from C style strings
                             // to C++ style strings. -Jackson
 
     Instruction_Register inst = parseInstructionLine1(line);
 
-    const unordered_map<string, uint32_t> it = opcodeTable.find(inst.opcode);
+    
+    auto it = opcodeTable.find(inst.opcode);
     opcode = it->second;
+    if (inst.opcode == "NOP")
+	{
+		return 0;
+	}
 
     it = destRegTable.find(inst.regOut);
     regOut = it->second;
