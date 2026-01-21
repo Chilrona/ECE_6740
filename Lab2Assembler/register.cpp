@@ -29,6 +29,8 @@ vector<Instruction> parseInstructionLine(const string& line)
     string cleaned = line;
 
     // Remove commas from the line
+    // You shouldn't need to clean the line.
+    // I'm sending it in this format: "ADD R3 R1 R2" - Jackson
     cleaned.erase(std::remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
     istringstream iss(cleaned);
@@ -41,10 +43,12 @@ vector<Instruction> parseInstructionLine(const string& line)
     return result;
 }
 
-uint32_t parseREGISTER()
+uint32_t parseREGISTER(char* line_ptr)
 {
 	uint32_t opcode, regOut, regPri, regSec, finalresult;
-    string line = "ADD R3, R1, R2";
+    // string line = "ADD R3, R1, R2";
+    string line = line_ptr; // This is how you convert from C style strings
+                            // to C++ style strings. -Jackson
 
     auto instructions = parseInstructionLine(line);
 	//opcode 
