@@ -51,6 +51,12 @@ uint32_t parseREGISTER(char* line_ptr)
                             // to C++ style strings. -Jackson
 
     auto instructions = parseInstructionLine(line);
+
+    if(opcode == "NOP")
+    {
+        return 0;
+    }
+
 	//opcode 
 for (const auto& inst : instructions) 
     {
