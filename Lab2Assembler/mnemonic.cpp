@@ -16,7 +16,76 @@ typedef struct
 
 static const mnemonic_entry MNEMONICS[] = 
 {
-    //...
+    // FORMAT: { "MNEMONIC", TYPE }
+
+{ "ADD",   REGISTER },
+{ "ADDI",  IMMEDIATE },
+{ "ADDU",  REGISTER },
+{ "ADDUI", IMMEDIATE },
+
+{ "AND",   REGISTER },
+{ "ANDI",  IMMEDIATE },
+
+{ "BEQZ",  MEMORY },
+{ "BNEZ",  MEMORY },
+
+{ "J",     JUMP },
+{ "JAL",   JUMP },
+{ "JALR",  JUMP },
+{ "JR",    JUMP },
+
+{ "LW",    MEMORY },
+
+{ "NOP",   REGISTER },
+
+{ "OR",    REGISTER },
+{ "ORI",   IMMEDIATE },
+
+{ "SEQ",   REGISTER },
+{ "SEQI",  IMMEDIATE },
+
+{ "SGE",   REGISTER },
+{ "SGEI",  IMMEDIATE },
+{ "SGEU",  REGISTER },
+{ "SGEUI", IMMEDIATE },
+
+{ "SGT",   REGISTER },
+{ "SGTI",  IMMEDIATE },
+{ "SGTU",  REGISTER },
+{ "SGTUI", IMMEDIATE },
+
+{ "SLE",   REGISTER },
+{ "SLEI",  IMMEDIATE },
+{ "SLEU",  REGISTER },
+{ "SLEUI", IMMEDIATE },
+
+{ "SLT",   REGISTER },
+{ "SLTI",  IMMEDIATE },
+{ "SLTU",  REGISTER },
+{ "SLTUI", IMMEDIATE },
+
+{ "SLL",   REGISTER },
+{ "SLLI",  IMMEDIATE },
+
+{ "SNE",   REGISTER },
+{ "SNEI",  IMMEDIATE },
+
+{ "SRA",   REGISTER },
+{ "SRAI",  IMMEDIATE },
+
+{ "SRL",   REGISTER },
+{ "SRLI",  IMMEDIATE },
+
+{ "SUB",   REGISTER },
+{ "SUBI",  IMMEDIATE },
+{ "SUBU",  REGISTER },
+{ "SUBUI", IMMEDIATE },
+
+{ "SW",    MEMORY },
+
+{ "XOR",   REGISTER },
+{ "XORI",  IMMEDIATE }
+
 }
 
 static const size_t MNEMONICS_COUNT = sizeof(MNEMONICS) / sizeof(MNEMONICS[0]);

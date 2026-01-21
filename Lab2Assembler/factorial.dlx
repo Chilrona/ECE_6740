@@ -3,14 +3,13 @@
 	
 	.data
 	
-m 10 1 2 3 4 5 6 7 8 9 10
-result	1	0
+n   1	4 ;this is the value we are doing the factorial on 4! 
+f	1	1 ;this is where we put the final result
 
 	.text
 	
-	ADDI	R1, R0, 0
-	ADDI	R2, R0, 1
-	LW		R10, n(R0)
+	LW	    R0, f
+	LW		R1, n
 	
 top
 ;pseudocode for factorial
@@ -18,22 +17,23 @@ top
     LW 
 ;load in our factorial value(ex 4! we load in 4)
     LW 
-;start a loop that checks for if our loop variable is the load value (ex if i>4)
+;start a loop that checks for if our loop variable is zero i is (R1)
+factorial
 ;we have a special variable that we load in the temp value of total
-;another loop that loops through until (j>i)
-;add the temp value to the total
+
+;check if the I got down to zero 
+    BEQZ R1, exit
+;decrease the value of i 
+    SUBI R1, R1, 1
+;another loop that loops j(R8) through until (j>i) this will actually be our multiply function using Jump and Link
+    JAL 
+;add the temp value (R7) to the total (R0)
+    ADD R0, R0, R7
+    BNEZ R8, factorial ;if we got down to zero we want to go back to the top of the loop
+    SUBI R8, R8, 1
+    JR
 ;end program
-	SLEI	R11, R10, 1
-	BNEZ	R11, exit
-	ADD		R3, R1, R2
-	ADDI	R1, R2, 0
-	ADDI	R2, R3, 0
-	SUBI	R10, R10, 1
-	J		top
 	
 exit
-	SW		result(R0), R3
-	
-done
-	J		done
+	SW		f(R0), R3
 	
