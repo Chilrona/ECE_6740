@@ -16,36 +16,38 @@ using namespace std;
 struct Instruction 
 {
     string opcode;
-    string regOut;
     string regPri;
-    string immStr;
+    string address;
 };
 
-vector<Instruction> parseInstructionLine(const string& line)
+Instruction parseInstructionLine(const string& line)
 {
     // Make a local copy so we can modify it
     string cleaned = line;
 
     istringstream iss(cleaned);
-    vector<Instruction> result;
 
     Instruction inst;
-    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.immStr)
-        result.push_back(inst);
+    if (iss >> inst.opcode)
+    {
+        if (inst.opcode == "J" || inst.opcode == "JAL")
+            iss >> inst.address;
+        else if (inst.opcode == "JR" || inst.opcode == "JALR")
+            iss >> inst.regPri;
+        return inst;
+    }
 
-    return result;
+    cerr << "Invalid Instruction";
 }
 
-uint32_t parseImmediate(char* line_ptr)
+uint32_t parse_jump(char* line_ptr)
 {
     string line = line_ptr;
-	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
-    //string line = "ADDI R2, R1, 5";
+	uint32_t opcodeBits, regPriBits, addrBits, machineCode=0;
 
-    vector<Instruction> instructions = parseInstructionLine(line);
+    Instruction inst = parseInstructionLine(line);
 	// 1) opcode
-for (const Instruction& inst : instructions) 
-{
+
     auto opIt = opcodeTable.find(inst.opcode);
     if (opIt == opcodeTable.end()) 
     {
@@ -96,7 +98,7 @@ for (const Instruction& inst : instructions)
     // cout << "rs1Bits    = 0x" << hex << setw(8) << setfill('0') << regPriBits << "\n";
     // cout << "immBits    = 0x" << hex << setw(8) << setfill('0') << immBits << "\n";
     // cout << "Machine    = 0x" << hex << setw(8) << setfill('0') << machineCode << endl;
-}
+
  
 
     return machineCode;
