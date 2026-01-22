@@ -1,12 +1,15 @@
 //include function calls of files we will use in the main file
+#ifndef MOTHERSHIP_H
+#define MOTHERSHIP_H
+
 #include "stdio.h"
 #include <unordered_map>
 #include <string>
 #include <cstdint>
 
 typedef struct {
-        char name[64];
-        uint16_t addr;
+        char* name;
+        uint32_t addr;
     }label;
 
 typedef struct {
@@ -17,9 +20,7 @@ typedef struct {
 
 typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
 
-using namespace std;
-
-const unordered_map<string, uint32_t> opcodeTable = {
+const std:: unordered_map<string, uint32_t> opcodeTable = {
     {"NOP",   0x00000000},
 
     {"LW",    0x04000000},
@@ -87,7 +88,7 @@ const unordered_map<string, uint32_t> opcodeTable = {
 
 //destination registers
 
-const unordered_map<string, uint32_t> destRegTable = {
+const std:: unordered_map<string, uint32_t> destRegTable = {
     {"R1",  0x00200000},
     {"R2",  0x00400000},
     {"R3",  0x00600000},
@@ -191,4 +192,4 @@ const std::unordered_map<std::string, uint32_t> rs2Table = {
     {"R31", 0x00002D00}
 };
 
-
+#endif

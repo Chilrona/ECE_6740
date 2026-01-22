@@ -91,7 +91,7 @@ static int mnemonic_cmp(const void* key, const void* elem)
     return(strcmp((const char*)key, ((const mnemonic_entry*)elem)->mnemonic));
 }
 
-const mnemonic_entry* lookup_mnemonic(const char* mnemonic_str)
+mnemonic_entry* lookup_mnemonic(const char* mnemonic_str)
 {
     int i = 0;
     char mnemonic_str_upper[64];
@@ -100,7 +100,7 @@ const mnemonic_entry* lookup_mnemonic(const char* mnemonic_str)
         mnemonic_str_upper[i] = (char)toupper((unsigned char)mnemonic_str[i++]);
     }
     mnemonic_str_upper[i] = '\0';
-    const mnemonic_entry* result = bsearch(mnemonic_str_upper,
+    mnemonic_entry* result = bsearch(mnemonic_str_upper,
                     MNEMONICS,
                     MNEMONICS_COUNT,
                     sizeof(MNEMONICS[0]),

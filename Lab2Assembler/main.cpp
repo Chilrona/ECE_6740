@@ -6,16 +6,12 @@
 #include <stdlib.h>
 #include <stddef.h>   // size_t
 #include <string.h>   // strcmp
+#include <cstdint>
 #include "mnemonic.cpp"
 #include "register.cpp"
 #include "immediate.cpp"
-
-#ifndef MOTHERSHIP_H
-#define MOTHERSHIP_H
-
 #include "mothership.h"
 
-#endif
 
 void strip(char *s)
 {
@@ -75,7 +71,7 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
     char line[256];
     linevec_init(&data_lines);
     linevec_init(&text_lines);
-    uint16_t pc = 0;
+    uint32_t pc = 0;
     int label_idx = 0;
     int line_num = -1;
     Section mode = SEC_NONE;
@@ -102,8 +98,7 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
                                                     // trim it off the front
             if (label_name)
             {
-                label_table[label_idx].name = label_name;
-                label_table[label_idx++].addr = pc;
+                hmput(label_table, {label_name, pc});
             }
             if (!*line) continue;
             linevec_push(&text_lines, line_num, pc++, line);
@@ -176,42 +171,49 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
     fprintf(out_data, "\nEND;\n");
 }
 
-int main(int argc, char* argv[])
+// int main(int argc, char* argv[])
+// {
+//     if (argc != 4)
+//     {
+//         printf("not enough files");
+//         return 0;
+//     }
+//     //defining the input file
+//     FILE *input_file= fopen(argv[1], 'r');
+//     //defining and opening the output files
+//     FILE *out_data= fopen(argv[2], 'w');
+//     FILE *out_code= fopen(argv[3], 'w');
+
+//     fprintf(out_code,   "DEPTH = 1024;\n"
+//                         "WIDTH = 32;\n"
+//                         "ADDRESS_RADIX = HEX;\n"
+//                         "DATA_RADIX = HEX;\n"
+//                         "CONTENT\n"
+//                         "BEGIN\n\n");
+//     fprintf(out_data,   "DEPTH = 1024;\n"
+//                         "WIDTH = 32;\n"
+//                         "ADDRESS_RADIX = HEX;\n"
+//                         "DATA_RADIX = HEX;\n"
+//                         "CONTENT\n"
+//                         "BEGIN\n\n");
+
+//     label* label_table = NULL;
+//     line_vec data_lines, text_lines;
+//     pass_one(input_file, label_table, &data_lines, &text_lines);
+//     var data_table[data_lines.len];
+//     pass_two_data(out_data, data_lines, data_table);
+//     pass_two_inst(out_code, label_table, data_table, text_lines);
+
+//     fclose(out_data);
+//     fclose(out_code);
+
+
+//     return 0;
+// }
+
+int main()
 {
-    if (argc != 4)
-    {
-        printf("not enough files");
-        return 0;
-    }
-    //defining the input file
-    FILE *input_file= fopen(argv[1], 'r');
-    //defining and opening the output files
-    FILE *out_data= fopen(argv[2], 'w');
-    FILE *out_code= fopen(argv[3], 'w');
-
-    fprintf(out_code,   "DEPTH = 1024;\n"
-                        "WIDTH = 32;\n"
-                        "ADDRESS_RADIX = HEX;\n"
-                        "DATA_RADIX = HEX;\n"
-                        "CONTENT\n"
-                        "BEGIN\n\n");
-    fprintf(out_data,   "DEPTH = 1024;\n"
-                        "WIDTH = 32;\n"
-                        "ADDRESS_RADIX = HEX;\n"
-                        "DATA_RADIX = HEX;\n"
-                        "CONTENT\n"
-                        "BEGIN\n\n");
-
-    label label_table[16];
-    line_vec data_lines, text_lines;
-    pass_one(input_file, label_table, &data_lines, &text_lines);
-    var data_table[data_lines.len];
-    pass_two_data(out_data, data_lines, data_table);
-    pass_two_inst(out_code, label_table, data_table, text_lines);
-
-    fclose(out_data);
-    fclose(out_code);
-
-
-    return 0;
+    char str[] = "\tADDI R1, R0, 0   ;skurp";
+    strip(str);
+    print(str);
 }

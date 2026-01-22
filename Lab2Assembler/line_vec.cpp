@@ -1,3 +1,7 @@
+#include <cstdint>
+#include <cstdlib>
+#include "string.h"
+
 typedef struct {
     int      line_num;   // original source line number (for errors)
     uint16_t addr;      // address within its section (data addr or text pc)
@@ -5,7 +9,7 @@ typedef struct {
 } line_rec;
 
 typedef struct {
-    LineRec *items;
+    line_rec *items;
     size_t   len;
     size_t   cap;
 } line_vec;
@@ -44,7 +48,7 @@ static void linevec_grow_if_needed(line_vec *v)
 
 static void linevec_push(line_vec *v, int line_num, uint16_t addr, const char *clean_line)
 {
-    line_ven_grow_if_needed(v);
+    linevec_grow_if_needed(v);
 
     v->items[v->len].line_num = line_num;
     v->items[v->len].addr = addr;
