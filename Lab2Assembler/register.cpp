@@ -1,18 +1,9 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <vector>
 #include <algorithm>  // required for std::
-
-#ifndef MOTHERSHIP_H
-#define MOTHERSHIP_H
-
+#include <cstdint>
 #include "mothership.h"
-
-#endif
-
-
-
 
 using namespace std;
 

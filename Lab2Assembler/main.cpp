@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "line_vec.cpp"
+#include "line_vec.h"
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
@@ -7,11 +7,13 @@
 #include <stddef.h>   // size_t
 #include <string.h>   // strcmp
 #include <cstdint>
-#include "mnemonic.cpp"
-#include "register.cpp"
-#include "immediate.cpp"
+#include <iostream>
+#include "mnemonic.h"
+#include "register.h"
+#include "immediate.h"
 #include "mothership.h"
 #include "stb_ds.h"
+
 
 void strip(char *s)
 {
@@ -68,9 +70,9 @@ char* try_parse_label(char* line)
 
 void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* text_lines)
 {
-    char line[256];
-    linevec_init(&data_lines);
-    linevec_init(&text_lines);
+    char* line;
+    linevec_init(data_lines);
+    linevec_init(text_lines);
     uint32_t pc = 0;
     int label_idx = 0;
     int line_num = -1;
@@ -94,46 +96,48 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
 
         if (mode == SEC_TEXT)
         {
-            char* label_name = try_parse_label(&line); // looks for a label, if so
+            char* label_name = try_parse_label(line); // looks for a label, if so
                                                     // trim it off the front
             if (label_name)
             {
-                hmput(label_table, (Label){label_name, pc});
+                shput(label_table, label_name, pc);
             }
             if (!*line) continue;
-            linevec_push(&text_lines, line_num, pc++, line);
+            linevec_push(text_lines, line_num, pc++, line);
         } else if (mode == SEC_DATA)
         {
-            linevec_push(&data_lines, line_num, 0, line);   // Push The data line to the record.
+            linevec_push(data_lines, line_num, 0, line);   // Push The data line to the record.
                                                             // All addresses will initialize to 0, that will be corrected on the second pass.
         }
     }
 }
 
-void pass_two_inst(FILE* out_code, Label* label_table, var* data_table, Label* label_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, var* data_table, Label* label_table, line_vec* text_lines)
 {
     // Instruction pass two
     for (int i = 0; i < text_lines->len; i++)
     {
-        inst_type type = lookup_mnemonic(text_lines->items[i].text)->type;
+        char* save=NULL;
+        char* op_word = strtok_r(text_lines->items[i].text, " ", &save);
+        inst_type type = lookup_mnemonic(op_word)->type;
         if (type == NULL)
         {
-            error("Instruction not found.");
+            std::cerr << "Instruction not found." << op_word << std::endl;
         }
-        uint32_t instruction;
+        uint32_t instruction=0;
         switch (type)
         {
             case IMMEDIATE:
-                instruction = parse_immediate(text_lines->items[i].text);
+                //instruction = parse_immediate(text_lines->items[i].text);
                 break;
             case MEMORY:
-                instruction = parse_memory(text_lines->items[i].text, data_table);
+                //instruction = parse_memory(text_lines->items[i].text, data_table);
                 break;
             case REGISTER:
-                instruction = parse_register(text_lines->items[i].text);
+                //instruction = parse_register(text_lines->items[i].text);
                 break;
             case JUMP:
-                instruction = parse_jump(text_lines->items[i].text, label_table);
+                //instruction = parse_jump(text_lines->items[i].text, label_table);
                 break;
             default:
                 instruction = 0; //NOP if we somehow get here.
@@ -160,7 +164,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
         char* num_str = strtok_r(NULL, " ", &save);   // get size as a str
         data_table[i].size = (uint32_t)strtol(num_str, NULL, 10);    // convert size to integer
         uint32_t data;
-        for (int j = 0; j < data_table[i].size)
+        for (int j = 0; j < data_table[i].size; j++)
         {
             num_str = strtok(NULL, " ");   // 
             data = (uint32_t)strtol(num_str, NULL, 10);
@@ -202,7 +206,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 //     pass_one(input_file, label_table, &data_lines, &text_lines);
 //     var data_table[data_lines.len];
 //     pass_two_data(out_data, data_lines, data_table);
-//     pass_two_inst(out_code, label_table, data_table, text_lines);
+//     pass_two_inst(out_code, data_table, label_table, text_lines);
 
 //     fclose(out_data);
 //     fclose(out_code);
@@ -211,11 +215,30 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 //     return 0;
 // }
 
+// int main()
+// {
+//     char str[] = "\tADDI R1, R0, 0   ;skurp";
+//     strip(str);
+//     printf("%s\n", str);
+
+//     return(0);
+// }
+
 int main()
 {
-    char str[] = "\tADDI R1, R0, 0   ;skurp";
-    strip(str);
-    printf("%s\n", str);
+    char line1[] = "ADDI R1 R0 0";
+    char line2[] = "BNEZ R11 bottom";
 
+    Label* label_table = NULL;
+    shput(label_table, "top", 0);
+    shput(label_table, "bottom", 10);
+
+    uint32_t inst = parse_immediate(line1, label_table);
+    printf("first instruction:\t\t%08X\n", inst);
+    
+    inst = parse_immediate(line2, label_table);
+    printf("second instruction:\t\t%08X\n", inst);
+
+    shfree(label_table);
     return(0);
 }

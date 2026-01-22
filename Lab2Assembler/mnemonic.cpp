@@ -2,14 +2,10 @@
 #include <stdlib.h>   // bsearch
 #include <string.h>   // strcmp
 #include <ctype.h>
-
+#include "mnemonic.h"
 #include "mothership.h"
 
-typedef struct
-{
-    const char* mnemonic;
-    inst_type type;
-} mnemonic_entry;
+
 static const mnemonic_entry MNEMONICS[] =
 {
     { "ADD",   REGISTER },

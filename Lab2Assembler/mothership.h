@@ -9,7 +9,7 @@
 
 typedef struct {
         char* key;
-        uint32_t addr;
+        uint32_t value;
     }Label;
 
 typedef struct {
@@ -89,6 +89,7 @@ const std:: unordered_map<std::string, uint32_t> opcodeTable = {
 //destination registers
 
 const std:: unordered_map<std::string, uint32_t> destRegTable = {
+    {"R0",  0x00000000},
     {"R1",  0x00200000},
     {"R2",  0x00400000},
     {"R3",  0x00600000},
@@ -125,6 +126,7 @@ const std:: unordered_map<std::string, uint32_t> destRegTable = {
 
 
 const std::unordered_map<std::string, uint32_t> rs1Table = {
+    {"R0",  0x00000000},
     {"R1",  0x00010000},
     {"R2",  0x00020000},
     {"R3",  0x00030000},
@@ -159,6 +161,7 @@ const std::unordered_map<std::string, uint32_t> rs1Table = {
 };
 
 const std::unordered_map<std::string, uint32_t> rs2Table = {
+    {"R0",  0x00000000},
     {"R1",  0x00000F00},
     {"R2",  0x00001000},
     {"R3",  0x00001100},
