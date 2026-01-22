@@ -113,7 +113,7 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
     }
 }
 
-void pass_two_inst(FILE* out_code, label* label_table, var* data_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, label* label_table, var* data_table, label* label_table, line_vec* text_lines)
 {
     // Instruction pass two
     for (int i = 0; i < text_lines->len; i++)
@@ -136,7 +136,7 @@ void pass_two_inst(FILE* out_code, label* label_table, var* data_table, line_vec
                 instruction = parse_register(text_lines->items[i].text);
                 break;
             case JUMP:
-                instruction = parse_jump(text_lines->items[i].text);
+                instruction = parse_jump(text_lines->items[i].text, label_table);
                 break;
             default:
                 instruction = 0; //NOP if we somehow get here.
@@ -187,18 +187,18 @@ int main(int argc, char* argv[])
     FILE *out_data= fopen(argv[2], 'w');
     FILE *out_code= fopen(argv[3], 'w');
 
-    fprintf(out_code,   "DEPTH = 1024;\n
-                        WIDTH = 32;\n
-                        ADDRESS_RADIX = HEX;\n
-                        DATA_RADIX = HEX;\n
-                        CONTENT\n
-                        BEGIN\n\n");
-    fprintf(out_data,   "DEPTH = 1024;\n
-                        WIDTH = 32;\n
-                        ADDRESS_RADIX = HEX;\n
-                        DATA_RADIX = HEX;\n
-                        CONTENT\n
-                        BEGIN\n\n");
+    fprintf(out_code,   "DEPTH = 1024;\n"
+                        "WIDTH = 32;\n"
+                        "ADDRESS_RADIX = HEX;\n"
+                        "DATA_RADIX = HEX;\n"
+                        "CONTENT\n"
+                        "BEGIN\n\n");
+    fprintf(out_data,   "DEPTH = 1024;\n"
+                        "WIDTH = 32;\n"
+                        "ADDRESS_RADIX = HEX;\n"
+                        "DATA_RADIX = HEX;\n"
+                        "CONTENT\n"
+                        "BEGIN\n\n");
 
     label label_table[16];
     line_vec data_lines, text_lines;
