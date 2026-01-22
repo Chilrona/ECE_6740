@@ -21,19 +21,17 @@ struct Instruction
     string immStr;
 };
 
-vector<Instruction> parseInstructionLine(const string& line)
+Instruction parseInstructionLine(const string& line)
 {
     // Make a local copy so we can modify it
     string cleaned = line;
 
     istringstream iss(cleaned);
-    vector<Instruction> result;
 
     Instruction inst;
-    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.immStr)
-        result.push_back(inst);
+    iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.immStr;
 
-    return result;
+    return inst;
 }
 
 uint32_t parseImmediate(char* line_ptr)
@@ -42,15 +40,13 @@ uint32_t parseImmediate(char* line_ptr)
 	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
     //string line = "ADDI R2, R1, 5";
 
-    vector<Instruction> instructions = parseInstructionLine(line);
-	// 1) opcode
-for (const Instruction& inst : instructions) 
-{
+    Instruction inst = parseInstructionLine(line);
+	
+    // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);
     if (opIt == opcodeTable.end()) 
     {
         cerr << "Unknown opcode: " << inst.opcode << endl;
-        continue;
     }
 
     opcodeBits = opIt->second;
@@ -60,7 +56,6 @@ for (const Instruction& inst : instructions)
     if (rdIt == destRegTable.end())
     {
         cerr << "Unknown opcode: " << inst.regOut << endl;
-        continue;
     }
 
     regOutBits = rdIt->second;
@@ -70,7 +65,6 @@ for (const Instruction& inst : instructions)
     if (rs1It == rs1Table.end())
     {
         cerr << "Unknown primary register: " << inst.regPri << endl;
-        continue;
     }
 
     regPriBits = rs1It->second;
@@ -84,20 +78,11 @@ for (const Instruction& inst : instructions)
     catch(const exception& e)
     {
         cerr << "Bad immediate: " << inst.immStr << " (" << e.what() << ")\n";
-        continue;
     }
     
     // 5) build final instruction word
     // ASSUMPTION: immediate is bits [15:0]
     machineCode = opcodeBits | regOutBits | regPriBits | immBits;
-
-    // cout << "opcodeBits = 0x" << hex << setw(8) << setfill('0') << opcodeBits << "\n";
-    // cout << "regOutBits = 0x" << hex << setw(8) << setfill('0') << regOutBits << "\n";
-    // cout << "rs1Bits    = 0x" << hex << setw(8) << setfill('0') << regPriBits << "\n";
-    // cout << "immBits    = 0x" << hex << setw(8) << setfill('0') << immBits << "\n";
-    // cout << "Machine    = 0x" << hex << setw(8) << setfill('0') << machineCode << endl;
-}
- 
 
     return machineCode;
 }

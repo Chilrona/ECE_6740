@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <cstring>
 #include <vector>
 #include <algorithm>  // required for std::
 #include <iomanip>
@@ -16,8 +17,7 @@ using namespace std;
 struct Instruction 
 {
     string opcode;
-    string regPri;
-    string address;
+    string sec_param;
 };
 
 Instruction parseInstructionLine(const string& line)
@@ -30,77 +30,44 @@ Instruction parseInstructionLine(const string& line)
     Instruction inst;
     if (iss >> inst.opcode)
     {
-        if (inst.opcode == "J" || inst.opcode == "JAL")
-            iss >> inst.address;
-        else if (inst.opcode == "JR" || inst.opcode == "JALR")
-            iss >> inst.regPri;
+        iss >> inst.sec_param;
         return inst;
     }
 
     cerr << "Invalid Instruction";
 }
 
-uint32_t parse_jump(char* line_ptr)
+uint32_t parse_jump(char* line_ptr, label* label_table)
 {
     string line = line_ptr;
-	uint32_t opcodeBits, regPriBits, addrBits, machineCode=0;
+	uint32_t opcodeBits, addrBits, machineCode=0;
 
     Instruction inst = parseInstructionLine(line);
-	// 1) opcode
-
+	
+    // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);
     if (opIt == opcodeTable.end()) 
     {
         cerr << "Unknown opcode: " << inst.opcode << endl;
-        continue;
     }
 
     opcodeBits = opIt->second;
 
-    // 2) rd (dest)
-    auto rdIt = destRegTable.find(inst.regOut);
-    if (rdIt == destRegTable.end())
+     // 2) 
+    if (inst.opcode == "J" || inst.opcode == "JAL")
     {
-        cerr << "Unknown opcode: " << inst.regOut << endl;
-        continue;
+        auto adIt = find_if(label_table, label_table + label_count, [&](const label& e) {
+            return strcmp(inst.sec_param, e.name) == 0;
+        });
     }
-
-    regOutBits = rdIt->second;
-
-    //3) rs1 (primary)
-    auto rs1It = rs1Table.find(inst.regPri);
-    if (rs1It == rs1Table.end())
+    else if (inst.opcode == "JR" || inst.opcode == "JALR")
     {
-        cerr << "Unknown primary register: " << inst.regPri << endl;
-        continue;
-    }
 
-    regPriBits = rs1It->second;
-
-    // 4) immediate
-
-    try
-    {
-        immBits = static_cast<uint32_t>(stoi(inst.immStr));
     }
-    catch(const exception& e)
-    {
-        cerr << "Bad immediate: " << inst.immStr << " (" << e.what() << ")\n";
-        continue;
-    }
-    
+ 
     // 5) build final instruction word
     // ASSUMPTION: immediate is bits [15:0]
-    machineCode = opcodeBits | regOutBits | regPriBits | immBits;
-
-    // cout << "opcodeBits = 0x" << hex << setw(8) << setfill('0') << opcodeBits << "\n";
-    // cout << "regOutBits = 0x" << hex << setw(8) << setfill('0') << regOutBits << "\n";
-    // cout << "rs1Bits    = 0x" << hex << setw(8) << setfill('0') << regPriBits << "\n";
-    // cout << "immBits    = 0x" << hex << setw(8) << setfill('0') << immBits << "\n";
-    // cout << "Machine    = 0x" << hex << setw(8) << setfill('0') << machineCode << endl;
-
- 
-
+    machineCode = opcodeBits | addrBits;
     return machineCode;
 }
 
