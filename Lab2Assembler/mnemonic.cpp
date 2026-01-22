@@ -3,10 +3,7 @@
 #include <string.h>   // strcmp
 #include <ctype.h>
 
-#ifndef MOTHERSHIP_H
-#define MOTHERSHIP_H
 #include "mothership.h"
-#endif
 
 typedef struct
 {
@@ -100,10 +97,10 @@ mnemonic_entry* lookup_mnemonic(const char* mnemonic_str)
         mnemonic_str_upper[i] = (char)toupper((unsigned char)mnemonic_str[i++]);
     }
     mnemonic_str_upper[i] = '\0';
-    mnemonic_entry* result = bsearch(mnemonic_str_upper,
-                    MNEMONICS,
-                    MNEMONICS_COUNT,
-                    sizeof(MNEMONICS[0]),
-                    mnemonic_cmp);
+    mnemonic_entry* result = (mnemonic_entry*)bsearch(mnemonic_str_upper,
+                                                        MNEMONICS,
+                                                        MNEMONICS_COUNT,
+                                                        sizeof(MNEMONICS[0]),
+                                                        mnemonic_cmp);
     return (result); 
 }

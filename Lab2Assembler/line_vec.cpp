@@ -38,7 +38,7 @@ static void linevec_grow_if_needed(line_vec *v)
     if (v->len < v->cap) return;
     size_t new_cap = (v->cap == 0)? 16 : (v->cap *2);
 
-    line_rec *new_items = realloc(v->items, new_cap*sizeof(line_rec));
+    line_rec *new_items = (line_rec*)realloc(v->items, new_cap*sizeof(line_rec));
     if (!new_items)
     {
         perror("realloc");

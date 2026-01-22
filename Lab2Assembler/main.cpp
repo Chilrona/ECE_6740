@@ -11,7 +11,7 @@
 #include "register.cpp"
 #include "immediate.cpp"
 #include "mothership.h"
-
+#include "stb_ds.h"
 
 void strip(char *s)
 {
@@ -66,7 +66,7 @@ char* try_parse_label(char* line)
     return(NULL);
 }
 
-void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* text_lines)
+void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* text_lines)
 {
     char line[256];
     linevec_init(&data_lines);
@@ -98,7 +98,7 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
                                                     // trim it off the front
             if (label_name)
             {
-                hmput(label_table, {label_name, pc});
+                hmput(label_table, (Label){label_name, pc});
             }
             if (!*line) continue;
             linevec_push(&text_lines, line_num, pc++, line);
@@ -110,7 +110,7 @@ void pass_one(FILE* infile, label* label_table, line_vec* data_lines, line_vec* 
     }
 }
 
-void pass_two_inst(FILE* out_code, label* label_table, var* data_table, label* label_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, Label* label_table, var* data_table, Label* label_table, line_vec* text_lines)
 {
     // Instruction pass two
     for (int i = 0; i < text_lines->len; i++)
@@ -197,7 +197,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 //                         "CONTENT\n"
 //                         "BEGIN\n\n");
 
-//     label* label_table = NULL;
+//     Label* label_table = NULL;
 //     line_vec data_lines, text_lines;
 //     pass_one(input_file, label_table, &data_lines, &text_lines);
 //     var data_table[data_lines.len];
@@ -215,5 +215,7 @@ int main()
 {
     char str[] = "\tADDI R1, R0, 0   ;skurp";
     strip(str);
-    print(str);
+    printf("%s\n", str);
+
+    return(0);
 }

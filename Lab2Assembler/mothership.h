@@ -8,19 +8,19 @@
 #include <cstdint>
 
 typedef struct {
-        char* name;
+        char* key;
         uint32_t addr;
-    }label;
+    }Label;
 
 typedef struct {
-    char name[64];
+    char* name;
     uint16_t addr;
     uint32_t size;
     }var;
 
 typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
 
-const std:: unordered_map<string, uint32_t> opcodeTable = {
+const std:: unordered_map<std::string, uint32_t> opcodeTable = {
     {"NOP",   0x00000000},
 
     {"LW",    0x04000000},
@@ -88,7 +88,7 @@ const std:: unordered_map<string, uint32_t> opcodeTable = {
 
 //destination registers
 
-const std:: unordered_map<string, uint32_t> destRegTable = {
+const std:: unordered_map<std::string, uint32_t> destRegTable = {
     {"R1",  0x00200000},
     {"R2",  0x00400000},
     {"R3",  0x00600000},

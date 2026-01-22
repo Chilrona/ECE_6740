@@ -6,12 +6,9 @@
 #include <iomanip>
 #include <cstdio>
 
-#ifndef STB_DS_IMPLEMENTATION_H
 #define STB_DS_IMPLEMENTATION_H
-
 #include "stb_ds.h"
 
-#endif
 #include "mothership.h"
 
 
@@ -25,9 +22,9 @@ struct Instruction
     string immStr;
 };
 
-uint32_t resolve_label(string label, label* label_table)
+uint32_t resolve_label(string label, Label* label_table)
 {
-    int label_idx = hmgeti(label_table, label.c_str());
+    int label_addr = shgeti(label_table, key);
     if (label_idx == -1)
     {
         cerr << "Label Not Found." << label << endl;
@@ -35,7 +32,7 @@ uint32_t resolve_label(string label, label* label_table)
     return (label_table[label_idx].addr);
 }
 
-uint32_t parse_immediate(char* line_ptr, label* label_table)
+uint32_t parse_immediate(char* line_ptr, Label* label_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
@@ -99,15 +96,20 @@ uint32_t parse_immediate(char* line_ptr, label* label_table)
 
 int main()
 {
-    char line[] = "ADDI R1 R0 0";
-    label* label_table = NULL;
-    hmput(label_table, {"top", 0});
-    hmput(label_table, {"bottom", 10});
-    uint32_t inst = parse_immediate(line, label_table);
-    printf("%08X", inst);
-    line = "BNEZ R11 bottom";
-    inst = parse_immediate(line, label_table);
-    printf("%08X", inst);
+    char line1[] = "ADDI R1 R0 0";
+    char line2[] = "BNEZ R11 bottom";
+
+    Label* label_table = NULL;
+    shput(label_table, "top", 0);
+    shput(label_table, "bottom", 10);
+
+    uint32_t inst = parse_immediate(line1, label_table);
+    printf("first instruction:\t\t%08X\n", inst);
+    
+    inst = parse_immediate(line2, label_table);
+    printf("second instruction:\t\t%08X\n", inst);
+
+    hmfree(label_table);
     return(0);
 }
 
