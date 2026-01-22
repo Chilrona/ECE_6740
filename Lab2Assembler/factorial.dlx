@@ -1,5 +1,5 @@
 ;baseline of factorial 
-;not yet done
+;needs testing but should be complete
 	
 	.data
 	
@@ -7,33 +7,36 @@ n   1	4 ;this is the value we are doing the factorial on 4!
 f	1	1 ;this is where we put the final result
 
 	.text
-	
+	;start by initializing total at 1
 	LW	    R0, f
+    ;load in our factorial value(ex 4! we load in 4)
 	LW		R1, n
-	
-top
-;pseudocode for factorial
-;start by initializing total at 1
-    LW 
-;load in our factorial value(ex 4! we load in 4)
-    LW 
-;start a loop that checks for if our loop variable is zero i is (R1)
-factorial
-;we have a special variable that we load in the temp value of total
 
+top
+;start a loop that checks for if our loop variable is zero i is (R1)
+
+;we have a special variable that we load in the temp value of total
+    LW R7, R0
 ;check if the I got down to zero 
     BEQZ R1, exit
 ;decrease the value of i 
     SUBI R1, R1, 1
-;another loop that loops j(R8) through until (j>i) this will actually be our multiply function using Jump and Link
-    JAL 
+;another loop that loops j(R8) through until (j>i) 
+;this will actually be our multiply function using Jump and Link
+    JAL multiply
+multiply
 ;add the temp value (R7) to the total (R0)
     ADD R0, R0, R7
-    BNEZ R8, factorial ;if we got down to zero we want to go back to the top of the loop
+    BNEZ R8, top ;if we reach zero we want to go back to the top of the loop
     SUBI R8, R8, 1
-    JR
+    JR R31
 ;end program
 	
 exit
-	SW		f(R0), R3
+	SW		f, R0
+    ;R0 is what is holding the total value as we calculate the factorial
+    ;R1 is the variable i for the other loop and is based off of n 
+    ;R7 is the temp variable in our multiply function
+    ;R8 is the variable j for the inner loop for multiply
+
 	

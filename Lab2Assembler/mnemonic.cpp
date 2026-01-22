@@ -10,83 +10,79 @@
 
 typedef struct
 {
-    const chat* mnemonic;
+    const char* mnemonic;
     inst_type type;
 } mnemonic_entry;
-
-static const mnemonic_entry MNEMONICS[] = 
+static const mnemonic_entry MNEMONICS[] =
 {
-    // FORMAT: { "MNEMONIC", TYPE }
+    { "ADD",   REGISTER },
+    { "ADDI",  IMMEDIATE },
+    { "ADDU",  REGISTER },
+    { "ADDUI", IMMEDIATE },
 
-{ "ADD",   REGISTER },
-{ "ADDI",  IMMEDIATE },
-{ "ADDU",  REGISTER },
-{ "ADDUI", IMMEDIATE },
+    { "AND",   REGISTER },
+    { "ANDI",  IMMEDIATE },
 
-{ "AND",   REGISTER },
-{ "ANDI",  IMMEDIATE },
+    { "BEQZ",  REGISTER },
+    { "BNEZ",  REGISTER },
 
-{ "BEQZ",  MEMORY },
-{ "BNEZ",  MEMORY },
+    { "J",     JUMP },
+    { "JAL",   JUMP },
+    { "JALR",  JUMP },
+    { "JR",    JUMP },
 
-{ "J",     JUMP },
-{ "JAL",   JUMP },
-{ "JALR",  JUMP },
-{ "JR",    JUMP },
+    { "LW",    MEMORY },
 
-{ "LW",    MEMORY },
+    { "NOP",   REGISTER },
 
-{ "NOP",   REGISTER },
+    { "OR",    REGISTER },
+    { "ORI",   IMMEDIATE },
 
-{ "OR",    REGISTER },
-{ "ORI",   IMMEDIATE },
+    { "SEQ",   REGISTER },
+    { "SEQI",  IMMEDIATE },
 
-{ "SEQ",   REGISTER },
-{ "SEQI",  IMMEDIATE },
+    { "SGE",   REGISTER },
+    { "SGEI",  IMMEDIATE },
+    { "SGEU",  REGISTER },
+    { "SGEUI", IMMEDIATE },
 
-{ "SGE",   REGISTER },
-{ "SGEI",  IMMEDIATE },
-{ "SGEU",  REGISTER },
-{ "SGEUI", IMMEDIATE },
+    { "SGT",   REGISTER },
+    { "SGTI",  IMMEDIATE },
+    { "SGTU",  REGISTER },
+    { "SGTUI", IMMEDIATE },
 
-{ "SGT",   REGISTER },
-{ "SGTI",  IMMEDIATE },
-{ "SGTU",  REGISTER },
-{ "SGTUI", IMMEDIATE },
+    { "SLE",   REGISTER },
+    { "SLEI",  IMMEDIATE },
+    { "SLEU",  REGISTER },
+    { "SLEUI", IMMEDIATE },
 
-{ "SLE",   REGISTER },
-{ "SLEI",  IMMEDIATE },
-{ "SLEU",  REGISTER },
-{ "SLEUI", IMMEDIATE },
+    { "SLL",   REGISTER },
+    { "SLLI",  IMMEDIATE },
 
-{ "SLT",   REGISTER },
-{ "SLTI",  IMMEDIATE },
-{ "SLTU",  REGISTER },
-{ "SLTUI", IMMEDIATE },
+    { "SLT",   REGISTER },
+    { "SLTI",  IMMEDIATE },
+    { "SLTU",  REGISTER },
+    { "SLTUI", IMMEDIATE },
 
-{ "SLL",   REGISTER },
-{ "SLLI",  IMMEDIATE },
+    { "SNE",   REGISTER },
+    { "SNEI",  IMMEDIATE },
 
-{ "SNE",   REGISTER },
-{ "SNEI",  IMMEDIATE },
+    { "SRA",   REGISTER },
+    { "SRAI",  IMMEDIATE },
 
-{ "SRA",   REGISTER },
-{ "SRAI",  IMMEDIATE },
+    { "SRL",   REGISTER },
+    { "SRLI",  IMMEDIATE },
 
-{ "SRL",   REGISTER },
-{ "SRLI",  IMMEDIATE },
+    { "SUB",   REGISTER },
+    { "SUBI",  IMMEDIATE },
+    { "SUBU",  REGISTER },
+    { "SUBUI", IMMEDIATE },
 
-{ "SUB",   REGISTER },
-{ "SUBI",  IMMEDIATE },
-{ "SUBU",  REGISTER },
-{ "SUBUI", IMMEDIATE },
+    { "SW",    MEMORY },
 
-{ "SW",    MEMORY },
-
-{ "XOR",   REGISTER },
-{ "XORI",  IMMEDIATE }
-
-}
+    { "XOR",   REGISTER },
+    { "XORI",  IMMEDIATE }
+};
 
 static const size_t MNEMONICS_COUNT = sizeof(MNEMONICS) / sizeof(MNEMONICS[0]);
 

@@ -16,98 +16,52 @@
 
 using namespace std;
 
-struct Instruction {
+struct Instruction_Register {
     string opcode;
     string regOut;
     string regPri;
     string regSec;
 };
 
-vector<Instruction> parseInstructionLine(const string& line)
+Instruction_Register parseInstructionLine1(const string& line)
 {
-    // Make a local copy so we can modify it
+     Instruction_Register inst;
     string cleaned = line;
 
-    // Remove commas from the line
-    // You shouldn't need to clean the line.
-    // I'm sending it in this format: "ADD R3 R1 R2" - Jackson
-    cleaned.erase(std::remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
+    cleaned.erase(remove(cleaned.begin(), cleaned.end(), ','), cleaned.end());
 
     istringstream iss(cleaned);
-    vector<Instruction> result;
+    iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.regSec;
 
-    Instruction inst;
-    if (iss >> inst.opcode >> inst.regOut >> inst.regPri >> inst.regSec)
-        result.push_back(inst);
-
-    return result;
+    return inst;
 }
 // Added a pointer to the beginning of the line. -Jackson
 uint32_t parseREGISTER(char* line_ptr)
 {
 	uint32_t opcode, regOut, regPri, regSec, finalresult;
-    // string line = "ADD R3, R1, R2";
     string line = line_ptr; // This is how you convert from C style strings
                             // to C++ style strings. -Jackson
 
-    auto instructions = parseInstructionLine(line);
+    Instruction_Register inst = parseInstructionLine1(line);
 
-    if(opcode == "NOP")
-    {
-        return 0;
-    }
-
-	//opcode 
-for (const auto& inst : instructions) 
-    {
+    
     auto it = opcodeTable.find(inst.opcode);
-    if (it == opcodeTable.end()) {
-        cerr << "Unknown opcode: " << inst.opcode << endl;
-        continue;
-    }
-
     opcode = it->second;
-    //cout << "Opcode = 0x" << hex << opcode << endl;
-    }
+    if (inst.opcode == "NOP")
+	{
+		return 0;
+	}
 
-    //destination register
-    for (const auto& inst : instructions) 
-    {
-    auto it = destRegTable.find(inst.regOut);
-    if (it == destRegTable.end()) {
-        cerr << "Unknown Destination Register: " << inst.regOut << endl;
-        continue;
-    }
-
+    it = destRegTable.find(inst.regOut);
     regOut = it->second;
-    //cout << "Destination Register = 0x" << hex << regOut << endl;
-    }
 
-    //source 1 register
-    for (const auto& inst : instructions) 
-    {
-    auto it = rs1Table.find(inst.regPri);
-    if (it == rs1Table.end()) {
-        cerr << "Unknown Destination Register: " << inst.regPri << endl;
-        continue;
-    }
-
+    it = rs1Table.find(inst.regPri);
     regPri = it->second;
-    //cout << "Source 1 Register = 0x" << hex << regPri << endl;
-    }
-    //source 2 register
-    for (const auto& inst : instructions) 
-    {
-    auto it = rs2Table.find(inst.regSec);
-    if (it == rs2Table.end()) {
-        cerr << "Unknown Destination Register: " << inst.regSec << endl;
-        continue;
-    }
 
+    it = rs2Table.find(inst.regSec);
     regSec = it->second;
-    //cout << "Source 2 Register = 0x" << hex << regSec << endl;
-    }
 
+	
     //OR them together
     finalresult = opcode | regOut | regPri | regSec;
     cout << "0x" << hex << finalresult << endl;
