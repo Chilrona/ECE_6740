@@ -5,16 +5,16 @@ n   1   4
 f   1   1      
 
 .text
-    LW   R0, f     
+    LW   R2, f     
     LW   R1, n     
 
 top
     BEQZ R1, exit 
 
-    ADDI R7, R0, 0 
+    ADDI R7, R2, 0 
     ADDI R8, R1, 0 
 
-    XORI R0, R0, 0 
+    XORI R2, R2, 0 
 
     JAL multiply  
 
@@ -25,7 +25,7 @@ top
 
 ; R7 = old total
 ; R8 = loop counter (i)
-; R0 = accumulator (starts at 0)
+; R2 = accumulator (starts at 0)
 
 
 
@@ -33,7 +33,7 @@ multiply
     BEQZ R8, loopdone
 
 loop
-    ADD  R0, R0, R7   
+    ADD  R2, R2, R7   
     SUBI R8, R8, 1
     BNEZ R8, loop
 
@@ -42,4 +42,4 @@ loopdone
 
 
 exit
-    SW f, R0          
+    SW f, R2          
