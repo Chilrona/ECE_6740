@@ -23,12 +23,13 @@ top
     SUBI R1, R1, 1
 ;another loop that loops j(R8) through until (j>i) 
 ;this will actually be our multiply function using Jump and Link
+    JAL multiply
 multiply
 ;add the temp value (R7) to the total (R0)
     ADD R0, R0, R7
     BEQZ R8, top ;if we reach zero we want to go back to the top of the loop
     SUBI R8, R8, 1
-    J multiply
+    JR R31
 ;end program
 	
 exit
