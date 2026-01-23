@@ -9,18 +9,24 @@
 
 using namespace std;
 
+    // char line1[] = "LW R10 n R0";
+    // char line2[] = "SW result R1 R12";
 
-
-uint32_t parse_immediate(char* line_ptr, Label* data_table)
+uint32_t parse_memory(char* line_ptr, Label* data_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, rDataBits, rOffsetBits, baseAddrBits, machineCode=0;
-    //string line = "ADDI R2, R1, 5";
 
-    Instruction inst;
+    Instruction_Memory inst;
     istringstream iss(line);
-    iss >> inst.opcode >> inst.rData >> inst.rOffset >> inst.baseAddr;
-	
+    iss >> inst.opcode;
+    if (inst.opcode == "SW"){
+        iss >> inst.varName >> inst.rOffset >> inst.rData;
+    } else if (inst.opcode == "LW")
+    {
+        iss >> inst.rData >> inst.varName >> inst.rOffset;
+    }
+    
     // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);
     if (opIt == opcodeTable.end()) 
@@ -53,7 +59,7 @@ uint32_t parse_immediate(char* line_ptr, Label* data_table)
 
     // 4) Base Address
     
-    baseAddrBits = shget(data_table, inst.baseAddr.c_str());
+    baseAddrBits = shget(data_table, inst.varName.c_str());
     
     
     // 5) build final instruction word

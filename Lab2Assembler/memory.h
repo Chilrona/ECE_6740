@@ -2,12 +2,12 @@
 #include <string>
 #include "mothership.h"
 
-struct Instruction 
+struct Instruction_Memory 
 {
     std::string opcode;
     std::string rData;
+    std::string varName;
     std::string rOffset;
-    std::string baseAddr;
 };
 
-uint32_t parse_immediate(char* line_ptr, Label* data_table);
+uint32_t parse_memory(char* line_ptr, Label* data_table);

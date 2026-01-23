@@ -3,26 +3,19 @@
 #include <string>
 
 #include "stb_ds.h"
+#include "immediate.h"
 
 #include "mothership.h"
 
 
 using namespace std;
 
-struct Instruction 
-{
-    string opcode;
-    string regOut;
-    string regPri;
-    string immStr;
-};
-
 uint32_t parse_immediate(char* line_ptr, Label* label_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
 
-    Instruction inst;
+    Instruction_Imm inst;
     istringstream iss(line);
     iss >> inst.opcode >> inst.regOut >> inst.regPri;
 

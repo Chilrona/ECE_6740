@@ -41,8 +41,14 @@ void strip(char *s)
             }
             
         }
-        if (c == ',')
+        if (c == ',' || c==')')
         {
+            continue;
+        }
+        if (c=='(')
+        {
+            *dst++ = ' ';
+            prev_char = 0;
             continue;
         }
 
@@ -79,6 +85,7 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
     int label_idx = 0;
     int line_num = -1;
     Section mode = SEC_NONE;
+    printf("%d\tHere!\n", line_num);
     while(fgets(line, sizeof(line), infile))
     {
         line_num++;
@@ -111,7 +118,9 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
             linevec_push(data_lines, line_num, 0, line);   // Push The data line to the record.
                                                             // All addresses will initialize to 0, that will be corrected on the second pass.
         }
+        printf("%d\tHere!\n", line_num);
     }
+    free(line);
 }
 
 void pass_two_inst(FILE* out_code, Label* data_table, Label* label_table, line_vec* text_lines)
@@ -177,45 +186,49 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
     fprintf(out_data, "\nEND;\n");
 }
 
-// int main(int argc, char* argv[])
-// {
-//     if (argc != 4)
-//     {
-//         printf("not enough files");
-//         return 0;
-//     }
-//     //defining the input file
-//     FILE *input_file= fopen(argv[1], 'r');
-//     //defining and opening the output files
-//     FILE *out_data= fopen(argv[2], 'w');
-//     FILE *out_code= fopen(argv[3], 'w');
+int main(int argc, char* argv[])
+{
+    if (argc != 4)
+    {
+        printf("not enough files");
+        return 0;
+    }
+    //defining the input file
+    FILE *input_file= fopen(argv[1], "r");
+    //defining and opening the output files
+    FILE *out_data= fopen(argv[2], "w");
+    FILE *out_code= fopen(argv[3], "w");
 
-//     fprintf(out_code,   "DEPTH = 1024;\n"
-//                         "WIDTH = 32;\n"
-//                         "ADDRESS_RADIX = HEX;\n"
-//                         "DATA_RADIX = HEX;\n"
-//                         "CONTENT\n"
-//                         "BEGIN\n\n");
-//     fprintf(out_data,   "DEPTH = 1024;\n"
-//                         "WIDTH = 32;\n"
-//                         "ADDRESS_RADIX = HEX;\n"
-//                         "DATA_RADIX = HEX;\n"
-//                         "CONTENT\n"
-//                         "BEGIN\n\n");
+    // char* line = (char*)calloc(1, BASE_LINE_LENGTH);//.............
+    // fgets(line, sizeof(line), input_file);
+    // printf("First line:\t%s\n", line); free(line);
 
-//     Label* label_table = NULL;
-//     line_vec data_lines, text_lines;
-//     pass_one(input_file, label_table, &data_lines, &text_lines);
-//     var data_table[data_lines.len];
-//     pass_two_data(out_data, data_lines, data_table);
-//     pass_two_inst(out_code, data_table, label_table, text_lines);
+    fprintf(out_code,   "DEPTH = 1024;\n"
+                        "WIDTH = 32;\n"
+                        "ADDRESS_RADIX = HEX;\n"
+                        "DATA_RADIX = HEX;\n"
+                        "CONTENT\n"
+                        "BEGIN\n\n");
+    fprintf(out_data,   "DEPTH = 1024;\n"
+                        "WIDTH = 32;\n"
+                        "ADDRESS_RADIX = HEX;\n"
+                        "DATA_RADIX = HEX;\n"
+                        "CONTENT\n"
+                        "BEGIN\n\n");
 
-//     fclose(out_data);
-//     fclose(out_code);
+    Label* label_table = NULL;
+    line_vec data_lines, text_lines;
+    pass_one(input_file, label_table, &data_lines, &text_lines);
+    Label* data_table = NULL;
+    pass_two_data(out_data, &data_lines, data_table);
+    pass_two_inst(out_code, data_table, label_table, &text_lines);
+
+    fclose(out_data);
+    fclose(out_code);
 
 
-//     return 0;
-// }
+    return 0;
+}
 
 // int main()
 // {
@@ -226,21 +239,21 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
 //     return(0);
 // }
 
-int main()
-{
-    char line1[] = "J bottom";
-    char line2[] = "BNEZ R11 bottom";
+// int main()
+// {
+//     char line1[] = "LW R10 n R0";
+//     char line2[] = "SW result R0 R3";
 
-    Label* label_table = NULL;
-    shput(label_table, "top", 0);
-    shput(label_table, "bottom", 10);
+//     Label* data_table = NULL;
+//     shput(data_table, "n", 0);
+//     shput(data_table, "result", 1);
 
-    uint32_t inst = parse_jump(line1, label_table);
-    printf("first instruction:\t\t%08X\n", inst);
+//     uint32_t inst = parse_memory(line1, data_table);
+//     printf("first instruction:\t\t%08X\n", inst);
     
-    // inst = parse_immediate(line2, label_table);
-    // printf("second instruction:\t\t%08X\n", inst);
+//     inst = parse_memory(line2, data_table);
+//     printf("second instruction:\t\t%08X\n", inst);
 
-    shfree(label_table);
-    return(0);
-}
+//     shfree(data_table);
+//     return(0);
+// }

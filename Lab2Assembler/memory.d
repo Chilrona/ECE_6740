@@ -1,1 +1,1 @@
-memory.o: memory.cpp stb_ds.h mothership.h
+memory.o: memory.cpp stb_ds.h memory.h mothership.h

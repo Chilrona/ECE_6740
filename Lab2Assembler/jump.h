@@ -4,7 +4,7 @@
 #include "mothership.h"
 
 
-struct Instruction 
+struct Instruction_Jump 
 {
     std::string opcode;
     std::string sec_param;

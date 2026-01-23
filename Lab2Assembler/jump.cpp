@@ -15,7 +15,7 @@ uint32_t parse_jump(char* line_ptr, Label* label_table)
 	uint32_t opcodeBits, addrBits, machineCode=0;
 
     istringstream iss(line);
-    Instruction inst;
+    Instruction_Jump inst;
     iss >> inst.opcode >> inst.sec_param;
 	
     // 1) opcode
