@@ -10,6 +10,8 @@ SRCS := main.cpp \
 		immediate.cpp \
 		line_vec.cpp \
 		stb_ds.cpp \
+		jump.cpp \
+		memory.cpp \
 		mnemonic.cpp
 
 OBJS := $(SRCS:.cpp=.o)

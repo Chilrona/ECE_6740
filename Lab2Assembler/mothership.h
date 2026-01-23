@@ -12,11 +12,6 @@ typedef struct {
         uint32_t value;
     }Label;
 
-typedef struct {
-    char* name;
-    uint16_t addr;
-    uint32_t size;
-    }var;
 
 typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
 

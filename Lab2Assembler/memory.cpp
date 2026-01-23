@@ -3,21 +3,15 @@
 #include <string>
 
 #include "stb_ds.h"
-
+#include "memory.h"
 #include "mothership.h"
 
 
 using namespace std;
 
-struct Instruction 
-{
-    string opcode;
-    string rData;
-    string rOffset;
-    string baseAddr;
-};
 
-uint32_t parse_immediate(char* line_ptr, Label* label_table)
+
+uint32_t parse_immediate(char* line_ptr, Label* data_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, rDataBits, rOffsetBits, baseAddrBits, machineCode=0;
@@ -59,7 +53,7 @@ uint32_t parse_immediate(char* line_ptr, Label* label_table)
 
     // 4) Base Address
     
-    baseAddrBits = shget(memory_table, inst.baseAddr.c_str());
+    baseAddrBits = shget(data_table, inst.baseAddr.c_str());
     
     
     // 5) build final instruction word

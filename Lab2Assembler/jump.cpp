@@ -5,14 +5,9 @@
 #include <cstdint>
 #include "stb_ds.h"
 #include "mothership.h"
+#include "jump.h"
 
 using namespace std;
-
-struct Instruction 
-{
-    string opcode;
-    string sec_param;
-};
 
 uint32_t parse_jump(char* line_ptr, Label* label_table)
 {

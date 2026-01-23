@@ -10,9 +10,12 @@
 #include "mnemonic.h"
 #include "register.h"
 #include "immediate.h"
+#include "memory.h"
 #include "mothership.h"
+#include "jump.h"
 #include "stb_ds.h"
 
+#define BASE_LINE_LENGTH 256
 
 void strip(char *s)
 {
@@ -69,7 +72,7 @@ char* try_parse_label(char* line)
 
 void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* text_lines)
 {
-    char* line;
+    char* line = (char*)calloc(1, BASE_LINE_LENGTH);
     linevec_init(data_lines);
     linevec_init(text_lines);
     uint32_t pc = 0;
@@ -101,7 +104,7 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
             {
                 shput(label_table, label_name, pc);
             }
-            if (!*line) continue;
+            if (!*line) {pc++;continue;}
             linevec_push(text_lines, line_num, pc++, line);
         } else if (mode == SEC_DATA)
         {
@@ -111,7 +114,7 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
     }
 }
 
-void pass_two_inst(FILE* out_code, var* data_table, Label* label_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, Label* data_table, Label* label_table, line_vec* text_lines)
 {
     // Instruction pass two
     for (int i = 0; i < text_lines->len; i++)
@@ -127,16 +130,16 @@ void pass_two_inst(FILE* out_code, var* data_table, Label* label_table, line_vec
         switch (type)
         {
             case IMMEDIATE:
-                //instruction = parse_immediate(text_lines->items[i].text);
+                instruction = parse_immediate(text_lines->items[i].text, label_table);
                 break;
             case MEMORY:
-                //instruction = parse_memory(text_lines->items[i].text, data_table);
+                instruction = parse_memory(text_lines->items[i].text, data_table);
                 break;
             case REGISTER:
-                //instruction = parse_register(text_lines->items[i].text);
+                instruction = parse_register(text_lines->items[i].text);
                 break;
             case JUMP:
-                //instruction = parse_jump(text_lines->items[i].text, label_table);
+                instruction = parse_jump(text_lines->items[i].text, label_table);
                 break;
             default:
                 instruction = 0; //NOP if we somehow get here.
@@ -147,7 +150,7 @@ void pass_two_inst(FILE* out_code, var* data_table, Label* label_table, line_vec
     fprintf(out_code, "\nEND;\n");
 }
 
-void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
+void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
 {
     uint16_t data_addr = 0;
     for (int i = 0; i < data_lines->len; i++)
@@ -155,21 +158,21 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
         char* save = NULL;
         data_lines->items[i].addr = data_addr;
         line_rec curr_line = data_lines->items[i];
-        char* line_walk = curr_line.text;
-        data_table[i].name = strtok_r(line_walk, " ", &save);   // get var name
-        data_table[i].addr = curr_line.addr;
+        char* line = curr_line.text;
+        char* var_name = strdup(strtok_r(line, " ", &save));
+        shput(data_table, var_name, data_addr);
         // "m 10 0 4 0 5 6..."
         // Format for strtol(): long val = strtol(s, &end, 10);
         char* num_str = strtok_r(NULL, " ", &save);   // get size as a str
-        data_table[i].size = (uint32_t)strtol(num_str, NULL, 10);    // convert size to integer
+        int size = (int)strtol(num_str, NULL, 10);    // convert size to integer
         uint32_t data;
-        for (int j = 0; j < data_table[i].size; j++)
+        for (int j = 0; j < size; j++)
         {
             num_str = strtok(NULL, " ");   // 
             data = (uint32_t)strtol(num_str, NULL, 10);
-            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_table[i].addr, data, data_table[i].name, j);
+            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr, data, var_name, j);
         }
-        data_addr += data_table[i].size;
+        data_addr += size;
     }
     fprintf(out_data, "\nEND;\n");
 }
@@ -225,14 +228,14 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 
 int main()
 {
-    char line1[] = "ADD R3 R1 R2";
+    char line1[] = "J bottom";
     char line2[] = "BNEZ R11 bottom";
 
     Label* label_table = NULL;
     shput(label_table, "top", 0);
     shput(label_table, "bottom", 10);
 
-    uint32_t inst = parse_register(line1);
+    uint32_t inst = parse_jump(line1, label_table);
     printf("first instruction:\t\t%08X\n", inst);
     
     // inst = parse_immediate(line2, label_table);
