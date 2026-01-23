@@ -7,7 +7,6 @@
 #include <string.h>   // strcmp
 #include <cstdint>
 #include <iostream>
-#include "mnemonic.h"
 #include "register.h"
 #include "immediate.h"
 #include "memory.h"
@@ -16,6 +15,7 @@
 #include "stb_ds.h"
 
 #define BASE_LINE_LENGTH 256
+#define INITIAL_ADDR 0
 
 void strip(char *s)
 {
@@ -64,40 +64,41 @@ void strip(char *s)
     *dst = '\0';
 }
 
-char* try_parse_label(char* line)
+char* try_parse_label(char* line, mnemonic_entry* mnemonic_table)
 {
-    if (lookup_mnemonic(line) == NULL)
+    char* save = NULL;
+    char* label = strtok_r(strdup(line), " ", &save);
+    if (shgeti(mnemonic_table, label) == -1)
     {
-        char* save = NULL;
-        char* label = strtok_r(line, " ", &save);
-        line = strtok_r(NULL, "\0", &save);
+        
         return (label);
     }
     return(NULL);
 }
 
-void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* text_lines)
+void pass_one(FILE* infile, Label** label_table, line_vec* data_lines, line_vec* text_lines, mnemonic_entry* mnemonic_table)
 {
-    char* line = (char*)calloc(1, BASE_LINE_LENGTH);
+    char* buf = (char*)calloc(1, BASE_LINE_LENGTH);
     linevec_init(data_lines);
     linevec_init(text_lines);
     uint32_t pc = 0;
     int label_idx = 0;
     int line_num = -1;
     Section mode = SEC_NONE;
-    printf("%d\tHere!\n", line_num);
-    while(fgets(line, sizeof(line), infile))
+
+    while(fgets(buf, BASE_LINE_LENGTH, infile))
     {
+        char* line = buf;
         line_num++;
         strip(line); // Strips all commas and most whitespace from
                     // each line (leaves a single space between each word)
         if (!*line){continue;}
 
-        if (strcmp(line, ".data"))
+        if (strcmp(line, ".data") == 0)
         {
             mode = SEC_DATA;
             continue;
-        } else if (strcmp(line, ".text"))
+        } else if (strcmp(line, ".text") == 0)
         {
             mode = SEC_TEXT;
             continue;
@@ -105,61 +106,70 @@ void pass_one(FILE* infile, Label* label_table, line_vec* data_lines, line_vec* 
 
         if (mode == SEC_TEXT)
         {
-            char* label_name = try_parse_label(line); // looks for a label, if so
-                                                    // trim it off the front
-            if (label_name)
+            char* label_name = try_parse_label(line, mnemonic_table); // looks for a label
+            if (label_name != NULL)
             {
-                shput(label_table, label_name, pc);
+                shput(*label_table, strdup(label_name), pc);
+                continue;
             }
-            if (!*line) {pc++;continue;}
-            linevec_push(text_lines, line_num, pc++, line);
+            linevec_push(text_lines, line_num, pc++, strdup(line));
         } else if (mode == SEC_DATA)
         {
-            linevec_push(data_lines, line_num, 0, line);   // Push The data line to the record.
+            linevec_push(data_lines, line_num, INITIAL_ADDR, strdup(line));   // Push The data line to the record.
                                                             // All addresses will initialize to 0, that will be corrected on the second pass.
         }
-        printf("%d\tHere!\n", line_num);
     }
-    free(line);
+    free(buf);
 }
 
-void pass_two_inst(FILE* out_code, Label* data_table, Label* label_table, line_vec* text_lines)
+void pass_two_inst(FILE* out_code, Label** data_table, Label** label_table, mnemonic_entry* mnemonic_table, line_vec* text_lines)
 {
     // Instruction pass two
+    printf("Number of instruction lines: %d\n", text_lines->len);
     for (int i = 0; i < text_lines->len; i++)
     {
         char* save=NULL;
-        char* op_word = strtok_r(text_lines->items[i].text, " ", &save);
-        inst_type type = lookup_mnemonic(op_word)->type;
-        if (type == NULL)
+        printf("%s\n", text_lines->items[i].text);
+        char* line = strdup(text_lines->items[i].text);
+        char* op_word = strtok_r(line, " ", &save);
+        mnemonic_entry* entry = shgetp_null(mnemonic_table, op_word);
+        if (entry == NULL)
         {
-            std::cerr << "Instruction not found." << op_word << std::endl;
+            std::cerr << "Instruction not found. " << op_word << std::endl;
+            abort();
         }
+        inst_type type = entry->value;
         uint32_t instruction=0;
         switch (type)
         {
             case IMMEDIATE:
+                //printf("Immediate type found.\n");
                 instruction = parse_immediate(text_lines->items[i].text, label_table);
                 break;
             case MEMORY:
+                //printf("Memory type found.\n");
                 instruction = parse_memory(text_lines->items[i].text, data_table);
                 break;
             case REGISTER:
+                //printf("Register type found.\n");
                 instruction = parse_register(text_lines->items[i].text);
                 break;
             case JUMP:
+                //printf("Jump type found.\n");
                 instruction = parse_jump(text_lines->items[i].text, label_table);
                 break;
             default:
+                //printf("Invalid type type found.\n");
                 instruction = 0; //NOP if we somehow get here.
                 break;
         }
         fprintf(out_code, "%03X : %08X; --%s\n", text_lines->items[i].addr, instruction, text_lines->items[i].text);
+        free(line);
     }
     fprintf(out_code, "\nEND;\n");
 }
 
-void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
+void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
 {
     uint16_t data_addr = 0;
     for (int i = 0; i < data_lines->len; i++)
@@ -169,7 +179,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
         line_rec curr_line = data_lines->items[i];
         char* line = curr_line.text;
         char* var_name = strdup(strtok_r(line, " ", &save));
-        shput(data_table, var_name, data_addr);
+        shput(*data_table, var_name, data_addr);
         // "m 10 0 4 0 5 6..."
         // Format for strtol(): long val = strtol(s, &end, 10);
         char* num_str = strtok_r(NULL, " ", &save);   // get size as a str
@@ -177,31 +187,29 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label* data_table)
         uint32_t data;
         for (int j = 0; j < size; j++)
         {
-            num_str = strtok(NULL, " ");   // 
+            num_str = strtok_r(NULL, " ", &save);   // 
             data = (uint32_t)strtol(num_str, NULL, 10);
-            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr, data, var_name, j);
+            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
         }
         data_addr += size;
     }
     fprintf(out_data, "\nEND;\n");
 }
 
+void build_mnemonic_table(mnemonic_entry** table_ptr);
+
 int main(int argc, char* argv[])
 {
-    if (argc != 4)
-    {
-        printf("not enough files");
-        return 0;
-    }
+    // if (argc != 4)
+    // {
+    //     printf("not enough files");
+    //     return 0;
+    // }
     //defining the input file
     FILE *input_file= fopen(argv[1], "r");
     //defining and opening the output files
     FILE *out_data= fopen(argv[2], "w");
     FILE *out_code= fopen(argv[3], "w");
-
-    // char* line = (char*)calloc(1, BASE_LINE_LENGTH);//.............
-    // fgets(line, sizeof(line), input_file);
-    // printf("First line:\t%s\n", line); free(line);
 
     fprintf(out_code,   "DEPTH = 1024;\n"
                         "WIDTH = 32;\n"
@@ -217,17 +225,103 @@ int main(int argc, char* argv[])
                         "BEGIN\n\n");
 
     Label* label_table = NULL;
+    mnemonic_entry* mnemonic_table = NULL;
+    build_mnemonic_table(&mnemonic_table);
+
+    int len=shlen(mnemonic_table);
+    for(int i =0; i<len;i++)
+    {
+        printf("%s\t%d\n", mnemonic_table[i].key, mnemonic_table[i].value);
+    }
+
     line_vec data_lines, text_lines;
-    pass_one(input_file, label_table, &data_lines, &text_lines);
+    pass_one(input_file, &label_table, &data_lines, &text_lines, mnemonic_table);
     Label* data_table = NULL;
-    pass_two_data(out_data, &data_lines, data_table);
-    pass_two_inst(out_code, data_table, label_table, &text_lines);
+    pass_two_data(out_data, &data_lines, &data_table);
+    printf("Finished data pass two, on to instruction pass two...\n");
+    pass_two_inst(out_code, &data_table, &label_table, mnemonic_table, &text_lines);
 
     fclose(out_data);
     fclose(out_code);
 
-
+    shfree(mnemonic_table);
+    shfree(label_table);
+    shfree(data_table);
     return 0;
+}
+
+void build_mnemonic_table(mnemonic_entry** table_ptr)
+{
+    mnemonic_entry* table = NULL;
+    shput(table, "ADD", REGISTER);
+    shput(table, "ADDI", IMMEDIATE);
+    shput(table, "ADDU", REGISTER);
+    shput(table, "ADDUI", IMMEDIATE);
+
+    shput(table, "AND", REGISTER);
+    shput(table, "ANDI", IMMEDIATE);
+
+    shput(table, "BEQZ", IMMEDIATE);
+    shput(table, "BNEZ", IMMEDIATE);
+
+    shput(table, "J", JUMP);
+    shput(table, "JAL", JUMP);
+    shput(table, "JALR", JUMP);
+    shput(table, "JR", JUMP);
+
+    shput(table, "LW", MEMORY);
+
+    shput(table, "NOP", REGISTER);
+
+    shput(table, "OR", REGISTER);
+    shput(table, "ORI", IMMEDIATE);
+
+    shput(table, "SEQ", REGISTER);
+    shput(table, "SEQI", IMMEDIATE);
+
+    shput(table, "SGE", REGISTER);
+    shput(table, "SGEI", IMMEDIATE);
+    shput(table, "SGEU", REGISTER);
+    shput(table, "SGEUI", IMMEDIATE);
+
+    shput(table, "SGT", REGISTER);
+    shput(table, "SGTI", IMMEDIATE);
+    shput(table, "SGTU", REGISTER);
+    shput(table, "SGTUI", IMMEDIATE);
+
+    shput(table, "SLE", REGISTER);
+    shput(table, "SLEI", IMMEDIATE);
+    shput(table, "SLEU", REGISTER);
+    shput(table, "SLEUI", IMMEDIATE);
+
+    shput(table, "SLL", REGISTER);
+    shput(table, "SLLI", IMMEDIATE);
+
+    shput(table, "SLT", REGISTER);
+    shput(table, "SLTI", IMMEDIATE);
+    shput(table, "SLTU", REGISTER);
+    shput(table, "SLTUI", IMMEDIATE);
+
+    shput(table, "SNE", REGISTER);
+    shput(table, "SNEI", IMMEDIATE);
+
+    shput(table, "SRA", REGISTER);
+    shput(table, "SRAI", IMMEDIATE);
+
+    shput(table, "SRL", REGISTER);
+    shput(table, "SRLI", IMMEDIATE);
+
+    shput(table, "SUB", REGISTER);
+    shput(table, "SUBI", IMMEDIATE);
+    shput(table, "SUBU", REGISTER);
+    shput(table, "SUBUI", IMMEDIATE);
+
+    shput(table, "SW", MEMORY);
+
+    shput(table, "XOR", REGISTER);
+    shput(table, "XORI", IMMEDIATE);
+    printf("Table Built!\n");
+    *table_ptr=table;
 }
 
 // int main()

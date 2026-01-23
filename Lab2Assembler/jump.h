@@ -10,4 +10,4 @@ struct Instruction_Jump
     std::string sec_param;
 };
 
-uint32_t parse_jump(char* line_ptr, Label* label_table);
+uint32_t parse_jump(char* line_ptr, Label** label_table);

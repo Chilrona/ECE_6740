@@ -11,8 +11,7 @@ SRCS := main.cpp \
 		line_vec.cpp \
 		stb_ds.cpp \
 		jump.cpp \
-		memory.cpp \
-		mnemonic.cpp
+		memory.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 

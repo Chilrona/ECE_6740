@@ -9,7 +9,7 @@
 
 using namespace std;
 
-uint32_t parse_jump(char* line_ptr, Label* label_table)
+uint32_t parse_jump(char* line_ptr, Label** label_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, addrBits, machineCode=0;
@@ -31,7 +31,7 @@ uint32_t parse_jump(char* line_ptr, Label* label_table)
      // 2) 
     if (inst.opcode == "J" || inst.opcode == "JAL")
     {
-        addrBits = shget(label_table, inst.sec_param.c_str());
+        addrBits = shget(*label_table, inst.sec_param.c_str());
     }
     else if (inst.opcode == "JR" || inst.opcode == "JALR")
     {
@@ -42,7 +42,7 @@ uint32_t parse_jump(char* line_ptr, Label* label_table)
             abort();
         }
 
-        addrBits = rs1It->second;
+        addrBits = (rs1It->second) >> 16;
     }
  
     // 5) build final instruction word

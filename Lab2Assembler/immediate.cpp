@@ -10,7 +10,7 @@
 
 using namespace std;
 
-uint32_t parse_immediate(char* line_ptr, Label* label_table)
+uint32_t parse_immediate(char* line_ptr, Label** label_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
@@ -19,10 +19,10 @@ uint32_t parse_immediate(char* line_ptr, Label* label_table)
     istringstream iss(line);
     iss >> inst.opcode >> inst.regOut >> inst.regPri;
 
-    // 4) immediate
-    if (!(iss >> inst.immStr))
+    // 4) immediate 
+    if (!(iss >> inst.immStr)) // Must be a branch.
     {
-        immBits = (shget(label_table, inst.regPri.c_str())) & 0x0000FFFF;
+        immBits = (shget(*label_table, inst.regPri.c_str())) & 0x0000FFFF;
         regPriBits = 0;
     } else
     {

@@ -5,7 +5,7 @@ typedef enum { SEC_NONE, SEC_DATA, SEC_TEXT } Section;
 
 typedef struct {
     int      line_num;   // original source line number (for errors)
-    uint16_t addr;      // address within its section (data addr or text pc)
+    uint32_t addr;      // address within its section (data addr or text pc)
     char    *text;      // cleaned line text (heap allocated)
 } line_rec;
 
@@ -18,4 +18,4 @@ typedef struct {
 void linevec_init(line_vec *v);
 void linevec_free(line_vec *v);
 void linevec_grow_if_needed(line_vec *v);
-void linevec_push(line_vec *v, int line_num, uint16_t addr, const char *clean_line);
+void linevec_push(line_vec *v, int line_num, uint32_t addr, const char *clean_line);

@@ -11,4 +11,4 @@ struct Instruction_Imm
 };
 
 
-uint32_t parse_immediate(char* line_ptr, Label* label_table);
+uint32_t parse_immediate(char* line_ptr, Label** label_table);

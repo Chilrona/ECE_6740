@@ -12,7 +12,7 @@ using namespace std;
     // char line1[] = "LW R10 n R0";
     // char line2[] = "SW result R1 R12";
 
-uint32_t parse_memory(char* line_ptr, Label* data_table)
+uint32_t parse_memory(char* line_ptr, Label** data_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, rDataBits, rOffsetBits, baseAddrBits, machineCode=0;
@@ -59,7 +59,7 @@ uint32_t parse_memory(char* line_ptr, Label* data_table)
 
     // 4) Base Address
     
-    baseAddrBits = shget(data_table, inst.varName.c_str());
+    baseAddrBits = shget(*data_table, inst.varName.c_str());
     
     
     // 5) build final instruction word

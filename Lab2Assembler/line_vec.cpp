@@ -24,28 +24,28 @@ void linevec_free(line_vec *v)
 void linevec_grow_if_needed(line_vec *v)
 {
     if (v->len < v->cap) return;
-    size_t new_cap = (v->cap == 0)? 16 : (v->cap *2);
+    v->cap = (v->cap == 0)? 16 : (v->cap *2);
 
-    line_rec *new_items = (line_rec*)realloc(v->items, new_cap*sizeof(line_rec));
+    line_rec *new_items = (line_rec*)realloc(v->items, v->cap*sizeof(line_rec));
     if (!new_items)
     {
         std::cerr << "realloc" << std::endl;
-        exit(1);
+        abort();
     }
+    v->items = new_items;
 }
 
-void linevec_push(line_vec *v, int line_num, uint16_t addr, const char *clean_line)
+void linevec_push(line_vec *v, int line_num, uint32_t addr, const char *clean_line)
 {
     linevec_grow_if_needed(v);
 
-    v->items[v->len].line_num = line_num;
     v->items[v->len].addr = addr;
+    v->items[v->len].line_num = line_num;
     v->items[v->len].text = strdup(clean_line);
     if (!v->items[v->len].text)
     {
-        perror("strdup problem");
         std::cerr << "strdup problem" << std::endl;
-        exit(1);
+        abort();
     }
     v->len++;
 }

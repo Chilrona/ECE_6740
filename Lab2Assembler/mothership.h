@@ -7,13 +7,18 @@
 #include <string>
 #include <cstdint>
 
+typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
+
+typedef struct
+{
+    const char* key;
+    inst_type value;
+} mnemonic_entry;
+
 typedef struct {
         char* key;
         uint32_t value;
     }Label;
-
-
-typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
 
 const std:: unordered_map<std::string, uint32_t> opcodeTable = {
     {"NOP",   0x00000000},
