@@ -30,12 +30,12 @@ top
 
 
 multiply
-    BEQZ R8, done_multiply
+    BEQZ R8, loopdone
 
 loop
     ADD  R0, R0, R7   ; R0 += R7
     SUBI R8, R8, 1
-    BNEZ R8, mul_loop
+    BNEZ R8, loop
 
 loopdone
     JR R31           
