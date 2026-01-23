@@ -4,15 +4,10 @@
 #include <algorithm>  // required for std::
 #include <cstdint>
 #include "mothership.h"
+#include "register.h"
 
 using namespace std;
 
-struct Instruction_Register {
-    string opcode;
-    string regOut;
-    string regPri;
-    string regSec;
-};
 
 Instruction_Register parseInstructionLine1(const string& line)
 {
@@ -27,7 +22,7 @@ Instruction_Register parseInstructionLine1(const string& line)
     return inst;
 }
 // Added a pointer to the beginning of the line. -Jackson
-uint32_t parseREGISTER(char* line_ptr)
+uint32_t parse_register(char* line_ptr)
 {
 	uint32_t opcode, regOut, regPri, regSec, finalresult;
     string line = line_ptr; // This is how you convert from C style strings

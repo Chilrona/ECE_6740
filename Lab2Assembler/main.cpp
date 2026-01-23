@@ -1,7 +1,6 @@
 #include "stdio.h"
 #include "line_vec.h"
 #include <ctype.h>
-#include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
 #include <stddef.h>   // size_t
@@ -226,18 +225,18 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, var* data_table)
 
 int main()
 {
-    char line1[] = "ADDI R1 R0 0";
+    char line1[] = "ADD R3 R1 R2";
     char line2[] = "BNEZ R11 bottom";
 
     Label* label_table = NULL;
     shput(label_table, "top", 0);
     shput(label_table, "bottom", 10);
 
-    uint32_t inst = parse_immediate(line1, label_table);
+    uint32_t inst = parse_register(line1);
     printf("first instruction:\t\t%08X\n", inst);
     
-    inst = parse_immediate(line2, label_table);
-    printf("second instruction:\t\t%08X\n", inst);
+    // inst = parse_immediate(line2, label_table);
+    // printf("second instruction:\t\t%08X\n", inst);
 
     shfree(label_table);
     return(0);

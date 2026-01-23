@@ -21,11 +21,31 @@ uint32_t parse_immediate(char* line_ptr, Label* label_table)
 {
     string line = line_ptr;
 	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
-    //string line = "ADDI R2, R1, 5";
 
     Instruction inst;
     istringstream iss(line);
     iss >> inst.opcode >> inst.regOut >> inst.regPri;
+
+    // 4) immediate
+    if (!(iss >> inst.immStr))
+    {
+        immBits = (shget(label_table, inst.regPri.c_str())) & 0x0000FFFF;
+        regPriBits = 0;
+    } else
+    {
+        
+        immBits = static_cast<uint32_t>(stoi(inst.immStr));
+
+        //3) rs1 (primary)
+        auto rs1It = rs1Table.find(inst.regPri);
+        if (rs1It == rs1Table.end())
+        {
+            cerr << "Unknown primary register: " << inst.regPri << endl;
+            abort();
+        }
+
+        regPriBits = rs1It->second;
+    }
 	
     // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);
@@ -47,33 +67,7 @@ uint32_t parse_immediate(char* line_ptr, Label* label_table)
 
     regOutBits = rdIt->second;
 
-    //3) rs1 (primary)
-    auto rs1It = rs1Table.find(inst.regPri);
-    if (rs1It == rs1Table.end())
-    {
-        cerr << "Unknown primary register: " << inst.regPri << endl;
-        abort();
-    }
-
-    regPriBits = rs1It->second;
-
-    // 4) immediate
-    if (!(iss >> inst.immStr))
-    {
-        immBits = shget(label_table, inst.regPri.c_str());
-        regPriBits = 0;
-    } else
-    {
-        try
-        {
-            immBits = static_cast<uint32_t>(stoi(inst.immStr));
-        }
-        catch(const exception& e)
-        {
-            cerr << "Bad immediate: " << inst.immStr << " (" << e.what() << ")\n";
-            abort();
-        }
-    }
+    
     
     
     // 5) build final instruction word
