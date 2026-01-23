@@ -1,12 +1,12 @@
 ; factorial file
 
 .data
-n   1   4      ; compute 4!
-f   1   1      ; initial total = 1
+n   1   4      
+f   1   1      
 
 .text
-    LW   R0, f     ; total = 1
-    LW   R1, n     ; i = n
+    LW   R0, f     
+    LW   R1, n     
 
 top
     BEQZ R1, exit 
@@ -18,7 +18,7 @@ top
 
     JAL multiply  
 
-    SUBI R1, R1, 1 ; i--
+    SUBI R1, R1, 1 
 
     J top
 
@@ -33,7 +33,7 @@ multiply
     BEQZ R8, loopdone
 
 loop
-    ADD  R0, R0, R7   ; R0 += R7
+    ADD  R0, R0, R7   
     SUBI R8, R8, 1
     BNEZ R8, loop
 
