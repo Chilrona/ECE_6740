@@ -12,20 +12,20 @@ using namespace std;
 struct Instruction 
 {
     string opcode;
-    string regOut;
-    string regPri;
-    string immStr;
+    string rData;
+    string rOffset;
+    string baseAddr;
 };
 
 uint32_t parse_immediate(char* line_ptr, Label* label_table)
 {
     string line = line_ptr;
-	uint32_t opcodeBits, regOutBits, regPriBits, immBits, machineCode=0;
+	uint32_t opcodeBits, rDataBits, rOffsetBits, baseAddrBits, machineCode=0;
     //string line = "ADDI R2, R1, 5";
 
     Instruction inst;
     istringstream iss(line);
-    iss >> inst.opcode >> inst.regOut >> inst.regPri;
+    iss >> inst.opcode >> inst.rData >> inst.rOffset >> inst.baseAddr;
 	
     // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);
@@ -37,48 +37,34 @@ uint32_t parse_immediate(char* line_ptr, Label* label_table)
 
     opcodeBits = opIt->second;
 
-    // 2) rd (dest)
-    auto rdIt = destRegTable.find(inst.regOut);
+    // 2) r_data
+    auto rdIt = destRegTable.find(inst.rData);
     if (rdIt == destRegTable.end())
     {
-        cerr << "Unknown opcode: " << inst.regOut << endl;
+        cerr << "Unknown opcode: " << inst.rData << endl;
         abort();
     }
 
-    regOutBits = rdIt->second;
+    rDataBits = rdIt->second;
 
-    //3) rs1 (primary)
-    auto rs1It = rs1Table.find(inst.regPri);
+    //3) r_offset
+    auto rs1It = rs1Table.find(inst.rOffset);
     if (rs1It == rs1Table.end())
     {
-        cerr << "Unknown primary register: " << inst.regPri << endl;
+        cerr << "Unknown primary register: " << inst.rOffset << endl;
         abort();
     }
 
-    regPriBits = rs1It->second;
+    rOffsetBits = rs1It->second;
 
-    // 4) immediate
-    if (!(iss >> inst.immStr))
-    {
-        immBits = shget(label_table, inst.regPri.c_str());
-        regPriBits = 0;
-    } else
-    {
-        try
-        {
-            immBits = static_cast<uint32_t>(stoi(inst.immStr));
-        }
-        catch(const exception& e)
-        {
-            cerr << "Bad immediate: " << inst.immStr << " (" << e.what() << ")\n";
-            abort();
-        }
-    }
+    // 4) Base Address
+    
+    baseAddrBits = shget(memory_table, inst.baseAddr.c_str());
     
     
     // 5) build final instruction word
     // ASSUMPTION: immediate is bits [15:0]
-    machineCode = opcodeBits | regOutBits | regPriBits | immBits;
+    machineCode = opcodeBits | rDataBits | rOffsetBits | baseAddrBits;
 
     return machineCode;
 }
