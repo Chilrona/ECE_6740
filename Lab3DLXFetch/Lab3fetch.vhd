@@ -10,7 +10,7 @@ use ieee.numeric_std.all;
 			jump_addr : in unsigned(31 downto 0);
 			sel_jump : in std_logic;
 			pc : out unsigned(31 downto 0);
-			instruction : out (31 downto 0)
+			instruction : out unsigned(31 downto 0)
 		);
 						
 	end entity Lab3fetch;	
@@ -39,6 +39,7 @@ use ieee.numeric_std.all;
 
         process(clk, rst_l)
         begin 
+		  if rising_edge(clk)
             next_instruction <=mux_out;
 
             if(rst_l = '0') then--checking for reset in pc
