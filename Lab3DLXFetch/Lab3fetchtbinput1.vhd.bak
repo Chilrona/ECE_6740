@@ -1,0 +1,100 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity DE10_LITE_Lab3_tb is
+end DE10_LITE_Lab3_tb;
+
+architecture test of DE10_LITE_Lab3_tb is
+
+	component DE10_LITE_Lab3
+		port(
+				KEY : in unsigned(1 downto 0);
+				MAX10_CLK1_50 : in std_logic;
+				HEX0 : out unsigned(7 downto 0);
+				HEX1 : out unsigned(7 downto 0);
+				HEX2 : out unsigned(7 downto 0);
+				HEX3 : out unsigned(7 downto 0);
+				HEX4 : out unsigned(7 downto 0);
+				HEX5 : out unsigned(7 downto 0)
+			);
+	end component;
+	
+	signal KEY : unsigned(1 downto 0) :=(others=>'1');
+	signal MAX10_CLK1_50 : std_logic := '0';
+	signal HEX0 : unsigned(7 downto 0) :=(others=>'0');
+	signal HEX1 : unsigned(7 downto 0) :=(others=>'0');
+	signal HEX2 : unsigned(7 downto 0) :=(others=>'0');
+	signal HEX3 : unsigned(7 downto 0) :=(others=>'0');
+	signal HEX4 : unsigned(7 downto 0) :=(others=>'0');
+	signal HEX5 : unsigned(7 downto 0) :=(others=>'0');
+
+	
+	
+	constant CLK_PERIOD : time := 10 ns;
+	
+	begin
+
+	-- Instantiate the Unit Under Test (UUT)
+	UUT : DE10_LITE_Lab3
+		port map (
+			KEY => KEY,
+			MAX10_CLK1_50 => MAX10_CLK1_50,
+			HEX0 => HEX0,
+			HEX1 => HEX1,
+			HEX2 => HEX2,
+			HEX3 => HEX3,
+			HEX4 => HEX4,
+			HEX5 => HEX5
+	);
+	
+	clk_process : process
+	begin
+		MAX10_CLK1_50 <= '0';
+		wait for CLK_PERIOD/2;
+		MAX10_CLK1_50 <= '1';
+		wait for CLK_PERIOD/2;
+	end process;
+	
+	process
+	begin
+	
+		
+		KEY <= "10";  -- KEY(0) = 0 (reset active), KEY(1) = 1 (run inactive)
+		wait for CLK_PERIOD * 60;
+
+		KEY <= "11";  -- reset released
+		wait for CLK_PERIOD * 9;
+
+		KEY <= "01";  -- run active
+	--	wait for CLK_PERIOD * 600;
+
+	--	KEY <= "11";  -- stop running
+		wait;
+
+	
+	
+	
+		--KEY(0) <= '0';
+		--wait for CLK_PERIOD * 60;
+		
+		--KEY(0) <= '1';
+		--wait for CLK_PERIOD * 9;
+		
+		--KEY(1) <= '0';
+		--wait for CLK_PERIOD * 600;
+		
+		--KEY(1) <= '1';
+		--wait for CLK_PERIOD  * 900;
+		
+		--KEY(1) <= '0';
+		--wait for CLK_PERIOD  * 90000;
+		
+		--KEY(0) <= '0';
+		--wait for CLK_PERIOD * 900;
+		
+		--KEY(0) <= '1';
+		wait ;
+		
+	end process;
+end test;	
