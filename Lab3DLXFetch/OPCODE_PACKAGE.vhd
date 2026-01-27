@@ -4,11 +4,11 @@ use ieee.numeric_std.all;
 
 package opcode_package is
 	--jump instructions
-	constant BEQZ : unsigned(5 downto 0) := x"2B"
-	constant BNEZ : unsigned(5 downto 0) := x"2C"
-	constant J : unsigned(5 downto 0) := x"2D"
-	constant JR : unsigned(5 downto 0) := x"2E"
-	constant JAL : unsigned(5 downto 0) := x"2F"
-	constant JALR : unsigned(5 downto 0) := x"30"
+	constant BEQZ : unsigned(5 downto 0) := "101011";--2B
+	constant BNEZ : unsigned(5 downto 0) := "101100";--2C
+	constant J : unsigned(5 downto 0) := "101101";--2D
+	constant JR : unsigned(5 downto 0) := "101110";--2E
+	constant JAL : unsigned(5 downto 0) := "101111";--2F
+	constant JALR : unsigned(5 downto 0) := "110000";--30
 	
 end package opcode_package;

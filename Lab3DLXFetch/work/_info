@@ -1,0 +1,125 @@
+m255
+K4
+z2
+!s11e vcom 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch
+Elab3fetch
+w1769552788
+Z1 DPx4 work 14 opcode_package 0 22 CSm^do8E9i8F3m>HkL?Z]0
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 53
+R0
+8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch.vhd
+FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch.vhd
+l0
+L6 1
+V@`O1Ih9YHIT0Y`7j9U8T^0
+!s100 mb8m[Di8U>Z7QeiBJ0gHm0
+Z5 OL;C;2024.3;79
+32
+!s110 1769552795
+!i10b 1
+Z6 !s108 1769552795.000000
+!s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch.vhd|
+!s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch.vhd|
+!i113 0
+Z7 o-work work
+Z8 tExplicit 1 CvgOpt 0
+Elab3fetchtbinput1
+w1769551734
+R1
+R2
+R3
+R4
+!i122 54
+R0
+8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch_tb.vhd
+FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch_tb.vhd
+l0
+L6 1
+VPI6oI=M9ck3CWOVlHCmBo1
+!s100 jPm<]IIjoNE<SjG3o2IKX1
+R5
+32
+Z9 !s110 1769552796
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch_tb.vhd|
+!s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/Lab3fetch_tb.vhd|
+!i113 0
+R7
+R8
+Emy_rom
+Z10 w1769550397
+Z11 DPx9 altera_mf 20 altera_mf_components 0 22 K2nP0Jo_3Z^LgLEDTAdJT1
+R3
+R4
+!i122 55
+R0
+Z12 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/my_ROM.vhd
+Z13 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/my_ROM.vhd
+l0
+L43 1
+VQo`@2bO<SUj1SH]ViC<n73
+!s100 zgL9WhBdGDEk2aO]WTc=n3
+R5
+32
+R9
+!i10b 1
+Z14 !s108 1769552796.000000
+Z15 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/my_ROM.vhd|
+Z16 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/my_ROM.vhd|
+!i113 0
+R7
+R8
+Asyn
+R11
+R3
+R4
+DEx4 work 6 my_rom 0 22 Qo`@2bO<SUj1SH]ViC<n73
+!i122 55
+l57
+L53 33
+VW?gcULb;<a1m8lWbD6hF23
+!s100 QLfTV@VT0>WhP1=Y=]C9J0
+R5
+32
+R9
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R7
+R8
+Popcode_package
+R2
+R3
+R4
+!i122 56
+w1769550879
+R0
+8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/OPCODE_PACKAGE.vhd
+FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/OPCODE_PACKAGE.vhd
+l0
+L5 10
+VCSm^do8E9i8F3m>HkL?Z]0
+!s100 Ih7j9>FnLm1aTmH8Gm:hf1
+R5
+32
+R9
+!i10b 1
+R14
+!s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/OPCODE_PACKAGE.vhd|
+!s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab3DLXFetch/OPCODE_PACKAGE.vhd|
+!i113 0
+R7
+R8

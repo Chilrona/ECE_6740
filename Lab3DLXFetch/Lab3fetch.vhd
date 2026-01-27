@@ -10,7 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
 			jump_addr : in unsigned(15 downto 0);
 			sel_jump : in std_logic;
-			pc : out unsigned(15 downto 0);
+			pc : inout unsigned(15 downto 0);
 			instruction : out unsigned(31 downto 0)
 		);
 						
@@ -35,14 +35,14 @@ use work.opcode_package.all;
 		
         add_out <= pc + 1;
 
-        next_pc <= ((others<= sel_jump) and jump_addr)or((others=>not(sel_jump)) and add_out);
+        next_pc <= ((15 downto 0 => sel_jump) and jump_addr)or((15 downto 0=>not(sel_jump)) and add_out);
 
         process(clk, rst_l)
         begin 
 		  
 			if(rst_l = '0') then--checking for reset in pc
 				 pc <= (others=>'0');
-			elsif rising_edge(clk)
+			elsif rising_edge(clk) then
 				 pc <=next_pc;
 			end if;
         end process;
