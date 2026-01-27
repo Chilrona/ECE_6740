@@ -15,8 +15,7 @@ architecture test of Lab3fetchtbinput1 is
 	signal instruction unsigned(31 downto 0);
 	
 	
-	constant CLK_PERIOD : time := 10 ns;--check clock requirements Dr Phillips has
-	
+	constant CLK_PERIOD : time := 20 ns;
 	begin
 
 	-- Instantiate the Unit Under Test (UUT)
