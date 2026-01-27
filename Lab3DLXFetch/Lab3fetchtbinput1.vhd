@@ -1,21 +1,44 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.opcode_package.all;
 
 entity Lab3fetchtbinput1 is
 end Lab3fetchtbinput1;
 
 architecture test of Lab3fetchtbinput1 is
 
+	constant CLK_PERIOD : time := 20 ns;
+	
+	--number of times we are multiplying in factorial.dxl
+	constant n : integer := 3;
+	
+	--Signals to connect to Lab3fetch
 	signal rst_l : std_logic;
 	signal clk : std_logic;
-	signal jump_addr : unsigned(31 downto 0);
-	signal sel_jump std_logic;
-	signal pc unsigned(31 downto 0);
-	signal instruction unsigned(31 downto 0);
+	signal pc : unsigned(15 downto 0);
+	signal instruction : unsigned(31 downto 0);
 	
+	--Select Jump stages
+	signal sel_jump_stg2 : std_logic;
+	signal sel_jump_stg1 : std_logic;
+	signal sel_jump : std_logic;
 	
-	constant CLK_PERIOD : time := 20 ns;
+	--Jump addresses
+	signal jump_addr_stg2 : unsigned(15 downto 0);
+	signal jump_addr_stg1 : unsigned(15 downto 0);
+	signal jump_addr : unsigned(15 downto 0);
+	
+	--instruction[31,26]
+	signal opcode : unsigned(5 downto 0);
+	
+	--counter for the outer loop of factorial
+	signal BEQZ_count : integer := 0;
+	signal BNEQ_count : integer := 0;
+	
+	--counter for the multiplying in factorial
+	signal BNEZ_events : unsigned(8 downto 0) := "111011010";
+	
 	begin
 
 	-- Instantiate the Unit Under Test (UUT)
@@ -37,62 +60,56 @@ architecture test of Lab3fetchtbinput1 is
 		wait for CLK_PERIOD/2;
 	end process;
 	
-	process
+	process(clk)
 	begin
-	--address 000 to 003
-		jump_addr <= '0'; 
-		sel_jump <= '0';
-		wait for CLK_PERIOD *4
+	opcode <= instruction(31 downto 16) 
+	if rising_edge(clk) then
+		sel_jump_stg2 <= sel_jump_stg1;
+		sel_jump_stg1 <= sel_jump;
 		
-	--address 004
-		jump_addr <= A;
-		sel_jump <= '0';
-		wait for CLK_PERIOD
-	
-	--address 005 to 008
-		jump_addr <= '0';
-		sel_jump <= '0';
-		wait for CLK_PERIOD * 3
+		--Checking for Jump instruction and seting flag based on that instruction
+		if opcode = J or JAL or JR or JALR then
+			sel_jump_stg1 <= '1';
+		elsif not(opcode) = BNEZ or BEQZ then
+			sel_jump_stg1 = '0';
+		end if;
 		
-	--address 009
-		jump_addr <= 3;
-		sel_jump <= '1';
-		wait for CLK_PERIOD
+		-- jumping to the instruction
+		if opcode = J or JAL then
+			jump_addr <= instruction(15 downto 0)
+		end if;
 		
-	--address 00A
-		jump_addr <= 0;
-		sel_jump <= '0';
-		wait for CLK_PERIOD
+		--setting the link address
+		if opcode = JAL or JALR then
+			link_addr <= pc;
+		end if;
 		
-	--address 00B
-		jump_addr <= B
-		sel_jump <= '1';
-		wait for CLK_PERIOD
-	
-		wait;
+		--going to the address in the register
+		if opcode = JR or JALR;
+			jump_addr = link_addr;
+		end if;
+		
+		--checking for if the Branch is equal to 0
+		if opcode = BEQZ then
+			if BEQZ_count = 0 then
+				sel_jump_stg1 = '1';
+				jump_addr <= instruction(15 downto 0);
+			else
+				BEQZ_count <= BEQZ_count - 1;
+				sel_jump_stg1 <= '0';
+			end if;
+		end if;
+		
+		--checking for if the branch is not equal to 0
+		if opcode = BNEZ then
+			sel_jump_stg1 <= BNEZ_events(BNEZ_count)
+			jump_addr <= instruction(15 downto 0);
+			BNEZ_count <= BNEQ_count - 1;
+		end if;
 
+	end if;
 	
 	
-	
-		--KEY(0) <= '0';
-		--wait for CLK_PERIOD * 60;
-		
-		--KEY(0) <= '1';
-		--wait for CLK_PERIOD * 9;
-		
-		--KEY(1) <= '0';
-		--wait for CLK_PERIOD * 600;
-		
-		--KEY(1) <= '1';
-		--wait for CLK_PERIOD  * 900;
-		
-		--KEY(1) <= '0';
-		--wait for CLK_PERIOD  * 90000;
-		
-		--KEY(0) <= '0';
-		--wait for CLK_PERIOD * 900;
-		
-		--KEY(0) <= '1';
 		wait ;
 		
 	end process;
