@@ -5,8 +5,8 @@ n   1   4
 f   1   1      
 
 .text
-    LW   R2, f     
-    LW   R1, n     
+    LW   R2, f(R0)     
+    LW   R1, n(R0)     
 
 top
     BEQZ R1, exit 
@@ -42,4 +42,4 @@ loopdone
 
 
 exit
-    SW f, R2          
+    SW f(R0), R2          
