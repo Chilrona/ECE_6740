@@ -11,7 +11,7 @@ use work.opcode_package.all;
 			jump_addr : in unsigned(15 downto 0);
 			sel_jump : in std_logic;
 			pc : inout unsigned(15 downto 0);
-			instruction : out unsigned(31 downto 0)
+			instruction : out std_logic_vector(31 downto 0)
 		);
 						
 	end entity Lab3fetch;	
