@@ -8,9 +8,9 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-			jump_addr : in unsigned(15 downto 0);
+			jump_addr : in unsigned(9 downto 0);
 			sel_jump : in std_logic;
-			pc : inout unsigned(15 downto 0);
+			pc : inout unsigned(9 downto 0);
 			instruction : out std_logic_vector(31 downto 0)
 		);
 						
@@ -18,8 +18,9 @@ use work.opcode_package.all;
 					
 	architecture Behavioral of Lab3fetch is
 	
-		signal next_pc : unsigned(15 downto 0);
-		signal add_out : unsigned(15 downto 0);
+		signal next_pc : unsigned(9 downto 0):=(others=>'0');
+		signal add_out : unsigned(9 downto 0):=(others=>'0');
+		signal std_pc : std_logic_vector(9 downto 0):=(others=>'0');
         
 	
 	begin
@@ -27,15 +28,15 @@ use work.opcode_package.all;
 	U1: ENTITY work.my_ROM 
 	PORT MAP
 	(
-		address => pc,
+		address => std_pc,
 		clock	=> clk,
 		q	=> instruction
 	);
-
+			std_pc <= std_logic_vector(pc);
 		
         add_out <= pc + 1;
 
-        next_pc <= ((15 downto 0 => sel_jump) and jump_addr)or((15 downto 0=>not(sel_jump)) and add_out);
+        next_pc <= ((9 downto 0 => sel_jump) and jump_addr)or((9 downto 0=>not(sel_jump)) and add_out);
 
         process(clk, rst_l)
         begin 
