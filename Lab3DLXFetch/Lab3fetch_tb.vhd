@@ -20,13 +20,13 @@ architecture test of Lab3fetch_tb is
 	signal instruction : std_logic_vector(31 downto 0);
 	
 	--Select Jump stages
-	signal sel_jump_stg2 : std_logic;
-	signal sel_jump_stg1 : std_logic;
+	--signal sel_jump_stg2 : std_logic;
+	--signal sel_jump_stg1 : std_logic;
 	signal sel_jump : std_logic:= '0';
 	
 	--Jump addresses
-	signal jump_addr_stg2 : unsigned(9 downto 0);
-	signal jump_addr_stg1 : unsigned(9 downto 0);
+	--signal jump_addr_stg2 : unsigned(9 downto 0);
+	--signal jump_addr_stg1 : unsigned(9 downto 0);
 	signal jump_addr : unsigned(9 downto 0):=(others=>'0');
 	signal link_addr : unsigned(9 downto 0):=(others=>'0');
 	
@@ -34,8 +34,8 @@ architecture test of Lab3fetch_tb is
 	signal opcode : unsigned(5 downto 0):=(others=>'0');
 	
 	--counter for the outer loop of factorial
-	signal BEQZ_count : integer := 0;
-	signal BNEZ_count : integer := 0;
+	signal BEQZ_count : integer := n;
+	signal BNEZ_count : integer := 8;
 	
 	--counter for the multiplying in factorial
 	signal BNEZ_events : unsigned(8 downto 0) := "111011010";
@@ -63,57 +63,55 @@ architecture test of Lab3fetch_tb is
 	
 	rst_l <= '1' after 1 ps;
 	
+	opcode <= unsigned(instruction(31 downto 26));
+	
 	process(clk)
-	begin
-	opcode <= unsigned(instruction(31 downto 26)); 
+	begin 
 	if rising_edge(clk) then
-		sel_jump_stg2 <= sel_jump_stg1;
-		sel_jump_stg1 <= sel_jump;
+		--sel_jump_stg2 <= sel_jump_stg1;
+		--sel_jump_stg1 <= sel_jump;
 		
 		--Checking for Jump instruction and seting flag based on that instruction
-		if opcode = (J or JAL or JR or JALR) then
-			sel_jump_stg1 <= '1';
-		elsif not(opcode) <= (BNEZ or BEQZ) then
-			sel_jump_stg1 <= '0';
+		if (opcode = J) or (opcode =JAL) or (opcode = JR) or (opcode = JALR) then
+			sel_jump <= '1';
+		elsif not(opcode = BNEZ) or not(opcode = BEQZ) then
+			sel_jump <= '0';
 		end if;
 		
 		-- jumping to the instruction
-		if opcode = (J or JAL) then
+		if (opcode = J) or (opcode = JAL) then
 			jump_addr <= unsigned(instruction(9 downto 0));
 		end if;
 		
 		--setting the link address
-		if opcode = (JAL or JALR) then
+		if (opcode = JAL) or (opcode = JALR) then
 			link_addr <= pc;
 		end if;
 		
 		--going to the address in the register
-		if opcode = (JR or JALR) then
+		if (opcode = JR) or (opcode = JALR) then
 			jump_addr <= link_addr;
 		end if;
 		
 		--checking for if the Branch is equal to 0
 		if opcode = BEQZ then
 			if BEQZ_count = 0 then
-				sel_jump_stg1 <= '1';
+				sel_jump <= '1';
 				jump_addr <= unsigned(instruction(9 downto 0));
 			else
 				BEQZ_count <= BEQZ_count - 1;
-				sel_jump_stg1 <= '0';
+				sel_jump <= '0';
 			end if;
 		end if;
 		
 		--checking for if the branch is not equal to 0
 		if opcode = BNEZ then
-			sel_jump_stg1 <= BNEZ_events(BNEZ_count);
+			sel_jump <= BNEZ_events(BNEZ_count);
 			jump_addr <= unsigned(instruction(9 downto 0));
 			BNEZ_count <= BNEZ_count - 1;
 		end if;
 
 	end if;
 	
-	
-		--wait ;
-		
 	end process;
 end test;	
