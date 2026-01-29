@@ -10,7 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
 			jump_addr : in unsigned(9 downto 0);
 			sel_jump : in std_logic;
-			pc : inout unsigned(9 downto 0);
+			pc : out unsigned(9 downto 0);
 			instruction : out std_logic_vector(31 downto 0)
 		);
 						
