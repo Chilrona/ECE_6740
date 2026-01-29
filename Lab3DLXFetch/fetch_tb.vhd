@@ -12,6 +12,7 @@ architecture test of fetch_tb is
 	
 	--number of times we are multiplying in factorial.dxl
 	constant n : integer := 3;
+	signal clk_count : integer := 0;
 	
 	--Signals to connect to Lab3fetch
 	signal rst_l : std_logic:= '0';
@@ -20,13 +21,9 @@ architecture test of fetch_tb is
 	signal instruction : std_logic_vector(31 downto 0);
 	
 	--Select Jump stages
-	signal sel_jump_stg2 : std_logic;
-	signal sel_jump_stg1 : std_logic;
 	signal sel_jump : std_logic:= '0';
 	
 	--Jump addresses
-	signal jump_addr_stg2 : unsigned(9 downto 0);
-	signal jump_addr_stg1 : unsigned(9 downto 0);
 	signal jump_addr : unsigned(9 downto 0):=(others=>'0');
 	signal link_addr : unsigned(9 downto 0):=(others=>'0');
 	
@@ -61,11 +58,62 @@ architecture test of fetch_tb is
 		wait for CLK_PERIOD/2;
 	end process;
 	
+	
 	rst_l <= '1' after 1 ps;
 	
-	
-	
-		wait ;
+	process (clk)
+	begin
+	if rising_edge(clk) then
+		clk_count <= clk_count +1;
 		
+		case clk_count is
+			when 5 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 8 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 11 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 15 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000111";
+			when 17 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000010";
+			when 22=>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 25 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 29 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000111";
+			when 31 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000010";
+			when 36 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001001";
+			when 40 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000111";
+			when 42 =>
+				sel_jump <= '1';
+				jump_addr <= "0000000010";
+			when 43 =>
+				sel_jump <= '1';
+				jump_addr <= "0000001101";
+			when others =>
+				sel_jump <= '0';
+				jump_addr <= (others=>'0');
+		
+		end case;
+
+	end if;
 	end process;
+	
+	
 end test;	
