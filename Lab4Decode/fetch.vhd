@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-	entity Lab3fetch is
+	entity fetch is
 		port 
 		(
 			rst_l : in std_logic;
@@ -14,9 +14,9 @@ use work.opcode_package.all;
 			instruction : out std_logic_vector(31 downto 0)
 		);
 						
-	end entity Lab3fetch;	
+	end entity fetch;	
 					
-	architecture Behavioral of Lab3fetch is
+	architecture Behavioral of fetch is
 	
 		signal next_pc : unsigned(9 downto 0):=(others=>'0');
 		signal add_out : unsigned(9 downto 0):=(others=>'0');

@@ -3,33 +3,33 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-ENTITY single_clock_ram IS
-    PORT (
-        clk: IN STD_LOGIC;
-        data: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-        write_address: IN std_logic_vector(25 downto 21);
-        read_address_1: IN std_logic_vector(20 downto 16);
-        read_address_2: IN std_logic_vector(15 downto 11);
-        we: IN STD_LOGIC;
-        q_1: OUT STD_LOGIC_VECTOR (2 DOWNTO 0)
-        q_2: OUT STD_LOGIC_VECTOR (2 DOWNTO 0)
+entity registers is
+    port (
+        clk: in std_logic;
+        data: in std_logic_vector (2 DOWNTO 0);
+        write_address: in std_logic_vector(4 downto 0);
+        read_address_1: in std_logic_vector(4 downto 0);
+        read_address_2: in std_logic_vector(4 downto 0);
+        we: in std_logic;
+        q_1: out std_logic_vector (2 DOWNTO 0);
+        q_2: out std_logic_vector (2 DOWNTO 0)
     );
-END single_clock_ram;
+end registers;
 
-ARCHITECTURE rtl OF single_clock_ram IS
+architecture rtl of resgisters is
     
-BEGIN
-    PROCESS (clock)
-    VARIABLE ram_block: MEM;
-    BEGIN
-        IF (rising_edge(clock)) THEN
-            IF (we = '1') THEN
+begin
+    process (clk)
+    variable ram_block: MEM;
+    begin
+        if (rising_edge(clock)) THEN
+            if (we = '1') THEN
                 ram_block(to_integer(write_address)) := data;
-            END IF;
+            end if;
             q_1 <= ram_block(to_integer(read_address_1)); 
             q_2 <= ram_block(to_integer(read_address_2));
             -- VHDL semantics imply that q doesn't get data 
             -- in this clock cycle
-        END IF;
-    END PROCESS;
-END rtl;
+        end if;
+    end process;
+end rtl;
