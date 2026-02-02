@@ -8,10 +8,14 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-			jump_addr : in unsigned(9 downto 0);
-			sel_jump : in std_logic;
 			pc : inout unsigned(9 downto 0);
 			instruction : out std_logic_vector(31 downto 0);
+
+            --jump and branch ports
+            jump_addr : in unsigned(9 downto 0);
+			sel_jump : in std_logic;
+
+            --data memory ports
             data : in std_logic_vector (2 downto 0);
             q_1 : inout std_logic_vector (2 DOWNTO 0);
             q_2 : inout std_logic_vector(2 downto 0)
