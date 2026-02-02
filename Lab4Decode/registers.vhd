@@ -1,5 +1,8 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.opcode_package.all;
+
 ENTITY single_clock_ram IS
     PORT (
         clk: IN STD_LOGIC;
@@ -14,7 +17,6 @@ ENTITY single_clock_ram IS
 END single_clock_ram;
 
 ARCHITECTURE rtl OF single_clock_ram IS
-    TYPE MEM IS ARRAY(0 TO 31) OF STD_LOGIC_VECTOR(2 DOWNTO 0);
     
 BEGIN
     PROCESS (clock)
