@@ -16,9 +16,9 @@ use work.opcode_package.all;
 			sel_jump : in std_logic;
 
             --data memory ports
-            data : in std_logic_vector (2 downto 0);
-            q_1 : inout std_logic_vector (2 DOWNTO 0);
-            q_2 : inout std_logic_vector(2 downto 0)
+            data : in std_logic_vector (31 downto 0);
+            q_1 : inout std_logic_vector (31 DOWNTO 0);
+            q_2 : inout std_logic_vector(31 downto 0)
 
 		);
 						
