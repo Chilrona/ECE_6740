@@ -7,7 +7,7 @@ package opcode_package is
 	--types of signals
 	----------------------------------------------------------------
 
-	TYPE MEM IS ARRAY(0 TO 31) OF STD_LOGIC_VECTOR(2 DOWNTO 0);
+	TYPE MEM IS ARRAY(0 TO 31) OF STD_LOGIC_VECTOR(31 DOWNTO 0);
 
     ------------------------------------------------------------------
 	--Constants for opcodes
