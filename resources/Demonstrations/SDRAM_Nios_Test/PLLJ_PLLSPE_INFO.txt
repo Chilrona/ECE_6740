@@ -1,0 +1,5 @@
+PLL_Name	DE10_LITE_Qsys:u0|DE10_LITE_Qsys_altpll_0:altpll_0|DE10_LITE_Qsys_altpll_0_altpll_dk92:sd1|pll7
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+
