@@ -81,4 +81,23 @@ package opcode_package is
     constant JAL   : unsigned(5 downto 0) := "101111"; -- 0x2F
     constant JALR  : unsigned(5 downto 0) := "110000"; -- 0x30
 
+    -------------------------------------------------------------
+    -- Function declaration
+    -------------------------------------------------------------
+    function is_signed_imm(opcode : unsigned(5 downto 0)) return boolean;
+
 end package opcode_package;
+
+package body opcode_package is
+    function is_signed_imm(opcode : unsigned(5 downto 0)) return boolean is
+    begin
+        return  (opcode = ADDI) or
+                (opcode = SUBI) or
+                (opcode = SRAI) or
+                (opcode = SLTI) or
+                (opcode = SGTI) or
+                (opcode = SLEI) or
+                (opcode = SGEI) or
+                (opcode = SEQI);
+    end function;
+end package body opcode_package;
