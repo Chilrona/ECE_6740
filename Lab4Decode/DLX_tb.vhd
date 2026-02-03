@@ -17,15 +17,10 @@ architecture test of DLX_tb is
 	--Signals to connect to Lab3fetch
 	signal rst_l : std_logic:= '0';
 	signal clk : std_logic;
-	signal pc : unsigned(9 downto 0):=(others=>'0');
-	signal instruction : std_logic_vector(31 downto 0);
 
 	--decode signals
 	signal we : std_logic := '1';
-	signal wr_data : std_logic_vector(31 downto 0) := X"01";
-
-	signal q_1 : std_logic_vector (2 DOWNTO 0);
-    signal q_2 : std_logic_vector(2 downto 0)
+	signal wr_data : std_logic_vector(31 downto 0) := X"00000001";
 	
 	--Select Jump stages
 	signal sel_jump : std_logic:= '0';
@@ -63,16 +58,13 @@ architecture test of DLX_tb is
 		(
 			rst_l => rst_l,
 			clk =>clk,
-			pc => pc,
-			instruction => instruction
-            --jump and branch ports
-            jump_addr => jump_addr,
+         --jump and branch ports
+         jump_addr => jump_addr,
 			sel_jump => sel_jump,
 
-            --data memory ports
-            data => wr_data,
-			q_1 => q_1,
-        	q_2 => q_2
+         --data memory ports
+         data => wr_data,
+			we => we
 
 		);
 
@@ -96,7 +88,7 @@ architecture test of DLX_tb is
 		case clk_count is
 			when 1=>
 				we <= '1';
-				wr_data <= X"03";
+				wr_data <= X"00000003";
 			when 2 => 
 				we <= '0';
 			when 5 =>

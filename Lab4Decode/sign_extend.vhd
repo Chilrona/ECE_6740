@@ -8,11 +8,11 @@ entity sign_extend is
     (
         rst_l : in std_logic;
         clk : in std_logic;
-        opcode : in unsigned(5 downto 0);
+        opcode : in std_logic_vector(5 downto 0);
         imm : in unsigned(15 downto 0);
         imm_extended : out unsigned(31 downto 0)
     );
-end entity
+end entity;
 
 architecture Behavioral of sign_extend is
 

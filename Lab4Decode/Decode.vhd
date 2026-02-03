@@ -8,38 +8,42 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-            data : in std_logic_vector (2 downto 0);
-			instruction : inout std_logic_vector(31 downto 0);
-            q_1 : inout std_logic_vector (2 DOWNTO 0);
-            q_2 : inout std_logic_vector(2 downto 0)
+         data : in std_logic_vector (31 downto 0);
+			we : in std_logic;
+			instruction : in std_logic_vector(31 downto 0);
+         q_1 : out std_logic_vector (31 DOWNTO 0);
+         q_2 : out std_logic_vector(31 downto 0);
+			imm_extended : out unsigned(31 downto 0)
 		);
 						
 	end entity decode;	
 					
 	architecture Behavioral of decode is     
-	
-    --signal for write enable
-    signal we : std_logic;
-    
+	    
 	begin
 	
-	SR: entity work.registers 
+	R: entity work.registers 
 	port map
 	(
 		clk => clk,
         data => data,
         write_address => instruction(25 downto 21),
         read_address_1 => instruction(20 downto 16),
-        read_address_2: instruction(15 downto 11),
+        read_address_2 => instruction(15 downto 11),
         we => we,
         q_1 => q_1,
         q_2 => q_2
 	);
 
-    process(rst_l)
-    begin 
-        
-    end process;
+	SE: entity work.sign_extend
+    port map
+    (
+        rst_l => rst_l,
+        clk => clk,
+        opcode => instruction(31 downto 26),
+        imm => unsigned(instruction(15 downto 0)),
+        imm_extended => imm_extended
+    );
 				
 	end Behavioral;
 	

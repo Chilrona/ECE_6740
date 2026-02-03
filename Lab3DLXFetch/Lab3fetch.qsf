@@ -383,3 +383,4 @@ set_location_assignment PIN_AA2 -to GPIO[35]
 set_global_assignment -name VHDL_FILE Lab3.vhd
 set_global_assignment -name QIP_FILE my_ROM.qip
 set_global_assignment -name VHDL_FILE OPCODE_PACKAGE.vhd
+set_global_assignment -name VHDL_FILE testbench.vhd
