@@ -6,7 +6,8 @@ f   1   1
 
 .text
     LW   R2, f(R0)     
-    LW   R1, n(R0)     
+    LW   R1, n(R0)  
+    SUBI R1, R1, 1   
 
 top
     BEQZ R1, exit 
