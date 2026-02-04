@@ -24,7 +24,7 @@ begin
     variable ram_block: MEM:=(others=>(others=>'0'));
     begin
         if (rising_edge(clk)) THEN
-            if (we = '1') then -- and not(write_address = "00000") THEN
+            if (we = '1') and not(write_address = "00000") THEN
                 ram_block(to_integer(unsigned(write_address))) := data;
             end if;
             q_1 <= ram_block(to_integer(unsigned(read_address_1))); 

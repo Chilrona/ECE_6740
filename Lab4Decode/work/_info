@@ -3,6 +3,9 @@ K4
 z2
 Z0 !s12c _opt
 Z1 !s99 nomlopt
+!s11f MIXED_VERSIONS
+R0
+R1
 R0
 R1
 R0
@@ -20,166 +23,190 @@ R1
 cModel Technology
 Z2 dC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode
 T_opt
-!s110 1770242431
-VXcfCU]K^N3;V^mcnnRBio3
+!s110 1770243357
+V@9HJ]kbf1zgiION3@;z2U1
 04 6 4 work dlx_tb test 1
-=1-b4e9b8412daa-6983c17e-16f-20078
+=1-b4e9b8412daa-6983c51d-129-1f918
 R1
 !s12f OEM100
 !s12b OEM100
 !s124 OEM10U7 
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
-tCvgOpt 0
+Z3 tCvgOpt 0
 n@_opt
 OL;O;2024.3;79
 Edecode
-Z3 w1770149817
-Z4 DPx4 work 14 opcode_package 0 22 ]@mmEkXocC]IV:>4HoaFb1
-Z5 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 116
+Z4 w1770149817
+Z5 DPx4 work 14 opcode_package 0 22 ]@mmEkXocC]IV:>4HoaFb1
+Z6 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 141
 R2
-Z8 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd
-Z9 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd
+Z9 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd
+Z10 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd
 l0
 L6 1
 V]4GM:8M85iSZhakmMJd5:1
 !s100 KEC73Yo3]^Q>8aza^Y>dP1
-Z10 OL;C;2024.3;79
+Z11 OL;C;2024.3;79
 32
-Z11 !s110 1770242410
+Z12 !s110 1770243315
 !i10b 1
-Z12 !s108 1770242410.000000
-Z13 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd|
-Z14 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd|
+Z13 !s108 1770243315.000000
+Z14 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd|
+Z15 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/Decode.vhd|
 !i113 0
-Z15 o-work work
-Z16 tExplicit 1 CvgOpt 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
 Abehavioral
-Z17 DEx4 work 11 sign_extend 0 22 bA;nPiRn4Cl5LeKKje1Q61
-Z18 DEx4 work 9 registers 0 22 7@0]QmLZ4lYIWD>BE8N:P1
-R4
+Z18 DEx4 work 11 sign_extend 0 22 bA;nPiRn4Cl5LeKKje1Q61
+Z19 DEx4 work 9 registers 0 22 7@0]QmLZ4lYIWD>BE8N:P1
 R5
 R6
 R7
-Z19 DEx4 work 6 decode 0 22 ]4GM:8M85iSZhakmMJd5:1
-!i122 116
+R8
+Z20 DEx4 work 6 decode 0 22 ]4GM:8M85iSZhakmMJd5:1
+!i122 141
 l23
 L21 28
 Va]Z<mao<0eT4TGS_Xb99B1
 !s100 DC>J27b4Oh5XVlI9N^?;c1
-R10
-32
 R11
-!i10b 1
+32
 R12
+!i10b 1
 R13
 R14
-!i113 0
 R15
+!i113 0
 R16
+R17
+vDLX
+2C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v
+R12
+!i10b 1
+!s100 IIQ0R5bH4dC0:k6XSAZeH2
+IOjfgj8me4NV?O[=_3ZRh<0
+R2
+w1770147939
+8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v
+FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v
+!i122 140
+L0 6 61
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2024.3;79
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v|
+!s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@d@l@x
 Edlx
-Z20 w1770150864
-R4
+Z21 w1770150864
 R5
 R6
 R7
-!i122 117
+R8
+!i122 142
 R2
-Z21 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd
-Z22 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd
+Z22 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd
+Z23 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd
 l0
 L6 1
 VhJ=2z=aCD4RgMXKJhNz9m3
 !s100 BCRb:UMV?EoMz1CVFPHL51
-R10
-32
 R11
-!i10b 1
+32
 R12
-Z23 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd|
-Z24 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd|
+!i10b 1
+R13
+Z24 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd|
+Z25 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavioral
-R19
-Z25 DEx4 work 5 fetch 0 22 lX=G=C@o_2z`CD1ZjQ0RR3
-R4
+R20
+Z26 DEx4 work 5 fetch 0 22 lX=G=C@o_2z`CD1ZjQ0RR3
 R5
 R6
 R7
-Z26 DEx4 work 3 dlx 0 22 hJ=2z=aCD4RgMXKJhNz9m3
-!i122 117
+R8
+Z27 DEx4 work 3 dlx 0 22 hJ=2z=aCD4RgMXKJhNz9m3
+!i122 142
 l32
 L24 35
 V^TBn>FJb]EUJG>MoVR4AT0
 !s100 520@;GOiWIFfJVPA@oHNz1
-R10
-32
 R11
-!i10b 1
+32
 R12
-R23
+!i10b 1
+R13
 R24
+R25
 !i113 0
-R15
 R16
+R17
 Edlx_tb
-Z27 w1770233220
-R4
+Z28 w1770243108
 R5
 R6
 R7
-!i122 118
+R8
+!i122 143
 R2
-Z28 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd
-Z29 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd
+Z29 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd
+Z30 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd
 l0
 L6 1
 VX>MEo]El]fFm?5PDVj_=[1
 !s100 8R6b3GzmE68ZzORhWnHCE0
-R10
+R11
 32
-Z30 !s110 1770242411
+Z31 !s110 1770243316
 !i10b 1
-Z31 !s108 1770242411.000000
+R13
 Z32 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd|
 Z33 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX_tb.vhd|
 !i113 0
-R15
 R16
+R17
 Atest
-R26
-R4
+R27
 R5
 R6
 R7
+R8
 DEx4 work 6 dlx_tb 0 22 X>MEo]El]fFm?5PDVj_=[1
-!i122 118
+!i122 143
 l42
 L9 369
-VA<KLkGMVo7?O4Qod4@_d<0
-!s100 1>foBO@A?e^MW46cU9EAd0
-R10
+VNZ1CzkHOWDcIgcLX>Ni[Q3
+!s100 1R?UMTO<_A0^id^^Y?1Z[3
+R11
 32
-R30
-!i10b 1
 R31
+!i10b 1
+R13
 R32
 R33
 !i113 0
-R15
 R16
+R17
 Efetch
 Z34 w1770145291
-R4
 R5
 R6
 R7
-!i122 119
+R8
+!i122 144
 R2
 Z35 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd
 Z36 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd
@@ -187,213 +214,213 @@ l0
 L6 1
 VlX=G=C@o_2z`CD1ZjQ0RR3
 !s100 VIoI?UHkWJ:ze9zJD;[;I0
-R10
+R11
 32
-R30
-!i10b 1
 R31
-Z37 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd|
-Z38 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd|
+!i10b 1
+Z37 !s108 1770243316.000000
+Z38 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd|
+Z39 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/fetch.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavioral
-Z39 DPx9 altera_mf 20 altera_mf_components 0 22 K2nP0Jo_3Z^LgLEDTAdJT1
-Z40 DEx4 work 6 my_rom 0 22 Qo`@2bO<SUj1SH]ViC<n73
-R4
+Z40 DPx9 altera_mf 20 altera_mf_components 0 22 K2nP0Jo_3Z^LgLEDTAdJT1
+Z41 DEx4 work 6 my_rom 0 22 Qo`@2bO<SUj1SH]ViC<n73
 R5
 R6
 R7
-R25
-!i122 119
+R8
+R26
+!i122 144
 l26
 L19 33
 Vf:^j><M5od7^8PMbE]znC1
 !s100 @Q73[]gB@g7WlNTFi_UmM2
-R10
+R11
 32
-R30
-!i10b 1
 R31
+!i10b 1
 R37
 R38
-!i113 0
-R15
-R16
-Emy_rom
-Z41 w1770148883
 R39
-R6
+!i113 0
+R16
+R17
+Emy_rom
+Z42 w1770148883
+R40
 R7
-!i122 120
+R8
+!i122 145
 R2
-Z42 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd
-Z43 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd
+Z43 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd
+Z44 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd
 l0
 L43 1
 VQo`@2bO<SUj1SH]ViC<n73
 !s100 zgL9WhBdGDEk2aO]WTc=n3
-R10
+R11
 32
-R30
-!i10b 1
 R31
-Z44 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd|
-Z45 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd|
+!i10b 1
+R37
+Z45 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd|
+Z46 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/my_ROM.vhd|
 !i113 0
-R15
 R16
+R17
 Asyn
-R39
-R6
-R7
 R40
-!i122 120
+R7
+R8
+R41
+!i122 145
 l57
 L53 33
 VW?gcULb;<a1m8lWbD6hF23
 !s100 QLfTV@VT0>WhP1=Y=]C9J0
-R10
+R11
 32
-R30
-!i10b 1
 R31
-R44
+!i10b 1
+R37
 R45
+R46
 !i113 0
-R15
 R16
+R17
 Popcode_package
-R5
 R6
 R7
-!i122 121
-Z46 w1770149628
+R8
+!i122 146
+Z47 w1770149628
 R2
-Z47 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd
-Z48 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd
+Z48 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd
+Z49 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd
 l0
 L5 85
 V]@mmEkXocC]IV:>4HoaFb1
 !s100 Koz=W1hXc9BGo;2b5H_@K3
-R10
+R11
 32
 b1
-R30
-!i10b 1
 R31
-Z49 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd|
-Z50 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd|
+!i10b 1
+R37
+Z50 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd|
+Z51 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/OPCODE_PACKAGE.vhd|
 !i113 0
-R15
 R16
+R17
 Bbody
-R4
 R5
 R6
 R7
-!i122 121
+R8
+!i122 146
 l0
 L91 13
 VFBdG;fT`Y4;;bKF>38lJ:1
 !s100 RWOEmZ0ISJ=lS[EUiVO_G3
-R10
+R11
 32
-R30
-!i10b 1
 R31
-R49
+!i10b 1
+R37
 R50
+R51
 !i113 0
-R15
 R16
+R17
 Eregisters
-Z51 w1770242358
-R4
+Z52 w1770243298
 R5
 R6
 R7
-!i122 122
+R8
+!i122 147
 R2
-Z52 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd
-Z53 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd
+Z53 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd
+Z54 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd
 l0
 L6 1
 V7@0]QmLZ4lYIWD>BE8N:P1
 !s100 _C`JZPh`?H>F5Hmdd<enR1
-R10
+R11
 32
-Z54 !s110 1770242412
+Z55 !s110 1770243317
 !i10b 1
-R31
-Z55 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd|
-Z56 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd|
+R37
+Z56 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd|
+Z57 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/registers.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
-R4
 R5
 R6
 R7
-R18
-!i122 122
+R8
+R19
+!i122 147
 l21
 L19 18
-V^IFIfbcXKzTC2C2YhJJN;1
-!s100 GzzHU3NWE_D:g71@b<o_52
-R10
+V_2_iMVQBE>V<W4gMoKOk^0
+!s100 gO3RHZ<0OYlczgW<M2fY]3
+R11
 32
-R54
-!i10b 1
-R31
 R55
+!i10b 1
+R37
 R56
+R57
 !i113 0
-R15
 R16
+R17
 Esign_extend
-Z57 w1770149680
-R4
+Z58 w1770149680
 R5
 R6
 R7
-!i122 123
+R8
+!i122 148
 R2
-Z58 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd
-Z59 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd
+Z59 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd
+Z60 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd
 l0
 L6 1
 VbA;nPiRn4Cl5LeKKje1Q61
 !s100 j2<2mG6:YO30EV5Y=3WQn1
-R10
+R11
 32
-R54
+R55
 !i10b 1
-Z60 !s108 1770242412.000000
-Z61 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd|
-Z62 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd|
+Z61 !s108 1770243317.000000
+Z62 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd|
+Z63 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/sign_extend.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavioral
-R4
 R5
 R6
 R7
-R17
-!i122 123
+R8
+R18
+!i122 148
 l19
 L17 19
 Vm@3CYlC;1GW>FYZH7XAZc2
 !s100 W8YB9QdIOZm0Lnji_6=?j1
-R10
+R11
 32
-R54
+R55
 !i10b 1
-R60
 R61
 R62
+R63
 !i113 0
-R15
 R16
+R17
