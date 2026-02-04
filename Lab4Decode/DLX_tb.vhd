@@ -87,288 +87,288 @@ architecture test of DLX_tb is
 
 
 		case clk_count is
-			when 1 =>
+			when 0 =>
 				we <= '1';
 				wr_data <= X"00000001";
+				sel_jump <= '0';
+				jump_addr <= (others=>'0');
+
+			when 1 =>
+				we <= '1';
+				wr_data <= X"00000004";
 				sel_jump <= '0';
 				jump_addr <= (others=>'0');
 
 			when 2 =>
 				we <= '1';
-				wr_data <= X"00000004";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
-
-			when 3 =>
-				we <= '1';
 				wr_data <= X"00000003";
 				sel_jump <= '0';
 				jump_addr <= (others=>'0');
 
-			when 4 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 3 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 5 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 4 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 6 =>
-				we <= '1';
-				wr_data <= X"00000003";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 5 =>
+        we <= '1';
+        wr_data <= X"00000003";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 7 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 6 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 8 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 7 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 9 =>
-				we <= '1';
-				wr_data <= X"00000002";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 8 =>
+        we <= '1';
+        wr_data <= X"00000002";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 10 =>
-				we <= '1';
-				wr_data <= X"00000002";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 9 =>
+        we <= '1';
+        wr_data <= X"00000002";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 11 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 10 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 12 =>
-				we <= '1';
-				wr_data <= X"00000003";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 11 =>
+        we <= '1';
+        wr_data <= X"00000003";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 13 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 12 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 14 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 13 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 15 =>
-				we <= '1';
-				wr_data <= X"00000004";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 14 =>
+        we <= '1';
+        wr_data <= X"00000004";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 16 =>
-				we <= '1';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000000111";
+    when 15 =>
+        we <= '1';
+        wr_data <= X"00000000";
+        sel_jump <= '1';
+        jump_addr <= "0000000111";
 
-			when 17 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 16 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 18 =>
-				we <= '1';
-				wr_data <= X"00000002";
-				sel_jump <= '1';
-				jump_addr <= "0000000010";
+    when 17 =>
+        we <= '1';
+        wr_data <= X"00000002";
+        sel_jump <= '1';
+        jump_addr <= "0000000010";
 
-			when 19 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 18 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 20 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 19 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 21 =>
-				we <= '1';
-				wr_data <= X"00000004";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 20 =>
+        we <= '1';
+        wr_data <= X"00000004";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 22 =>
-				we <= '1';
-				wr_data <= X"00000002";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 21 =>
+        we <= '1';
+        wr_data <= X"00000002";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 23 =>
-				we <= '1';
-				wr_data <= X"00000004";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 22 =>
+        we <= '1';
+        wr_data <= X"00000004";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 24 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 23 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 25 =>
-				we <= '1';
-				wr_data <= X"00000008";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 24 =>
+        we <= '1';
+        wr_data <= X"00000008";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 26 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 25 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 27 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 26 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 28 =>
-				we <= '1';
-				wr_data <= X"0000000C";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 27 =>
+        we <= '1';
+        wr_data <= X"0000000C";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 29 =>
-				we <= '1';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000000111";
+    when 28 =>
+        we <= '1';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 30 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 29 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '1';
+        jump_addr <= "0000000111";
 
-			when 31 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000000010";
+    when 30 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 32 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 31 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '1';
+        jump_addr <= "0000000010";
 
-			when 33 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 32 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 34 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 33 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 35 =>
-				we <= '1';
-				wr_data <= X"0000000C";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 34 =>
+        we <= '1';
+        wr_data <= X"0000000C";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 36 =>
-				we <= '1';
-				wr_data <= X"00000001";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 35 =>
+        we <= '1';
+        wr_data <= X"00000001";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 37 =>
-				we <= '1';
-				wr_data <= X"0000000C";
-				sel_jump <= '1';
-				jump_addr <= "0000001001";
+    when 36 =>
+        we <= '1';
+        wr_data <= X"0000000C";
+        sel_jump <= '1';
+        jump_addr <= "0000001001";
 
-			when 38 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 37 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 39 =>
-				we <= '1';
-				wr_data <= X"00000018";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 38 =>
+        we <= '1';
+        wr_data <= X"00000018";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 40 =>
-				we <= '1';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000000111";
+    when 39 =>
+        we <= '1';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 41 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 40 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '1';
+        jump_addr <= "0000000111";
 
-			when 42 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000000010";
+    when 41 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 43 =>
-				we <= '1';
-				wr_data <= X"00000000";
-				sel_jump <= '1';
-				jump_addr <= "0000001101";
+    when 42 =>
+        we <= '1';
+        wr_data <= X"00000000";
+        sel_jump <= '1';
+        jump_addr <= "0000000010";
 
-			when 44 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 43 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '1';
+        jump_addr <= "0000001101";
 
-			when 45 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 44 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when 46 =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
+    when 45 =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
 
-			when others =>
-				we <= '0';
-				wr_data <= X"00000000";
-				sel_jump <= '0';
-				jump_addr <= (others=>'0');
-		end case;
+    when others =>
+        we <= '0';
+        wr_data <= X"00000000";
+        sel_jump <= '0';
+        jump_addr <= (others=>'0');
+end case;
 
 	end if;
 	end process;
