@@ -58,7 +58,7 @@ use work.opcode_package.all;
 		sel_jump => sel_jump,
         q_1 => q_1,
         op_2 => op_2,
-        instruction_execute => instruction
+        instruction_execute => instruction_execute
 	);
 
 	EXECUTE: entity work.sign_extend
