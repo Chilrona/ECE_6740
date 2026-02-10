@@ -8,6 +8,7 @@ package opcode_package is
 	----------------------------------------------------------------
 
 	TYPE MEM IS ARRAY(0 TO 31) OF STD_LOGIC_VECTOR(31 DOWNTO 0);
+    TYPE OP_TYPE is (ADDITION, SUBTRACTION, JUMP, AND_, OR_, XOR_, SHIFTLEFT, SHIFTRIGHT, SHIFTRIGHTA, LESSTHAN, GREATTHAN, LESSTHANEQ, GREATTHANEQ, EQ, NE);
 
     ------------------------------------------------------------------
 	--Constants for opcodes
@@ -100,4 +101,10 @@ package body opcode_package is
                 (opcode = SGEI) or
                 (opcode = SEQI);
     end function;
+
+    function get_op_type(opcode : std_logic_vector(5 downto 0)) return OP_TYPE is
+    begin
+        case opcode is
+            when 
+
 end package body opcode_package;
