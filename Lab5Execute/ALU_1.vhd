@@ -1,0 +1,206 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.opcode_package.all;
+
+	entity ALU is
+		port 
+		(
+			rst_l : in std_logic;
+			clk : in std_logic;
+            opcode : in std_logic_vector(5 downto 0);
+			RS_1 : in std_logic_vector (31 downto 0);
+            RS_2 : in std_logic_vector (31 downto 0);
+			imm : in std_logic_vector (31 downto 0);
+            alu_result : out std_logic_vector (31 downto 0)
+		);
+						
+	end entity ALU;	
+					
+architecture Behavioral of ALU is
+    -- Handy local views of inputs
+    signal op_u   : unsigned(5 downto 0);
+    signal rs1_s  : signed(31 downto 0);
+    signal rs2_s  : signed(31 downto 0);
+    signal imm_s  : signed(31 downto 0);
+
+    signal rs1_u  : unsigned(31 downto 0);
+    signal rs2_u  : unsigned(31 downto 0);
+    signal imm_u  : unsigned(31 downto 0);
+
+begin
+    op_u  <= unsigned(opcode);
+
+    rs1_s <= signed(RS_1);
+    rs2_s <= signed(RS_2);
+    imm_s <= signed(imm);
+
+    rs1_u <= unsigned(RS_1);
+    rs2_u <= unsigned(RS_2);
+    imm_u <= unsigned(imm);
+
+    process(clk, rst_l)
+        variable shamt_reg : natural range 0 to 31;
+        variable shamt_imm : natural range 0 to 31;
+    begin
+        if rst_l = '0' then
+            alu_result <= (others => '0');
+
+        elsif rising_edge(clk) then
+            -- default
+            alu_result <= (others => '0');
+
+            shamt_reg := to_integer(rs2_u(4 downto 0));  -- shift amount from rs2
+            shamt_imm := to_integer(imm_u(4 downto 0));  -- shift amount from imm
+
+            case op_u is
+                -- =========================
+                -- ADD / SUB (signed/unsigned, reg/imm)
+                -- =========================
+                when ADD  =>
+                    alu_result <= rs1_s + rs2_s;
+
+                when ADDI =>
+                    alu_result <= rs1_s + imm_s;
+
+                when ADDU =>
+                    alu_result <= rs1_u + rs2_u;
+
+                when ADDUI =>
+                    alu_result <= rs1_u + imm_u;
+
+                when SUB  =>
+                    alu_result <= rs1_s - rs2_s;
+
+                when SUBI =>
+                    alu_result <= rs1_s - imm_s;
+
+                when SUBU =>
+                    alu_result <= rs1_u - rs2_u;
+
+                when SUBUI =>
+                    alu_result <= rs1_u - imm_u;
+
+                -- =========================
+                -- Bitwise
+                -- =========================
+                when AND_OP =>
+                    alu_result <= std_logic_vector(rs1_u and rs2_u);
+
+                when ANDI =>
+                    alu_result <= std_logic_vector(rs1_u and imm_u);
+
+                when OR_OP =>
+                    alu_result <= std_logic_vector(rs1_u or rs2_u);
+
+                when ORI =>
+                    alu_result <= std_logic_vector(rs1_u or imm_u);
+
+                when XOR_OP =>
+                    alu_result <= std_logic_vector(rs1_u xor rs2_u);
+
+                when XORI =>
+                    alu_result <= std_logic_vector(rs1_u xor imm_u);
+
+                -- =========================
+                -- Shifts
+                -- =========================
+                when SLL_OP =>
+                    alu_result <= std_logic_vector(shift_left(rs1_u, shamt_reg));
+
+                when SLLI =>
+                    alu_result <= std_logic_vector(shift_left(rs1_u, shamt_imm));
+
+                when SRL_OP =>
+                    alu_result <= std_logic_vector(shift_right(rs1_u, shamt_reg));
+
+                when SRLI =>
+                    alu_result <= std_logic_vector(shift_right(rs1_u, shamt_imm));
+
+                when SRA_OP =>
+                    alu_result <= std_logic_vector(shift_right(rs1_s, shamt_reg));
+
+                when SRAI =>
+                    alu_result <= std_logic_vector(shift_right(rs1_s, shamt_imm));
+
+                -- =========================
+                -- Comparisons (write 1 else 0)
+                -- =========================
+                when SLT =>
+                    if rs1_s < rs2_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLTI =>
+                    if rs1_s < imm_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLTU =>
+                    if rs1_u < rs2_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLTUI =>
+                    if rs1_u < imm_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGT =>
+                    if rs1_s > rs2_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGTI =>
+                    if rs1_s > imm_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGTU =>
+                    if rs1_u > rs2_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGTUI =>
+                    if rs1_u > imm_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLE =>
+                    if rs1_s <= rs2_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLEI =>
+                    if rs1_s <= imm_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLEU =>
+                    if rs1_u <= rs2_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SLEUI =>
+                    if rs1_u <= imm_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGE =>
+                    if rs1_s >= rs2_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGEI =>
+                    if rs1_s >= imm_s then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGEU =>
+                    if rs1_u >= rs2_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SGEUI =>
+                    if rs1_u >= imm_u then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SEQ =>
+                    if RS_1 = RS_2 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SEQI =>
+                    if RS_1 = imm then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SNE =>
+                    if RS_1 /= RS_2 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when SNEI =>
+                    if RS_1 /= imm then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                -- =========================
+                -- Branch condition helpers (1 = take, 0 = don't take)
+                -- (PC update happens elsewhere)
+                -- =========================
+                when BEQZ =>
+                    if rs1_u = 0 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when BNEZ =>
+                    if rs1_u /= 0 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
+
+                when others =>
+                    alu_result <= (others => '0');
+            end case;
+        end if;
+    end process;
+
+end Behavioral;
+	
