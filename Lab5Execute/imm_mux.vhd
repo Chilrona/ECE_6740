@@ -18,14 +18,10 @@ entity PC_mux is
     architecture behavioral of execute is 
     begin
         process()
-            if opcode = ADDI or 
-               opcode = ADDUI or 
-                        opcode = SUBI or 
-                        opcode = SUBUI or 
-                        opcode = ANDI or opcode = ORI or opcode = XORI or opcode = SLLI or opcode = SRLI or opcode = SRAI or opcode = SLTI or opcode = SLTUI or opcode = SGTI 
-                op_1 <= pc;
+            if is_imm(opcode) then
+                op_2 <= im_ex;
             else
-                op_1 <= q_1;
+                op_2 <= q_2;
             end if;
         end process;
     end behavioral;

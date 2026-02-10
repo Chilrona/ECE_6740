@@ -85,6 +85,7 @@ package opcode_package is
     -- Function declaration
     -------------------------------------------------------------
     function is_signed_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
+    function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
 
 end package opcode_package;
 
@@ -114,9 +115,20 @@ package body opcode_package is
                 (opcode = SRLI)  or
                 (opcode = SRAI)  or
                 (opcode = SLTI)  or
+                (opcode = SLTUI) or
                 (opcode = SGTI)  or
+                (opcode = SGTUI) or
                 (opcode = SLEI)  or
+                (opcode = SLEUI) or
                 (opcode = SGEI)  or
-                (opcode = SEQI);
+                (opcode = SGEUI) or
+                (opcode = SEQI)  or
+                (opcode = SNEI)  or 
+                (opcode = BEQZ)  or
+                (opcode = BNEZ)  or
+                (opcode = j)     or
+                (opcode = JAL)    or
+                (opcode = LW)    or
+                (opcode = SW);
     end function;
 end package body opcode_package;
