@@ -14,9 +14,7 @@ use work.opcode_package.all;
             pc_execute : in std_logic_vector(9 downto 0);
             instruction_execute : in std_logic_vector(31 downto 0);
 
-            ram_addr : out std_logic_vector(31 downto 0);
-            ram_data : out std_logic_vector(31 downto 0);
-            instruction_mem : out std_logic_vector(31 downto 0);
+            alu_result : out std_logic_vector(31 downto 0);
             jump_addr : out unsigned(9 downto 0);
 		    sel_jump : out std_logic
 		);
@@ -27,10 +25,9 @@ use work.opcode_package.all;
 	
     signal op_1 : std_logic_vector(31 downto 0):= (others => '0');
     signal op_2 : std_logic_vector(31 downto 0) := (others => '0');
-    signal alu_result : std_logic_vector(31 downto 0) := (others => '0');
 
 	begin
-	
+        
 	MUX1 : entity work.PC_mux
     port map
     (
