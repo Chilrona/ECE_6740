@@ -100,4 +100,23 @@ package body opcode_package is
                 (opcode = SGEI) or
                 (opcode = SEQI);
     end function;
+
+    function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean is
+    begin
+        return  (opcode = ADDI)  or
+                (opcode = ADDUI) or
+                (opcode = SUBI)  or
+                (opcode = SUBUI) or
+                (opcode = ANDI)  or
+                (opcode = ORI)   or
+                (opcode = XORI)  or
+                (opcode = SLLI)  or
+                (opcode = SRLI)  or
+                (opcode = SRAI)  or
+                (opcode = SLTI)  or
+                (opcode = SGTI)  or
+                (opcode = SLEI)  or
+                (opcode = SGEI)  or
+                (opcode = SEQI);
+    end function;
 end package body opcode_package;

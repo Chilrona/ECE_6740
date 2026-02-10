@@ -10,11 +10,11 @@ use work.opcode_package.all;
 			clk : in std_logic;
 
          --jump and branch ports
-         jump_addr : in unsigned(9 downto 0);
+        	jump_addr : in unsigned(9 downto 0);
 			sel_jump : in std_logic;
 
          --data memory ports
-         data : in std_logic_vector (31 downto 0);
+         	data : in std_logic_vector (31 downto 0);
 			we : in std_logic
 
 		);
@@ -26,7 +26,7 @@ use work.opcode_package.all;
 		signal pc : unsigned(9 downto 0);
 		signal instruction : std_logic_vector(31 downto 0);
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
 		signal imm_extended : unsigned(31 downto 0);
 	
 	begin
