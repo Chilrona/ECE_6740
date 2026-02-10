@@ -16,7 +16,9 @@ use work.opcode_package.all;
 
             ram_addr : out std_logic_vector(31 downto 0);
             ram_data : out std_logic_vector(31 downto 0);
-            instruction_mem : out std_logic_vector(31 downto 0)
+            instruction_mem : out std_logic_vector(31 downto 0);
+            jump_addr : out unsigned(9 downto 0);
+		    sel_jump : out std_logic
 		);
 						
 	end entity execute;	
@@ -50,7 +52,13 @@ use work.opcode_package.all;
     ZEROS: entity work.zeros 
 	port map
 	(
-		
+		rst_l => rst_l,
+		clk => clk,
+        jump_addr =>jump_addr,
+		sel_jump => sel_jump,
+        q_1 => q_1,
+        op_2 => op_2,
+        instruction_execute => instruction
 	);
 
 	EXECUTE: entity work.sign_extend
