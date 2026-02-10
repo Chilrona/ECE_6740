@@ -6,18 +6,22 @@ use work.opcode_package.all;
 
 entity Zeros is
     port
-    {
+    (
         rst_l : in std_logic;
 		clk : in std_logic;
         --jump and branch ports
         jump_addr : out unsigned(9 downto 0);
 		sel_jump : out std_logic;
         --address to jump to value
-        q_1 : in std_logic_vector (31 DOWNTO 0)
-    };
+        q_1 : in std_logic_vector (31 DOWNTO 0);
+        op2 : in std_logic_vector (31 DOWNTO 0);
+        instruction_execute : in std_logic_vector(31 downto 0);
+    );
     end entity Zeros;
 
     architecture Behavioral of Zeros is
+    
+    signal opcode : std_logic_vector(31 downto 26);
 
 
     begin
@@ -27,10 +31,16 @@ entity Zeros is
     begin
          if rst_l = '0' then
             jump_addr <= (others => '0');
-            sel_jump
-
+            sel_jump <= (others => '0');
         elsif rising_edge(clk) then
-
+            --check for Jump or Branch
+            if () then
+                
+                sel_jump <= '0';
+            --if not Jump or Branch then set sel_jump = 0
+            else 
+                sel_jump <= '0';
+            end if;
 
         end if;
     end Behavioral;
