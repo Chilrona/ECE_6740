@@ -185,17 +185,6 @@ begin
 
                 when SNEI =>
                     if RS_1 /= imm then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
-
-                -- =========================
-                -- Branch condition helpers (1 = take, 0 = don't take)
-                -- (PC update happens elsewhere)
-                -- =========================
-                when BEQZ =>
-                    if rs1_u = 0 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
-
-                when BNEZ =>
-                    if rs1_u /= 0 then alu_result <= x"00000001"; else alu_result <= (others => '0'); end if;
-
                 when others =>
                     alu_result <= (others => '0');
             end case;
