@@ -69,7 +69,7 @@ use work.opcode_package.all;
         opcode => instruction_execute(31 downto 26),
         op_1 => op_1,
         op_2 => op_2,
-        alu_result : out std_logic_vector (31 downto 0)
+        alu_result => alu_result
     );
 				
 	end Behavioral;
