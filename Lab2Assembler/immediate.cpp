@@ -18,15 +18,27 @@ uint32_t parse_immediate(char* line_ptr, Label** label_table)
     Instruction_Imm inst;
     istringstream iss(line);
     iss >> inst.opcode >> inst.regOut >> inst.regPri;
+    bool branch = false;
 
     // 4) immediate 
     if (!(iss >> inst.immStr)) // Must be a branch.
     {
+        branch = true;
         immBits = (shget(*label_table, inst.regPri.c_str())) & 0x0000FFFF;
-        regPriBits = 0;
+        regOutBits = 0;
+
+        //3) rs1 (primary)with Branch instruction
+        auto rs1It = rs1Table.find(inst.regOut); // Interpret regOut as source, not dest
+        if (rs1It == rs1Table.end())
+        {
+            cerr << "Unknown primary register: " << inst.regPri << endl;
+            abort();
+        }
+
+        regPriBits = rs1It->second;
+
     } else
     {
-        
         immBits = static_cast<uint32_t>(stoi(inst.immStr));
 
         //3) rs1 (primary)
@@ -51,14 +63,18 @@ uint32_t parse_immediate(char* line_ptr, Label** label_table)
     opcodeBits = opIt->second;
 
     // 2) rd (dest)
-    auto rdIt = destRegTable.find(inst.regOut);
-    if (rdIt == destRegTable.end())
+    if (!branch)
     {
-        cerr << "Unknown opcode: " << inst.regOut << endl;
-        abort();
-    }
+        auto rdIt = destRegTable.find(inst.regOut);
+        if (rdIt == destRegTable.end())
+        {
+            cerr << "Unknown opcode: " << inst.regOut << endl;
+            abort();
+        }
 
-    regOutBits = rdIt->second;
+        regOutBits = rdIt->second;
+    }
+    
 
     
     
