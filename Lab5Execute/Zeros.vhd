@@ -31,7 +31,7 @@ entity Zeros is
     begin
          if rst_l = '0' then
             jump_addr <= (others => '0');
-            sel_jump <= (others => '0');
+            sel_jump <= '0';
         elsif rising_edge(clk) then
             --check for Jump or Branch
             if ((opcode = J) or (opcode =  JR) or (opcode = JAL)or (opcode = JALR)) then
