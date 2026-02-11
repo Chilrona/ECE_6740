@@ -379,6 +379,24 @@ set_location_assignment PIN_AA2 -to GPIO[35]
 #============================================================
 
 
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_global_assignment -name SOURCE_FILE my_ROM.cmp
+set_global_assignment -name SDC_FILE DLX.sdc
+set_global_assignment -name VERILOG_FILE DLX.v
+set_global_assignment -name VHDL_FILE Zeros.vhd
+set_global_assignment -name VHDL_FILE PC_mux.vhd
+set_global_assignment -name VHDL_FILE imm_mux.vhd
+set_global_assignment -name VHDL_FILE Execute.vhd
+set_global_assignment -name VHDL_FILE DLX_ex1_tb.vhd
+set_global_assignment -name VHDL_FILE ALU_1.vhd
+set_global_assignment -name VHDL_FILE ALU.vhd
 set_global_assignment -name VHDL_FILE sign_extend.vhd
 set_global_assignment -name VHDL_FILE registers.vhd
 set_global_assignment -name VHDL_FILE OPCODE_PACKAGE.vhd
@@ -387,13 +405,5 @@ set_global_assignment -name VHDL_FILE DLX_tb.vhd
 set_global_assignment -name VHDL_FILE DLX.vhd
 set_global_assignment -name VHDL_FILE Decode.vhd
 set_global_assignment -name SDC_FILE DLX.SDC
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name QIP_FILE my_ROM.qip
-
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

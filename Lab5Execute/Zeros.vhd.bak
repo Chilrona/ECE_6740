@@ -15,7 +15,7 @@ entity Zeros is
         --address to jump to value
         q_1 : in std_logic_vector (31 DOWNTO 0);
         op2 : in std_logic_vector (31 DOWNTO 0);--the address we got from the instruction
-        instruction_execute : in std_logic_vector(31 downto 0)
+        instruction_execute : in std_logic_vector(31 downto 0);
     );
     end entity Zeros;
 
