@@ -35,14 +35,14 @@ uint32_t parse_jump(char* line_ptr, Label** label_table)
     }
     else if (inst.opcode == "JR" || inst.opcode == "JALR")
     {
-        auto rs1It = rs1Table.find(inst.sec_param);
-        if (rs1It == rs1Table.end())
+        auto rs2It = rs2Table.find(inst.sec_param);
+        if (rs2It == rs2Table.end())
         {
             cerr << "Unknown primary register: " << inst.sec_param << endl;
             abort();
         }
 
-        addrBits = (rs1It->second) >> 16;
+        addrBits = (rs2It->second);
     }
  
     // 5) build final instruction word
