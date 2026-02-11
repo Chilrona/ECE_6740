@@ -7,11 +7,11 @@ use work.opcode_package.all;
 entity Zeros is
     port
     (
-        rst_l : in std_logic;
-		clk : in std_logic;
+			rst_l : in std_logic;
+			clk : in std_logic;
         --jump and branch ports
-        jump_addr : out unsigned(9 downto 0);
-		sel_jump : out std_logic;
+			jump_addr : out std_logic_vector(9 downto 0);
+			sel_jump : out std_logic;
         --address to jump to value
         q_1 : in std_logic_vector (31 DOWNTO 0);
         op2 : in std_logic_vector (31 DOWNTO 0);--the address we got from the instruction
@@ -21,10 +21,12 @@ entity Zeros is
 
     architecture Behavioral of Zeros is
     
-    signal opcode : std_logic_vector(31 downto 26);
+    signal opcode : std_logic_vector(5 downto 0);
 
 
     begin
+		
+		opcode <= instruction_execute(31 downto 26);
 
 
     process(clk)
@@ -35,13 +37,13 @@ entity Zeros is
         elsif rising_edge(clk) then
             --check for Jump or Branch
             if ((opcode = J) or (opcode =  JR) or (opcode = JAL)or (opcode = JALR)) then
-                jump_addr <= unsigned(op2(9 downto 0));
+                jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
-            elsif ((opcode = BEQZ) and (q_1 =(others => '0'))) then
-                jump_addr <= unsigned(op2(9 downto 0));
+            elsif ((opcode = BEQZ) and (q_1 =(unsigned(q_1) = 0))) then
+                jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
-            elsif ((opcode = BNEZ) and (q_1 /=(others => '0'))) then
-                jump_addr <= unsigned(op2(9 downto 0));
+            elsif ((opcode = BNEZ) and (q_1 /=(unsigned(q_1) = 0))) then
+                jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
             --if not Jump or Branch then set sel_jump = 0
             else 

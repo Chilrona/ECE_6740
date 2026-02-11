@@ -8,10 +8,10 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-            opcode : in std_logic_vector(5 downto 0);
+         opcode : in std_logic_vector(5 downto 0);
 			op1 : in std_logic_vector (31 downto 0);
-            op2 : in std_logic_vector (31 downto 0);
-            alu_result : out std_logic_vector (31 downto 0);
+         op2 : in std_logic_vector (31 downto 0);
+         alu_result : out std_logic_vector (31 downto 0);
 			ram_we : out std_logic
 			
 		);
@@ -24,31 +24,31 @@ use work.opcode_package.all;
 	process(clk,rst_l)
 	begin
         if rst_l = '0' then
-            alu_result <= (others => 0);
+            alu_result <= (others => '0');
         elsif rising_edge(clk) then
 			case opcode is
-                when NOP =>
-					alu_result <= 0;
+            when NOP =>
+					alu_result <= (others => '0');
 				when LW =>
-					alu_result <= unsigned(op1) + unsigned(op2);
+					alu_result <= std_logic_vector(unsigned(op1) + unsigned(op2));
 				when SW =>
-					alu_result <= unsigned(op1) + unsigned(op2);
+					alu_result <= std_logic_vector(unsigned(op1) + unsigned(op2));
 				when ADD =>
-					alu_result <= signed(op1) + signed(op2);
+					alu_result <= std_logic_vector(signed(op1) + signed(op2));
 				when ADDI =>
-					alu_result <= signed(op1) + signed(op2);
+					alu_result <= std_logic_vector(signed(op1) + signed(op2));
 				when ADDU =>
-					alu_result <= unsigned(op1) + unsigned(op2);
+					alu_result <= std_logic_vector(unsigned(op1) + unsigned(op2));
 				when ADDUI =>
-					alu_result <= unsigned(op1) + unsigned(op2);
-				when SUB =>
-					alu_result <= signed(op1) - signed(op2);
+					alu_result <= std_logic_vector(unsigned(op1) + unsigned(op2));
+				when SUB_OP =>
+					alu_result <= std_logic_vector(signed(op1) - signed(op2));
 				when SUBI =>
-					alu_result <= signed(op1) - signed(op2);
+					alu_result <= std_logic_vector(signed(op1) - signed(op2));
 				when SUBU =>
-                    alu_result <= unsigned(op1) - unsigned(op2);
+                    alu_result <= std_logic_vector(unsigned(op1) - unsigned(op2));
 				when SUBUI =>
-					alu_result <= unsigned(op1) - unsigned(op2);
+					alu_result <= std_logic_vector(unsigned(op1) - unsigned(op2));
 				when AND_OP =>
 					alu_result <= op1 and op2;
 				when ANDI =>
@@ -62,17 +62,17 @@ use work.opcode_package.all;
 				when XORI =>
 					alu_result <= op1 xor op2;
 				when SLL_OP =>
-					alu_result <= shift_left(op1, op2);
+					alu_result <= std_logic_vector(shift_left(unsigned(op1), to_integer(unsigned(op2))));
 				when SLLI =>
-					alu_result <= shift_left(op1, op2);
+					alu_result <= std_logic_vector(shift_left(unsigned(op1), to_integer(unsigned(op2))));
 				when SRL_OP =>
-					alu_result <= shift_right(op1, op2);
+					alu_result <= std_logic_vector(shift_right(unsigned(op1), to_integer(unsigned(op2))));
 				when SRLI =>
-					alu_result <= shift_right(op1, op2);
+					alu_result <= std_logic_vector(shift_right(unsigned(op1), to_integer(unsigned(op2))));
 				when SRA_OP =>
-					alu_result <= shift_right(signed(op1), op2);
+					alu_result <= std_logic_vector(shift_right(signed(op1), to_integer(unsigned(op2))));
 				when SRAI =>
-					alu_result <= shift_right(signed(op1), op2);
+					alu_result <= std_logic_vector(shift_right(signed(op1), to_integer(unsigned(op2))));
 				when SLT =>
 					if signed(op1) < signed(op2) then
 						alu_result <= X"00000001";
@@ -165,6 +165,8 @@ use work.opcode_package.all;
 					alu_result <= op1;
 				when JALR =>
 					alu_result <= op1;
+				when others =>
+					alu_result <= (others=>'0');
             end case;
 			if opcode = SW then
 				ram_we <= '1';

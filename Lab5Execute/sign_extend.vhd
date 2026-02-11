@@ -9,8 +9,8 @@ entity sign_extend is
         rst_l : in std_logic;
         clk : in std_logic;
         opcode : in std_logic_vector(5 downto 0);
-        imm : in unsigned(15 downto 0);
-        imm_extended : out unsigned(31 downto 0)
+        imm : in std_logic_vector(15 downto 0);
+        imm_extended : out std_logic_vector(31 downto 0)
     );
 end entity;
 

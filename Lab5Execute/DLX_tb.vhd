@@ -26,8 +26,8 @@ architecture test of DLX_tb is
 	signal sel_jump : std_logic:= '0';
 	
 	--Jump addresses
-	signal jump_addr : unsigned(9 downto 0):=(others=>'0');
-	signal link_addr : unsigned(9 downto 0):=(others=>'0');
+	--signal jump_addr : unsigned(9 downto 0):=(others=>'0');
+	--signal link_addr : unsigned(9 downto 0):=(others=>'0');
 	
 	--instruction[31,26]
 	signal opcode : unsigned(5 downto 0):=(others=>'0');
@@ -59,8 +59,8 @@ architecture test of DLX_tb is
 			rst_l => rst_l,
 			clk =>clk,
          --jump and branch ports
-         jump_addr => jump_addr,
-			sel_jump => sel_jump,
+         --jump_addr => jump_addr,
+			--sel_jump => sel_jump,
 
          --data memory ports
          data => wr_data,

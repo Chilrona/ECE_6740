@@ -26,7 +26,7 @@ package opcode_package is
     constant ADDU  : std_logic_vector(5 downto 0) := "000101"; -- 0x05
     constant ADDUI : std_logic_vector(5 downto 0) := "000110"; -- 0x06
 
-    constant SUB   : std_logic_vector(5 downto 0) := "000111"; -- 0x07
+    constant SUB_OP   : std_logic_vector(5 downto 0) := "000111"; -- 0x07
     constant SUBI  : std_logic_vector(5 downto 0) := "001000"; -- 0x08
     constant SUBU  : std_logic_vector(5 downto 0) := "001001"; -- 0x09
     constant SUBUI : std_logic_vector(5 downto 0) := "001010"; -- 0x0A
@@ -126,7 +126,7 @@ package body opcode_package is
                 (opcode = SNEI)  or 
                 (opcode = BEQZ)  or
                 (opcode = BNEZ)  or
-                (opcode = j)     or
+                (opcode = J)     or
                 (opcode = JAL)    or
                 (opcode = LW)    or
                 (opcode = SW);

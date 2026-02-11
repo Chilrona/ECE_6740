@@ -401,7 +401,6 @@ set_global_assignment -name VHDL_FILE sign_extend.vhd
 set_global_assignment -name VHDL_FILE registers.vhd
 set_global_assignment -name VHDL_FILE OPCODE_PACKAGE.vhd
 set_global_assignment -name VHDL_FILE fetch.vhd
-set_global_assignment -name VHDL_FILE DLX_tb.vhd
 set_global_assignment -name VHDL_FILE DLX.vhd
 set_global_assignment -name VHDL_FILE Decode.vhd
 set_global_assignment -name SDC_FILE DLX.SDC

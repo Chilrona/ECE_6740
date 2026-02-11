@@ -8,9 +8,9 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-			jump_addr : in unsigned(9 downto 0);
+			jump_addr : in std_logic_vector(9 downto 0);
 			sel_jump : in std_logic;
-			pc : inout unsigned(9 downto 0);
+			pc : out std_logic_vector(9 downto 0);
 			instruction : out std_logic_vector(31 downto 0)
 		);
 						
@@ -18,8 +18,8 @@ use work.opcode_package.all;
 					
 	architecture Behavioral of fetch is
 	
-		signal next_pc : unsigned(9 downto 0):=(others=>'0');
-		signal add_out : unsigned(9 downto 0):=(others=>'0');
+		signal next_pc : std_logic_vector(9 downto 0):=(others=>'0');
+		signal add_out : std_logic_vector(9 downto 0):=(others=>'0');
 		signal std_pc : std_logic_vector(9 downto 0):=(others=>'0');
         
 	
@@ -32,9 +32,9 @@ use work.opcode_package.all;
 		clock	=> clk,
 		q	=> instruction
 	);
-			std_pc <= std_logic_vector(pc);
+			pc <= std_pc;
 		
-        add_out <= pc + 1;
+        add_out <= std_logic_vector(unsigned(std_pc) + 1);
 
         next_pc <= ((9 downto 0 => sel_jump) and jump_addr)or((9 downto 0=>not(sel_jump)) and add_out);
 
@@ -42,9 +42,9 @@ use work.opcode_package.all;
         begin 
 		  
 			if(rst_l = '0') then--checking for reset in pc
-				 pc <= (others=>'0');
+				 std_pc <= (others=>'0');
 			elsif rising_edge(clk) then
-				 pc <=next_pc;
+				 std_pc <=next_pc;
 			end if;
         end process;
 				

@@ -10,7 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
 
          --data memory ports
-         	data : in std_logic_vector (31 downto 0);
+         data : in std_logic_vector (31 downto 0);
 			we : in std_logic
 
 		);
@@ -19,12 +19,18 @@ use work.opcode_package.all;
 					
 	architecture Behavioral of DLX is     
 		
-		signal pc : unsigned(9 downto 0);
-		signal instruction : std_logic_vector(31 downto 0);
+		signal pc_decode : std_logic_vector(9 downto 0);
+		signal pc_execute : std_logic_vector(9 downto 0);
+		
+		signal instruction_decode : std_logic_vector(31 downto 0);
+		signal instruction_execute : std_logic_vector(31 downto 0);
+		signal instruction_mem : std_logic_vector(31 downto 0);
+		
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
-		signal imm_extended : unsigned(31 downto 0);
-        signal jump_addr : unsigned(9 downto 0);
+      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+		
+		signal imm_extended : std_logic_vector(31 downto 0);
+      signal jump_addr : std_logic_vector(9 downto 0);
 		signal sel_jump : std_logic;
 		signal alu_result : std_logic_vector(31 downto 0);
 	
@@ -37,20 +43,23 @@ use work.opcode_package.all;
         clk => clk,
         jump_addr => jump_addr,
         sel_jump => sel_jump,
-        pc => pc,
-        instruction => instruction
+        pc => pc_decode,
+        instruction => instruction_decode
 	);
 
     DECODE: entity work.decode
 	port map
 	(
 		rst_l => rst_l,
-        clk => clk,
-        data => data,
-        instruction => instruction,
+      clk => clk,
+      data => data,
+      instruction_in => instruction_decode,
+		instruction_out => instruction_execute,
+		pc_in => pc_decode,
+		pc_out => pc_execute,
 		we => we,
-        q_1 => q_1,
-        q_2 => q_2,
+      q_1 => q_1,
+      q_2 => q_2,
 		imm_extended => imm_extended
 	);
 
@@ -62,8 +71,9 @@ use work.opcode_package.all;
 		q_1 => q_1,
 		q_2 => q_2,
 		imm_extended => imm_extended,
-		pc_execute => pc,
-		instruction_execute => instruction,
+		pc_in => pc_execute,
+		instruction_in => instruction_execute,
+		instruction_out => instruction_mem,
 		alu_result => alu_result,
 		jump_addr => jump_addr,
 		sel_jump => sel_jump
