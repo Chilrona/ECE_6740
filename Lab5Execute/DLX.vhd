@@ -63,10 +63,10 @@ use work.opcode_package.all;
 		q_2 => q_2,
 		imm_extended => imm_extended,
 		pc_execute => pc,
-		instruction_execute => instruction;
+		instruction_execute => instruction,
 		alu_result => alu_result,
 		jump_addr => jump_addr,
 		sel_jump => sel_jump
-	)
+	);
 				
 	end Behavioral;

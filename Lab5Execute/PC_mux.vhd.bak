@@ -17,8 +17,7 @@ entity PC_mux is
 
     architecture behavioral of execute is 
     begin
-        process(pc, q_1)
-		  begin
+        process()
             if opcode = JAL or opcode = JALR then
                 op_1 <= pc;
             else

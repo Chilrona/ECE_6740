@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-	entity ALU is
+	entity ALU_1 is
 		port 
 		(
 			rst_l : in std_logic;
@@ -15,9 +15,9 @@ use work.opcode_package.all;
             alu_result : out std_logic_vector (31 downto 0)
 		);
 						
-	end entity ALU;	
+	end entity ALU_1;	
 					
-architecture Behavioral of ALU is
+architecture Behavioral of ALU_1 is
     -- Handy local views of inputs
     signal op_u   : unsigned(5 downto 0);
     signal rs1_s  : signed(31 downto 0);

@@ -50,6 +50,7 @@ entity Zeros is
             end if;
 
         end if;
+		  end process;
     end Behavioral;
 
 

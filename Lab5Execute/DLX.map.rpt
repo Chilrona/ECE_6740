@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Wed Feb 11 09:11:30 2026
+Wed Feb 11 12:14:06 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Feb 11 09:11:30 2026               ;
+; Analysis & Synthesis Status        ; Failed - Wed Feb 11 12:14:06 2026               ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -164,20 +164,22 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Feb 11 09:11:24 2026
+    Info: Processing started: Wed Feb 11 12:13:59 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file dlx.v
     Info (12023): Found entity 1: DLX File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.v Line: 6
-Error (10500): VHDL syntax error at Zeros.vhd(53) near text "Behavioral";  expecting "process" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Zeros.vhd Line: 53
-Info (12021): Found 0 design units, including 0 entities, in source file zeros.vhd
-Error (10500): VHDL syntax error at PC_mux.vhd(20) near text ")";  expecting an identifier, or a string literal, or "all" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/PC_mux.vhd Line: 20
-Info (12021): Found 0 design units, including 0 entities, in source file pc_mux.vhd
-Error (10430): VHDL Primary Unit Declaration error at imm_mux.vhd(6): primary unit "PC_mux" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/imm_mux.vhd Line: 6
-Error (10784): HDL error at PC_mux.vhd(6): see declaration for object "PC_mux" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/PC_mux.vhd Line: 6
-Error (10500): VHDL syntax error at imm_mux.vhd(20) near text ")";  expecting an identifier, or a string literal, or "all" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/imm_mux.vhd Line: 20
-Info (12021): Found 0 design units, including 0 entities, in source file imm_mux.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file zeros.vhd
+    Info (12022): Found design unit 1: Zeros-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Zeros.vhd Line: 22
+    Info (12023): Found entity 1: Zeros File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Zeros.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pc_mux.vhd
+    Info (12022): Found design unit 1: execute-behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/PC_mux.vhd Line: 18
+    Info (12023): Found entity 1: PC_mux File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/PC_mux.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file imm_mux.vhd
+    Info (12022): Found design unit 1: imm_mux-behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/imm_mux.vhd Line: 18
+    Info (12023): Found entity 1: imm_mux File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/imm_mux.vhd Line: 6
+Critical Warning (12048): Ignored duplicate design unit "execute-behavioral" in file PC_mux.vhd File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/PC_mux.vhd Line: 18
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
     Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Execute.vhd Line: 24
     Info (12023): Found entity 1: execute File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Execute.vhd Line: 6
@@ -185,12 +187,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file dlx_ex1
     Info (12022): Found design unit 1: DLX_ex1_tb-test File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd Line: 9
     Info (12023): Found entity 1: DLX_ex1_tb File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file alu_1.vhd
-    Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU_1.vhd Line: 20
-    Info (12023): Found entity 1: ALU File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU_1.vhd Line: 6
-Error (10430): VHDL Primary Unit Declaration error at ALU.vhd(6): primary unit "ALU" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU.vhd Line: 6
-Error (10784): HDL error at ALU_1.vhd(6): see declaration for object "ALU" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU_1.vhd Line: 6
-Error (10500): VHDL syntax error at ALU.vhd(25) near text "if";  expecting "begin", or a declaration statement File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU.vhd Line: 25
-Info (12021): Found 0 design units, including 0 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU_1-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU_1.vhd Line: 20
+    Info (12023): Found entity 1: ALU_1 File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU_1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU.vhd Line: 21
+    Info (12023): Found entity 1: ALU File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/ALU.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file sign_extend.vhd
     Info (12022): Found design unit 1: sign_extend-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/sign_extend.vhd Line: 17
     Info (12023): Found entity 1: sign_extend File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/sign_extend.vhd Line: 6
@@ -206,19 +207,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file fetch.v
 Info (12021): Found 2 design units, including 1 entities, in source file dlx_tb.vhd
     Info (12022): Found design unit 1: DLX_tb-test File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX_tb.vhd Line: 9
     Info (12023): Found entity 1: DLX_tb File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX_tb.vhd Line: 6
-Error (10500): VHDL syntax error at DLX.vhd(66) near text ";";  expecting ")", or "," File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.vhd Line: 66
-Error (10500): VHDL syntax error at DLX.vhd(72) near text "end";  expecting ";" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.vhd Line: 72
-Info (12021): Found 0 design units, including 0 entities, in source file dlx.vhd
+Error (12049): Can't compile duplicate declarations of entity "DLX" into library "work" File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.vhd Line: 6
+    Error (12180): Instance could be entity "DLX" in file DLX.v compiled in library work File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.v Line: 6
+    Error (12180): Instance could be entity "DLX" in file DLX.vhd compiled in library work File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
+    Info (12022): Found design unit 1: DLX-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/DLX.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
     Info (12022): Found design unit 1: decode-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Decode.vhd Line: 21
     Info (12023): Found entity 1: decode File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/Decode.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file my_rom.vhd
     Info (12022): Found design unit 1: my_rom-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/my_ROM.vhd Line: 53
     Info (12023): Found entity 1: my_ROM File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab5Execute/my_ROM.vhd Line: 43
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 10 errors, 1 warning
-    Error: Peak virtual memory: 4806 megabytes
-    Error: Processing ended: Wed Feb 11 09:11:30 2026
-    Error: Elapsed time: 00:00:06
-    Error: Total CPU time (on all processors): 00:00:14
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 2 warnings
+    Error: Peak virtual memory: 4805 megabytes
+    Error: Processing ended: Wed Feb 11 12:14:06 2026
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:13
 
 

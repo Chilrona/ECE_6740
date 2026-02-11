@@ -22,7 +22,6 @@ use work.opcode_package.all;
 	    
 	begin
 	process(clk,rst_l)
-	begin
         if rst_l = '0' then
             alu_result <= (others => 0);
         elsif rising_edge(clk) then
@@ -172,7 +171,7 @@ use work.opcode_package.all;
 				ram_we <= '0';
 			end if;
         end if;
-    end process;
+    end process
 	
 				
 	end Behavioral;
