@@ -39,10 +39,10 @@ entity Zeros is
             if ((opcode = J) or (opcode =  JR) or (opcode = JAL)or (opcode = JALR)) then
                 jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
-            elsif ((opcode = BEQZ) and (q_1 =(unsigned(q_1) = 0))) then
+            elsif ((opcode = BEQZ) and (to_integer(unsigned(q_1)) = 0)) then
                 jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
-            elsif ((opcode = BNEZ) and (q_1 /=(unsigned(q_1) = 0))) then
+            elsif ((opcode = BNEZ) and (to_integer(unsigned(q_1)) /= 0)) then
                 jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
             --if not Jump or Branch then set sel_jump = 0
