@@ -7,11 +7,11 @@ use work.opcode_package.all;
 entity Zeros is
     port
     (
-			rst_l : in std_logic;
-			clk : in std_logic;
+		rst_l : in std_logic;
+		clk : in std_logic;
         --jump and branch ports
-			jump_addr : out std_logic_vector(9 downto 0);
-			sel_jump : out std_logic;
+		jump_addr : out std_logic_vector(9 downto 0);
+		sel_jump : out std_logic;
         --address to jump to value
         q_1 : in std_logic_vector (31 DOWNTO 0);
         op2 : in std_logic_vector (31 DOWNTO 0);--the address we got from the instruction

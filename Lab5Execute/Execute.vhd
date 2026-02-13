@@ -6,19 +6,19 @@ use work.opcode_package.all;
 	entity execute is
 		port 
 		(
-          rst_l : in std_logic;
-          clk : in std_logic;
-          q_1 : in std_logic_vector (31 downto 0);
-          q_2 : in std_logic_vector(31 downto 0);
-          imm_extended : in std_logic_vector(31 downto 0);
+            rst_l : in std_logic;
+            clk : in std_logic;
+            q_1 : in std_logic_vector (31 downto 0);
+            q_2 : in std_logic_vector(31 downto 0);
+            imm_extended : in std_logic_vector(31 downto 0);
 			 
-          pc_in : in std_logic_vector(9 downto 0);
+            pc_in : in std_logic_vector(9 downto 0);
 			 
-          instruction_in : in std_logic_vector(31 downto 0);
-			 instruction_out : out std_logic_vector(31 downto 0);
+            instruction_in : in std_logic_vector(31 downto 0);
+		    instruction_out : out std_logic_vector(31 downto 0);
 
-          alu_result : out std_logic_vector(31 downto 0);
-          jump_addr : out std_logic_vector(9 downto 0);
+            alu_result : out std_logic_vector(31 downto 0);
+            jump_addr : out std_logic_vector(9 downto 0);
 		    sel_jump : out std_logic
 		);
 						
@@ -54,11 +54,11 @@ use work.opcode_package.all;
 	(
 		rst_l => rst_l,
 		clk => clk,
-      jump_addr =>jump_addr,
+        jump_addr =>jump_addr,
 		sel_jump => sel_jump,
-      q_1 => q_1,
-      op2 => op2,
-      instruction_execute => instruction_in
+        q_1 => q_1,
+        op2 => op2,
+        instruction_execute => instruction_in
 	);
 
 	ALU: entity work.ALU

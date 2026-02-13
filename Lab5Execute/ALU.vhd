@@ -8,10 +8,10 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-         opcode : in std_logic_vector(5 downto 0);
+         	opcode : in std_logic_vector(5 downto 0);
 			op1 : in std_logic_vector (31 downto 0);
-         op2 : in std_logic_vector (31 downto 0);
-         alu_result : out std_logic_vector (31 downto 0);
+         	op2 : in std_logic_vector (31 downto 0);
+         	alu_result : out std_logic_vector (31 downto 0);
 			ram_we : out std_logic
 			
 		);
