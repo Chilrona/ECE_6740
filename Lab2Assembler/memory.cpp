@@ -15,7 +15,7 @@ using namespace std;
 uint32_t parse_memory(char* line_ptr, Label** data_table)
 {
     string line = line_ptr;
-	uint32_t opcodeBits, rDataBits, rOffsetBits, baseAddrBits, machineCode=0;
+	uint32_t opcodeBits, rDataBits, rOffsetBits, rSource2Bits, baseAddrBits, machineCode=0;
 
     Instruction_Memory inst;
     istringstream iss(line);
@@ -41,7 +41,7 @@ uint32_t parse_memory(char* line_ptr, Label** data_table)
     auto rdIt = destRegTable.find(inst.rData);
     if (rdIt == destRegTable.end())
     {
-        cerr << "Unknown opcode: " << inst.rData << endl;
+        cerr << "Unknown data register: " << inst.rData << endl;
         abort();
     }
 
@@ -55,7 +55,15 @@ uint32_t parse_memory(char* line_ptr, Label** data_table)
         abort();
     }
 
-    rOffsetBits = rs1It->second;
+    //4) Cheekily sneak the destination reg into the source reg 2 field for SW
+    auto rs2It = rs2Table.find(inst.rData);
+    if (rs2It == rs2Table.end())
+    {
+        cerr << "Unknown data register: " << inst.rData << endl;
+        abort();
+    }
+
+    rSource2Bits = rs2It->second;
 
     // 4) Base Address
     
@@ -64,7 +72,7 @@ uint32_t parse_memory(char* line_ptr, Label** data_table)
     
     // 5) build final instruction word
     // ASSUMPTION: immediate is bits [15:0]
-    machineCode = opcodeBits | rDataBits | rOffsetBits | baseAddrBits;
+    machineCode = opcodeBits | rDataBits | rOffsetBits | rSource2Bits | baseAddrBits;
 
     return machineCode;
 }
