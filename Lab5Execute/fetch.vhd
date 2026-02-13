@@ -10,7 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
 			jump_addr : in std_logic_vector(9 downto 0);
 			sel_jump : in std_logic;
-			pc : out std_logic_vector(9 downto 0);
+			pc : buffer std_logic_vector(9 downto 0);
 			instruction : out std_logic_vector(31 downto 0)
 		);
 						
@@ -32,7 +32,7 @@ use work.opcode_package.all;
 		clock	=> clk,
 		q	=> instruction
 	);
-			pc <= std_pc;
+		std_pc <= pc;
 		
         add_out <= std_logic_vector(unsigned(std_pc) + 1);
 
@@ -42,9 +42,9 @@ use work.opcode_package.all;
         begin 
 		  
 			if(rst_l = '0') then--checking for reset in pc
-				 std_pc <= (others=>'0');
+				 pc <= (others=>'0');
 			elsif rising_edge(clk) then
-				 std_pc <=next_pc;
+				 pc <=next_pc;
 			end if;
         end process;
 				

@@ -10,6 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
         	data : in std_logic_vector (31 downto 0);
 			we : in std_logic;
+			wr_addr : in std_logic_vector(4 downto 0);
 
 			instruction_in : in std_logic_vector(31 downto 0);
 			instruction_out : out std_logic_vector(31 downto 0);
@@ -33,7 +34,7 @@ use work.opcode_package.all;
 	(
 		clk => clk,
         data => data,
-        write_address => instruction_in(25 downto 21),
+        write_address => wr_addr,
         read_address_1 => instruction_in(20 downto 16),
         read_address_2 => instruction_in(15 downto 11),
         we => we,

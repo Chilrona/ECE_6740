@@ -11,7 +11,8 @@ use work.opcode_package.all;
 
          --data memory ports
          data : in std_logic_vector (31 downto 0);
-			we : in std_logic
+			we : in std_logic;
+			wr_addr : in std_logic_vector(4 downto 0 )
 
 		);
 						
@@ -58,6 +59,7 @@ use work.opcode_package.all;
 		pc_in => pc_decode,
 		pc_out => pc_execute,
 		we => we,
+		wr_addr => wr_addr,
       q_1 => q_1,
       q_2 => q_2,
 		imm_extended => imm_extended
