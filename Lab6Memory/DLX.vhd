@@ -7,12 +7,7 @@ use work.opcode_package.all;
 		port 
 		(
 			rst_l : in std_logic;
-			clk : in std_logic;
-
-         --data memory ports
-         	data : in std_logic_vector (31 downto 0);
-			wr_addr : in std_logic_vector(4 downto 0 )
-
+			clk : in std_logic
 		);
 						
 	end entity DLX;	
@@ -33,8 +28,15 @@ use work.opcode_package.all;
 		signal imm_extended : std_logic_vector(31 downto 0);
       	signal jump_addr : std_logic_vector(9 downto 0);
 		signal sel_jump : std_logic;
+		
 		signal alu_result : std_logic_vector(31 downto 0);
+		signal alu_result_wb : std_logic_vector(31 downto 0);
+		
 		signal ram_data : std_logic_vector(31 downto 0);
+		signal reg_data : std_logic_vector (31 downto 0);
+		
+		signal wr_addr : std_logic_vector(4 downto 0 );
+
 		--write enable signals
 		signal reg_we : std_logic;
 		signal ram_we : std_logic;
@@ -59,7 +61,7 @@ use work.opcode_package.all;
 	(
 		rst_l => rst_l,
       	clk => clk,
-      	data => data,
+      	data => reg_data,
       	instruction_in => instruction_decode,
 		instruction_out => instruction_execute,
 		pc_in => pc_decode,
@@ -98,13 +100,18 @@ use work.opcode_package.all;
 		alu_result => alu_result,
 		ram_we => ram_we,
 		ram_data => ram_data,
-		alu_result_wb => alu_result
+		alu_result_wb => alu_result_wb
 	)
 
 	WB : entity work.write_back
 	port map
 	(
-
+        instruction_wb => instruction_wb,
+        ram_data => ram_data,
+        alu_result_wb => alu_result_wb,
+        wr_addr => wr_addr,
+        reg_data => reg_data,
+        reg_we => reg_we
 	)
 				
 	end Behavioral;

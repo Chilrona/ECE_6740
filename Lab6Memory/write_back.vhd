@@ -6,9 +6,6 @@ use work.opcode_package.all;
 entity write_back is
     port
     (
-        rst_l : in std_logic;
-        clk : in std_logic;
-
         instruction_wb : in std_logic_vector(31 downto 0);
 
         ram_data : in std_logic_vector(31 downto 0);
