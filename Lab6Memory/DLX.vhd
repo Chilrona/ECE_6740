@@ -52,16 +52,16 @@ use work.opcode_package.all;
 	port map
 	(
 		rst_l => rst_l,
-      clk => clk,
-      data => data,
-      instruction_in => instruction_decode,
+      	clk => clk,
+      	data => data,
+      	instruction_in => instruction_decode,
 		instruction_out => instruction_execute,
 		pc_in => pc_decode,
 		pc_out => pc_execute,
 		we => we,
 		wr_addr => wr_addr,
-      q_1 => q_1,
-      q_2 => q_2,
+      	q_1 => q_1,
+      	q_2 => q_2,
 		imm_extended => imm_extended
 	);
 
@@ -80,5 +80,16 @@ use work.opcode_package.all;
 		jump_addr => jump_addr,
 		sel_jump => sel_jump
 	);
+	MEMORY: entity work.memory
+	port map
+	(
+
+	)
+
+	WB : entity work.write_back
+	port map
+	(
+		
+	)
 				
 	end Behavioral;
