@@ -101,7 +101,7 @@ use work.opcode_package.all;
 		ram_we => ram_we,
 		ram_data => ram_data,
 		alu_result_wb => alu_result_wb
-	)
+	);
 
 	WB : entity work.write_back
 	port map
@@ -112,6 +112,6 @@ use work.opcode_package.all;
         wr_addr => wr_addr,
         reg_data => reg_data,
         reg_we => reg_we
-	)
+	);
 				
 	end Behavioral;

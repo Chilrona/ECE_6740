@@ -102,16 +102,6 @@ package body opcode_package is
                 (opcode = SEQI);
     end function;
 
-    function is_not_wb(opcode : std_logic_vector(5 downto 0)) return boolean is
-    begin
-        return  (opcode = SW)       or
-                (opcode = NOP)      or
-                (opcode = BEQZ)     or
-                (opcode = BNEZ)     or
-                (opcode = J)        or
-                (opcode = JR)
-    end function;
-
     function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean is
     begin
         return  (opcode = ADDI)  or
@@ -137,8 +127,31 @@ package body opcode_package is
                 (opcode = BEQZ)  or
                 (opcode = BNEZ)  or
                 (opcode = J)     or
-                (opcode = JAL)    or
+                (opcode = JAL)   or
                 (opcode = LW)    or
                 (opcode = SW);
     end function;
+	 
+	 function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean is
+    begin
+        return  (opcode = ADDI) or
+                (opcode = SUBI) or
+                (opcode = SRAI) or
+                (opcode = SLTI) or
+                (opcode = SGTI) or
+                (opcode = SLEI) or
+                (opcode = SGEI) or
+                (opcode = SEQI);
+    end function;
+	 
+--	 function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean is
+--    begin
+--        return  (opcode = SW)   or
+--                (opcode = NOP)  or
+--                (opcode = BEQZ) or
+--                (opcode = BNEZ) or
+--                (opcode = J)    or
+--                (opcode = JR);
+--    end function;
+	 
 end package body opcode_package;

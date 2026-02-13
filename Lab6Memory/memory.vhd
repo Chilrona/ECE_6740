@@ -1,3 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.opcode_package.all;
+
 entity memory is
 port 
 (
@@ -9,7 +14,7 @@ port
 
     q_2 : in std_logic_vector(31 downto 0);
     alu_result : in std_logic_vector(31 downto 0);
-    ram_we : in std_logic_vector(31 downto 0);
+    ram_we : in std_logic;
 
     ram_data : out std_logic_vector(31 downto 0);
     alu_result_wb : out std_logic_vector(31 downto 0)
@@ -38,5 +43,5 @@ pass_along: process(clk, rst_l)
 			instruction_out <= instruction_in;
 		end if;
 	end process;
-end Behavioral
+end Behavioral;
 					

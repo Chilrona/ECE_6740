@@ -11,15 +11,14 @@ entity write_back is
         ram_data : in std_logic_vector(31 downto 0);
         alu_result_wb : in std_logic_vector(31 downto 0);
 
-        wr_addr : out std_logic_vector(9 downto 0);
+        wr_addr : out std_logic_vector(4 downto 0);
         reg_data : out std_logic_vector(31 downto 0);
         reg_we : out std_logic
     );
-end entity write_back
+end entity write_back;
 
 architecture Behavioral of write_back is
     begin
-    wr_addr <= instruction_wb(25 downto 21);
 
     process(instruction_wb)
     begin
@@ -29,7 +28,7 @@ architecture Behavioral of write_back is
             reg_data <= alu_result_wb;
         end if;
 
-        if is_not_wb(instruction_wb(31 downto 26)) then
+        if (is_n_wb(instruction_wb(31 downto 26))) then
             reg_we <= '0';
         else
             reg_we <= '1';
@@ -42,6 +41,4 @@ architecture Behavioral of write_back is
         end if;
     end process;
 
-    process()
-
-end Behavioral
+end Behavioral;

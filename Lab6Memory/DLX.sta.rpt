@@ -1,5 +1,5 @@
 Timing Analyzer report for DLX
-Fri Feb 13 14:47:13 2026
+Fri Feb 13 16:20:37 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -101,7 +101,7 @@ on the Quartus Prime software download page.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; DLX.sdc       ; OK     ; Fri Feb 13 14:47:12 2026 ;
+; DLX.sdc       ; OK     ; Fri Feb 13 16:20:36 2026 ;
 +---------------+--------+--------------------------+
 
 
@@ -257,44 +257,6 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 ; rst_l               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; clk                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[0]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[1]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[2]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[3]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[4]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[5]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[6]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[7]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[8]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[9]             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[10]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[11]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[12]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[13]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[14]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[15]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[16]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[17]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[18]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[19]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[20]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[21]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[22]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[23]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[24]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[25]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[26]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[27]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[28]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[29]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[30]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; data[31]            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; we                  ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; wr_addr[0]          ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; wr_addr[1]          ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; wr_addr[2]          ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; wr_addr[3]          ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; wr_addr[4]          ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -370,7 +332,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Feb 13 14:47:11 2026
+    Info: Processing started: Fri Feb 13 16:20:35 2026
 Info: Command: quartus_sta DLX -c DLX
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -428,9 +390,9 @@ Info (332140): No Minimum Pulse Width paths to report
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4935 megabytes
-    Info: Processing ended: Fri Feb 13 14:47:13 2026
+    Info: Peak virtual memory: 4927 megabytes
+    Info: Processing ended: Fri Feb 13 16:20:37 2026
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

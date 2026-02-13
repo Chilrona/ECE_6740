@@ -15,12 +15,12 @@ use work.opcode_package.all;
             pc_in : in std_logic_vector(9 downto 0);
 			 
             instruction_in : in std_logic_vector(31 downto 0);
-		    instruction_out : out std_logic_vector(31 downto 0);
+				instruction_out : out std_logic_vector(31 downto 0);
 
             alu_result : out std_logic_vector(31 downto 0);
             jump_addr : out std_logic_vector(9 downto 0);
-		    sel_jump : out std_logic;
-            ram_we : out std_logic;
+				sel_jump : out std_logic;
+            ram_we : out std_logic
 		);
 						
 	end entity execute;	
