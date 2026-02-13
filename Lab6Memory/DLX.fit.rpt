@@ -1,5 +1,5 @@
 Fitter report for DLX
-Thu Feb 12 19:43:17 2026
+Fri Feb 13 14:47:07 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -62,7 +62,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Feb 12 19:43:17 2026           ;
+; Fitter Status                      ; Successful - Fri Feb 13 14:47:07 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -148,7 +148,7 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 14          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -533,7 +533,7 @@ on the Quartus Prime software download page.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.pin.
+The pin-out file can be found in C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1671,15 +1671,15 @@ Info (12825): DCLK dual-purpose pin not reserved
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Critical Warning (169085): No exact pin location assignment(s) for 40 pins of 40 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (332104): Reading SDC File: 'DLX.sdc'
-Warning (332174): Ignored filter at DLX.sdc(9): ADC_CLK_10 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 9
-Warning (332049): Ignored create_clock at DLX.sdc(9): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 9
-    Info (332050): create_clock -period "10.0 MHz" [get_ports ADC_CLK_10] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 9
-Warning (332174): Ignored filter at DLX.sdc(10): MAX10_CLK1_50 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 10
-Warning (332049): Ignored create_clock at DLX.sdc(10): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 10
-    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK1_50] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 10
-Warning (332174): Ignored filter at DLX.sdc(11): MAX10_CLK2_50 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 11
-Warning (332049): Ignored create_clock at DLX.sdc(11): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 11
-    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.sdc Line: 11
+Warning (332174): Ignored filter at DLX.sdc(9): ADC_CLK_10 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 9
+Warning (332049): Ignored create_clock at DLX.sdc(9): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 9
+    Info (332050): create_clock -period "10.0 MHz" [get_ports ADC_CLK_10] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 9
+Warning (332174): Ignored filter at DLX.sdc(10): MAX10_CLK1_50 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 10
+Warning (332049): Ignored create_clock at DLX.sdc(10): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 10
+    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK1_50] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 10
+Warning (332174): Ignored filter at DLX.sdc(11): MAX10_CLK2_50 could not be matched with a port File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 11
+Warning (332049): Ignored create_clock at DLX.sdc(11): Argument <targets> is an empty collection File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 11
+    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.sdc Line: 11
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -1869,7 +1869,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SW[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[9]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1888,12 +1888,12 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 178 warnings
     Info: Peak virtual memory: 6503 megabytes
-    Info: Processing ended: Thu Feb 12 19:43:18 2026
+    Info: Processing ended: Fri Feb 13 14:47:07 2026
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:09
 
@@ -1901,6 +1901,6 @@ Info: Quartus Prime Fitter was successful. 0 errors, 178 warnings
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.fit.smsg.
+The suppressed messages can be found in C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.fit.smsg.
 
 
