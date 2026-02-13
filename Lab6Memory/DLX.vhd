@@ -10,8 +10,7 @@ use work.opcode_package.all;
 			clk : in std_logic;
 
          --data memory ports
-         data : in std_logic_vector (31 downto 0);
-			we : in std_logic;
+         	data : in std_logic_vector (31 downto 0);
 			wr_addr : in std_logic_vector(4 downto 0 )
 
 		);
@@ -26,14 +25,21 @@ use work.opcode_package.all;
 		signal instruction_decode : std_logic_vector(31 downto 0);
 		signal instruction_execute : std_logic_vector(31 downto 0);
 		signal instruction_mem : std_logic_vector(31 downto 0);
+		signal instruction_wb : std_logic_vector(31 downto 0);
 		
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
 		
 		signal imm_extended : std_logic_vector(31 downto 0);
-      signal jump_addr : std_logic_vector(9 downto 0);
+      	signal jump_addr : std_logic_vector(9 downto 0);
 		signal sel_jump : std_logic;
 		signal alu_result : std_logic_vector(31 downto 0);
+		signal ram_data : std_logic_vector(31 downto 0);
+		--write enable signals
+		signal reg_we : std_logic;
+		signal ram_we : std_logic;
+
+
 	
 	begin
 	
@@ -58,7 +64,7 @@ use work.opcode_package.all;
 		instruction_out => instruction_execute,
 		pc_in => pc_decode,
 		pc_out => pc_execute,
-		we => we,
+		we => reg_we,
 		wr_addr => wr_addr,
       	q_1 => q_1,
       	q_2 => q_2,
@@ -78,18 +84,27 @@ use work.opcode_package.all;
 		instruction_out => instruction_mem,
 		alu_result => alu_result,
 		jump_addr => jump_addr,
-		sel_jump => sel_jump
+		sel_jump => sel_jump,
+		ram_we => ram_we
 	);
 	MEMORY: entity work.memory
 	port map
 	(
-
+		rst_l => rst_l,
+		clk => clk,
+		instruction_in => instruction_mem,
+		instruction_out => instruction_wb,
+		q_2 => q_2,
+		alu_result => alu_result,
+		ram_we => ram_we,
+		ram_data => ram_data,
+		alu_result_wb => alu_result
 	)
 
 	WB : entity work.write_back
 	port map
 	(
-		
+
 	)
 				
 	end Behavioral;

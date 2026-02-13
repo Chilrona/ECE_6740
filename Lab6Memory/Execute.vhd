@@ -19,7 +19,8 @@ use work.opcode_package.all;
 
             alu_result : out std_logic_vector(31 downto 0);
             jump_addr : out std_logic_vector(9 downto 0);
-		    sel_jump : out std_logic
+		    sel_jump : out std_logic;
+            ram_we : out std_logic;
 		);
 						
 	end entity execute;	
@@ -69,7 +70,8 @@ use work.opcode_package.all;
         opcode => instruction_in(31 downto 26),
         op1 => op1,
         op2 => op2,
-        alu_result => alu_result
+        alu_result => alu_result,
+        ram_we => ram_we
     );
 	 
 	 pass_along: process(clk, rst_l)
