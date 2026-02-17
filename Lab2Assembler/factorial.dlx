@@ -5,27 +5,45 @@ n   1   3
 f   1   1      
 
 .text
-    LW   R2, f(R0)     
+    LW   R2, f(R0)   
+    NOP
+    NOP 
+    NOP  
     LW   R1, n(R0)  
-    NOP 
     NOP
-    SUBI R1, R1, 1   
-
-top
-    NOP 
-    NOP
-    BEQZ R1, exit 
-    NOP 
-    NOP
-    ADDI R7, R2, 0 
-    ADDI R8, R1, 0 
-
-    JAL loop_multiply  
     NOP 
     NOP
     SUBI R1, R1, 1 
+    NOP
+    NOP 
+    NOP  
 
+top
+    NOP
+    NOP 
+    NOP
+    BEQZ R1, exit 
+    NOP
+    NOP 
+    NOP
+    ADDI R7, R2, 0 
+    NOP
+    NOP 
+    NOP
+    ADDI R8, R1, 0 
+    NOP
+    NOP 
+    NOP
+    JAL loop_multiply  
+    NOP
+    NOP 
+    NOP
+    SUBI R1, R1, 1 
+    NOP
+    NOP 
+    NOP
     J top
+    NOP
     NOP 
     NOP
 
@@ -36,18 +54,24 @@ top
 
 
 loop_multiply
-    ADD  R2, R2, R7   
+    ADD  R2, R2, R7  
+    NOP
+    NOP 
+    NOP 
     SUBI R8, R8, 1
+    NOP
     NOP 
     NOP
     BNEZ R8, loop_multiply
+    NOP
     NOP 
     NOP
 
 loopdone
     JR R31  
+    NOP
     NOP 
-    NOP         
+    NOP        
 
 
 exit
