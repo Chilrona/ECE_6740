@@ -20,7 +20,7 @@ end entity write_back;
 architecture Behavioral of write_back is
     begin
 
-    process(instruction_wb)
+    process(instruction_wb, ram_data, alu_result_wb)
     begin
         if instruction_wb(31 downto 26) = LW then
             reg_data <= ram_data;
