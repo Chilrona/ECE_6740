@@ -7,40 +7,109 @@ a	10	0 0 0 0 0 0 0 0 0 0
 
 	;R12 is loop counter
 	ADD		R12, R0, R0
+	NOP
+	NOP
+	NOP
 	
 m_loop	
 	LW		R5, m(R12)
+	NOP
+	NOP
+	NOP
 	ADD		R6, R5, R0
+	NOP
+	NOP
+	NOP
 	ADD		R1, R5, R0
+	NOP
+	NOP
+	NOP
 	ADD		R2, R6, R0
+	NOP
+	NOP
+	NOP
 	JAL		func
+	NOP
+	NOP
+	NOP
 	SW		a(R12), R1
+	NOP
+	NOP
+	NOP
 	ADDI	R12, R12, 1
+	NOP
+	NOP
+	NOP
 	SGEI	R13, R12, 10
+	NOP
+	NOP
+	NOP
 	BEQZ	R13, m_loop
+	NOP
+	NOP
+	NOP
 	
 done
 	J		done
+	NOP
+	NOP
+	NOP
 		
 func
 	;R7 is loop counter
 	;R8 is sum
 	ADDI	R7, R0, 0
+	NOP
+	NOP
+	NOP
 	ADDI	R8, R0, 0
+	NOP
+	NOP
+	NOP
 
 f_loop
 	ADDI	R9, R0, 0
+	NOP
+	NOP
+	NOP
 	SLTI	R9, R7, 32
+	NOP
+	NOP
+	NOP
 	BEQZ	R9, loop_done
+	NOP
+	NOP
+	NOP
 	ANDI	R10, R2, 1
+	NOP
+	NOP
+	NOP
 	BEQZ	R10, if_done
+	NOP
+	NOP
+	NOP
 	ADDI	R8, R8, 1
+	NOP
+	NOP
+	NOP
 	
 if_done
 	SLLI	R1, R1, 1
+	NOP
+	NOP
+	NOP
 	SRLI	R2, R2, 1
+	NOP
+	NOP
+	NOP
 	J		f_loop
+	NOP
+	NOP
+	NOP
 	
 loop_done
 	JR		R31
+	NOP
+	NOP
+	NOP
 	
