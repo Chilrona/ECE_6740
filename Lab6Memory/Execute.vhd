@@ -15,7 +15,7 @@ use work.opcode_package.all;
             pc_in : in std_logic_vector(9 downto 0);
 			 
             instruction_in : in std_logic_vector(31 downto 0);
-				instruction_out : out std_logic_vector(31 downto 0);
+				instruction_out : out std_logic_vector(31 downto 0) := (others=>'0');
 
             alu_result : out std_logic_vector(31 downto 0);
             jump_addr : out std_logic_vector(9 downto 0);

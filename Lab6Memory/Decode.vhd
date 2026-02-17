@@ -13,10 +13,10 @@ use work.opcode_package.all;
 			wr_addr : in std_logic_vector(4 downto 0);
 
 			instruction_in : in std_logic_vector(31 downto 0);
-			instruction_out : out std_logic_vector(31 downto 0);
+			instruction_out : out std_logic_vector(31 downto 0) := (others=>'0') ;
 
 			pc_in : in std_logic_vector(9 downto 0);
-			pc_out : out std_logic_vector(9 downto 0);
+			pc_out : out std_logic_vector(9 downto 0) := (others=>'0');
 
         	q_1 : out std_logic_vector (31 DOWNTO 0);
         	q_2 : out std_logic_vector(31 downto 0);

@@ -10,14 +10,14 @@ port
     clk : in std_logic;
 
     instruction_in : in std_logic_vector(31 downto 0);
-    instruction_out : out std_logic_vector(31 downto 0);
+    instruction_out : out std_logic_vector(31 downto 0) := (others=>'0');
 
     q_2 : in std_logic_vector(31 downto 0);
     alu_result : in std_logic_vector(31 downto 0);
     ram_we : in std_logic;
 
     ram_data : out std_logic_vector(31 downto 0);
-    alu_result_wb : out std_logic_vector(31 downto 0)
+    alu_result_wb : out std_logic_vector(31 downto 0) :=(others=>'0')
 );
 
 end entity memory;
@@ -39,8 +39,10 @@ pass_along: process(clk, rst_l)
 	 begin
 		if rst_l = '0' then
 			instruction_out <= (others=>'0');
+			alu_result_wb <= (others=>'0');
 		elsif rising_edge(clk) then
 			instruction_out <= instruction_in;
+			alu_result_wb <= alu_result;
 		end if;
 	end process;
 end Behavioral;

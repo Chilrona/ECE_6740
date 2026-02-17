@@ -86,6 +86,7 @@ package opcode_package is
     -------------------------------------------------------------
     function is_signed_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
     function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
+	 function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean;
 
 end package opcode_package;
 
