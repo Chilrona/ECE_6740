@@ -7,22 +7,27 @@ f   1   1
 .text
     LW   R2, f(R0)     
     LW   R1, n(R0)  
+    NOP 
+    NOP
     SUBI R1, R1, 1   
 
 top
+    NOP 
+    NOP
     BEQZ R1, exit 
-
+    NOP 
+    NOP
     ADDI R7, R2, 0 
     ADDI R8, R1, 0 
 
-    XORI R2, R2, 0 
-
     JAL loop_multiply  
-
+    NOP 
+    NOP
     SUBI R1, R1, 1 
 
     J top
-
+    NOP 
+    NOP
 
 ; R7 = old total
 ; R8 = loop counter (i)
@@ -33,10 +38,16 @@ top
 loop_multiply
     ADD  R2, R2, R7   
     SUBI R8, R8, 1
+    NOP 
+    NOP
     BNEZ R8, loop_multiply
+    NOP 
+    NOP
 
 loopdone
-    JR R31           
+    JR R31  
+    NOP 
+    NOP         
 
 
 exit
