@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Feb 17 16:47:42 2026
+Tue Feb 17 17:00:15 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -17,8 +17,8 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated
- 13. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated
+ 12. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated
+ 13. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated
  14. Parameter Settings for User Entity Instance: fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component
  15. Parameter Settings for User Entity Instance: memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component
  16. altsyncram Parameter Settings by Entity Instance
@@ -51,7 +51,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 17 16:47:42 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 17 17:00:15 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -201,10 +201,10 @@ on the Quartus Prime software download page.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altrom.inc                     ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altram.inc                     ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
-; db/altsyncram_a6r3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf ;         ;
-; code1.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/code1.mif              ;         ;
-; db/altsyncram_v9r3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf ;         ;
-; data1.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/data1.mif              ;         ;
+; db/altsyncram_d5s3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf ;         ;
+; factorial_code.mif               ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/factorial_code.mif     ;         ;
+; db/altsyncram_29s3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf ;         ;
+; factorial_data.mif               ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/factorial_data.mif     ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
@@ -361,7 +361,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +-------------------------------------------------------------------------------------------------------------+
-; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated ;
+; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                            ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
@@ -370,7 +370,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated ;
+; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -421,7 +421,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; INIT_FILE                          ; code1.mif            ; Untyped                                ;
+; INIT_FILE                          ; factorial_code.mif   ; Untyped                                ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                         ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
@@ -434,7 +434,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                         ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_a6r3      ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_d5s3      ; Untyped                                ;
 +------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -482,7 +482,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
-; INIT_FILE                          ; data1.mif            ; Untyped                                   ;
+; INIT_FILE                          ; factorial_data.mif   ; Untyped                                   ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                            ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
@@ -495,7 +495,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_v9r3      ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_29s3      ; Untyped                                   ;
 +------------------------------------+----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -558,7 +558,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Feb 17 16:47:37 2026
+    Info: Processing started: Tue Feb 17 17:00:09 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -637,7 +637,7 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "code1.mif"
+    Info (12134): Parameter "init_file" = "factorial_code.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -667,11 +667,9 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a6r3.tdf
-    Info (12023): Found entity 1: altsyncram_a6r3 File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_a6r3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 968 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/code1.mif Line: 1
-    Warning (113027): Addresses ranging from 56 to 1023 are not initialized File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/code1.mif Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5s3.tdf
+    Info (12023): Found entity 1: altsyncram_d5s3 File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_d5s3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.vhd Line: 59
 Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/Decode.vhd Line: 32
 Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/Decode.vhd Line: 45
@@ -708,7 +706,7 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "data1.mif"
+    Info (12134): Parameter "init_file" = "factorial_data.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -738,78 +736,76 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v9r3.tdf
-    Info (12023): Found entity 1: altsyncram_v9r3 File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_v9r3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 1022 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/data1.mif Line: 1
-    Warning (113027): Addresses ranging from 2 to 1023 are not initialized File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/data1.mif Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_29s3.tdf
+    Info (12023): Found entity 1: altsyncram_29s3 File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_29s3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX.vhd Line: 106
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[0]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 37
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[1]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 61
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[2]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 85
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[3]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 109
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[4]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 133
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[5]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 157
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[6]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 181
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[7]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 205
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[8]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 229
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[9]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 253
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[10]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 277
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[11]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 301
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[12]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 325
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[13]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 349
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[14]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 373
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[15]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 397
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[16]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 421
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[17]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 445
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[18]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 469
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[19]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 493
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[20]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 517
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[21]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 541
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[22]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 565
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[23]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 589
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[24]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 613
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[25]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 637
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[26]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 661
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[27]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 685
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[28]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 709
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[29]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 733
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[30]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 757
-        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_v9r3:auto_generated|q_a[31]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_v9r3.tdf Line: 781
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[0]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 35
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[1]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 57
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[2]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 79
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[3]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 101
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[4]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 123
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[5]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 145
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[6]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 167
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[7]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 189
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[8]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 211
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[9]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 233
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[10]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 255
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[11]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 277
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[12]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 299
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[13]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 321
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[14]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 343
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[15]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 365
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[16]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 387
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[17]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 409
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[18]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 431
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[19]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 453
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[20]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 475
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[21]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 497
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[22]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 519
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[23]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 541
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[24]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 563
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[25]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 585
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[26]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 607
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[27]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 629
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[28]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 651
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[29]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 673
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[30]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 695
-        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_a6r3:auto_generated|q_a[31]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_a6r3.tdf Line: 717
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[0]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 37
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[1]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 61
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[2]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 85
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[3]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 109
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[4]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 133
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[5]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 157
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[6]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 181
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[7]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 205
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[8]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 229
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[9]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 253
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[10]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 277
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[11]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 301
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[12]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 325
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[13]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 349
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[14]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 373
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[15]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 397
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[16]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 421
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[17]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 445
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[18]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 469
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[19]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 493
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[20]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 517
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[21]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 541
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[22]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 565
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[23]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 589
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[24]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 613
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[25]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 637
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[26]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 661
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[27]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 685
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[28]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 709
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[29]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 733
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[30]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 757
+        Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[31]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_29s3.tdf Line: 781
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[0]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 35
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[1]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 57
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[2]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 79
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[3]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 101
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[4]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 123
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[5]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 145
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[6]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 167
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[7]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 189
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[8]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 211
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[9]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 233
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[10]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 255
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[11]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 277
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[12]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 299
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[13]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 321
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[14]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 343
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[15]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 365
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[16]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 387
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[17]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 409
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[18]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 431
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[19]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 453
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[20]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 475
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[21]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 497
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[22]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 519
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[23]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 541
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[24]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 563
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[25]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 585
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[26]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 607
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[27]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 629
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[28]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 651
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[29]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 673
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[30]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 695
+        Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[31]" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/db/altsyncram_d5s3.tdf Line: 717
 Info (17049): 225 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -819,9 +815,9 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
     Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Tue Feb 17 16:47:43 2026
+    Info: Processing ended: Tue Feb 17 17:00:15 2026
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
