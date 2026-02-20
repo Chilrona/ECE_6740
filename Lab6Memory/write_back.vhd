@@ -19,21 +19,13 @@ end entity write_back;
 
 architecture Behavioral of write_back is
     begin
-
-    -- process(instruction_wb)
-	 
-	--  variable reg_data_var : std_logic_vector(31 downto 0):=(others=>'0');
-	 
     process(instruction_wb, ram_data, alu_result_wb)
     begin
         if instruction_wb(31 downto 26) = LW then
-           -- reg_data_var := ram_data;
            reg_data <= ram_data;
         else
-            --reg_data_var := alu_result_wb;
             reg_data <= alu_result_wb;
         end if;
-		  --reg_data <= reg_data_var;
 
         if (is_n_wb(instruction_wb(31 downto 26))) then
             reg_we <= '0';
