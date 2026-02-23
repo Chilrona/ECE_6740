@@ -1,0 +1,20 @@
+.data
+a		4	0 0 0 0
+b		4	1 2 3 4
+
+.text
+	ADDUI	R11, R0, 0
+	ADDUI	R12, R0, 3
+	ADDUI	R13, R0, 1
+loop
+	SGEUI	R15, R11, 4
+	BNEZ		R15, done
+	ADDU		R13, R13, R12
+	ADDUI	R12, R12, 2
+	SW		a(R11), R11
+	SW		b(R11), R12
+	ADDUI	R11, R11, 1
+	J		loop
+done
+	J		done
+
