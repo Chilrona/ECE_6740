@@ -18,6 +18,7 @@ use work.opcode_package.all;
             instruction_in_wb : in std_logic_vector(31 downto 0);
             alu_result_wb : in std_logic_vector(31 downto 0);
             tag_for_flush : in std_logic;
+				stall : in std_logic;
 
 				instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0');
             alu_result : buffer std_logic_vector(31 downto 0);
@@ -33,8 +34,13 @@ use work.opcode_package.all;
 	
     signal op1 : std_logic_vector(31 downto 0):= (others => '0');
     signal op2 : std_logic_vector(31 downto 0) := (others => '0');
+	 signal instruction_in_1 : std_logic_vector(31 downto 0);
+
 
 	begin
+	
+	instruction_in_1 <= (others=>'0') when (tag_for_flush = '1' or stall = '1') else instruction_in;
+	
         
 	MUX1 : entity work.PC_mux
     port map
@@ -67,14 +73,13 @@ use work.opcode_package.all;
     ZEROS: entity work.zeros 
 	port map
 	(
-		rst_l => rst_l,
-		clk => clk,
-        jump_addr =>jump_addr,
-		sel_jump => sel_jump,
-        q_1 => q_1,
-        op2 => op2,
-        instruction_execute => instruction_in,
-        tag_for_flush => tag_for_flush
+			rst_l => rst_l,
+			clk => clk,
+			jump_addr =>branch_addr,
+			sel_jump => take_branch,
+			q_1 => q_1,
+			op2 => op2,
+			instruction_execute => instruction_in
 	);
 
 	ALU: entity work.ALU
@@ -86,8 +91,7 @@ use work.opcode_package.all;
         op1 => op1,
         op2 => op2,
         alu_result => alu_result,
-        ram_we => ram_we,
-        tag_for_flush=>tag_for_flush
+        ram_we => ram_we
     );
 	 
 	 pass_along: process(clk, rst_l)
@@ -96,11 +100,10 @@ use work.opcode_package.all;
 			instruction_out <= (others=>'0');
             q_2_out <= (others=>'0');
 		elsif rising_edge(clk) then
-			instruction_out <= instruction_in;
+				instruction_out <= instruction_in;
             q_2_out <= q_2;
 		end if;
 	end process;
-				
 	end Behavioral;
 	
 						

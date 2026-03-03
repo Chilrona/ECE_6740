@@ -26,7 +26,7 @@ entity imm_mux is
 
     architecture behavioral of imm_mux is 
     begin
-        process(imm_ex, q_2)
+        process(imm_ex, q_2, opcode, rd_mem, RS2, alu_result, rd_wb, alu_result_wb)
 		  begin
             if is_imm(opcode) then
                 op2 <= imm_ex;

@@ -12,9 +12,7 @@ use work.opcode_package.all;
 			op1 : in std_logic_vector (31 downto 0);
          	op2 : in std_logic_vector (31 downto 0);
          	alu_result : out std_logic_vector (31 downto 0);
-			ram_we : out std_logic;
-			tag_for_flush : in std_logic
-			
+			ram_we : out std_logic			
 		);
 						
 	end entity ALU;	
@@ -27,10 +25,6 @@ use work.opcode_package.all;
         if rst_l = '0' then
             alu_result <= (others => '0');
         elsif rising_edge(clk) then
-			if(tag_for_flush='1') then
-                alu_result <= (others => '0');
-                ram_we <= '0';
-            else
 				case opcode is
 				when NOP =>
 						alu_result <= (others => '0');
@@ -178,7 +172,6 @@ use work.opcode_package.all;
 				else
 					ram_we <= '0';
 				end if;
-			end if;
         end if;
     end process;
 	

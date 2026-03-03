@@ -27,7 +27,7 @@ entity PC_mux is
 
     architecture behavioral of PC_mux is 
     begin
-        process(pc, q_1)
+        process(pc, q_1, opcode, rd_mem, RS1, alu_result, rd_wb, alu_result_wb)
 		  begin
             if opcode = JAL or opcode = JALR then
                 op1 <= std_logic_vector(resize(unsigned(pc), 32));

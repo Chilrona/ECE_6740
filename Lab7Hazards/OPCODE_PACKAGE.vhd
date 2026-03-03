@@ -160,7 +160,7 @@ package body opcode_package is
     begin
         return  (opcode = ADD)   or
                 (opcode = ADDU)  or
-                (opcode = SUB) or
+                (opcode = SUB_OP) or
                 (opcode = SUBU) or
                 (opcode = AND_OP) or
                 (opcode = OR_OP) or

@@ -6,7 +6,6 @@ use work.opcode_package.all;
 entity OVERSEER is
     port 
     (
-        rst_l : in std_logic;
         clk : in std_logic;
 
         instruction_decode : in std_logic_vector(31 downto 0);
@@ -37,7 +36,7 @@ begin
             flush_decode <= '1';
             flush_execute <= '1';
             take_jump <= '0';
-            jump_addr <= (others<='0');
+            jump_addr <= (others=>'0');
         
         elsif (instruction_decode(31 downto 26) = J) or (instruction_decode(31 downto 26) = JAL) then
             flush_fetch <= '1';
@@ -55,7 +54,7 @@ begin
         end if;
     end process;
 
-    Stall: process(instruction_execute, instruction_wb)
+    Stall_process: process(instruction_execute, instruction_wb)
     begin
         if (instruction_wb(25 downto 21) = instruction_execute(20 downto 16) and not (is_not_data_hazard_1(instruction_execute(31 downto 26)))) then
             stall <= '1';
