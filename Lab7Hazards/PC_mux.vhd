@@ -6,12 +6,21 @@ use work.opcode_package.all;
 entity PC_mux is
 		port 
 		(
-            opcode : in std_logic_vector(5 downto 0);    
+            --used for checking data hazards
+            opcode : in std_logic_vector(5 downto 0);
+            rd_mem : in std_logic_vector(4 downto 0); 
+            rd_wb : in std_logic_vector(4 downto 0);
+            RS1 : in std_logic_vector(4 downto 0);
+            
+            
             pc : in std_logic_vector(9 downto 0);
             q_1 : in std_logic_vector(31 downto 0);
+
+            --alu_result
+            alu_result_wb : in std_logic_vector(31 downto 0);
+            alu_result : in std_logic_vector(31 downto 0);
+
             op1 : out std_logic_vector(31 downto 0)
-				--add the ALU result coming out of execute as one of the mux inputs
-				--add something other stuff but IDK what 
 		);
 						
 	end entity PC_mux;	

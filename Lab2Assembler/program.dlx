@@ -8,8 +8,8 @@ b		4	1 2 3 4
 	ADDUI	R13, R0, 1
 loop
 	SGEUI	R15, R11, 4
-	BNEZ		R15, done
-	ADDU		R13, R13, R12
+	BNEZ	R15, done
+	ADDU	R13, R13, R12
 	ADDUI	R12, R12, 2
 	SW		a(R11), R11
 	SW		b(R11), R12

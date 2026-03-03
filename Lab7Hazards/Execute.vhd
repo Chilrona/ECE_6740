@@ -15,12 +15,16 @@ use work.opcode_package.all;
             pc_in : in std_logic_vector(9 downto 0);
 			 
             instruction_in : in std_logic_vector(31 downto 0);
-				instruction_out : out std_logic_vector(31 downto 0) := (others=>'0');
+            instruction_in_wb : in std_logic_vector(31 downto 0);
+            alu_result_wb : in std_logic_vector(31 downto 0);
+            tag_for_flush : in std_logic;
 
+			instruction_out : out std_logic_vector(31 downto 0) := (others=>'0');
             alu_result : out std_logic_vector(31 downto 0);
-            jump_addr : out std_logic_vector(9 downto 0);
-				sel_jump : out std_logic;
-            ram_we : out std_logic
+            branch_addr : out std_logic_vector(9 downto 0);
+			take_branch : out std_logic;
+            ram_we : out std_logic;
+            q_2_out : out std_logic_vector(31 downto 0)
 		);
 						
 	end entity execute;	
@@ -35,7 +39,12 @@ use work.opcode_package.all;
 	MUX1 : entity work.PC_mux
     port map
     (
-        opcode => instruction_in(31 downto 26),   
+        opcode => instruction_in(31 downto 26), 
+        rd_mem => instruction_out(25 downto 21),
+        rd_wb => instruction_in_wb(25 downto 21),
+        RS1 => instruction_in(20 downto 16), 
+        alu_result_wb => alu_result_wb,
+        alu-result => alu_result,
         pc => pc_in,
         q_1 => q_1,
         op1 => op1
@@ -78,8 +87,10 @@ use work.opcode_package.all;
 	 begin
 		if rst_l = '0' then
 			instruction_out <= (others=>'0');
+            q_2_out <= (others=>'0');
 		elsif rising_edge(clk) then
 			instruction_out <= instruction_in;
+            q_2_out <= q_2;
 		end if;
 	end process;
 				

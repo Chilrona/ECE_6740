@@ -23,10 +23,11 @@ use work.opcode_package.all;
 		signal instruction_wb : std_logic_vector(31 downto 0);
 		
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+		signal q_2_mem : std_logic_vector(31 downto 0) := (others=>'0');
 		
 		signal imm_extended : std_logic_vector(31 downto 0);
-      signal jump_addr : std_logic_vector(9 downto 0);
+      	signal jump_addr : std_logic_vector(9 downto 0);
 		signal sel_jump : std_logic;
 		signal jump_addr1 : std_logic_vector(9 downto 0);
 		signal sel_jump1 : std_logic;
@@ -42,6 +43,7 @@ use work.opcode_package.all;
 		--write enable signals
 		signal reg_we : std_logic;
 		signal ram_we : std_logic;
+		signal tag_for_flush : std_logic;
 
 
 	
@@ -85,11 +87,15 @@ use work.opcode_package.all;
 		imm_extended => imm_extended,
 		pc_in => pc_execute,
 		instruction_in => instruction_execute,
+		instruction_in_wb => instruction_wb,
+		alu_result_wb => alu_result_wb,
+		tag_for_flush => tag_for_flush,
 		instruction_out => instruction_mem,
 		alu_result => alu_result,
-		jump_addr => jump_addr,
-		sel_jump => sel_jump,
-		ram_we => ram_we
+		branch_addr => jump_addr,
+		take_branch => sel_jump,
+		ram_we => ram_we,
+		q_2_out => q_2_mem
 	);
 	MEMORY: entity work.memory
 	port map
@@ -98,7 +104,7 @@ use work.opcode_package.all;
 		clk => clk,
 		instruction_in => instruction_mem,
 		instruction_out => instruction_wb,
-		q_2 => q_2,
+		q_2 => q_2_mem,
 		alu_result => alu_result,
 		ram_we => ram_we,
 		ram_data => ram_data,
@@ -126,7 +132,7 @@ use work.opcode_package.all;
 			pc_decode=> pc_decode,
 			instruction_decode => instruction_decode
     );
-    end entity Branch_guess;
+    --end entity Branch_guess;
 	 
 	 process(sel_jump, sel_jump1, jump_addr, jump_addr1)
 	 begin
