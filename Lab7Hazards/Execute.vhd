@@ -19,10 +19,10 @@ use work.opcode_package.all;
             alu_result_wb : in std_logic_vector(31 downto 0);
             tag_for_flush : in std_logic;
 
-			instruction_out : out std_logic_vector(31 downto 0) := (others=>'0');
-            alu_result : out std_logic_vector(31 downto 0);
+				instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0');
+            alu_result : buffer std_logic_vector(31 downto 0);
             branch_addr : out std_logic_vector(9 downto 0);
-			take_branch : out std_logic;
+				take_branch : out std_logic;
             ram_we : out std_logic;
             q_2_out : out std_logic_vector(31 downto 0)
 		);
