@@ -35,8 +35,11 @@ entity Zeros is
             jump_addr <= (others => '0');
             sel_jump <= '0';
         elsif rising_edge(clk) then
-            --check for Branch
-            if  ((opcode = BEQZ) and (to_integer(unsigned(q_1)) = 0)) then
+            --check for Branch or a JR/JALR
+            if ((opcode =  JR) or (opcode = JALR)) then
+                jump_addr <= op2(9 downto 0);
+                sel_jump <= '1';
+            elsif  ((opcode = BEQZ) and (to_integer(unsigned(q_1)) = 0)) then
                 jump_addr <= op2(9 downto 0);
                 sel_jump <= '1';
             elsif ((opcode = BNEZ) and (to_integer(unsigned(q_1)) /= 0)) then

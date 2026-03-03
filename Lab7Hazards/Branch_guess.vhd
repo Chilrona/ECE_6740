@@ -34,8 +34,8 @@ entity Branch_guess is
             jump_addr <= (others => '0');
             sel_jump <= '0';
         elsif rising_edge(clk) then
-            --check for Jump or Branch
-            if ((opcode = J) or (opcode =  JR) or (opcode = JAL)or (opcode = JALR)) then
+            --check for Jump 
+            if ((opcode = J) or (opcode = JAL)) then
                 jump_addr <= pc_decode(9 downto 0);
                 sel_jump <= '1';
             --if not Jump then set sel_jump = 0
