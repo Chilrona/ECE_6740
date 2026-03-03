@@ -132,16 +132,6 @@ use work.opcode_package.all;
 			pc_decode=> pc_decode,
 			instruction_decode => instruction_decode
     );
-    --end entity Branch_guess;
-	 
-	 process(sel_jump, sel_jump1, jump_addr, jump_addr1)
-	 begin
-		if(sel_jump = '1') then
-			
-		else
-		
-		end if;
-	 
-	 end process;
+    
 				
 	end Behavioral;
