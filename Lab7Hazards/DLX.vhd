@@ -23,11 +23,13 @@ use work.opcode_package.all;
 		signal instruction_wb : std_logic_vector(31 downto 0);
 		
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
 		
 		signal imm_extended : std_logic_vector(31 downto 0);
-      	signal jump_addr : std_logic_vector(9 downto 0);
+      signal jump_addr : std_logic_vector(9 downto 0);
 		signal sel_jump : std_logic;
+		signal jump_addr1 : std_logic_vector(9 downto 0);
+		signal sel_jump1 : std_logic;
 		
 		signal alu_result : std_logic_vector(31 downto 0);
 		signal alu_result_wb : std_logic_vector(31 downto 0);
@@ -113,5 +115,27 @@ use work.opcode_package.all;
         reg_data => reg_data,
         reg_we => reg_we
 	);
+	
+	BG : entity work.Branch_guess 
+    port map
+    (
+			rst_l => rst_l,
+			clk => clk,
+			jump_addr1 =>jump_addr1,
+			sel_jump1 => sel_jump1, 
+			pc_decode=> pc_decode,
+			instruction_decode => instruction_decode
+    );
+    end entity Branch_guess;
+	 
+	 process(sel_jump, sel_jump1, jump_addr, jump_addr1)
+	 begin
+		if(sel_jump = '1') then
+			
+		else
+		
+		end if;
+	 
+	 end process;
 				
 	end Behavioral;
