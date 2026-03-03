@@ -73,7 +73,8 @@ use work.opcode_package.all;
 		sel_jump => sel_jump,
         q_1 => q_1,
         op2 => op2,
-        instruction_execute => instruction_in
+        instruction_execute => instruction_in,
+        tag_for_flush => tag_for_flush
 	);
 
 	ALU: entity work.ALU
@@ -85,7 +86,8 @@ use work.opcode_package.all;
         op1 => op1,
         op2 => op2,
         alu_result => alu_result,
-        ram_we => ram_we
+        ram_we => ram_we,
+        tag_for_flush=>tag_for_flush
     );
 	 
 	 pass_along: process(clk, rst_l)
