@@ -152,7 +152,7 @@ package body opcode_package is
                 (opcode = J)  or
                 (opcode = JR) or
                 (opcode = JAL) or
-                (opcode = JALR)    or
+                (opcode = JALR);
     end function;
 
     --Is included in the second data hazard opcode types

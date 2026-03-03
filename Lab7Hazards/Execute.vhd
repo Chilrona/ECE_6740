@@ -44,7 +44,7 @@ use work.opcode_package.all;
         rd_wb => instruction_in_wb(25 downto 21),
         RS1 => instruction_in(20 downto 16), 
         alu_result_wb => alu_result_wb,
-        alu-result => alu_result,
+        alu_result => alu_result,
         pc => pc_in,
         q_1 => q_1,
         op1 => op1
