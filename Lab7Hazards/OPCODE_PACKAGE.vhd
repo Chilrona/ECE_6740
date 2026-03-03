@@ -86,7 +86,9 @@ package opcode_package is
     -------------------------------------------------------------
     function is_signed_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
     function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
-	 function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean;
+	function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean;
+    function is_not_data_hazard_1(opcode : std_logic_vector(5 downto 0)) return boolean;
+    function is_register_register(opcode : std_logic_vector(5 downto 0)) return boolean;
 
 end package opcode_package;
 
@@ -133,7 +135,7 @@ package body opcode_package is
                 (opcode = SW);
     end function;
 	 
-	 function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean is
+	function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean is
     begin
         return  (opcode = SW)   or
                 (opcode = NOP)  or
@@ -142,5 +144,41 @@ package body opcode_package is
                 (opcode = J)    or
                 (opcode = JR);
     end function;
+
+    --Is not included in the first data hazard opcode types
+    function is_not_data_hazard_1(opcode : std_logic_vector(5 downto 0)) return boolean is
+    begin
+        return  (opcode = NOP)   or
+                (opcode = J)  or
+                (opcode = JR) or
+                (opcode = JAL) or
+                (opcode = JALR)    or
+    end function;
+
+    --Is included in the second data hazard opcode types
+    function is_register_register(opcode : std_logic_vector(5 downto 0)) return boolean is
+    begin
+        return  (opcode = ADD)   or
+                (opcode = ADDU)  or
+                (opcode = SUB) or
+                (opcode = SUBU) or
+                (opcode = AND_OP) or
+                (opcode = OR_OP) or
+                (opcode = XOR_OP) or
+                (opcode = SLL_OP) or
+                (opcode = SRL_OP) or
+                (opcode = SRA_OP) or
+                (opcode = SLT) or
+                (opcode = SLTU) or
+                (opcode = SGT) or
+                (opcode = SGTU) or
+                (opcode = SLE) or
+                (opcode = SLEU) or
+                (opcode = SGE) or
+                (opcode = SGEU) or
+                (opcode = SEQ) or
+                (opcode = SNE);
+    end function;
+    
 	 
 end package body opcode_package;

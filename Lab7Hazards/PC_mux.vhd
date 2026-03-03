@@ -31,8 +31,11 @@ entity PC_mux is
 		  begin
             if opcode = JAL or opcode = JALR then
                 op1 <= std_logic_vector(resize(unsigned(pc), 32));
+            elsif (rd_mem = RS1) and not(is_not_data_hazard_1(opcode)) then
+                op1 <= alu_result;
+            elsif (rd_wb = RS1) and not(is_not_data_hazard_1(opcode)) then
+                op1 <= alu_result_wb;
             else
-				--need to add an if statement for checking data hazards
                 op1 <= q_1;
             end if;
         end process;

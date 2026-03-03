@@ -54,6 +54,11 @@ use work.opcode_package.all;
     port map
     (
         opcode => instruction_in(31 downto 26), 
+        rd_mem => instruction_out(25 downto 21),
+        rd_wb => instruction_in_wb(25 downto 21),
+        RS2 => instruction_in(15 downto 11),
+        alu_result_wb => alu_result_wb,
+        alu_result => alu_result,
         imm_ex => imm_extended,
         q_2 => q_2,
         op2 => op2
