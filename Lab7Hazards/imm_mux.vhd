@@ -6,12 +6,17 @@ use work.opcode_package.all;
 entity imm_mux is
 		port 
 		(
+            --used for checking data hazards
             opcode : in std_logic_vector(5 downto 0);
             rd_mem : in std_logic_vector(4 downto 0);
             rd_wb : in std_logic_vector(4 downto 0);
             RS2 : in std_logic_vector(4 downto 0);
+
+            --alu_result
             alu_result_wb : in std_logic_vector(31 downto 0);
             alu_result : in std_logic_vector(31 downto 0); 
+
+            
             imm_ex : in std_logic_vector(31 downto 0);
             q_2 : in std_logic_vector(31 downto 0);
             op2 : out std_logic_vector(31 downto 0)
