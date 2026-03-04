@@ -39,13 +39,14 @@ use work.opcode_package.all;
 		clock	=> clk,
 		q	=> rom_instruction
 	);
-		std_pc <= pc;
 		
-        add_out <= std_logic_vector(unsigned(std_pc) + 1);
+      add_out <= std_logic_vector(unsigned(std_pc) + 1);
 
-        next_pc <= ((9 downto 0 => sel_jump) and jump_addr)or((9 downto 0=>not(sel_jump)) and add_out);
+		next_pc <= jump_addr when sel_jump = '1' else add_out;
 
 		instruction <= (others => '0') when tag_for_flush_1d = '1' else rom_instruction;
+		std_pc <= pc when stall = '0' else std_logic_vector(unsigned(pc) - 1);
+		
 
         process(clk, rst_l)
         begin 

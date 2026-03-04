@@ -16,7 +16,7 @@ use work.opcode_package.all;
 			 
             instruction_in : in std_logic_vector(31 downto 0);
             instruction_in_wb : in std_logic_vector(31 downto 0);
-            alu_result_wb : in std_logic_vector(31 downto 0);
+            reg_data : in std_logic_vector(31 downto 0);
             tag_for_flush : in std_logic;
 
 			instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0');
@@ -44,25 +44,30 @@ use work.opcode_package.all;
 	MUX1 : entity work.PC_mux
     port map
     (
-        opcode => instruction_in(31 downto 26), 
+		  opcode_exe => instruction_in_1(31 downto 26),
+		  opcode_mem => instruction_out(31 downto 26),
+		  opcode_wb => instruction_in_wb(31 downto 26),
         rd_mem => instruction_out(25 downto 21),
         rd_wb => instruction_in_wb(25 downto 21),
-        RS1 => instruction_in(20 downto 16), 
-        alu_result_wb => alu_result_wb,
+        RS1 => instruction_in_1(20 downto 16), 
+        reg_data => reg_data,
         alu_result => alu_result,
         pc => pc_in,
         q_1 => q_1,
         op1 => op1
     );
+	 
 
     MUX2 : entity work.imm_mux
     port map
     (
-        opcode => instruction_in(31 downto 26), 
+        opcode_exe => instruction_in_1(31 downto 26),
+		  opcode_mem => instruction_out(31 downto 26),
+		  opcode_wb => instruction_in_wb(31 downto 26), 
         rd_mem => instruction_out(25 downto 21),
         rd_wb => instruction_in_wb(25 downto 21),
-        RS2 => instruction_in(15 downto 11),
-        alu_result_wb => alu_result_wb,
+        RS2 => instruction_in_1(15 downto 11),
+        reg_data => reg_data,
         alu_result => alu_result,
         imm_ex => imm_extended,
         q_2 => q_2,
@@ -76,9 +81,9 @@ use work.opcode_package.all;
 			clk => clk,
 			jump_addr =>branch_addr,
 			sel_jump => take_branch,
-			q_1 => q_1,
+			op1 => op1,
 			op2 => op2,
-			instruction_execute => instruction_in
+			instruction_execute => instruction_in_1
 	);
 
 	ALU: entity work.ALU
@@ -86,7 +91,7 @@ use work.opcode_package.all;
     (
         rst_l => rst_l,
         clk => clk,
-        opcode => instruction_in(31 downto 26),
+        opcode => instruction_in_1(31 downto 26),
         op1 => op1,
         op2 => op2,
         alu_result => alu_result,
@@ -99,7 +104,7 @@ use work.opcode_package.all;
 			instruction_out <= (others=>'0');
             q_2_out <= (others=>'0');
 		elsif rising_edge(clk) then
-				instruction_out <= instruction_in;
+				instruction_out <= instruction_in_1;
             q_2_out <= q_2;
 		end if;
 	end process;

@@ -88,6 +88,7 @@ package opcode_package is
     function is_imm(opcode : std_logic_vector(5 downto 0)) return boolean;
 	function is_n_wb(opcode : std_logic_vector(5 downto 0)) return boolean;
     function is_not_data_hazard_1(opcode : std_logic_vector(5 downto 0)) return boolean;
+	 function has_no_dest_reg(opcode : std_logic_vector(5 downto 0)) return boolean;
     function is_register_register(opcode : std_logic_vector(5 downto 0)) return boolean;
 
 end package opcode_package;
@@ -153,6 +154,14 @@ package body opcode_package is
                 (opcode = JR) or
                 (opcode = JAL) or
                 (opcode = JALR);
+    end function;
+	 
+	 function has_no_dest_reg(opcode : std_logic_vector(5 downto 0)) return boolean is
+	 begin
+		return 	 (opcode = NOP)   or
+                (opcode = J)  or
+                (opcode = JR) or
+                (opcode = SW);
     end function;
 
     --Is included in the second data hazard opcode types

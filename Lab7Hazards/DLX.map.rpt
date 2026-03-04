@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar  3 14:06:28 2026
+Tue Mar  3 23:52:16 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -22,10 +22,9 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  14. Parameter Settings for User Entity Instance: fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component
  15. Parameter Settings for User Entity Instance: memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component
  16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "execute:EXECUTE"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -52,7 +51,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar  3 14:06:28 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar  3 23:52:16 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -274,111 +273,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; execute:EXECUTE|ALU:ALU|ram_we                   ; Lost fanout        ;
 ; execute:EXECUTE|ALU:ALU|alu_result[0..31]        ; Lost fanout        ;
 ; execute:EXECUTE|Zeros:ZEROS|sel_jump             ; Lost fanout        ;
+; execute:EXECUTE|Zeros:ZEROS|jump_addr[0..9]      ; Lost fanout        ;
 ; decode:DECODE|pc_out[0..9]                       ; Lost fanout        ;
 ; decode:DECODE|instruction_out[11..31]            ; Lost fanout        ;
 ; decode:DECODE|sign_extend:SE|imm_extended[0..31] ; Lost fanout        ;
 ; decode:DECODE|registers:R|q_2[0..31]             ; Lost fanout        ;
 ; decode:DECODE|registers:R|q_1[0..31]             ; Lost fanout        ;
-; fetch:FETCH|pc[0..9]                             ; Lost fanout        ;
 ; fetch:FETCH|tag_for_flush_1d                     ; Lost fanout        ;
-; Total Number of Removed Registers = 258          ;                    ;
+; fetch:FETCH|pc[0..9]                             ; Lost fanout        ;
+; Total Number of Removed Registers = 268          ;                    ;
 +--------------------------------------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                        ;
-+--------------------------------------+--------------------+------------------------------------------------------------------------+
-; Register name                        ; Reason for Removal ; Registers Removed due to This Register                                 ;
-+--------------------------------------+--------------------+------------------------------------------------------------------------+
-; execute:EXECUTE|Zeros:ZEROS|sel_jump ; Lost Fanouts       ; decode:DECODE|registers:R|q_1[26], decode:DECODE|registers:R|q_1[27],  ;
-;                                      ;                    ; decode:DECODE|registers:R|q_1[28], decode:DECODE|registers:R|q_1[29],  ;
-;                                      ;                    ; decode:DECODE|registers:R|q_1[30]                                      ;
-; memory:MEMORY|instruction_out[31]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[31], decode:DECODE|instruction_out[31] ;
-; memory:MEMORY|instruction_out[30]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[30], decode:DECODE|instruction_out[30] ;
-; memory:MEMORY|instruction_out[29]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[29], decode:DECODE|instruction_out[29] ;
-; memory:MEMORY|instruction_out[28]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[28], decode:DECODE|instruction_out[28] ;
-; memory:MEMORY|instruction_out[27]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[27], decode:DECODE|instruction_out[27] ;
-; memory:MEMORY|instruction_out[26]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[26], decode:DECODE|instruction_out[26] ;
-; memory:MEMORY|instruction_out[25]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[25], decode:DECODE|instruction_out[25] ;
-; memory:MEMORY|instruction_out[24]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[24], decode:DECODE|instruction_out[24] ;
-; memory:MEMORY|instruction_out[23]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[23], decode:DECODE|instruction_out[23] ;
-; memory:MEMORY|instruction_out[22]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[22], decode:DECODE|instruction_out[22] ;
-; memory:MEMORY|instruction_out[21]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[21], decode:DECODE|instruction_out[21] ;
-; memory:MEMORY|alu_result_wb[30]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[30]                                 ;
-; memory:MEMORY|alu_result_wb[29]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[29]                                 ;
-; memory:MEMORY|alu_result_wb[28]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[28]                                 ;
-; memory:MEMORY|alu_result_wb[27]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[27]                                 ;
-; memory:MEMORY|alu_result_wb[26]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[26]                                 ;
-; memory:MEMORY|alu_result_wb[25]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[25]                                 ;
-; memory:MEMORY|alu_result_wb[24]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[24]                                 ;
-; memory:MEMORY|alu_result_wb[23]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[23]                                 ;
-; memory:MEMORY|alu_result_wb[22]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[22]                                 ;
-; memory:MEMORY|alu_result_wb[21]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[21]                                 ;
-; memory:MEMORY|alu_result_wb[20]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[20]                                 ;
-; memory:MEMORY|alu_result_wb[19]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[19]                                 ;
-; memory:MEMORY|alu_result_wb[18]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[18]                                 ;
-; memory:MEMORY|alu_result_wb[17]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[17]                                 ;
-; memory:MEMORY|alu_result_wb[16]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[16]                                 ;
-; memory:MEMORY|alu_result_wb[15]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[15]                                 ;
-; memory:MEMORY|alu_result_wb[14]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[14]                                 ;
-; memory:MEMORY|alu_result_wb[13]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[13]                                 ;
-; memory:MEMORY|alu_result_wb[12]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[12]                                 ;
-; memory:MEMORY|alu_result_wb[11]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[11]                                 ;
-; memory:MEMORY|alu_result_wb[10]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[10]                                 ;
-; memory:MEMORY|alu_result_wb[9]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[9]                                  ;
-; memory:MEMORY|alu_result_wb[8]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[8]                                  ;
-; memory:MEMORY|alu_result_wb[7]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[7]                                  ;
-; memory:MEMORY|alu_result_wb[6]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[6]                                  ;
-; memory:MEMORY|alu_result_wb[5]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[5]                                  ;
-; memory:MEMORY|alu_result_wb[4]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[4]                                  ;
-; memory:MEMORY|alu_result_wb[3]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[3]                                  ;
-; memory:MEMORY|alu_result_wb[2]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[2]                                  ;
-; memory:MEMORY|alu_result_wb[1]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[1]                                  ;
-; memory:MEMORY|alu_result_wb[0]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[0]                                  ;
-; execute:EXECUTE|q_2_out[0]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[0]                                       ;
-; execute:EXECUTE|q_2_out[31]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[31]                                      ;
-; execute:EXECUTE|q_2_out[30]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[30]                                      ;
-; execute:EXECUTE|q_2_out[29]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[29]                                      ;
-; execute:EXECUTE|q_2_out[28]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[28]                                      ;
-; execute:EXECUTE|q_2_out[27]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[27]                                      ;
-; execute:EXECUTE|q_2_out[26]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[26]                                      ;
-; execute:EXECUTE|q_2_out[25]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[25]                                      ;
-; execute:EXECUTE|q_2_out[24]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[24]                                      ;
-; execute:EXECUTE|q_2_out[23]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[23]                                      ;
-; execute:EXECUTE|q_2_out[22]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[22]                                      ;
-; execute:EXECUTE|q_2_out[21]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[21]                                      ;
-; execute:EXECUTE|q_2_out[20]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[20]                                      ;
-; execute:EXECUTE|q_2_out[19]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[19]                                      ;
-; execute:EXECUTE|q_2_out[18]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[18]                                      ;
-; execute:EXECUTE|q_2_out[17]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[17]                                      ;
-; execute:EXECUTE|q_2_out[16]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[16]                                      ;
-; execute:EXECUTE|q_2_out[15]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[15]                                      ;
-; execute:EXECUTE|q_2_out[14]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[14]                                      ;
-; execute:EXECUTE|q_2_out[13]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[13]                                      ;
-; execute:EXECUTE|q_2_out[12]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[12]                                      ;
-; execute:EXECUTE|q_2_out[11]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[11]                                      ;
-; memory:MEMORY|alu_result_wb[31]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[31]                                 ;
-; execute:EXECUTE|q_2_out[9]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[9]                                       ;
-; execute:EXECUTE|q_2_out[8]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[8]                                       ;
-; execute:EXECUTE|q_2_out[7]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[7]                                       ;
-; execute:EXECUTE|q_2_out[6]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[6]                                       ;
-; execute:EXECUTE|q_2_out[5]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[5]                                       ;
-; execute:EXECUTE|q_2_out[4]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[4]                                       ;
-; execute:EXECUTE|q_2_out[3]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[3]                                       ;
-; execute:EXECUTE|q_2_out[2]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[2]                                       ;
-; execute:EXECUTE|q_2_out[1]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[1]                                       ;
-; execute:EXECUTE|q_2_out[10]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[10]                                      ;
-; decode:DECODE|pc_out[0]              ; Lost Fanouts       ; fetch:FETCH|pc[0]                                                      ;
-; decode:DECODE|pc_out[1]              ; Lost Fanouts       ; fetch:FETCH|pc[1]                                                      ;
-; decode:DECODE|pc_out[2]              ; Lost Fanouts       ; fetch:FETCH|pc[2]                                                      ;
-; decode:DECODE|pc_out[3]              ; Lost Fanouts       ; fetch:FETCH|pc[3]                                                      ;
-; decode:DECODE|pc_out[4]              ; Lost Fanouts       ; fetch:FETCH|pc[4]                                                      ;
-; decode:DECODE|pc_out[5]              ; Lost Fanouts       ; fetch:FETCH|pc[5]                                                      ;
-; decode:DECODE|pc_out[6]              ; Lost Fanouts       ; fetch:FETCH|pc[6]                                                      ;
-; decode:DECODE|pc_out[7]              ; Lost Fanouts       ; fetch:FETCH|pc[7]                                                      ;
-; decode:DECODE|pc_out[8]              ; Lost Fanouts       ; fetch:FETCH|pc[8]                                                      ;
-; decode:DECODE|pc_out[9]              ; Lost Fanouts       ; fetch:FETCH|pc[9]                                                      ;
-+--------------------------------------+--------------------+------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                      ;
++--------------------------------------+--------------------+----------------------------------------------------------------------+
+; Register name                        ; Reason for Removal ; Registers Removed due to This Register                               ;
++--------------------------------------+--------------------+----------------------------------------------------------------------+
+; execute:EXECUTE|Zeros:ZEROS|sel_jump ; Lost Fanouts       ; decode:DECODE|registers:R|q_1[29], decode:DECODE|registers:R|q_1[30] ;
+; memory:MEMORY|instruction_out[30]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[30]                                  ;
+; memory:MEMORY|instruction_out[29]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[29]                                  ;
+; memory:MEMORY|instruction_out[28]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[28]                                  ;
+; memory:MEMORY|instruction_out[27]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[27]                                  ;
+; memory:MEMORY|instruction_out[26]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[26]                                  ;
+; memory:MEMORY|instruction_out[25]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[25]                                  ;
+; memory:MEMORY|instruction_out[24]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[24]                                  ;
+; memory:MEMORY|instruction_out[23]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[23]                                  ;
+; memory:MEMORY|instruction_out[22]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[22]                                  ;
+; memory:MEMORY|instruction_out[21]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[21]                                  ;
+; memory:MEMORY|alu_result_wb[31]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[31]                               ;
+; memory:MEMORY|alu_result_wb[30]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[30]                               ;
+; memory:MEMORY|alu_result_wb[29]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[29]                               ;
+; memory:MEMORY|alu_result_wb[28]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[28]                               ;
+; memory:MEMORY|alu_result_wb[27]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[27]                               ;
+; memory:MEMORY|alu_result_wb[26]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[26]                               ;
+; memory:MEMORY|alu_result_wb[25]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[25]                               ;
+; memory:MEMORY|alu_result_wb[24]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[24]                               ;
+; memory:MEMORY|alu_result_wb[23]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[23]                               ;
+; memory:MEMORY|alu_result_wb[22]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[22]                               ;
+; memory:MEMORY|alu_result_wb[21]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[21]                               ;
+; memory:MEMORY|alu_result_wb[20]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[20]                               ;
+; memory:MEMORY|alu_result_wb[19]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[19]                               ;
+; memory:MEMORY|alu_result_wb[18]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[18]                               ;
+; memory:MEMORY|alu_result_wb[17]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[17]                               ;
+; memory:MEMORY|alu_result_wb[16]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[16]                               ;
+; memory:MEMORY|alu_result_wb[15]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[15]                               ;
+; memory:MEMORY|alu_result_wb[14]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[14]                               ;
+; memory:MEMORY|alu_result_wb[13]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[13]                               ;
+; memory:MEMORY|alu_result_wb[12]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[12]                               ;
+; memory:MEMORY|alu_result_wb[11]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[11]                               ;
+; memory:MEMORY|alu_result_wb[10]      ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[10]                               ;
+; memory:MEMORY|alu_result_wb[9]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[9]                                ;
+; memory:MEMORY|alu_result_wb[8]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[8]                                ;
+; memory:MEMORY|alu_result_wb[7]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[7]                                ;
+; memory:MEMORY|alu_result_wb[6]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[6]                                ;
+; memory:MEMORY|alu_result_wb[5]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[5]                                ;
+; memory:MEMORY|alu_result_wb[4]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[4]                                ;
+; memory:MEMORY|alu_result_wb[3]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[3]                                ;
+; memory:MEMORY|alu_result_wb[2]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[2]                                ;
+; memory:MEMORY|alu_result_wb[1]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[1]                                ;
+; memory:MEMORY|alu_result_wb[0]       ; Lost Fanouts       ; execute:EXECUTE|ALU:ALU|alu_result[0]                                ;
+; execute:EXECUTE|q_2_out[0]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[0]                                     ;
+; execute:EXECUTE|q_2_out[31]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[31]                                    ;
+; execute:EXECUTE|q_2_out[30]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[30]                                    ;
+; execute:EXECUTE|q_2_out[29]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[29]                                    ;
+; execute:EXECUTE|q_2_out[28]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[28]                                    ;
+; execute:EXECUTE|q_2_out[27]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[27]                                    ;
+; execute:EXECUTE|q_2_out[26]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[26]                                    ;
+; execute:EXECUTE|q_2_out[25]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[25]                                    ;
+; execute:EXECUTE|q_2_out[24]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[24]                                    ;
+; execute:EXECUTE|q_2_out[23]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[23]                                    ;
+; execute:EXECUTE|q_2_out[22]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[22]                                    ;
+; execute:EXECUTE|q_2_out[21]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[21]                                    ;
+; execute:EXECUTE|q_2_out[20]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[20]                                    ;
+; execute:EXECUTE|q_2_out[19]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[19]                                    ;
+; execute:EXECUTE|q_2_out[18]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[18]                                    ;
+; execute:EXECUTE|q_2_out[17]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[17]                                    ;
+; execute:EXECUTE|q_2_out[16]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[16]                                    ;
+; execute:EXECUTE|q_2_out[15]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[15]                                    ;
+; execute:EXECUTE|q_2_out[14]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[14]                                    ;
+; execute:EXECUTE|q_2_out[13]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[13]                                    ;
+; execute:EXECUTE|q_2_out[12]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[12]                                    ;
+; execute:EXECUTE|q_2_out[11]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[11]                                    ;
+; memory:MEMORY|instruction_out[31]    ; Lost Fanouts       ; execute:EXECUTE|instruction_out[31]                                  ;
+; execute:EXECUTE|q_2_out[9]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[9]                                     ;
+; execute:EXECUTE|q_2_out[8]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[8]                                     ;
+; execute:EXECUTE|q_2_out[7]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[7]                                     ;
+; execute:EXECUTE|q_2_out[6]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[6]                                     ;
+; execute:EXECUTE|q_2_out[5]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[5]                                     ;
+; execute:EXECUTE|q_2_out[4]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[4]                                     ;
+; execute:EXECUTE|q_2_out[3]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[3]                                     ;
+; execute:EXECUTE|q_2_out[2]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[2]                                     ;
+; execute:EXECUTE|q_2_out[1]           ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[1]                                     ;
+; execute:EXECUTE|q_2_out[10]          ; Lost Fanouts       ; decode:DECODE|registers:R|q_2[10]                                    ;
+; decode:DECODE|pc_out[0]              ; Lost Fanouts       ; fetch:FETCH|pc[0]                                                    ;
+; decode:DECODE|pc_out[1]              ; Lost Fanouts       ; fetch:FETCH|pc[1]                                                    ;
+; decode:DECODE|pc_out[2]              ; Lost Fanouts       ; fetch:FETCH|pc[2]                                                    ;
+; decode:DECODE|pc_out[3]              ; Lost Fanouts       ; fetch:FETCH|pc[3]                                                    ;
+; decode:DECODE|pc_out[4]              ; Lost Fanouts       ; fetch:FETCH|pc[4]                                                    ;
+; decode:DECODE|pc_out[5]              ; Lost Fanouts       ; fetch:FETCH|pc[5]                                                    ;
+; decode:DECODE|pc_out[6]              ; Lost Fanouts       ; fetch:FETCH|pc[6]                                                    ;
+; decode:DECODE|pc_out[7]              ; Lost Fanouts       ; fetch:FETCH|pc[7]                                                    ;
+; decode:DECODE|pc_out[8]              ; Lost Fanouts       ; fetch:FETCH|pc[8]                                                    ;
+; decode:DECODE|pc_out[9]              ; Lost Fanouts       ; fetch:FETCH|pc[9]                                                    ;
++--------------------------------------+--------------------+----------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -567,15 +565,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "execute:EXECUTE"                                                                           ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; branch_addr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-------------------+---------------------------------+
@@ -603,7 +592,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Mar  3 14:06:23 2026
+    Info: Processing started: Tue Mar  3 23:52:10 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -623,13 +612,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file zeros.v
     Info (12022): Found design unit 1: Zeros-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Zeros.vhd Line: 22
     Info (12023): Found entity 1: Zeros File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Zeros.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file pc_mux.vhd
-    Info (12022): Found design unit 1: PC_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/PC_mux.vhd Line: 28
+    Info (12022): Found design unit 1: PC_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/PC_mux.vhd Line: 30
     Info (12023): Found entity 1: PC_mux File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/PC_mux.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file imm_mux.vhd
-    Info (12022): Found design unit 1: imm_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/imm_mux.vhd Line: 27
+    Info (12022): Found design unit 1: imm_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/imm_mux.vhd Line: 29
     Info (12023): Found entity 1: imm_mux File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/imm_mux.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 33
+    Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 32
     Info (12023): Found entity 1: execute File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 6
 Warning (12019): Can't analyze file -- file ALU_1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
@@ -643,7 +632,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
     Info (12023): Found entity 1: registers File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/registers.vhd Line: 6
 Info (12021): Found 2 design units, including 0 entities, in source file opcode_package.vhd
     Info (12022): Found design unit 1: opcode_package File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/OPCODE_PACKAGE.vhd Line: 5
-    Info (12022): Found design unit 2: opcode_package-body File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/OPCODE_PACKAGE.vhd Line: 95
+    Info (12022): Found design unit 2: opcode_package-body File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/OPCODE_PACKAGE.vhd Line: 96
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
     Info (12022): Found design unit 1: fetch-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/fetch.vhd Line: 23
     Info (12023): Found entity 1: fetch File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/fetch.vhd Line: 6
@@ -651,7 +640,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
     Info (12022): Found design unit 1: DLX-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 15
     Info (12023): Found entity 1: DLX File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
-    Info (12022): Found design unit 1: decode-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 31
+    Info (12022): Found design unit 1: decode-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 30
     Info (12023): Found entity 1: decode File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file my_rom.vhd
     Info (12022): Found design unit 1: my_rom-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ROM.vhd Line: 53
@@ -660,7 +649,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file my_ram.
     Info (12022): Found design unit 1: my_ram-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ram.vhd Line: 55
     Info (12023): Found entity 1: my_ram File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ram.vhd Line: 43
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(30): object "jump_addr_final" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 30
 Info (12128): Elaborating entity "fetch" for hierarchy "fetch:FETCH" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 60
 Info (12128): Elaborating entity "my_ROM" for hierarchy "fetch:FETCH|my_ROM:U1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/fetch.vhd Line: 35
 Info (12128): Elaborating entity "altsyncram" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ROM.vhd Line: 60
@@ -719,16 +707,17 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5s3.tdf
     Info (12023): Found entity 1: altsyncram_d5s3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_d5s3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_d5s3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 1010 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 14 to 1023 are not initialized File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/factorial_code.mif Line: 1
 Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 73
-Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 39
-Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 52
-Info (12128): Elaborating entity "execute" for hierarchy "execute:EXECUTE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 92
-Warning (10036): Verilog HDL or VHDL warning at Execute.vhd(37): object "instruction_in_1" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 37
-Info (12128): Elaborating entity "PC_mux" for hierarchy "execute:EXECUTE|PC_mux:MUX1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 45
-Info (12128): Elaborating entity "imm_mux" for hierarchy "execute:EXECUTE|imm_mux:MUX2" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 59
-Info (12128): Elaborating entity "Zeros" for hierarchy "execute:EXECUTE|Zeros:ZEROS" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 73
-Info (12128): Elaborating entity "ALU" for hierarchy "execute:EXECUTE|ALU:ALU" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 85
-Info (12128): Elaborating entity "memory" for hierarchy "memory:MEMORY" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 113
+Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 38
+Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Decode.vhd Line: 51
+Info (12128): Elaborating entity "execute" for hierarchy "execute:EXECUTE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 91
+Info (12128): Elaborating entity "PC_mux" for hierarchy "execute:EXECUTE|PC_mux:MUX1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 44
+Info (12128): Elaborating entity "imm_mux" for hierarchy "execute:EXECUTE|imm_mux:MUX2" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 61
+Info (12128): Elaborating entity "Zeros" for hierarchy "execute:EXECUTE|Zeros:ZEROS" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 77
+Info (12128): Elaborating entity "ALU" for hierarchy "execute:EXECUTE|ALU:ALU" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/Execute.vhd Line: 89
+Info (12128): Elaborating entity "memory" for hierarchy "memory:MEMORY" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 111
 Info (12128): Elaborating entity "my_ram" for hierarchy "memory:MEMORY|my_ram:RAM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/memory.vhd Line: 28
 Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ram.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/my_ram.vhd Line: 62
@@ -786,8 +775,8 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_29s3.tdf
     Info (12023): Found entity 1: altsyncram_29s3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_29s3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_29s3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 127
-Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 139
+Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 125
+Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX.vhd Line: 137
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_29s3:auto_generated|q_a[0]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_29s3.tdf Line: 37
@@ -854,7 +843,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[29]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_d5s3.tdf Line: 673
         Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[30]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_d5s3.tdf Line: 695
         Warning (14320): Synthesized away node "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated|q_a[31]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/db/altsyncram_d5s3.tdf Line: 717
-Info (17049): 258 registers lost all their fanouts during netlist optimizations.
+Info (17049): 268 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -865,8 +854,8 @@ Info (21057): Implemented 2 device resources after synthesis - the final resourc
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
     Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Tue Mar  3 14:06:28 2026
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Tue Mar  3 23:52:16 2026
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
 

@@ -13,7 +13,7 @@ entity Zeros is
 			jump_addr : out std_logic_vector(9 downto 0);
 			sel_jump : out std_logic;
         --address to jump to value
-			q_1 : in std_logic_vector (31 DOWNTO 0);
+			op1 : in std_logic_vector (31 DOWNTO 0);
 			op2 : in std_logic_vector (31 DOWNTO 0);--the address we got from the instruction
 			instruction_execute : in std_logic_vector(31 downto 0)
     );
@@ -39,10 +39,10 @@ entity Zeros is
 				 if ((opcode =  JR) or (opcode = JALR)) then
 					  jump_addr <= op2(9 downto 0);
 					  sel_jump <= '1';
-				 elsif  ((opcode = BEQZ) and (to_integer(unsigned(q_1)) = 0)) then
+				 elsif  ((opcode = BEQZ) and (to_integer(unsigned(op1)) = 0)) then
 					  jump_addr <= op2(9 downto 0);
 					  sel_jump <= '1';
-				 elsif ((opcode = BNEZ) and (to_integer(unsigned(q_1)) /= 0)) then
+				 elsif ((opcode = BNEZ) and (to_integer(unsigned(op1)) /= 0)) then
 					  jump_addr <= op2(9 downto 0);
 					  sel_jump <= '1';
 				 --if not a Branch then set sel_jump = 0

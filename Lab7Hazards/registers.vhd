@@ -22,6 +22,7 @@ begin
 	
     process (clk)
     variable ram_block: MEM:=(others=>(others=>'0'));
+	
     begin
         if (rising_edge(clk)) THEN
             if (we = '1') and not(write_address = "00000") THEN
