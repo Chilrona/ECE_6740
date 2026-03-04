@@ -44,7 +44,13 @@ begin
             flush_execute <= '0';
             take_jump <= '1';
             jump_addr <= instruction_decode(9 downto 0);
-
+        
+        elsif (instruction_execute(25 downto 21) = instruction_decode(20 downto 16) and not (is_not_data_hazard_1(instruction_decode(31 downto 26))))
+            flush_fetch <= '0';
+            flush_decode <= '1';
+            flush_execute <= '0';
+            take_jump <= '0';
+            jump_addr <= (others=>'0');
         else
             flush_fetch <= '0';
             flush_decode <= '0';

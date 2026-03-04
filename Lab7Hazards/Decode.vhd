@@ -16,7 +16,6 @@ use work.opcode_package.all;
 			instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0') ;
 			
 			tag_for_flush : in std_logic;
-			stall : in std_logic;
 
 			pc_in : in std_logic_vector(9 downto 0);
 			pc_out : buffer std_logic_vector(9 downto 0) := (others=>'0');
@@ -62,13 +61,8 @@ use work.opcode_package.all;
 	pass_along: process (clk)
 	begin
 		if rising_edge(clk) then
-			if stall = '0' then
-				instruction_out <= instruction_in_1;
-				pc_out <= pc_in;
-			else
-				instruction_out <= instruction_out;
-				pc_out <= pc_out;
-			end if;
+			instruction_out <= instruction_in_1;
+			pc_out <= pc_in;
 		end if;
 	end process;
 				

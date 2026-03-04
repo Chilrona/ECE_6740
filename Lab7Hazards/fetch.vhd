@@ -54,10 +54,10 @@ use work.opcode_package.all;
 				 pc <= (others=>'0');
 			elsif rising_edge(clk) then
 				tag_for_flush_1d <= tag_for_flush;
-				if stall = '0' then
-					pc <=next_pc;
-				else
+				if stall = '1' then
 					pc <= pc;
+				else
+					pc <= next_pc;
 				end if;
 			end if;
         end process;

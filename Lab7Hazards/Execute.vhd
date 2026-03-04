@@ -18,12 +18,11 @@ use work.opcode_package.all;
             instruction_in_wb : in std_logic_vector(31 downto 0);
             alu_result_wb : in std_logic_vector(31 downto 0);
             tag_for_flush : in std_logic;
-				stall : in std_logic;
 
-				instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0');
+			instruction_out : buffer std_logic_vector(31 downto 0) := (others=>'0');
             alu_result : buffer std_logic_vector(31 downto 0);
             branch_addr : out std_logic_vector(9 downto 0);
-				take_branch : out std_logic;
+			take_branch : out std_logic;
             ram_we : out std_logic;
             q_2_out : out std_logic_vector(31 downto 0)
 		);
@@ -39,7 +38,7 @@ use work.opcode_package.all;
 
 	begin
 	
-	instruction_in_1 <= (others=>'0') when (tag_for_flush = '1' or stall = '1') else instruction_in;
+	instruction_in_1 <= (others=>'0') when (tag_for_flush = '1') else instruction_in;
 	
         
 	MUX1 : entity work.PC_mux
