@@ -1,0 +1,35 @@
+; factorial file
+
+.data
+n   1   6
+f   1   1
+
+.text
+    LW   R2, f(R0)
+    LW   R1, n(R0)
+    NOP 
+    NOP
+    SUBI R1, R1, 1
+
+top:
+    BEQZ R1, exit
+    ADDI R7, R2, 0
+    ADDI R8, R1, 0
+    JAL loop_multiply
+    SUBI R1, R1, 1
+    J top
+
+; R7 = old total
+; R8 = loop counter (i)
+; R2 = accumulator (starts at 0)
+
+loop_multiply:
+    ADD  R2, R2, R7
+    SUBI R8, R8, 1
+    BNEZ R8, loop_multiply
+
+loopdone:
+    JR R31
+
+exit:
+    SW f(R0), R2
