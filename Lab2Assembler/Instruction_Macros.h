@@ -64,6 +64,9 @@
 #define JR_OPCODE       0xB8000000
 #define JAL_OPCODE      0xBC000000
 #define JALR_OPCODE     0xC0000000
+#define PCH             0xC4000000
+#define PD              0xC8000000
+#define PDU             0xCC000000
 
 //Source Registers for Rs1
 #define R0_SOURCE_1 0x00000000
