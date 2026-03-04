@@ -62,7 +62,7 @@ use work.opcode_package.all;
 	(
 		rst_l => rst_l,
 		clk => clk,
-      jump_addr => jump_addr,
+      jump_addr => jump_addr_final,
       sel_jump => sel_jump,
 		tag_for_flush => flush_fetch,
 		stall => stall,
