@@ -1,17 +1,17 @@
-Fitter Status : Successful - Fri Jan  9 13:50:16 2026
+Fitter Status : Successful - Tue Mar 17 12:21:12 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : Lab1UART
 Top-level Entity Name : Lab1UART
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 342 / 49,760 ( < 1 % )
-    Total combinational functions : 323 / 49,760 ( < 1 % )
-    Dedicated logic registers : 213 / 49,760 ( < 1 % )
-Total registers : 213
+Total logic elements : 1,487 / 49,760 ( 3 % )
+    Total combinational functions : 933 / 49,760 ( 2 % )
+    Dedicated logic registers : 1,201 / 49,760 ( 2 % )
+Total registers : 1201
 Total pins : 126 / 360 ( 35 % )
 Total virtual pins : 0
-Total memory bits : 8 / 1,677,312 ( < 1 % )
+Total memory bits : 180,232 / 1,677,312 ( 11 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )

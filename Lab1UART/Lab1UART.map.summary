@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Fri Jan  9 13:50:03 2026
+Analysis & Synthesis Status : Successful - Tue Mar 17 12:21:04 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : Lab1UART
 Top-level Entity Name : Lab1UART
 Family : MAX 10
-Total logic elements : 349
-    Total combinational functions : 322
-    Dedicated logic registers : 213
-Total registers : 213
+Total logic elements : 1,547
+    Total combinational functions : 930
+    Dedicated logic registers : 1,201
+Total registers : 1201
 Total pins : 126
 Total virtual pins : 0
-Total memory bits : 8
+Total memory bits : 180,232
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
 UFM blocks : 0

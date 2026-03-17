@@ -1,0 +1,16 @@
+Partition Merge Status : Successful - Fri Jan  9 17:57:40 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : Lab1UART
+Top-level Entity Name : Lab1UART
+Family : MAX 10
+Total logic elements : 597
+    Total combinational functions : 462
+    Dedicated logic registers : 417
+Total registers : 417
+Total pins : 127
+Total virtual pins : 0
+Total memory bits : 256
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0

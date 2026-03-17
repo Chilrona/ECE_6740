@@ -388,6 +388,10 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SOURCE_FILE fifo_word.cmp
+set_global_assignment -name SOURCE_FILE fifo_char.cmp
+set_global_assignment -name SOURCE_FILE diva.cmp
+set_global_assignment -name VHDL_FILE uart_recv_tb.vhd
 set_global_assignment -name SOURCE_FILE my_fifo.cmp
 set_global_assignment -name QIP_FILE my_fifo.qip
 set_global_assignment -name QIP_FILE pll.qip
@@ -427,3 +431,4 @@ set_global_assignment -name QIP_FILE my_div.qip
 set_global_assignment -name QIP_FILE fifo_word.qip
 set_global_assignment -name QIP_FILE fifo_char.qip
 set_global_assignment -name QIP_FILE diva.qip
+set_global_assignment -name VHDL_FILE print_FSM.vhd

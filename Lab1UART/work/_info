@@ -1,0 +1,235 @@
+m255
+K4
+z2
+!s12c _opt2
+Z0 !s99 nomlopt
+!s12c _opt1
+R0
+!s12c _opt
+R0
+!s11e vcom 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/A02395949/Documents/Lab1UART
+T_opt
+!s110 1767998197
+V@Rh]zfj_`iZG;A0g@Nd4[2
+Z2 04 13 3 work tb_uart_trans sim 1
+=1-b4e9b8412daa-696182f4-229-3578
+R0
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM10U2 
+Z6 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2024.3;79
+R1
+T_opt1
+!s110 1767998403
+VOV4?@g9Ig<BEYX:Ne[J6C0
+R2
+=1-b4e9b8412daa-696183c3-169-36ac
+R0
+R3
+R4
+R5
+R6
+Z9 o-quiet -auto_acc_if_foreign -work work +acc
+R7
+n@_opt1
+R8
+R1
+T_opt2
+!s110 1768000339
+VkNVQO7O[c9f4o]8De>zc@1
+04 12 3 work tb_uart_recv sim 1
+=1-b4e9b8412daa-69618b52-204-5804
+R0
+R3
+R4
+R5
+R6
+R9
+R7
+n@_opt2
+R8
+Etb_uart_recv
+Z10 w1768000266
+Z11 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 3
+R1
+Z14 8C:/Users/A02395949/Documents/Lab1UART/uart_recv_tb.vhd
+Z15 FC:/Users/A02395949/Documents/Lab1UART/uart_recv_tb.vhd
+l0
+L5 1
+VQ3W1>G6WJmG[F:F58l6]P3
+!s100 IVX?KZh@mF4S]`ZzhEX0E3
+Z16 OL;C;2024.3;79
+32
+Z17 !s110 1768000312
+!i10b 1
+Z18 !s108 1768000312.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/Lab1UART/uart_recv_tb.vhd|
+Z20 !s107 C:/Users/A02395949/Documents/Lab1UART/uart_recv_tb.vhd|
+!i113 0
+Z21 o-work work
+Z22 tExplicit 1 CvgOpt 0
+Asim
+Z23 DEx4 work 9 uart_recv 0 22 `M[jAlI>fga`_m1E?cjhO0
+R11
+R12
+R13
+DEx4 work 12 tb_uart_recv 0 22 Q3W1>G6WJmG[F:F58l6]P3
+!i122 3
+l17
+L8 65
+VN20LbKI9_gQhla6LT];WZ3
+!s100 ZL^CN]O??X[OXGAg3Y29^2
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22
+Etb_uart_trans
+Z24 w1767997999
+R11
+R12
+R13
+!i122 1
+R1
+Z25 8C:/Users/A02395949/Documents/Lab1UART/uarttx_tb.vhd
+Z26 FC:/Users/A02395949/Documents/Lab1UART/uarttx_tb.vhd
+l0
+L5 1
+V:ZTViTZ1[Q:=>n?O95jTD0
+!s100 `c:WRNTn4lA<3oo=_fgcm3
+R16
+32
+Z27 !s110 1767998165
+!i10b 1
+Z28 !s108 1767998165.000000
+Z29 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/Lab1UART/uarttx_tb.vhd|
+Z30 !s107 C:/Users/A02395949/Documents/Lab1UART/uarttx_tb.vhd|
+!i113 0
+R21
+R22
+Asim
+Z31 DEx4 work 10 uart_trans 0 22 PVmCQYGX5N@eS6B`Xi9_H1
+R11
+R12
+R13
+DEx4 work 13 tb_uart_trans 0 22 :ZTViTZ1[Q:=>n?O95jTD0
+!i122 1
+l16
+L8 55
+Vi1>OA`JJ9]X0RhTbn:9kA0
+!s100 khcoVek=^GeN4jX899:2?3
+R16
+32
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 0
+R21
+R22
+Euart_recv
+Z32 w1767990090
+R11
+R12
+R13
+!i122 2
+R1
+Z33 8C:/Users/A02395949/Documents/Lab1UART/uart_recv.vhd
+Z34 FC:/Users/A02395949/Documents/Lab1UART/uart_recv.vhd
+l0
+L6 1
+V`M[jAlI>fga`_m1E?cjhO0
+!s100 h];5:?fCZZoTz0Ni4;nzl1
+R16
+32
+R17
+!i10b 1
+R18
+Z35 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/Lab1UART/uart_recv.vhd|
+Z36 !s107 C:/Users/A02395949/Documents/Lab1UART/uart_recv.vhd|
+!i113 0
+R21
+R22
+Abehavioral
+R11
+R12
+R13
+R23
+!i122 2
+l25
+L18 48
+VWV;B<P^FQc>mzjNoJ8gbm0
+!s100 aWADI]1gDTMfX^IIhEGOS1
+R16
+32
+R17
+!i10b 1
+R18
+R35
+R36
+!i113 0
+R21
+R22
+Euart_trans
+Z37 w1767996849
+R11
+R12
+R13
+!i122 0
+R1
+Z38 8C:/Users/A02395949/Documents/Lab1UART/UART_trans.vhd
+Z39 FC:/Users/A02395949/Documents/Lab1UART/UART_trans.vhd
+l0
+L6 1
+VPVmCQYGX5N@eS6B`Xi9_H1
+!s100 iJBGSW[eGoSQ@MZ@AhY]b3
+R16
+32
+R27
+!i10b 1
+R28
+Z40 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/Lab1UART/UART_trans.vhd|
+Z41 !s107 C:/Users/A02395949/Documents/Lab1UART/UART_trans.vhd|
+!i113 0
+R21
+R22
+Abehavioral
+R11
+R12
+R13
+R31
+!i122 0
+l24
+L19 40
+V4e:f>NEY1^oWN1K5Bk]h[0
+!s100 OV5nzN24`62?FF7g2E_jM2
+R16
+32
+R27
+!i10b 1
+R28
+R40
+R41
+!i113 0
+R21
+R22
