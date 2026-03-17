@@ -25,7 +25,7 @@ uint32_t parse_memory(char* line_ptr, Label** data_table)
     } else if (inst.opcode == "LW")
     {
         iss >> inst.rData >> inst.varName >> inst.rOffset;
-    }
+    } 
     
     // 1) opcode
     auto opIt = opcodeTable.find(inst.opcode);

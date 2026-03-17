@@ -12,6 +12,7 @@
 #include "memory.h"
 #include "mothership.h"
 #include "jump.h"
+#include "print.h"
 #include "stb_ds.h"
 
 #define BASE_LINE_LENGTH 256
@@ -41,7 +42,7 @@ void strip(char *s)
             }
             
         }
-        if (c == ',' || c==')')
+        if (c == ',' || c==')' || c==':')
         {
             continue;
         }
@@ -88,6 +89,7 @@ void pass_one(FILE* infile, Label** label_table, line_vec* data_lines, line_vec*
 
     while(fgets(buf, BASE_LINE_LENGTH, infile))
     {
+        // printf("PC value: %d\n", pc);
         char* line = buf;
         line_num++;
         strip(line); // Strips all commas and most whitespace from
@@ -110,6 +112,7 @@ void pass_one(FILE* infile, Label** label_table, line_vec* data_lines, line_vec*
             if (label_name != NULL)
             {
                 shput(*label_table, strdup(label_name), pc);
+                printf("Just added label: %s, %d\n", label_name, shget(*label_table, label_name));
                 continue;
             }
             linevec_push(text_lines, line_num, pc++, strdup(line));
@@ -129,7 +132,7 @@ void pass_two_inst(FILE* out_code, Label** data_table, Label** label_table, mnem
     for (int i = 0; i < text_lines->len; i++)
     {
         char* save=NULL;
-        printf("%s\n", text_lines->items[i].text);
+        // printf("%s\n", text_lines->items[i].text);
         char* line = strdup(text_lines->items[i].text);
         char* op_word = strtok_r(line, " ", &save);
         mnemonic_entry* entry = shgetp_null(mnemonic_table, op_word);
@@ -157,6 +160,10 @@ void pass_two_inst(FILE* out_code, Label** data_table, Label** label_table, mnem
             case JUMP:
                 //printf("Jump type found.\n");
                 instruction = parse_jump(text_lines->items[i].text, label_table);
+                break;
+            case PRINT:
+                //printf("Print type found.\n");
+                instruction = parse_print(text_lines->items[i].text);
                 break;
             default:
                 //printf("Invalid type type found.\n");
@@ -228,14 +235,21 @@ int main(int argc, char* argv[])
     mnemonic_entry* mnemonic_table = NULL;
     build_mnemonic_table(&mnemonic_table);
 
-    int len=shlen(mnemonic_table);
-    for(int i =0; i<len;i++)
-    {
-        printf("%s\t%d\n", mnemonic_table[i].key, mnemonic_table[i].value);
-    }
+    // int len=shlen(mnemonic_table);
+    // for(int i =0; i<len;i++)
+    // {
+    //     printf("%s\t%d\n", mnemonic_table[i].key, mnemonic_table[i].value);
+    // }
 
     line_vec data_lines, text_lines;
     pass_one(input_file, &label_table, &data_lines, &text_lines, mnemonic_table);
+
+    printf("top address: %d\n", shget(label_table, "top"));
+    printf("loop_multiply address: %d\n", shget(label_table, "loop_multiply"));
+    printf("loopdone address: %d\n", shget(label_table, "loopdone"));
+    printf("exit address: %d\n", shget(label_table, "exit"));
+    
+
     Label* data_table = NULL;
     pass_two_data(out_data, &data_lines, &data_table);
     printf("Finished data pass two, on to instruction pass two...\n");
@@ -320,6 +334,11 @@ void build_mnemonic_table(mnemonic_entry** table_ptr)
 
     shput(table, "XOR", REGISTER);
     shput(table, "XORI", IMMEDIATE);
+
+    shput(table, "PCH", PRINT);
+    shput(table, "PD", PRINT);
+    shput(table, "PDU", PRINT);
+
     printf("Table Built!\n");
     *table_ptr=table;
 }

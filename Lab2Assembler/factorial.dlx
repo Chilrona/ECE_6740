@@ -31,3 +31,4 @@ loopdone:
 
 exit:
     SW f(R0), R2
+    PCH R8

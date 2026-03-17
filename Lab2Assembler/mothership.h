@@ -7,7 +7,7 @@
 #include <string>
 #include <cstdint>
 
-typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, INVALID} inst_type;
+typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, PRINT, INVALID} inst_type;
 
 typedef struct
 {
@@ -83,7 +83,11 @@ const std:: unordered_map<std::string, uint32_t> opcodeTable = {
     {"J",     0xB4000000},
     {"JR",    0xB8000000},
     {"JAL",   0xBC000000},
-    {"JALR",  0xC0000000}
+    {"JALR",  0xC0000000},
+
+    {"PCH",   0xC4000000},
+    {"PD",    0xC8000000},
+    {"PDU",   0xCC000000}
 };
 
 //destination registers
