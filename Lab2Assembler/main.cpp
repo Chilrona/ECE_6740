@@ -100,7 +100,12 @@ void pass_one(FILE* infile, Label** label_table, line_vec* data_lines, line_vec*
         {
             mode = SEC_DATA;
             continue;
-        } else if (strcmp(line, ".text") == 0)
+        } else if (strcmp(line, ".const") == 0)
+        {
+            mode = SEC_CONST;
+            linevec_push(data_lines, line_num, INITIAL_ADDR, "const");
+            continue;
+        }else if (strcmp(line, ".text") == 0)
         {
             mode = SEC_TEXT;
             continue;
@@ -116,7 +121,7 @@ void pass_one(FILE* infile, Label** label_table, line_vec* data_lines, line_vec*
                 continue;
             }
             linevec_push(text_lines, line_num, pc++, strdup(line));
-        } else if (mode == SEC_DATA)
+        } else if ((mode == SEC_DATA) || (mode == SEC_CONST))
         {
             linevec_push(data_lines, line_num, INITIAL_ADDR, strdup(line));   // Push The data line to the record.
                                                             // All addresses will initialize to 0, that will be corrected on the second pass.
@@ -179,8 +184,15 @@ void pass_two_inst(FILE* out_code, Label** data_table, Label** label_table, mnem
 void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
 {
     uint16_t data_addr = 0;
+    bool is_const = false;
     for (int i = 0; i < data_lines->len; i++)
     {
+        if (strcmp(data_lines->items[i].text, "const") == 0)
+        {
+            is_const = true;
+            printf("finished data, on to const\n");
+            continue;
+        }
         char* save = NULL;
         data_lines->items[i].addr = data_addr;
         line_rec curr_line = data_lines->items[i];
@@ -194,8 +206,15 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
         uint32_t data;
         for (int j = 0; j < size; j++)
         {
-            num_str = strtok_r(NULL, " ", &save);   // 
-            data = (uint32_t)strtol(num_str, NULL, 10);
+            
+            if (is_const)
+            {
+                data = (uint32_t)save[j];
+            }else
+            {
+                num_str = strtok_r(NULL, " ", &save);   // 
+                data = (uint32_t)strtol(num_str, NULL, 10);
+            }
             fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
         }
         data_addr += size;

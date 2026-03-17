@@ -1,8 +1,5 @@
 #include <cstdint>
 
-
-typedef enum { SEC_NONE, SEC_DATA, SEC_TEXT } Section;
-
 typedef struct {
     int      line_num;   // original source line number (for errors)
     uint32_t addr;      // address within its section (data addr or text pc)

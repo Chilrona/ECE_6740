@@ -7,6 +7,8 @@
 #include <string>
 #include <cstdint>
 
+typedef enum { SEC_NONE, SEC_DATA, SEC_CONST, SEC_TEXT } Section;
+
 typedef enum {IMMEDIATE, MEMORY, REGISTER, JUMP, PRINT, INVALID} inst_type;
 
 typedef struct

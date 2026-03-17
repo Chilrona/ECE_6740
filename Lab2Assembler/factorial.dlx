@@ -4,6 +4,9 @@
 n   1   6
 f   1   1
 
+.const
+s1 16 "Your output is: "
+
 .text
     LW   R2, f(R0)
     LW   R1, n(R0)
