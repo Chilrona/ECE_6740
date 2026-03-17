@@ -164,6 +164,12 @@ use work.opcode_package.all;
 						alu_result <= op1;
 					when JALR =>
 						alu_result <= op1;
+					when PCH =>
+						alu_result <= (others=>'0');
+					when PD =>
+						alu_result <= (others=>'0');
+					when PDU =>
+						alu_result <= (others=>'0');
 					when others =>
 						alu_result <= (others=>'0');
 				end case;
