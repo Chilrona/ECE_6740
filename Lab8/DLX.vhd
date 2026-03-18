@@ -83,6 +83,7 @@ use work.opcode_package.all;
 		signal areset		: STD_LOGIC := '0';
 		signal c0		: STD_LOGIC :='0'; --153600 Hz
 		signal c1		: STD_LOGIC :='0'; --115.2 kHz 
+		signal locked : std_logic;
 
 
 	
@@ -90,7 +91,7 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	rst_l <= KEY(0);
+	rst_l <= KEY(0) and locked;
 	clk <= MAX10_CLK1_50;
 	tx <= GPIO(1);
 	
@@ -201,7 +202,7 @@ use work.opcode_package.all;
 			q_1 => q_1,
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
-			tx <= tx, 
+			tx => tx, 
 			uart_clk => c1
 		);
 		
@@ -217,7 +218,7 @@ use work.opcode_package.all;
 			inclk0=>MAX10_CLK1_50,
 			c0=>c0,
 			c1=>c1,
-			locked=>rst_l
+			locked=>locked
 		);
 	
 	 

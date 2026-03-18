@@ -80,7 +80,7 @@ package opcode_package is
     constant JR    : std_logic_vector(5 downto 0) := "101110"; -- 0x2E
     constant JAL   : std_logic_vector(5 downto 0) := "101111"; -- 0x2F
     constant JALR  : std_logic_vector(5 downto 0) := "110000"; -- 0x30
-	 constant PCH   : std_logic_vector(5 downto 0) := "110000"; -- 0x31
+	 constant PCH   : std_logic_vector(5 downto 0) := "110001"; -- 0x31
 	 constant PD    : std_logic_vector(5 downto 0) := "110010"; -- 0x32
 	 constant PDU   : std_logic_vector(5 downto 0) := "110011"; -- 0x33
 

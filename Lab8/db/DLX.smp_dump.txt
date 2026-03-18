@@ -1,0 +1,6 @@
+
+State Machine - |DLX|print_FSM:FSM|state
+Name state.POP state.DIV state.MAGIC 
+state.MAGIC 0 0 0 
+state.DIV 0 1 1 
+state.POP 1 0 1 

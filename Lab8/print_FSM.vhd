@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.opcode_package.all;
 
 
 
@@ -31,8 +32,8 @@ use ieee.numeric_std.all;
 	signal state : state_type;
 	
 	signal i : integer;
-	signal pos_val : std_logic_vector(37 downto 0);
-	signal RS_signal : std_logic_vector(37 downto 0);
+	signal pos_val : std_logic_vector(31 downto 0);
+	signal RS_signal : std_logic_vector(31 downto 0);
 	signal opcode_signal : std_logic_vector(5 downto 0);
 	
 	type stack_type is array (0 to 9) of std_logic_vector(7 downto 0);
@@ -52,11 +53,11 @@ use ieee.numeric_std.all;
 	--FIFO_CHAR signals
 	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
 	signal rdreq_char : std_logic;
-	signal rdreq_char : std_logic;
 	signal wrreq_char : std_logic;
 	signal rdempty_char : std_logic;
 	signal wrfull_char : std_logic;
 	signal wrusedw : std_logic_vector (7 downto 0);
+	signal send_char : std_logic_vector (7 downto 0);
 	
 	--DIVVVVAAAAAAA signals
 	--signal denom : STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -103,7 +104,7 @@ use ieee.numeric_std.all;
 			wrusedw => wrusedw
 		);
 		
-		DIV : ENTITY work.diva
+		DIVIDER : ENTITY work.diva
 		PORT MAP
 		(
 			clock	=> clk,
@@ -116,12 +117,12 @@ use ieee.numeric_std.all;
 		U : ENTITY work.UART_trans
 		PORT MAP 
 		(
-			c1          => uart_clk,
+				c1          => uart_clk,
             rst_l       => rst_l,
-			send       	=> send_flag,
-            data_in     => send_char,
+				send       	=> send_flag,
+            data_in     => unsigned(send_char),
             tx          => tx,
-			idle_flag	=> uart_idle
+				idle_flag	=> uart_idle
 			
 		);
 
@@ -130,7 +131,7 @@ use ieee.numeric_std.all;
 
 	process (wrusedw, almost_full)
 	begin
-		if (wrusedw >= 254) or (almost_full = '1') then
+		if (to_integer(unsigned(wrusedw)) >= 254) or (almost_full = '1') then
 			print_stall <= '1';
 			print_flush_decode <= '1';
 		else
@@ -143,7 +144,7 @@ use ieee.numeric_std.all;
 	begin
 	if rst_l = '0' then
 		 state <= MAGIC;
-		 counter <= 0;
+		 clk_count <= 0;
 	elsif rising_edge(clk) then
 
 		case state is
@@ -177,7 +178,7 @@ use ieee.numeric_std.all;
 			end if;
 			
 		when DIV =>
-			if quotient = 0 then
+			if quotient = x"00000000" then
 				state <= POP;
 				i <= i - 1;
 				if neg_flag = '1' then
@@ -187,7 +188,7 @@ use ieee.numeric_std.all;
 			elsif clk_count = 3 then 
 				state <= DIV;
 				clk_count <= 0;
-				stack(i) <= std_logic_vector(unsigned(remain) + x"30");
+				stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");
 				i <= i + 1;
 				pos_val <= quotient;
 			else 
