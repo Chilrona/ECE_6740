@@ -5,11 +5,32 @@ n   1   6
 f   1   1
 
 .const
-s1 16 "Your output is: "
+s1 37 "!margorp lairotcaf XLD eht ot emocleW"
+s2 4 " = !"
 
 .text
+    ADDI R21, R0, 37
+print_loop:
+    LW R21, s1(R21)
+    BEQZ R21, end_loop
+    PCH R22
+    SUBI R21, R21, 1
+    J print_loop
+end_loop:
+
     LW   R2, f(R0)
     LW   R1, n(R0)
+    PD   R1 
+
+    ADDI R21, R0, 4
+second_loop:
+    LW R21, s2(R21)
+    BEQZ R21, second_done
+    PCH R22
+    SUBI R21, R21, 1
+    J second_loop
+second_done:
+    
     SUBI R1, R1, 1
 
 top:
@@ -33,5 +54,6 @@ loopdone:
     JR R31
 
 exit:
+    PDU R2
     SW f(R0), R2
     PCH R8
