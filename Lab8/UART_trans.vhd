@@ -6,11 +6,12 @@ use ieee.numeric_std.all;
 entity UART_trans is
 		port 
 		(
-				c1          : in std_logic;
-            rst_l         : in std_logic;
-				send       	: in std_logic;
+			c1          : in std_logic;
+            rst_l       : in std_logic;
+			send       	: in std_logic;
             data_in     : in unsigned(7 downto 0);
-            tx          : out std_logic
+            tx          : out std_logic;
+            idle_flag   : out std_logic
 			
 		);
 						
@@ -35,18 +36,22 @@ entity UART_trans is
                         state <= TRANSMIT;
                         counter <= 0;
                         tx <= '0';
+                        idle_flag <= '0'
                     else
+                        idle_flag <= '1';
                         tx <= '1';
                     end if;
                 when TRANSMIT =>
                     if counter < 8 then
                         tx <= data_in(counter);
                         counter <= counter + 1;
+                        idle_flag <= '0';
                     else
                         tx <= '1';
                         counter <= 0;
-								state <= IDLE;
-							end if;
+						state <= IDLE;
+                        idle_flag <= '1';
+					end if;
                 when others =>
                     state <= IDLE;
             end case;

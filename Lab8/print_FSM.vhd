@@ -10,6 +10,7 @@ use ieee.numeric_std.all;
 		(
             rst_l : in std_logic;
             clk : in std_logic;
+			uart_clk : in std_logic;
             opcode_FSM : in std_logic_vector(5 downto 0);
 			q_1 : in std_logic_vector(31 downto 0);
 
@@ -38,7 +39,6 @@ use ieee.numeric_std.all;
 	signal stack : stack_type;
 	
 	--FIFO_WORD signals
-	signal clock_word : std_logic;
 	signal data_word : STD_LOGIC_VECTOR (37 DOWNTO 0);
 	signal rdreq_word : std_logic;
 	signal wrreq_word : std_logic;
@@ -50,10 +50,8 @@ use ieee.numeric_std.all;
 	
 	--FIFO_CHAR signals
 	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
-	signal rdclk_char : std_logic;
 	signal rdreq_char : std_logic;
 	signal rdreq_char : std_logic;
-	signal wrclk_char : std_logic;
 	signal wrreq_char : std_logic;
 	signal rdempty_char : std_logic;
 	signal wrfull_char : std_logic;
@@ -64,8 +62,9 @@ use ieee.numeric_std.all;
 	signal quotient : STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal remain : STD_LOGIC_VECTOR (31 DOWNTO 0);
 	
---		RS => instruction_mem(20 downto 16)
---   	FSM_opcode => instruction_mem(31 downto 26)
+	-- UART signals
+	signal uart_idle : std_logic;
+	signal send_flag : std_logic := '0';
 	
 
 	begin
@@ -76,7 +75,7 @@ use ieee.numeric_std.all;
 		FIFO1 ENTITY work.fifo_word 
 		PORT MAP
 		(
-			clock	=> clock_word,
+			clock	=> clk,
 			data	=> instruction_FSM,
 			rdreq	=> rdreq_word,
 			wrreq	=> wrreq_word,
@@ -91,9 +90,9 @@ use ieee.numeric_std.all;
 		PORT MAP
 		(
 			data	=> data_char,
-			rdclk	=> rdclk_char,
+			rdclk	=> uart_clk,
 			rdreq	=> rdreq_char,
-			wrclk	=> wrclk_char,
+			wrclk	=> clk,
 			wrreq	=> wrreq_char,
 			q => send_char,
 			rdempty	=> rdempty_char,
@@ -117,7 +116,8 @@ use ieee.numeric_std.all;
             rst_l       => rst_l,
 			send       	=> send_flag,
             data_in     => send_char,
-            tx          => tx
+            tx          => tx,
+			idle_flag	=> uart_idle
 			
 		);
 
@@ -179,6 +179,7 @@ use ieee.numeric_std.all;
 				if neg_flag = '1' then
 					wrreq_char <= '1';
 					data_char<= x"2D";
+				end if;
 			elsif clk_count = 3 then 
 				state <= DIV;
 				clk_count <= 0;
@@ -214,6 +215,19 @@ use ieee.numeric_std.all;
 
 		end if;
 		
+		end process;
+
+		process (uart_clk)
+		begin
+			if rising_edge(uart_clk) then
+				if uart_idle = '1' and rdempty_char = '0' then
+					send_flag <= '1';
+					rdreq_char <= '1';
+				else
+					send_flag <= '0';
+					rdreq_char <= '0';
+				end if;
+			end if;
 		end process;
 
 
