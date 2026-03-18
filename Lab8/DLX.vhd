@@ -60,7 +60,12 @@ use work.opcode_package.all;
 		-- print signals
 		signal print_stall : std_logic;
 		signal print_flush_decode : std_logic;
-		signal send_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
+		signal tx : std_logic;
+		
+		--pll signals
+		signal areset		: STD_LOGIC := '0';
+		signal c0		: STD_LOGIC :='0'; --153600 Hz
+		signal c1		: STD_LOGIC :='0'; --115.2 kHz 
 
 
 	
@@ -167,13 +172,29 @@ use work.opcode_package.all;
 	 FSM: entity work.print_FSM
 		port map
 		(
-            rst_l => rst_l,
-            clk => clk,
-			instruction_FSM => instruction_execute,
+         rst_l => rst_l,
+         clk => clk,
+			opcode_FSM => instruction_execute(31 downto 26),
 			q_1 => q_1,
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
-			send_char => send_char
+			tx <= tx, 
+			uart_clk => c1
+		);
+		
+		
+            
+			
+			
+		
+		PLLTX: entity work.pll 
+		PORT MAP
+		(
+			areset=> areset,
+			inclk0=>MAX10_CLK1_50,
+			c0=>c0,
+			c1=>c1,
+			locked=>rst_l
 		);
 	
 	 

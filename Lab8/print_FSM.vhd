@@ -33,7 +33,7 @@ use ieee.numeric_std.all;
 	signal i : integer;
 	signal pos_val : std_logic_vector(37 downto 0);
 	signal RS_signal : std_logic_vector(37 downto 0);
-	signal opcode_signal : std_logic_vector(5 downto 0)
+	signal opcode_signal : std_logic_vector(5 downto 0);
 	
 	type stack_type is array (0 to 9) of std_logic_vector(7 downto 0);
 	signal stack : stack_type;
@@ -46,6 +46,7 @@ use ieee.numeric_std.all;
 	signal empty_word : std_logic;
 	signal full_word : std_logic;
 	signal usedw_word : STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal almost_full : std_logic;
 	
 	
 	--FIFO_CHAR signals
@@ -55,6 +56,7 @@ use ieee.numeric_std.all;
 	signal wrreq_char : std_logic;
 	signal rdempty_char : std_logic;
 	signal wrfull_char : std_logic;
+	signal wrusedw : std_logic_vector (7 downto 0);
 	
 	--DIVVVVAAAAAAA signals
 	--signal denom : STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -72,21 +74,22 @@ use ieee.numeric_std.all;
 		instruction_FSM(37 downto 32) <=  opcode_FSM;
 		instruction_FSM(31 downto 0) <=  q_1;
 		
-		FIFO1 ENTITY work.fifo_word 
+		FIFO1 : ENTITY work.fifo_word 
 		PORT MAP
 		(
 			clock	=> clk,
 			data	=> instruction_FSM,
 			rdreq	=> rdreq_word,
 			wrreq	=> wrreq_word,
+			almost_full => almost_full,
 			empty	=> empty_word,
 			full => full_word,
 			q	=> q_word,
-			usedw	=>  usedw_word	 
+			usedw	=>  usedw_word
 		);
 		
 		
-		FIFO2 ENTITY work.fifo_char
+		FIFO2 : ENTITY work.fifo_char
 		PORT MAP
 		(
 			data	=> data_char,
@@ -96,10 +99,11 @@ use ieee.numeric_std.all;
 			wrreq	=> wrreq_char,
 			q => send_char,
 			rdempty	=> rdempty_char,
-			wrfull => wrfull_char 	
+			wrfull => wrfull_char,
+			wrusedw => wrusedw
 		);
 		
-		DIV ENTITY work.diva
+		DIV : ENTITY work.diva
 		PORT MAP
 		(
 			clock	=> clk,
@@ -109,7 +113,7 @@ use ieee.numeric_std.all;
 			remain => remain
 		);
 
-		U ENTITY work.UART_trans
+		U : ENTITY work.UART_trans
 		PORT MAP 
 		(
 			c1          => uart_clk,
@@ -124,9 +128,9 @@ use ieee.numeric_std.all;
 	opcode_signal <= q_word(37 downto 32);
 	RS_signal <= q_word(31 downto 0);
 
-	process (wrfull_char, full_word)
+	process (wrusedw, almost_full)
 	begin
-		if (wrfull_char = '1') or (full_word = '1') then
+		if (wrusedw >= 254) or (almost_full = '1') then
 			print_stall <= '1';
 			print_flush_decode <= '1';
 		else
@@ -198,7 +202,7 @@ use ieee.numeric_std.all;
 				if empty_word = '1' then
 					state <= POP;
 					rdreq_word <= '0';
-				elsif 
+				else
 					state <= MAGIC;
 					rdreq_word <= '1';
 				end if;
