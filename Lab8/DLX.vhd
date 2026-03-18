@@ -47,11 +47,20 @@ use work.opcode_package.all;
 		signal reg_we : std_logic;
 		signal ram_we : std_logic;
 		signal stall : std_logic;
+
+		signal stall_final : std_logic;
 		
 		--the flushes
 		signal flush_fetch : std_logic;
 		signal flush_decode : std_logic;
 		signal flush_execute :std_logic;
+
+		signal flush_decode_final : std_logic;
+
+		-- print signals
+		signal print_stall : std_logic;
+		signal print_flush_decode : std_logic;
+		signal send_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
 
 
 	
@@ -65,7 +74,7 @@ use work.opcode_package.all;
       jump_addr => jump_addr_final,
       sel_jump => sel_jump,
 		tag_for_flush => flush_fetch,
-		stall => stall,
+		stall => stall_final,
       pc => pc_decode,
       instruction => instruction_decode
 	);
@@ -78,7 +87,7 @@ use work.opcode_package.all;
       data => reg_data,
       instruction_in => instruction_decode,
 		instruction_out => instruction_execute,
-		tag_for_flush => flush_decode,
+		tag_for_flush => flush_decode_final,
 		pc_in => pc_decode,
 		pc_out => pc_execute,
 		we => reg_we,
@@ -160,11 +169,17 @@ use work.opcode_package.all;
 		(
             rst_l => rst_l,
             clk => clk,
-				instruction_FSM => instruction_execute,
-				q_1 => q_1
+			instruction_FSM => instruction_execute,
+			q_1 => q_1,
+			print_stall => print_stall,
+			print_flush_decode => print_flush_decode,
+			send_char => send_char
 		);
 	
 	 
+	 stall_final <= stall or print_stall;
+	 flush_decode_final <= flush_decode or print_flush_decode; 
+	
 	 jump_addr_final <= branch_addr when take_jump = '0' else jump_addr;
 	 sel_jump <= take_branch or take_jump;
 	

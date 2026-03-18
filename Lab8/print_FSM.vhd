@@ -11,7 +11,11 @@ use ieee.numeric_std.all;
             rst_l : in std_logic;
             clk : in std_logic;
             opcode_FSM : in std_logic_vector(5 downto 0);
-				q_1 : in std_logic_vector(31 downto 0)
+			q_1 : in std_logic_vector(31 downto 0);
+
+			print_stall : out std_logic;
+			print_flush_decode : out std_logic;
+			tx : out STD_LOGIC
 		);
 						
 	end entity print_FSM;	
@@ -51,7 +55,6 @@ use ieee.numeric_std.all;
 	signal rdreq_char : std_logic;
 	signal wrclk_char : std_logic;
 	signal wrreq_char : std_logic;
-	signal q_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
 	signal rdempty_char : std_logic;
 	signal wrfull_char : std_logic;
 	
@@ -92,7 +95,7 @@ use ieee.numeric_std.all;
 			rdreq	=> rdreq_char,
 			wrclk	=> wrclk_char,
 			wrreq	=> wrreq_char,
-			q => q_char,
+			q => send_char,
 			rdempty	=> rdempty_char,
 			wrfull => wrfull_char 	
 		);
@@ -107,8 +110,31 @@ use ieee.numeric_std.all;
 			remain => remain
 		);
 
+		U ENTITY work.UART_trans
+		PORT MAP 
+		(
+			c1          => uart_clk,
+            rst_l       => rst_l,
+			send       	=> send_flag,
+            data_in     => send_char,
+            tx          => tx
+			
+		);
+
 	opcode_signal <= q_word(37 downto 32);
 	RS_signal <= q_word(31 downto 0);
+
+	process (wrfull_char, full_word)
+	begin
+		if (wrfull_char = '1') or (full_word = '1') then
+			print_stall <= '1';
+			print_flush_decode <= '1';
+		else
+			print_stall <= '0';
+			print_flush_decode <= '0';
+		end if;
+	end process;
+
 	process (clk, rst_l)
 	begin
 	if rst_l = '0' then
