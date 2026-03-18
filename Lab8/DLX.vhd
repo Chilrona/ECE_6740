@@ -160,23 +160,10 @@ use work.opcode_package.all;
 		(
             rst_l => rst_l,
             clk => clk,
-            RS => instruction_mem(20 downto 16),
-            FSM_opcode => instruction_mem(31 downto 26)
+				instruction_FSM => instruction_execute,
+				q_1 => q_1
 		);
-	 
-	 ENTITY fifo_char IS
-		PORT
-		(
-			clock		: IN STD_LOGIC ;
-			data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			rdreq		: IN STD_LOGIC ;
-			wrreq		: IN STD_LOGIC ;
-			empty		: OUT STD_LOGIC ;
-			full		: OUT STD_LOGIC ;
-			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-			usedw		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-		);
-		END fifo_char;
+	
 	 
 	 jump_addr_final <= branch_addr when take_jump = '0' else jump_addr;
 	 sel_jump <= take_branch or take_jump;
