@@ -10,8 +10,8 @@ entity Branch_guess is
 		rst_l : in std_logic;
 		clk : in std_logic;
       --jump and branch ports
-		jump_addr1 : out std_logic_vector(9 downto 0);
-		sel_jump1 : out std_logic;
+		jump_addr : out std_logic_vector(9 downto 0);
+		sel_jump : out std_logic;
       --address to jump to value
 		pc_decode : in std_logic_vector(9 downto 0);
 		instruction_decode : in std_logic_vector(31 downto 0)
@@ -25,7 +25,7 @@ entity Branch_guess is
 
     begin
 		
-		opcode <= instruction_execute(31 downto 26);
+		opcode <= instruction_decode(31 downto 26);-- was execute before
 
 
     process(clk)

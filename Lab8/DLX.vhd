@@ -6,13 +6,30 @@ use work.opcode_package.all;
 	entity DLX is
 		port 
 		(
-			rst_l : in std_logic;
-			clk : in std_logic
+			KEY : in unsigned(1 downto 0);
+			ADC_CLK_10 : in std_logic;
+			MAX10_CLK1_50 : in std_logic;
+			MAX10_CLK2_50 : in std_logic;
+			HEX0 : out unsigned(7 downto 0);
+			HEX1 : out unsigned(7 downto 0);
+			HEX2 : out unsigned(7 downto 0);
+			HEX3 : out unsigned(7 downto 0);
+			HEX4 : out unsigned(7 downto 0);
+			HEX5 : out unsigned(7 downto 0);
+			LEDR : out unsigned(9 downto 0);
+			SW	  : in unsigned(9 downto 0);
+			ARDUINO_IO : inout unsigned(15 downto 0);
+			ARDUINO_RESET_N : inout std_logic;
+			GPIO : inout unsigned(35 downto 0)
 		);
 						
 	end entity DLX;	
 					
-	architecture Behavioral of DLX is     
+	architecture Behavioral of DLX is  
+
+		--clk and rst signals
+		signal clk : std_logic;
+		signal rst_l : std_logic;
 		
 		signal pc_decode : std_logic_vector(9 downto 0);
 		signal pc_execute : std_logic_vector(9 downto 0);
@@ -23,7 +40,7 @@ use work.opcode_package.all;
 		signal instruction_wb : std_logic_vector(31 downto 0);
 		
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
-      	signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
+      signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
 		signal q_2_mem : std_logic_vector(31 downto 0) := (others=>'0');
 		
 		signal imm_extended : std_logic_vector(31 downto 0);
@@ -70,6 +87,12 @@ use work.opcode_package.all;
 
 	
 	begin
+	
+	--setting up the clk and rst and tx
+	
+	rst_l <= KEY(0);
+	clk <= MAX10_CLK1_50;
+	tx <= GPIO(1);
 	
 	FETCH: entity work.fetch 
 	port map
@@ -203,6 +226,7 @@ use work.opcode_package.all;
 	
 	 jump_addr_final <= branch_addr when take_jump = '0' else jump_addr;
 	 sel_jump <= take_branch or take_jump;
+	 
 	
 
 				

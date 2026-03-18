@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Wed Mar 18 14:53:02 2026
+Wed Mar 18 15:47:53 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Mar 18 14:53:02 2026               ;
+; Analysis & Synthesis Status        ; Failed - Wed Mar 18 15:47:53 2026               ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -147,8 +147,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 14          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,105 +164,104 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Mar 18 14:52:57 2026
+    Info: Processing started: Wed Mar 18 15:47:46 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Warning (12019): Can't analyze file -- file uart_recv_tb.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file my_fifo.vhd
-    Info (12022): Found design unit 1: my_fifo-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_fifo.vhd Line: 58
-    Info (12023): Found entity 1: my_fifo File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_fifo.vhd Line: 43
-Error (10500): VHDL syntax error at pll.vhd(402) near text "rdreq_word";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/pll.vhd Line: 402
-Info (12021): Found 0 design units, including 0 entities, in source file pll.vhd
+    Info (12022): Found design unit 1: my_fifo-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_fifo.vhd Line: 58
+    Info (12023): Found entity 1: my_fifo File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_fifo.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
+    Info (12022): Found design unit 1: pll-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/pll.vhd Line: 55
+    Info (12023): Found entity 1: pll File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file characterconvertor.vhd
-    Info (12022): Found design unit 1: CharacterConvertor-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/CharacterConvertor.vhd Line: 14
-    Info (12023): Found entity 1: CharacterConvertor File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/CharacterConvertor.vhd Line: 6
+    Info (12022): Found design unit 1: CharacterConvertor-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/CharacterConvertor.vhd Line: 14
+    Info (12023): Found entity 1: CharacterConvertor File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/CharacterConvertor.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file lab1uart.vhd
-    Info (12022): Found design unit 1: Lab1UART-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Lab1UART.vhd Line: 29
-    Info (12023): Found entity 1: Lab1UART File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Lab1UART.vhd Line: 6
+    Info (12022): Found design unit 1: Lab1UART-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Lab1UART.vhd Line: 29
+    Info (12023): Found entity 1: Lab1UART File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Lab1UART.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file uart_recv.vhd
-    Info (12022): Found design unit 1: uart_recv-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/uart_recv.vhd Line: 18
-    Info (12023): Found entity 1: uart_recv File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/uart_recv.vhd Line: 6
+    Info (12022): Found design unit 1: uart_recv-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/uart_recv.vhd Line: 18
+    Info (12023): Found entity 1: uart_recv File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/uart_recv.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file uart_trans.vhd
-    Info (12022): Found design unit 1: UART_trans-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/UART_trans.vhd Line: 20
-    Info (12023): Found entity 1: UART_trans File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/UART_trans.vhd Line: 6
+    Info (12022): Found design unit 1: UART_trans-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/UART_trans.vhd Line: 20
+    Info (12023): Found entity 1: UART_trans File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/UART_trans.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file uartsampler.vhd
-    Info (12022): Found design unit 1: UARTSampler-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/UARTSampler.vhd Line: 20
-    Info (12023): Found entity 1: UARTSampler File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/UARTSampler.vhd Line: 6
+    Info (12022): Found design unit 1: UARTSampler-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/UARTSampler.vhd Line: 20
+    Info (12023): Found entity 1: UARTSampler File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/UARTSampler.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file branch_guess.vhd
-    Info (12022): Found design unit 1: Branch_guess-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Branch_guess.vhd Line: 21
-    Info (12023): Found entity 1: Branch_guess File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Branch_guess.vhd Line: 7
+    Info (12022): Found design unit 1: Branch_guess-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Branch_guess.vhd Line: 21
+    Info (12023): Found entity 1: Branch_guess File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Branch_guess.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file overseer.vhd
-    Info (12022): Found design unit 1: OVERSEER-BEHAVIORAL File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Overseer.vhd Line: 28
-    Info (12023): Found entity 1: OVERSEER File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Overseer.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file dlx_lab6_tb.vhd
-    Info (12022): Found design unit 1: DLX_lab6_tb-test File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX_lab6_tb.vhd Line: 9
-    Info (12023): Found entity 1: DLX_lab6_tb File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX_lab6_tb.vhd Line: 6
+    Info (12022): Found design unit 1: OVERSEER-BEHAVIORAL File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Overseer.vhd Line: 28
+    Info (12023): Found entity 1: OVERSEER File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Overseer.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file write_back.vhd
-    Info (12022): Found design unit 1: write_back-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/write_back.vhd Line: 20
-    Info (12023): Found entity 1: write_back File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/write_back.vhd Line: 6
+    Info (12022): Found design unit 1: write_back-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/write_back.vhd Line: 20
+    Info (12023): Found entity 1: write_back File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/write_back.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: memory-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/memory.vhd Line: 25
-    Info (12023): Found entity 1: memory File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/memory.vhd Line: 6
+    Info (12022): Found design unit 1: memory-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/memory.vhd Line: 25
+    Info (12023): Found entity 1: memory File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/memory.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file zeros.vhd
-    Info (12022): Found design unit 1: Zeros-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Zeros.vhd Line: 22
-    Info (12023): Found entity 1: Zeros File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Zeros.vhd Line: 7
+    Info (12022): Found design unit 1: Zeros-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Zeros.vhd Line: 22
+    Info (12023): Found entity 1: Zeros File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Zeros.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file pc_mux.vhd
-    Info (12022): Found design unit 1: PC_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/PC_mux.vhd Line: 30
-    Info (12023): Found entity 1: PC_mux File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/PC_mux.vhd Line: 6
+    Info (12022): Found design unit 1: PC_mux-behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/PC_mux.vhd Line: 30
+    Info (12023): Found entity 1: PC_mux File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/PC_mux.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file imm_mux.vhd
-    Info (12022): Found design unit 1: imm_mux-behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/imm_mux.vhd Line: 29
-    Info (12023): Found entity 1: imm_mux File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/imm_mux.vhd Line: 6
+    Info (12022): Found design unit 1: imm_mux-behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/imm_mux.vhd Line: 29
+    Info (12023): Found entity 1: imm_mux File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/imm_mux.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Execute.vhd Line: 32
-    Info (12023): Found entity 1: execute File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Execute.vhd Line: 6
+    Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Execute.vhd Line: 32
+    Info (12023): Found entity 1: execute File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Execute.vhd Line: 6
 Warning (12019): Can't analyze file -- file ALU_1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/ALU.vhd Line: 20
-    Info (12023): Found entity 1: ALU File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/ALU.vhd Line: 6
+    Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/ALU.vhd Line: 20
+    Info (12023): Found entity 1: ALU File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/ALU.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file sign_extend.vhd
-    Info (12022): Found design unit 1: sign_extend-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/sign_extend.vhd Line: 17
-    Info (12023): Found entity 1: sign_extend File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/sign_extend.vhd Line: 6
+    Info (12022): Found design unit 1: sign_extend-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/sign_extend.vhd Line: 17
+    Info (12023): Found entity 1: sign_extend File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/sign_extend.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
-    Info (12022): Found design unit 1: registers-rtl File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/registers.vhd Line: 19
-    Info (12023): Found entity 1: registers File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/registers.vhd Line: 6
+    Info (12022): Found design unit 1: registers-rtl File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/registers.vhd Line: 19
+    Info (12023): Found entity 1: registers File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/registers.vhd Line: 6
 Info (12021): Found 2 design units, including 0 entities, in source file opcode_package.vhd
-    Info (12022): Found design unit 1: opcode_package File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/OPCODE_PACKAGE.vhd Line: 5
-    Info (12022): Found design unit 2: opcode_package-body File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/OPCODE_PACKAGE.vhd Line: 99
+    Info (12022): Found design unit 1: opcode_package File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/OPCODE_PACKAGE.vhd Line: 5
+    Info (12022): Found design unit 2: opcode_package-body File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/OPCODE_PACKAGE.vhd Line: 99
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: fetch-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fetch.vhd Line: 23
-    Info (12023): Found entity 1: fetch File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fetch.vhd Line: 6
+    Info (12022): Found design unit 1: fetch-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fetch.vhd Line: 23
+    Info (12023): Found entity 1: fetch File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fetch.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
-    Info (12022): Found design unit 1: DLX-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX.vhd Line: 15
-    Info (12023): Found entity 1: DLX File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX.vhd Line: 6
+    Info (12022): Found design unit 1: DLX-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/DLX.vhd Line: 28
+    Info (12023): Found entity 1: DLX File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/DLX.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
-    Info (12022): Found design unit 1: decode-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Decode.vhd Line: 30
-    Info (12023): Found entity 1: decode File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/Decode.vhd Line: 6
+    Info (12022): Found design unit 1: decode-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Decode.vhd Line: 30
+    Info (12023): Found entity 1: decode File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/Decode.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file my_rom.vhd
-    Info (12022): Found design unit 1: my_rom-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_ROM.vhd Line: 53
-    Info (12023): Found entity 1: my_ROM File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_ROM.vhd Line: 43
+    Info (12022): Found design unit 1: my_rom-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_ROM.vhd Line: 53
+    Info (12023): Found entity 1: my_ROM File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_ROM.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file my_ram.vhd
-    Info (12022): Found design unit 1: my_ram-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_ram.vhd Line: 55
-    Info (12023): Found entity 1: my_ram File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_ram.vhd Line: 43
+    Info (12022): Found design unit 1: my_ram-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_ram.vhd Line: 55
+    Info (12023): Found entity 1: my_ram File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_ram.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file my_div.vhd
-    Info (12022): Found design unit 1: my_div-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_div.vhd Line: 55
-    Info (12023): Found entity 1: my_div File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/my_div.vhd Line: 43
+    Info (12022): Found design unit 1: my_div-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_div.vhd Line: 55
+    Info (12023): Found entity 1: my_div File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/my_div.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_word.vhd
-    Info (12022): Found design unit 1: fifo_word-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fifo_word.vhd Line: 59
-    Info (12023): Found entity 1: fifo_word File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fifo_word.vhd Line: 43
+    Info (12022): Found design unit 1: fifo_word-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fifo_word.vhd Line: 59
+    Info (12023): Found entity 1: fifo_word File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fifo_word.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_char.vhd
-    Info (12022): Found design unit 1: fifo_char-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fifo_char.vhd Line: 59
-    Info (12023): Found entity 1: fifo_char File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/fifo_char.vhd Line: 43
+    Info (12022): Found design unit 1: fifo_char-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fifo_char.vhd Line: 59
+    Info (12023): Found entity 1: fifo_char File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/fifo_char.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file diva.vhd
-    Info (12022): Found design unit 1: diva-SYN File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/diva.vhd Line: 55
-    Info (12023): Found entity 1: diva File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/diva.vhd Line: 43
+    Info (12022): Found design unit 1: diva-SYN File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/diva.vhd Line: 55
+    Info (12023): Found entity 1: diva File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/diva.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file print_fsm.vhd
-    Info (12022): Found design unit 1: print_FSM-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/print_FSM.vhd Line: 24
-    Info (12023): Found entity 1: print_FSM File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/print_FSM.vhd Line: 8
+    Info (12022): Found design unit 1: print_FSM-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/print_FSM.vhd Line: 24
+    Info (12023): Found entity 1: print_FSM File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/print_FSM.vhd Line: 8
+Error (10437): VHDL Association List error at DLX.vhd(204): positional associations must be listed before named associations File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/Lab8/DLX.vhd Line: 204
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 3 warnings
-    Error: Peak virtual memory: 4815 megabytes
-    Error: Processing ended: Wed Mar 18 14:53:02 2026
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:10
+    Error: Peak virtual memory: 4814 megabytes
+    Error: Processing ended: Wed Mar 18 15:47:53 2026
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:13
 
 

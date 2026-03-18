@@ -405,7 +405,6 @@ set_global_assignment -name SOURCE_FILE my_div.cmp
 set_global_assignment -name VHDL_FILE Branch_guess.vhd
 set_global_assignment -name SOURCE_FILE my_ram.cmp
 set_global_assignment -name VHDL_FILE Overseer.vhd
-set_global_assignment -name VHDL_FILE DLX_lab6_tb.vhd
 set_global_assignment -name VHDL_FILE write_back.vhd
 set_global_assignment -name VHDL_FILE memory.vhd
 set_global_assignment -name SOURCE_FILE my_ROM.cmp

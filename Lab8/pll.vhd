@@ -399,4 +399,3 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL pll_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
 -- Retrieval info: CBX_MODULE_PREFIX: ON
-rdreq_word
