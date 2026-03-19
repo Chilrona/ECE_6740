@@ -5,8 +5,8 @@ n   1   6
 f   1   1
 
 .const
-s1 37 "!margorp lairotcaf XLD eht ot emocleW"
-s2 4 " = !"
+s1 37 !margorp lairotcaf XLD eht ot emocleW
+s2 3 = ! 
 
 .text
     ADDI R21, R0, 37
