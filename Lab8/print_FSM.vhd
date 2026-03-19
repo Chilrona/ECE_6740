@@ -13,7 +13,7 @@ use work.opcode_package.all;
             clk : in std_logic;
 			uart_clk : in std_logic;
             opcode_FSM : in std_logic_vector(5 downto 0);
-			q_1 : in std_logic_vector(31 downto 0);
+			op1 : in std_logic_vector(31 downto 0);
 
 			print_stall : out std_logic;
 			print_flush_decode : out std_logic;
@@ -72,7 +72,7 @@ use work.opcode_package.all;
 	begin
 		
 		instruction_FSM(37 downto 32) <=  opcode_FSM;
-		instruction_FSM(31 downto 0) <=  q_1;
+		instruction_FSM(31 downto 0) <=  op1;
 		
 		FIFO1 : ENTITY work.fifo_word 
 		PORT MAP

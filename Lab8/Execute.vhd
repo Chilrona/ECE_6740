@@ -24,14 +24,14 @@ use work.opcode_package.all;
             branch_addr : out std_logic_vector(9 downto 0);
 			take_branch : out std_logic;
             ram_we : out std_logic;
-            q_2_out : out std_logic_vector(31 downto 0)
+            q_2_out : out std_logic_vector(31 downto 0);
+				op1 : buffer std_logic_vector(31 downto 0) := (others=>'0')
 		);
 						
 	end entity execute;	
 					
 	architecture Behavioral of execute is     
 	
-    signal op1 : std_logic_vector(31 downto 0):= (others => '0');
     signal op2 : std_logic_vector(31 downto 0) := (others => '0');
 	 signal instruction_in_1 : std_logic_vector(31 downto 0);
 

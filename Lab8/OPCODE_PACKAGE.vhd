@@ -146,25 +146,31 @@ package body opcode_package is
                 (opcode = BEQZ) or
                 (opcode = BNEZ) or
                 (opcode = J)    or
-                (opcode = JR);
+                (opcode = JR)   or
+					 (opcode = PCH)  or
+					 (opcode = PD)   or
+					 (opcode = PDU);
     end function;
 
     --Is not included in the first data hazard opcode types
     function is_not_data_hazard_1(opcode : std_logic_vector(5 downto 0)) return boolean is
     begin
-        return  (opcode = NOP)   or
-                (opcode = J)  or
-                (opcode = JR) or
-                (opcode = JAL) or
+        return  (opcode = NOP)  or
+                (opcode = J)    or
+                (opcode = JR)   or
+                (opcode = JAL)  or
                 (opcode = JALR);
     end function;
 	 
 	 function has_no_dest_reg(opcode : std_logic_vector(5 downto 0)) return boolean is
 	 begin
-		return 	 (opcode = NOP)   or
-                (opcode = J)  or
-                (opcode = JR) or
-                (opcode = SW);
+		return 	 (opcode = NOP)  or
+                (opcode = J)    or
+                (opcode = JR)   or
+                (opcode = SW)   or
+					 (opcode = PCH)  or
+					 (opcode = PD)   or
+					 (opcode = PDU);
     end function;
 
     --Is included in the second data hazard opcode types

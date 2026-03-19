@@ -55,6 +55,8 @@ uint32_t parse_memory(char* line_ptr, Label** data_table)
         abort();
     }
 
+    rOffsetBits = rs1It->second;
+
     //4) Cheekily sneak the destination reg into the source reg 2 field for SW
     auto rs2It = rs2Table.find(inst.rData);
     if (rs2It == rs2Table.end())

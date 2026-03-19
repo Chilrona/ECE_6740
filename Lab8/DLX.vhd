@@ -32,6 +32,7 @@ use work.opcode_package.all;
 		signal q_1 : std_logic_vector (31 DOWNTO 0) := (others=>'0');
       signal q_2 : std_logic_vector(31 downto 0) := (others=>'0');
 		signal q_2_mem : std_logic_vector(31 downto 0) := (others=>'0');
+		signal op1 : std_logic_vector(31 downto 0);
 		
 		signal imm_extended : std_logic_vector(31 downto 0);
 		signal jump_addr_final : std_logic_vector(9 downto 0);
@@ -135,7 +136,8 @@ use work.opcode_package.all;
 		branch_addr => branch_addr,
 		take_branch => take_branch,
 		ram_we => ram_we,
-		q_2_out => q_2_mem
+		q_2_out => q_2_mem,
+		op1 => op1
 	);
 	MEMORY: entity work.memory
 	port map
@@ -190,7 +192,7 @@ use work.opcode_package.all;
          rst_l => rst_l,
          clk => clk,
 			opcode_FSM => instruction_execute(31 downto 26),
-			q_1 => q_1,
+			op1 => op1,
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
 			tx => tx, 
