@@ -50,7 +50,7 @@ use work.opcode_package.all;
 	
 	
 	--FIFO_CHAR signals
-	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0):= (others=>'0');
 	signal rdreq_char : std_logic;
 	signal wrreq_char : std_logic;
 	signal rdempty_char : std_logic;
@@ -162,14 +162,9 @@ use work.opcode_package.all;
 			if opcode_signal = PCH then
 				wrreq_char <= '1';
 				data_char <= RS_signal(7 downto 0);
+				state <= POP;
+				rdreq_word<='0';
 
-				if empty_word = '0' then -- if not empty, keep reading
-					state <= MAGIC;
-					rdreq_word <= '1';
-				else -- if empty, go back to pop
-					state <= POP;
-					rdreq_word <= '0';
-				end if;
 			elsif opcode_signal = PDU then
 				pos_val <= RS_signal;
 				state <= DIV;
@@ -248,3 +243,5 @@ use work.opcode_package.all;
 
 		
 	end Behavioral;	
+
+
