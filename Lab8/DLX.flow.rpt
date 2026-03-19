@@ -1,5 +1,5 @@
 Flow report for DLX
-Wed Mar 18 21:21:13 2026
+Wed Mar 18 22:04:48 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 18 21:21:10 2026           ;
+; Flow Status                        ; Successful - Wed Mar 18 22:04:45 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/18/2026 21:20:53 ;
+; Start date & time ; 03/18/2026 22:04:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ on the Quartus Prime software download page.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 84607103025491.177389045342308         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 84607103025491.177389306931832         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; my_fifo.cmp                            ; --            ; --          ; --         ;
@@ -106,7 +106,7 @@ on the Quartus Prime software download page.
 ; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4909 MB             ; 00:00:14                           ;
 ; Fitter               ; 00:00:04     ; 1.1                     ; 6510 MB             ; 00:00:09                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4836 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4959 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4951 MB             ; 00:00:02                           ;
 ; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
