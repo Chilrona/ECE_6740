@@ -82,7 +82,7 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	rst_l <= KEY(0) and not locked;
+	rst_l <= KEY(0) and not(locked);
 	clk <= MAX10_CLK1_50;
 	-- GPIO(1) <= tx;
 	--tx <= GPIO(1);
