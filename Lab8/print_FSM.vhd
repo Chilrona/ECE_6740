@@ -160,15 +160,9 @@ use work.opcode_package.all;
 		when MAGIC =>
 			
 			if opcode_signal = PCH then
-				wrreq_char <= '1';
 				data_char <= RS_signal(7 downto 0);
-				if empty_word = '0' then -- If fifo not empty
-					state <= MAGIC;
-					rdreq_word <= '1';
-				else -- Else if fifo not empty
-					state <= POP;
-					rdreq_word <= '0';
-				end if;
+				state <= POP;
+				rdreq_word <= '0';
 			elsif opcode_signal = PDU then
 				pos_val <= RS_signal;
 				state <= DIV;

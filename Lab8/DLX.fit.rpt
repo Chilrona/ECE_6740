@@ -1,5 +1,5 @@
 Fitter report for DLX
-Wed Mar 18 22:04:42 2026
+Wed Mar 18 22:33:54 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Mar 18 22:04:42 2026           ;
+; Fitter Status                      ; Successful - Wed Mar 18 22:33:54 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -1810,9 +1810,9 @@ Warning (169064): Following 36 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[35] has a permanently disabled output enable File: C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX.vhd Line: 13
 Info (144001): Generated suppressed messages file C:/Users/A02395949/Documents/advanced/ECE_6740/Lab8/DLX.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 139 warnings
-    Info: Peak virtual memory: 6510 megabytes
-    Info: Processing ended: Wed Mar 18 22:04:42 2026
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 6506 megabytes
+    Info: Processing ended: Wed Mar 18 22:33:55 2026
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:09
 
 
