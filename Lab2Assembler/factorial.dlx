@@ -11,7 +11,7 @@ s2 4 " = !"
 .text
     ADDI R21, R0, 37
 print_loop:
-    LW R21, s1(R21)
+    LW R22, s1(R21)
     BEQZ R21, end_loop
     PCH R22
     SUBI R21, R21, 1
@@ -24,7 +24,7 @@ end_loop:
 
     ADDI R21, R0, 4
 second_loop:
-    LW R21, s2(R21)
+    LW R22, s2(R21)
     BEQZ R21, second_done
     PCH R22
     SUBI R21, R21, 1
