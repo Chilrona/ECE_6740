@@ -3,29 +3,36 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-entity DLX_lab6_tb is
-end DLX_lab6_tb;
+entity DLX_lab8_tb is
+end DLX_lab8_tb;
 
-architecture test of DLX_lab6_tb is
+architecture test of DLX_lab8_tb is
 
 	constant CLK_PERIOD : time := 20 ns;
 	
 	--Signals to connect to Lab3fetch
-	signal rst_l : std_logic:= '0';
+	signal rst_l : std_logic:= '0'; 
+	signal KEY : std_logic_vector(1 downto 0);
 	signal clk : std_logic;
+	signal GPIO : std_logic_vector(35 downto 0);
+	signal open_clk : std_logic;
+	signal open_clk2 : std_logic;
 
 	begin
 
 	-- Instantiate the Unit Under Test (UUT)
-
-	UUT : entity work.DLX
-		port map
+		
+		UUT : entity work.DLX
+		port  map
 		(
-			rst_l => rst_l,
-			clk =>clk
-
+			KEY => KEY,
+			ADC_CLK_10 => open_clk,
+			MAX10_CLK1_50 => clk,
+			MAX10_CLK2_50 => open_clk2,
+			GPIO => GPIO
 		);
 
+	KEY(0) <= rst_l;
 
 	clk_process : process
 	begin

@@ -6,21 +6,11 @@ use work.opcode_package.all;
 	entity DLX is
 		port 
 		(
-			KEY : in unsigned(1 downto 0);
+			KEY : in std_logic_vector(1 downto 0);
 			ADC_CLK_10 : in std_logic;
 			MAX10_CLK1_50 : in std_logic;
 			MAX10_CLK2_50 : in std_logic;
-			HEX0 : out unsigned(7 downto 0);
-			HEX1 : out unsigned(7 downto 0);
-			HEX2 : out unsigned(7 downto 0);
-			HEX3 : out unsigned(7 downto 0);
-			HEX4 : out unsigned(7 downto 0);
-			HEX5 : out unsigned(7 downto 0);
-			LEDR : out unsigned(9 downto 0);
-			SW	  : in unsigned(9 downto 0);
-			ARDUINO_IO : inout unsigned(15 downto 0);
-			ARDUINO_RESET_N : inout std_logic;
-			GPIO : inout unsigned(35 downto 0)
+			GPIO : inout std_logic_vector(35 downto 0)
 		);
 						
 	end entity DLX;	
@@ -91,9 +81,10 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	rst_l <= KEY(0) and locked;
+	rst_l <= KEY(0) and not locked;
 	clk <= MAX10_CLK1_50;
 	tx <= GPIO(1);
+	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
 	port map

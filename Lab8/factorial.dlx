@@ -9,11 +9,11 @@ s1 37 !margorp lairotcaf XLD eht ot emocleW
 s2 3 = ! 
 
 .text
-    ADDI R21, R0, 37
+    ADDI R21, R0, 36
 print_loop:
     LW R22, s1(R21)
-    BEQZ R21, end_loop
     PCH R22
+    BEQZ R21, end_loop
     SUBI R21, R21, 1
     J print_loop
 end_loop:
@@ -22,11 +22,11 @@ end_loop:
     LW   R1, n(R0)
     PD   R1 
 
-    ADDI R21, R0, 4
+    ADDI R21, R0, 2
 second_loop:
     LW R22, s2(R21)
-    BEQZ R21, second_done
     PCH R22
+    BEQZ R21, second_done
     SUBI R21, R21, 1
     J second_loop
 second_done:
@@ -56,4 +56,3 @@ loopdone:
 exit:
     PDU R2
     SW f(R0), R2
-    PCH R8

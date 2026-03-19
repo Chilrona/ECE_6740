@@ -29,9 +29,9 @@ use work.opcode_package.all;
 	signal instruction_FSM : std_logic_vector(37 downto 0);
 	
 	type state_type is (MAGIC, DIV, POP);
-	signal state : state_type;
+	signal state : state_type:= POP;
 	
-	signal i : integer;
+	signal i : integer:= 0;
 	signal pos_val : std_logic_vector(31 downto 0);
 	signal RS_signal : std_logic_vector(31 downto 0);
 	signal opcode_signal : std_logic_vector(5 downto 0);
@@ -40,9 +40,8 @@ use work.opcode_package.all;
 	signal stack : stack_type;
 	
 	--FIFO_WORD signals
-	signal data_word : STD_LOGIC_VECTOR (37 DOWNTO 0);
-	signal rdreq_word : std_logic;
-	signal wrreq_word : std_logic;
+	signal rdreq_word : std_logic:= '0';
+	signal wrreq_word : std_logic:= '0';
 	signal q_word : STD_LOGIC_VECTOR (37 DOWNTO 0);
 	signal empty_word : std_logic;
 	signal full_word : std_logic;
@@ -139,14 +138,23 @@ use work.opcode_package.all;
 			print_flush_decode <= '0';
 		end if;
 	end process;
+	
+	process (opcode_FSM)
+	begin
+		if (opcode_FSM = PCH) or (opcode_FSM = PD) or (opcode_FSM = PDU) then
+			wrreq_word <= '1';
+		else
+			wrreq_word <='0';
+		end if;
+	end process;
 
 	process (clk, rst_l)
 	begin
 	if rst_l = '0' then
-		 state <= MAGIC;
+		 state <= POP;
 		 clk_count <= 0;
 	elsif rising_edge(clk) then
-
+		
 		case state is
 		
 		when MAGIC =>

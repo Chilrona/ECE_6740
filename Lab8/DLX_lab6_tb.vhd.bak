@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-entity DLX_tb is
-end DLX_tb;
+entity DLX_lab6_tb is
+end DLX_lab6_tb;
 
-architecture test of DLX_tb is
+architecture test of DLX_lab6_tb is
 
 	constant CLK_PERIOD : time := 20 ns;
 	
@@ -22,14 +22,7 @@ architecture test of DLX_tb is
 		port map
 		(
 			rst_l => rst_l,
-			clk =>clk,
-         --jump and branch ports
-         --jump_addr => jump_addr,
-			--sel_jump => sel_jump,
-
-         --data memory ports
-         data => wr_data,
-			we => we
+			clk =>clk
 
 		);
 
