@@ -25,7 +25,7 @@ use work.opcode_package.all;
 	architecture Behavioral of print_FSM is 
 
 	signal neg_flag : std_logic;
-	signal clk_count : integer;
+	signal clk_count : integer:= 0;
 	signal instruction_FSM : std_logic_vector(37 downto 0);
 	
 	type state_type is (MAGIC, DIV, POP);
@@ -160,9 +160,16 @@ use work.opcode_package.all;
 		when MAGIC =>
 			
 			if opcode_signal = PCH then
+				wrreq_char <= '1';
 				data_char <= RS_signal(7 downto 0);
-				state <= POP;
-				rdreq_word <= '0';
+
+				if empty_word = '0' then -- if not empty, keep reading
+					state <= MAGIC;
+					rdreq_word <= '1';
+				else -- if empty, go back to pop
+					state <= POP;
+					rdreq_word <= '0';
+				end if;
 			elsif opcode_signal = PDU then
 				pos_val <= RS_signal;
 				state <= DIV;
