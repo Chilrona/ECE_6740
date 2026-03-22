@@ -68,7 +68,7 @@ use work.opcode_package.all;
 		-- print signals
 		signal print_stall : std_logic;
 		signal print_flush_decode : std_logic;
-		signal tx : std_logic;
+		-- signal tx : std_logic;
 		
 		--pll signals
 		signal areset		: STD_LOGIC := '0';
@@ -82,9 +82,10 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	rst_l <= KEY(0) and not locked;
+	rst_l <= KEY(0) and not(locked);
 	clk <= MAX10_CLK1_50;
-	tx <= GPIO(1);
+	-- GPIO(1) <= tx;
+	--tx <= GPIO(1);
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
@@ -195,7 +196,7 @@ use work.opcode_package.all;
 			op1 => op1,
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
-			tx => tx, 
+			tx => GPIO(1), 
 			uart_clk => c1
 		);
 		
