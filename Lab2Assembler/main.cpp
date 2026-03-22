@@ -358,6 +358,9 @@ void build_mnemonic_table(mnemonic_entry** table_ptr)
     shput(table, "PD", PRINT);
     shput(table, "PDU", PRINT);
 
+    shput(table, "GD", PRINT);
+    shput(table, "GDU", PRINT);
+
     printf("Table Built!\n");
     *table_ptr=table;
 }

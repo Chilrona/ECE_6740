@@ -57,3 +57,6 @@ exit:
     PDU R2
     SW f(R0), R2
     PCH R8
+    ; Adding a test line here for scanning
+    GD R6
+    GDU R20
