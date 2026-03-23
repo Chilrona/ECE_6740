@@ -33,5 +33,6 @@ BEGIN
 019 : B800F800; --JR R31
 01A : CC020000; --PDU R2
 01B : 08401001; --SW f R0 R2
+01C : B400001C; --J infinite_nothing
 
 END;
