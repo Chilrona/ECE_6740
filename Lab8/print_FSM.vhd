@@ -100,7 +100,7 @@ use work.opcode_package.all;
 		PORT MAP
 		(
 			data	=> data_char,
-			rdclk	=> clk,
+			rdclk	=> uart_clk,
 			rdreq	=> rdreq_char,
 			wrclk	=> clk,
 			wrreq	=> wrreq_char,
@@ -123,7 +123,7 @@ use work.opcode_package.all;
 		U : ENTITY work.UART_trans
 		PORT MAP 
 		(
-				c1          => clk,
+				c1          => uart_clk,
             rst_l       => rst_l,
 				send       	=> send_flag,
             data_in     => unsigned(send_char),
@@ -171,7 +171,7 @@ use work.opcode_package.all;
 	process (clk, rst_l)
 	begin
 		if rst_l = '0' then
-			 state <= POP;
+			 state <= IDLE;
 			 clk_count <= 0;
 			 i <= 0;
 		elsif rising_edge(clk) then
