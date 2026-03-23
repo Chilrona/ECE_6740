@@ -1,7 +1,7 @@
 
 State Machine - |DLX|print_FSM:FSM|state
-Name state.IDLE state.DIV state.MAGIC state.POP 
-state.POP 0 0 0 0 
+Name state.POP state.DIV state.MAGIC state.IDLE 
+state.IDLE 0 0 0 0 
 state.MAGIC 0 0 1 1 
 state.DIV 0 1 0 1 
-state.IDLE 1 0 0 1 
+state.POP 1 0 0 1 

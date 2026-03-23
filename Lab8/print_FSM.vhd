@@ -101,6 +101,7 @@ use work.opcode_package.all;
 		(
 			data	=> data_char,
 			rdclk	=> uart_clk,
+			--rdclk	=> clk,
 			rdreq	=> rdreq_char,
 			wrclk	=> clk,
 			wrreq	=> wrreq_char,
@@ -123,6 +124,7 @@ use work.opcode_package.all;
 		U : ENTITY work.UART_trans
 		PORT MAP 
 		(
+				--c1          => clk,
 				c1          => uart_clk,
             rst_l       => rst_l,
 				send       	=> send_flag,

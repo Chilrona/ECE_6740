@@ -2,7 +2,8 @@
 
 .data
 n   1   6
-f   1   1
+st   1   1
+f 1 1
 
 .const
 s1 37 !margorp lairotcaf XLD eht ot emocleW
@@ -18,7 +19,7 @@ print_loop:
     J print_loop
 end_loop:
 
-    LW   R2, f(R0)
+    LW   R2, st(R0)
     LW   R1, n(R0)
     PD   R1 
 
