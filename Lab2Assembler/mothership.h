@@ -89,7 +89,10 @@ const std:: unordered_map<std::string, uint32_t> opcodeTable = {
 
     {"PCH",   0xC4000000},
     {"PD",    0xC8000000},
-    {"PDU",   0xCC000000}
+    {"PDU",   0xCC000000},
+
+    {"GD",    0xD0000000},
+    {"GDU",   0xD4000000}
 };
 
 //destination registers
