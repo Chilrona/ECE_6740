@@ -56,3 +56,6 @@ loopdone:
 exit:
     PDU R2
     SW f(R0), R2
+
+infinite_nothing:
+    J infinite_nothing
