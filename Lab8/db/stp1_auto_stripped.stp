@@ -414,14 +414,14 @@
     </signal_set>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data horizontal scroll position" value="107"/>
+      <single attribute="data horizontal scroll position" value="660"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom level numerator" value="4"/>
       <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="63488"/>
+      <single attribute="zoom offset numerator" value="31744"/>
     </position_info>
   </instance>
   <mnemonics/>
@@ -434,7 +434,7 @@
     <single attribute="instance widget visible" value="1"/>
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
-    <multi attribute="frame size" size="2" value="1920,1009"/>
+    <multi attribute="frame size" size="2" value="958,1000"/>
     <multi attribute="jtag widget size" size="2" value="319,125"/>
   </global_info>
 </session>
