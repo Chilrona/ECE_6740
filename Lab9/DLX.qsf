@@ -572,6 +572,8 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=sld_reserved_DLX_auto_signaltap_0_1_e0e," -section_id auto_signaltap_0
+set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_FILE DLX_lab8_tb.vhd
 set_global_assignment -name SOURCE_FILE fifo_word.cmp
 set_global_assignment -name SOURCE_FILE fifo_char.cmp
@@ -614,5 +616,6 @@ set_global_assignment -name QIP_FILE fifo_char.qip
 set_global_assignment -name QIP_FILE diva.qip
 set_global_assignment -name VHDL_FILE print_FSM.vhd
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
-set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE scan_FSM.vhd
+set_global_assignment -name QIP_FILE FIFO_UART_RF.qip
+set_global_assignment -name QIP_FILE fifo_in_buf.qip
