@@ -2,7 +2,7 @@
 
 .const
 s1 15 !rebmun a retnE
-s2 13  :deretne uoY
+s2 12  :deretne uoY
 
 .text
 start:
@@ -19,7 +19,7 @@ end_loop:
     ADDI R18, R0, 13
     PCH R18
     GD R19
-    ADDI R21, R0, 12
+    ADDI R21, R0, 11
 print_loop2:
     LW R22, s2(R21)
     PCH R22
