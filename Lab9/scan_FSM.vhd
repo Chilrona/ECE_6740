@@ -11,272 +11,182 @@ use work.opcode_package.all;
 		(
          rst_l : in std_logic;
          clk : in std_logic;
-			uart_clk : in std_logic;
+			uart_clk : in std_logic; --115.2kHz
+			uart_samp_clk : in std_logic; --921.6 kHz
          opcode_scan : in std_logic_vector(5 downto 0);
 			rx : in std_logic;
 
-			stall_release : out std_logic;
-			data_out : out std_logic;
+			data_out : out std_logic_vector(31 downto 0);
 			in_buff_empty : out STD_LOGIC
 		);
 						
 	end entity scan_FSM;	
 					
 	architecture Behavioral of scan_FSM is 
-
-	signal neg_flag : std_logic;
-	signal next_neg_flag : std_logic;
-	signal clk_count : integer:= 0;
-	signal n_clk_count : integer := 0;
-	signal instruction_FSM : std_logic_vector(37 downto 0);
 	
-	type state_type is (IDLE, MAGIC, DIV, POP);
+	type state_type is (IDLE, MULT);
 	signal state : state_type:= IDLE;
 	signal next_state : state_type:= IDLE;
 	
-	signal i : integer:= 0;
-	signal next_i : integer := 0;
-	signal pos_val : std_logic_vector(31 downto 0);
-	signal next_pos_val : std_logic_vector(31 downto 0);
-	signal RS_signal : std_logic_vector(31 downto 0);
-	signal opcode_signal : std_logic_vector(5 downto 0);
+	-- concatenation signals
+	signal cat1					: std_logic_vector(2 downto 0) := "000";
+	signal cat2					: std_logic := '0';
 	
-	type stack_type is array (0 to 9) of std_logic_vector(7 downto 0);
-	signal stack : stack_type; --:= (others=>(others=>'0'));
-	signal new_stack : stack_type; --:= (others=>(others=>'0'));
-	
-	--FIFO_WORD signals
-	signal rdreq_word : std_logic:= '0';
-	signal wrreq_word : std_logic:= '0';
-	signal q_word : STD_LOGIC_VECTOR (37 DOWNTO 0);
-	signal empty_word : std_logic;
-	signal full_word : std_logic;
-	signal usedw_word : STD_LOGIC_VECTOR (7 DOWNTO 0);
-	signal almost_full : std_logic;
+	--FIFO_UART_RF signals
+	signal data_uart_rf		: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal rdreq_uart_rf		: STD_LOGIC ;
+	signal wrreq_uart_rf		: STD_LOGIC ;
+	signal wrreq_uart_rf_final : STD_LOGIC;
+	signal q_char			: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal rdempty_uart_rf	: STD_LOGIC ;
+	signal wrfull_uart_rf	: STD_LOGIC; 
 	
 	
-	--FIFO_CHAR signals
-	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0):= (others=>'0');
-	signal next_data_char : STD_LOGIC_VECTOR (7 DOWNTO 0):= (others=>'0');
-	signal rdreq_char : std_logic;
-	signal wrreq_char : std_logic;
-	signal rdempty_char : std_logic;
-	signal wrfull_char : std_logic;
-	signal wrusedw : std_logic_vector (7 downto 0);
-	signal send_char : std_logic_vector (7 downto 0);
+	--FIFO_IN_BUF signals
+	signal data_in		: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal data_in_next		: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal rdreq_in_buf		: STD_LOGIC ;
+	signal wrreq_in_buf		: STD_LOGIC ;
+	signal empty_in_buf		: STD_LOGIC ;
+	signal full_in_buf		: STD_LOGIC ;
+	signal usedw_in_buf		: STD_LOGIC_VECTOR (7 DOWNTO 0);
 	
-	--DIVVVVAAAAAAA signals
-	--signal denom : STD_LOGIC_VECTOR (31 DOWNTO 0);
-	--signal numer : STD_LOGIC_VECTOR (31 DOWNTO 0);
-	signal quotient : STD_LOGIC_VECTOR (31 DOWNTO 0);
-	signal remain : STD_LOGIC_VECTOR (31 DOWNTO 0);
+	--UART Signals
+	signal rx_sync_sig : std_logic;
+	signal char_in : std_logic_vector(7 downto 0);
 	
-	-- UART signals
-	signal uart_idle : std_logic;
-	signal send_flag : std_logic := '0';
+	--multiplication
+	signal mult_out : std_logic_vector(31 downto 0);
+	
+	--neg stuff
+	signal neg_flag : std_logic := '0';
+	signal next_neg_flag : std_logic := '0';
 	
 
 	begin
 		
-		instruction_FSM(37 downto 32) <=  opcode_FSM;
-		instruction_FSM(31 downto 0) <=  op1;
-		
-		FIFO1 : ENTITY work.fifo_word 
+		UART_RF : ENTITY work.FIFO_UART_RF
 		PORT MAP
 		(
-			clock	=> clk,
-			data	=> instruction_FSM,
-			rdreq	=> rdreq_word,
-			wrreq	=> wrreq_word,
-			almost_full => almost_full,
-			empty	=> empty_word,
-			full => full_word,
-			q	=> q_word,
-			usedw	=>  usedw_word
+			data => char_in,
+			rdclk => clk,
+			rdreq	=>	rdreq_uart_rf,
+			wrclk	=> uart_clk,
+			wrreq	=> wrreq_uart_rf,
+			q	=> q_char,
+			rdempty => rdempty_uart_rf,
+			wrfull =>wrfull_uart_rf
 		);
 		
 		
-		FIFO2 : ENTITY work.fifo_char
+		IN_BUF : ENTITY work.fifo_in_buf
 		PORT MAP
 		(
-			data	=> data_char,
-			rdclk	=> uart_clk,
-			--rdclk	=> clk,
-			rdreq	=> rdreq_char,
-			wrclk	=> clk,
-			wrreq	=> wrreq_char,
-			q => send_char,
-			rdempty	=> rdempty_char,
-			wrfull => wrfull_char,
-			wrusedw => wrusedw
+			clock => clk,
+			data => data_in,
+			rdreq => rdreq_in_buf,
+			wrreq	=> wrreq_in_buf,
+			empty	=>empty_in_buf,
+			full=> full_in_buf,
+			q => data_out,
+			usedw => usedw_in_buf
 		);
 		
-		DIVIDER : ENTITY work.diva
-		PORT MAP
-		(
-			clock	=> clk,
-			denom	=> x"0000000A",
-			numer	=> pos_val,
-			quotient	=> quotient,
-			remain => remain
-		);
 
-		U : ENTITY work.UART_trans
-		PORT MAP 
+		UART_RX : entity work.uart_recv
+		port map
 		(
-				--c1          => clk,
-				c1          => uart_clk,
-            rst_l       => rst_l,
-				send       	=> send_flag,
-            data_in     => unsigned(send_char),
-            tx          => tx,
-				idle_flag	=> uart_idle
+			c1 => uart_clk,
+			rx_sync => rx_sync_sig,
+			char => char_in,
+			send_flag => wrreq_uart_rf,
+			rst_l => rst_l
+		);
+		
+		DA_SAMPLER : entity work.UARTSampler
+		port map
+		(
+			c0 => uart_samp_clk,
+			c1 => uart_clk,
+			rst_l => rst_l,
+			rx => rx,
+			rx_sync => rx_sync_sig
 			
 		);
-
-	opcode_signal <= q_word(37 downto 32);
-	RS_signal <= q_word(31 downto 0);
-
-	process (wrusedw, almost_full)
-	begin
-		if (to_integer(unsigned(wrusedw)) >= 254) or (almost_full = '1') then
-			print_stall <= '1';
-			print_flush_decode <= '1';
-		else
-			print_stall <= '0';
-			print_flush_decode <= '0';
-		end if;
-	end process;
-	
-	process (rdempty_char, uart_idle)
-	begin
-	-- add stuff for wrreq_char
-		if rdempty_char = '0' and uart_idle= '1' then
-			rdreq_char <= '1';
-			send_flag <= '1';
-		else
-			rdreq_char <= '0';
-			send_flag <= '0';
-		end if;
-	end process;
-	
-	
-	process (opcode_FSM)
-	begin
-		if (opcode_FSM = PCH) or (opcode_FSM = PD) or (opcode_FSM = PDU) then
-			wrreq_word <= '1';
-		else
-			wrreq_word <='0';
-		end if;
-	end process;
+		
+	wrreq_uart_rf_final <= wrreq_uart_rf and not(wrfull_uart_rf);
+	mult_out <= std_logic_vector(
+		 unsigned(std_logic_vector'(
+			  std_logic_vector(data_in(28 downto 0)) & cat1
+		 )) +
+		 unsigned(std_logic_vector'(
+			  std_logic_vector(data_in(30 downto 0)) & cat2
+		 ))
+	);
 
 	process (clk, rst_l)
 	begin
 		if rst_l = '0' then
 			 state <= IDLE;
-			 clk_count <= 0;
-			 i <= 0;
 		elsif rising_edge(clk) then
 			state <= next_state;
-			i <= next_i;
-			stack <= new_stack;
-			clk_count <= n_clk_count;
-			pos_val <= next_pos_val;
-			-- data_char <= next_data_char;
+			data_in <= data_in_next;
 			neg_flag <= next_neg_flag;
-		
 
 		end if;
 		
 	end process;
+	
+	process(clk, rst_l)
+	begin
+		if rst_l = '0' then
+			rdreq_in_buf <= '0';
+		elsif rising_edge(clk) then
+			if empty_in_buf = '0' then
+				rdreq_in_buf <= '1';
+			else
+				rdreq_in_buf <= '0';
+			end if;
+		end if;
+	end process;
 		
-	process(state, clk_count, i, opcode_signal, RS_signal, empty_word, almost_full, next_i, stack, pos_val, data_char, neg_flag, quotient, remain )--fill in later
+	process(state, next_state, data_in, data_in_next, neg_flag, next_neg_flag, rdreq_uart_rf, wrreq_in_buf, wrreq_uart_rf_final, usedw_in_buf, q_char, mult_out, rdempty_uart_rf, full_in_buf)--fill in later
 		begin
 			next_state <= state;
-			n_clk_count <= clk_count;
-			next_i <= i;
-			new_stack<= stack;
-			next_pos_val <= pos_val;
-			data_char <= (others=>'0');
+			data_in_next <= data_in;
+			rdreq_uart_rf <= '0';
+			wrreq_in_buf <= '0';
 			next_neg_flag <= neg_flag;
-			rdreq_word <= '0';
-			wrreq_char <= '0';
-			
-			case state is
+		case state is
 		
 		when IDLE =>
-			wrreq_char <= '0';
-				if empty_word = '1' then
-					next_state <= IDLE;
-					rdreq_word <= '0';
-				else
-					next_state <= MAGIC;
-					rdreq_word <= '1';
-				end if;
-		
-		when MAGIC =>
-			rdreq_word <= '0';
-			if opcode_signal = PCH then
-				wrreq_char <= '1';
-				data_char <= RS_signal(7 downto 0);
+			data_in_next <= x"00000000";
+			if rdempty_uart_rf = '1' then
+				rdreq_uart_rf <= '0';
 				next_state <= IDLE;
-
-			elsif opcode_signal = PDU then
-				next_pos_val <= RS_signal;
-				next_state <= DIV;
-			elsif opcode_signal = PD and RS_signal(31) = '1' then
-				next_pos_val <= std_logic_vector((unsigned(RS_signal) XOR x"FFFFFFFF") + x"00000001");
-				next_state <= DIV;
+			else
+				rdreq_uart_rf <= '1';
+				next_state <= MULT;
+			end if;
+		
+		when MULT =>
+			if q_char = x"0A" and full_in_buf = '0' then
+				next_state <= IDLE;
+				wrreq_in_buf <= '1';
+				if neg_flag = '1' then
+					data_in_next <= std_logic_vector(unsigned(data_in XOR x"FFFFFFFF") + x"00000001");
+				else
+					data_in_next <= data_in;
+				end if;
+			elsif q_char = x"2D" and data_in = x"00000000" then
+				next_state <= MULT;
 				next_neg_flag <= '1';
-			elsif opcode_signal = PD and RS_signal(31) = '0' then
-				next_pos_val <= RS_signal;
-				next_state <= DIV;
-				next_neg_flag <= '0';
+			elsif q_char >= x"30" and q_char <= x"39" then
+				data_in_next <= std_logic_vector(unsigned(mult_out) + (resize(unsigned(q_char),32) - x"00000030"));
+				rdreq_uart_rf <= '1';
+				next_state <= MULT;
 			else
-				next_state <= POP;
-			end if;
-			
-		when DIV =>
-
-			if clk_count > 3 then 
-				
-				n_clk_count <= 0;
-				new_stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");
-				next_pos_val <= quotient;
-				
-				if quotient = x"00000000" then
-					next_state <= POP;
-					next_i <= i;
-					if neg_flag = '1' then
-						wrreq_char <= '1';
-						data_char<= x"2D";
-					end if;
-				else
-					next_state <= DIV;
-					next_i <= i + 1;
-				end if;
-			else 
-				n_clk_count <= clk_count + 1;
-				next_state <= DIV;
-			end if;
-			
-			
-		when POP =>
-
-			wrreq_char<= '1';
-			data_char <= stack(i);
-			
-			if i = 0 then
-				if empty_word = '0' then
-					next_state <= MAGIC;
-					rdreq_word <= '1';
-				else
-					next_state <= IDLE;
-				end if;
-				
-			else
-				next_i <= i - 1;
-				next_state <= POP;
+				next_state <= MULT;
 			end if;
 			
 		when others =>

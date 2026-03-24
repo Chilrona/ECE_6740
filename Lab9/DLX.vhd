@@ -70,6 +70,10 @@ use work.opcode_package.all;
 		signal print_flush_decode : std_logic;
 		-- signal tx : std_logic;
 		
+		-- scan signals
+		signal got_data : std_logic_vector(31 downto 0);
+		signal in_buf_empty : std_logic;
+		
 		--pll signals
 		signal areset		: STD_LOGIC := '0';
 		signal c0		: STD_LOGIC :='0'; --153600 Hz
@@ -85,8 +89,6 @@ use work.opcode_package.all;
 	rst_l <= KEY(0) and locked;
 	--rst_l <= KEY(0);
 	clk <= MAX10_CLK1_50;
-	-- GPIO(1) <= tx;
-	--tx <= GPIO(1);
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
@@ -131,6 +133,7 @@ use work.opcode_package.all;
 		pc_in => pc_execute,
 		instruction_in => instruction_execute,
 		instruction_in_wb => instruction_wb,
+		got_data => got_data,
 		reg_data => reg_data,
 		tag_for_flush => flush_execute,
 		instruction_out => instruction_mem,
@@ -177,6 +180,7 @@ use work.opcode_package.all;
         instruction_wb => instruction_wb,
 
         take_branch => take_branch,
+		  in_buf_empty => in_buf_empty,
 
         flush_fetch => flush_fetch,
         flush_decode => flush_decode,
@@ -201,10 +205,20 @@ use work.opcode_package.all;
 			uart_clk => c1
 		);
 		
+		SCAN : entity work.scan_FSM
+		port map 
+		(
+         rst_l => rst_l,
+         clk => clk,
+			uart_clk => c1, --115.2kHz
+			uart_samp_clk => c0, --921.6 kHz
+         opcode_scan => instruction_decode(31 downto 26),
+			rx => GPIO(0),
+
+			data_out => got_data,
+			in_buff_empty => in_buf_empty
+		);
 		
-            
-			
-			
 		
 		PLLTX: entity work.pll 
 		PORT MAP

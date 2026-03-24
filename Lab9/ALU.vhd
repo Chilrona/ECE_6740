@@ -8,10 +8,11 @@ use work.opcode_package.all;
 		(
 			rst_l : in std_logic;
 			clk : in std_logic;
-         	opcode : in std_logic_vector(5 downto 0);
+         opcode : in std_logic_vector(5 downto 0);
+			got_data: in std_logic_vector(31 downto 0);
 			op1 : in std_logic_vector (31 downto 0);
-         	op2 : in std_logic_vector (31 downto 0);
-         	alu_result : out std_logic_vector (31 downto 0);
+         op2 : in std_logic_vector (31 downto 0);
+         alu_result : out std_logic_vector (31 downto 0);
 			ram_we : out std_logic			
 		);
 						
@@ -26,7 +27,7 @@ use work.opcode_package.all;
             alu_result <= (others => '0');
         elsif rising_edge(clk) then
 				case opcode is
-				when NOP =>
+					when NOP =>
 						alu_result <= (others => '0');
 					when LW =>
 						alu_result <= std_logic_vector(unsigned(op1) + unsigned(op2));
@@ -170,6 +171,10 @@ use work.opcode_package.all;
 						alu_result <= (others=>'0');
 					when PDU =>
 						alu_result <= (others=>'0');
+					when GD =>
+						alu_result <= got_data;
+					when GDU =>
+						alu_result <= got_data;
 					when others =>
 						alu_result <= (others=>'0');
 				end case;

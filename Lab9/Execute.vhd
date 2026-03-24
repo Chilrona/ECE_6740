@@ -16,6 +16,7 @@ use work.opcode_package.all;
 			 
             instruction_in : in std_logic_vector(31 downto 0);
             instruction_in_wb : in std_logic_vector(31 downto 0);
+				got_data : in std_logic_vector(31 downto 0);
             reg_data : in std_logic_vector(31 downto 0);
             tag_for_flush : in std_logic;
 
@@ -93,6 +94,7 @@ use work.opcode_package.all;
         rst_l => rst_l,
         clk => clk,
         opcode => instruction_in_1(31 downto 26),
+		  got_data => got_data,
         op1 => op1,
         op2 => op2,
         alu_result => alu_result,

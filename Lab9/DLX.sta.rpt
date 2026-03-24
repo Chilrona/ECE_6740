@@ -1,5 +1,5 @@
 Timing Analyzer report for DLX
-Mon Mar 23 16:37:09 2026
+Mon Mar 23 23:45:35 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -95,15 +95,15 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 14          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 2.23        ;
+; Average used               ; 2.29        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  11.6%      ;
-;     Processor 3            ;   9.9%      ;
-;     Processor 4            ;   9.7%      ;
-;     Processors 5-14        ;   9.2%      ;
+;     Processor 2            ;  11.8%      ;
+;     Processor 3            ;  10.6%      ;
+;     Processor 4            ;  10.2%      ;
+;     Processors 5-14        ;   9.6%      ;
 +----------------------------+-------------+
 
 
@@ -112,7 +112,7 @@ on the Quartus Prime software download page.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; DLX.sdc       ; OK     ; Mon Mar 23 16:37:07 2026 ;
+; DLX.sdc       ; OK     ; Mon Mar 23 23:45:33 2026 ;
 +---------------+--------+--------------------------+
 
 
@@ -125,7 +125,8 @@ on the Quartus Prime software download page.
 ; altera_reserved_tck                               ; Base      ; 100.000  ; 10.0 MHz  ; 0.000 ; 50.000   ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                     ; { altera_reserved_tck }                               ;
 ; MAX10_CLK1_50                                     ; Base      ; 20.000   ; 50.0 MHz  ; 0.000 ; 10.000   ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                     ; { MAX10_CLK1_50 }                                     ;
 ; MAX10_CLK2_50                                     ; Base      ; 20.000   ; 50.0 MHz  ; 0.000 ; 10.000   ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                     ; { MAX10_CLK2_50 }                                     ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; Generated ; 8680.555 ; 0.12 MHz  ; 0.000 ; 4340.277 ; 50.00      ; 15625     ; 36          ;       ;        ;           ;            ; false    ; MAX10_CLK1_50 ; PLLTX|altpll_component|auto_generated|pll1|inclk[0] ; { PLLTX|altpll_component|auto_generated|pll1|clk[1] } ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; Generated ; 1085.070 ; 0.92 MHz  ; 0.000 ; 542.535  ; 50.00      ; 3852      ; 71          ;       ;        ;           ;            ; false    ; MAX10_CLK1_50 ; PLLTX|altpll_component|auto_generated|pll1|inclk[0] ; { PLLTX|altpll_component|auto_generated|pll1|clk[0] } ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; Generated ; 8680.563 ; 0.12 MHz  ; 0.000 ; 4340.281 ; 50.00      ; 30816     ; 71          ;       ;        ;           ;            ; false    ; MAX10_CLK1_50 ; PLLTX|altpll_component|auto_generated|pll1|inclk[0] ; { PLLTX|altpll_component|auto_generated|pll1|clk[1] } ;
 +---------------------------------------------------+-----------+----------+-----------+-------+----------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+-----------------------------------------------------+-------------------------------------------------------+
 
 
@@ -134,9 +135,10 @@ on the Quartus Prime software download page.
 +------------+-----------------+---------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                        ; Note ;
 +------------+-----------------+---------------------------------------------------+------+
-; 26.88 MHz  ; 26.88 MHz       ; MAX10_CLK1_50                                     ;      ;
-; 56.55 MHz  ; 56.55 MHz       ; altera_reserved_tck                               ;      ;
-; 157.06 MHz ; 157.06 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 27.66 MHz  ; 27.66 MHz       ; MAX10_CLK1_50                                     ;      ;
+; 60.6 MHz   ; 60.6 MHz        ; altera_reserved_tck                               ;      ;
+; 147.71 MHz ; 147.71 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 155.55 MHz ; 155.55 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ;      ;
 +------------+-----------------+---------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -146,9 +148,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; -17.206  ; -1452.169     ;
-; altera_reserved_tck                               ; 41.158   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8674.188 ; 0.000         ;
+; MAX10_CLK1_50                                     ; -16.158  ; -1411.739     ;
+; altera_reserved_tck                               ; 41.749   ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 1078.641 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8673.793 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -157,9 +160,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                     ; -3.795 ; -7.586        ;
-; altera_reserved_tck                               ; 0.329  ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.379  ; 0.000         ;
+; MAX10_CLK1_50                                     ; -3.749 ; -7.496        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.257  ; 0.000         ;
+; altera_reserved_tck                               ; 0.304  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 0.319  ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -168,7 +172,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 95.777 ; 0.000         ;
+; altera_reserved_tck ; 95.603 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -177,7 +181,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.092 ; 0.000         ;
+; altera_reserved_tck ; 0.916 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -186,11 +190,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; 9.498    ; 0.000         ;
+; MAX10_CLK1_50                                     ; 9.503    ; 0.000         ;
 ; MAX10_CLK2_50                                     ; 16.000   ; 0.000         ;
-; altera_reserved_tck                               ; 49.532   ; 0.000         ;
+; altera_reserved_tck                               ; 49.536   ; 0.000         ;
 ; ADC_CLK_10                                        ; 96.000   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4339.987 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 542.216  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4339.963 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -206,9 +211,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+---------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                        ; Note ;
 +------------+-----------------+---------------------------------------------------+------+
-; 29.65 MHz  ; 29.65 MHz       ; MAX10_CLK1_50                                     ;      ;
-; 60.39 MHz  ; 60.39 MHz       ; altera_reserved_tck                               ;      ;
-; 167.81 MHz ; 167.81 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 30.61 MHz  ; 30.61 MHz       ; MAX10_CLK1_50                                     ;      ;
+; 65.58 MHz  ; 65.58 MHz       ; altera_reserved_tck                               ;      ;
+; 156.91 MHz ; 156.91 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ;      ;
+; 168.35 MHz ; 168.35 MHz      ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ;      ;
 +------------+-----------------+---------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -218,9 +224,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; -13.729  ; -907.885      ;
-; altera_reserved_tck                               ; 41.720   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8674.596 ; 0.000         ;
+; MAX10_CLK1_50                                     ; -12.665  ; -853.927      ;
+; altera_reserved_tck                               ; 42.376   ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 1079.130 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8674.190 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -229,9 +236,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                     ; -3.244 ; -6.484        ;
-; altera_reserved_tck                               ; 0.305  ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.323  ; 0.000         ;
+; MAX10_CLK1_50                                     ; -3.232 ; -6.461        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.221  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 0.277  ; 0.000         ;
+; altera_reserved_tck                               ; 0.299  ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -240,7 +248,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 96.173 ; 0.000         ;
+; altera_reserved_tck ; 96.029 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -249,7 +257,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.010 ; 0.000         ;
+; altera_reserved_tck ; 0.838 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -258,11 +266,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; 9.512    ; 0.000         ;
+; MAX10_CLK1_50                                     ; 9.513    ; 0.000         ;
 ; MAX10_CLK2_50                                     ; 16.000   ; 0.000         ;
-; altera_reserved_tck                               ; 49.549   ; 0.000         ;
+; altera_reserved_tck                               ; 49.548   ; 0.000         ;
 ; ADC_CLK_10                                        ; 96.000   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4339.978 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 542.233  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4339.976 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -278,9 +287,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; -3.482   ; -60.262       ;
-; altera_reserved_tck                               ; 46.377   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8677.705 ; 0.000         ;
+; MAX10_CLK1_50                                     ; -3.617   ; -66.153       ;
+; altera_reserved_tck                               ; 46.689   ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 1082.201 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8677.351 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -289,9 +299,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                     ; -1.846 ; -3.692        ;
-; altera_reserved_tck                               ; 0.125  ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.177  ; 0.000         ;
+; MAX10_CLK1_50                                     ; -1.798 ; -3.595        ;
+; altera_reserved_tck                               ; 0.119  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.121  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 0.152  ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -300,7 +311,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 97.865 ; 0.000         ;
+; altera_reserved_tck ; 97.757 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -309,7 +320,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.473 ; 0.000         ;
+; altera_reserved_tck ; 0.412 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -318,11 +329,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------------------------+----------+---------------+
 ; Clock                                             ; Slack    ; End Point TNS ;
 +---------------------------------------------------+----------+---------------+
-; MAX10_CLK1_50                                     ; 9.264    ; 0.000         ;
+; MAX10_CLK1_50                                     ; 9.265    ; 0.000         ;
 ; MAX10_CLK2_50                                     ; 16.000   ; 0.000         ;
-; altera_reserved_tck                               ; 49.385   ; 0.000         ;
+; altera_reserved_tck                               ; 49.387   ; 0.000         ;
 ; ADC_CLK_10                                        ; 96.000   ; 0.000         ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4340.008 ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 542.249  ; 0.000         ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4340.003 ; 0.000         ;
 +---------------------------------------------------+----------+---------------+
 
 
@@ -338,16 +350,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +----------------------------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                                              ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                   ; -17.206   ; -3.795 ; 95.777   ; 0.473   ; 9.264               ;
+; Worst-case Slack                                   ; -16.158   ; -3.749 ; 95.603   ; 0.412   ; 9.265               ;
 ;  ADC_CLK_10                                        ; N/A       ; N/A    ; N/A      ; N/A     ; 96.000              ;
-;  MAX10_CLK1_50                                     ; -17.206   ; -3.795 ; N/A      ; N/A     ; 9.264               ;
+;  MAX10_CLK1_50                                     ; -16.158   ; -3.749 ; N/A      ; N/A     ; 9.265               ;
 ;  MAX10_CLK2_50                                     ; N/A       ; N/A    ; N/A      ; N/A     ; 16.000              ;
-;  PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8674.188  ; 0.177  ; N/A      ; N/A     ; 4339.978            ;
-;  altera_reserved_tck                               ; 41.158    ; 0.125  ; 95.777   ; 0.473   ; 49.385              ;
-; Design-wide TNS                                    ; -1452.169 ; -7.586 ; 0.0      ; 0.0     ; 0.0                 ;
+;  PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 1078.641  ; 0.152  ; N/A      ; N/A     ; 542.216             ;
+;  PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 8673.793  ; 0.121  ; N/A      ; N/A     ; 4339.963            ;
+;  altera_reserved_tck                               ; 41.749    ; 0.119  ; 95.603   ; 0.412   ; 49.387              ;
+; Design-wide TNS                                    ; -1411.739 ; -7.496 ; 0.0      ; 0.0     ; 0.0                 ;
 ;  ADC_CLK_10                                        ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
-;  MAX10_CLK1_50                                     ; -1452.169 ; -7.586 ; N/A      ; N/A     ; 0.000               ;
+;  MAX10_CLK1_50                                     ; -1411.739 ; -7.496 ; N/A      ; N/A     ; 0.000               ;
 ;  MAX10_CLK2_50                                     ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 ;  PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 ;  altera_reserved_tck                               ; 0.000     ; 0.000  ; 0.000    ; 0.000   ; 0.000               ;
 +----------------------------------------------------+-----------+--------+----------+---------+---------------------+
@@ -358,7 +372,6 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 ; Pin                 ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
 +---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; GPIO[0]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[2]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[3]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[4]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
@@ -393,6 +406,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; GPIO[33]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[34]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[35]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; GPIO[0]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; GPIO[1]             ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -406,7 +420,6 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; KEY[1]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
 ; ADC_CLK_10          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; MAX10_CLK2_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
-; GPIO[0]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[2]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[3]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[4]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
@@ -441,6 +454,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; GPIO[33]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[34]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[35]            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; GPIO[0]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; GPIO[1]             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; MAX10_CLK1_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; KEY[0]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
@@ -459,7 +473,6 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
 ; GPIO[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.118 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.9e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.118 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.9e-10 s                  ; No                        ; No                        ;
 ; GPIO[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.118 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.9e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.118 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.9e-10 s                  ; No                        ; No                        ;
 ; GPIO[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
@@ -494,6 +507,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; GPIO[33]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; GPIO[34]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
 ; GPIO[35]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
 ; GPIO[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.117 V            ; 0.262 V                              ; 0.424 V                              ; 4.61e-10 s                  ; 4.88e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.117 V           ; 0.262 V                             ; 0.424 V                             ; 4.61e-10 s                 ; 4.88e-10 s                 ; No                        ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0409 V           ; 0.211 V                              ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0409 V          ; 0.211 V                             ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -504,7 +518,6 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; GPIO[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0637 V           ; 0.337 V                              ; 0.271 V                              ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0637 V          ; 0.337 V                             ; 0.271 V                             ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; GPIO[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0637 V           ; 0.337 V                              ; 0.271 V                              ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0637 V          ; 0.337 V                             ; 0.271 V                             ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; GPIO[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
@@ -539,6 +552,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; GPIO[33]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; GPIO[34]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
 ; GPIO[35]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; GPIO[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.15 V              ; -0.0625 V           ; 0.334 V                              ; 0.27 V                               ; 5.02e-10 s                  ; 6.47e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.15 V             ; -0.0625 V          ; 0.334 V                             ; 0.27 V                              ; 5.02e-10 s                 ; 6.47e-10 s                 ; No                        ; No                        ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0173 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.2e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0173 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.2e-10 s                  ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -549,7 +563,6 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[2]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0257 V           ; 0.468 V                              ; 0.138 V                              ; 3.02e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0257 V          ; 0.468 V                             ; 0.138 V                             ; 3.02e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[3]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0257 V           ; 0.468 V                              ; 0.138 V                              ; 3.02e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0257 V          ; 0.468 V                             ; 0.138 V                             ; 3.02e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[4]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
@@ -584,6 +597,7 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; GPIO[33]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[34]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[35]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; GPIO[0]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
 ; GPIO[1]             ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
 ; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0395 V           ; 0.361 V                              ; 0.109 V                              ; 3.11e-10 s                  ; 4.41e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0395 V          ; 0.361 V                             ; 0.109 V                             ; 3.11e-10 s                 ; 4.41e-10 s                 ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -598,9 +612,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 ; MAX10_CLK1_50                                     ; altera_reserved_tck                               ; false path   ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                               ; MAX10_CLK1_50                                     ; false path   ; 0        ; 0        ; 0        ;
 ; MAX10_CLK1_50                                     ; MAX10_CLK1_50                                     ; > 2147483647 ; 2        ; 0        ; 0        ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; MAX10_CLK1_50                                     ; 145          ; 2        ; 0        ; 0        ;
-; MAX10_CLK1_50                                     ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 9            ; 0        ; 0        ; 0        ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 2979         ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; MAX10_CLK1_50                                     ; 154          ; 2        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 6001         ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 4            ; 0        ; 0        ; 0        ;
+; MAX10_CLK1_50                                     ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 18           ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4            ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 5622         ; 0        ; 0        ; 0        ;
 +---------------------------------------------------+---------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -614,9 +631,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; MAX10_CLK1_50                                     ; altera_reserved_tck                               ; false path   ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                               ; MAX10_CLK1_50                                     ; false path   ; 0        ; 0        ; 0        ;
 ; MAX10_CLK1_50                                     ; MAX10_CLK1_50                                     ; > 2147483647 ; 2        ; 0        ; 0        ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; MAX10_CLK1_50                                     ; 145          ; 2        ; 0        ; 0        ;
-; MAX10_CLK1_50                                     ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 9            ; 0        ; 0        ; 0        ;
-; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 2979         ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; MAX10_CLK1_50                                     ; 154          ; 2        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 6001         ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; 4            ; 0        ; 0        ; 0        ;
+; MAX10_CLK1_50                                     ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 18           ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 4            ; 0        ; 0        ; 0        ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; 5622         ; 0        ; 0        ; 0        ;
 +---------------------------------------------------+---------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -662,8 +682,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 3     ; 3    ;
-; Unconstrained Input Port Paths  ; 458   ; 458  ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 697   ; 697  ;
 ; Unconstrained Output Ports      ; 2     ; 2    ;
 ; Unconstrained Output Port Paths ; 2     ; 2    ;
 +---------------------------------+-------+------+
@@ -677,6 +697,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; ADC_CLK_10                                        ; ADC_CLK_10                                        ; Base      ; Constrained ;
 ; MAX10_CLK1_50                                     ; MAX10_CLK1_50                                     ; Base      ; Constrained ;
 ; MAX10_CLK2_50                                     ; MAX10_CLK2_50                                     ; Base      ; Constrained ;
+; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; PLLTX|altpll_component|auto_generated|pll1|clk[0] ; Generated ; Constrained ;
 ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; PLLTX|altpll_component|auto_generated|pll1|clk[1] ; Generated ; Constrained ;
 ; altera_reserved_tck                               ; altera_reserved_tck                               ; Base      ; Constrained ;
 +---------------------------------------------------+---------------------------------------------------+-----------+-------------+
@@ -687,6 +708,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------+--------------------------------------------------------------------------------------+
 ; Input Port          ; Comment                                                                              ;
 +---------------------+--------------------------------------------------------------------------------------+
+; GPIO[0]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[0]              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -708,6 +730,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------+--------------------------------------------------------------------------------------+
 ; Input Port          ; Comment                                                                              ;
 +---------------------+--------------------------------------------------------------------------------------+
+; GPIO[0]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[0]              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -730,7 +753,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Mar 23 16:37:06 2026
+    Info: Processing started: Mon Mar 23 23:45:32 2026
 Info: Command: quartus_sta DLX -c DLX
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -738,15 +761,22 @@ Info (20030): Parallel compilation is enabled and will use 14 of the 14 processo
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity dcfifo_14e1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a* 
     Info (332165): Entity dcfifo_f1f1
         Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a* 
         Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a* 
+    Info (332165): Entity dcfifo_u7e1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a* 
     Info (332165): Entity sld_hub
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'DLX.sdc'
 Info (332110): Deriving PLL clocks
-    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 15625 -multiply_by 36 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[1]} {PLLTX|altpll_component|auto_generated|pll1|clk[1]}
+    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 3852 -multiply_by 71 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[0]} {PLLTX|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 30816 -multiply_by 71 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[1]} {PLLTX|altpll_component|auto_generated|pll1|clk[1]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
@@ -755,35 +785,38 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -17.206
+Info (332146): Worst-case setup slack is -16.158
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -17.206           -1452.169 MAX10_CLK1_50 
-    Info (332119):    41.158               0.000 altera_reserved_tck 
-    Info (332119):  8674.188               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is -3.795
+    Info (332119):   -16.158           -1411.739 MAX10_CLK1_50 
+    Info (332119):    41.749               0.000 altera_reserved_tck 
+    Info (332119):  1078.641               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  8673.793               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332146): Worst-case hold slack is -3.749
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.795              -7.586 MAX10_CLK1_50 
-    Info (332119):     0.329               0.000 altera_reserved_tck 
-    Info (332119):     0.379               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case recovery slack is 95.777
+    Info (332119):    -3.749              -7.496 MAX10_CLK1_50 
+    Info (332119):     0.257               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.304               0.000 altera_reserved_tck 
+    Info (332119):     0.319               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case recovery slack is 95.603
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    95.777               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.092
+    Info (332119):    95.603               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.916
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.092               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 9.498
+    Info (332119):     0.916               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 9.503
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.498               0.000 MAX10_CLK1_50 
+    Info (332119):     9.503               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
-    Info (332119):    49.532               0.000 altera_reserved_tck 
+    Info (332119):    49.536               0.000 altera_reserved_tck 
     Info (332119):    96.000               0.000 ADC_CLK_10 
-    Info (332119):  4339.987               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332114): Report Metastability: Found 22 synchronizer chains.
+    Info (332119):   542.216               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  4339.963               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -792,76 +825,82 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -13.729
+Info (332146): Worst-case setup slack is -12.665
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -13.729            -907.885 MAX10_CLK1_50 
-    Info (332119):    41.720               0.000 altera_reserved_tck 
-    Info (332119):  8674.596               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is -3.244
+    Info (332119):   -12.665            -853.927 MAX10_CLK1_50 
+    Info (332119):    42.376               0.000 altera_reserved_tck 
+    Info (332119):  1079.130               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  8674.190               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332146): Worst-case hold slack is -3.232
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.244              -6.484 MAX10_CLK1_50 
-    Info (332119):     0.305               0.000 altera_reserved_tck 
-    Info (332119):     0.323               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case recovery slack is 96.173
+    Info (332119):    -3.232              -6.461 MAX10_CLK1_50 
+    Info (332119):     0.221               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.277               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.299               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 96.029
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    96.173               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.010
+    Info (332119):    96.029               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.838
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.010               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 9.512
+    Info (332119):     0.838               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 9.513
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.512               0.000 MAX10_CLK1_50 
+    Info (332119):     9.513               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
-    Info (332119):    49.549               0.000 altera_reserved_tck 
+    Info (332119):    49.548               0.000 altera_reserved_tck 
     Info (332119):    96.000               0.000 ADC_CLK_10 
-    Info (332119):  4339.978               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332114): Report Metastability: Found 22 synchronizer chains.
+    Info (332119):   542.233               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  4339.976               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.482
+Info (332146): Worst-case setup slack is -3.617
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.482             -60.262 MAX10_CLK1_50 
-    Info (332119):    46.377               0.000 altera_reserved_tck 
-    Info (332119):  8677.705               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case hold slack is -1.846
+    Info (332119):    -3.617             -66.153 MAX10_CLK1_50 
+    Info (332119):    46.689               0.000 altera_reserved_tck 
+    Info (332119):  1082.201               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  8677.351               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332146): Worst-case hold slack is -1.798
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.846              -3.692 MAX10_CLK1_50 
-    Info (332119):     0.125               0.000 altera_reserved_tck 
-    Info (332119):     0.177               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332146): Worst-case recovery slack is 97.865
+    Info (332119):    -1.798              -3.595 MAX10_CLK1_50 
+    Info (332119):     0.119               0.000 altera_reserved_tck 
+    Info (332119):     0.121               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+    Info (332119):     0.152               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case recovery slack is 97.757
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    97.865               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.473
+    Info (332119):    97.757               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.412
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.473               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 9.264
+    Info (332119):     0.412               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 9.265
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.264               0.000 MAX10_CLK1_50 
+    Info (332119):     9.265               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
-    Info (332119):    49.385               0.000 altera_reserved_tck 
+    Info (332119):    49.387               0.000 altera_reserved_tck 
     Info (332119):    96.000               0.000 ADC_CLK_10 
-    Info (332119):  4340.008               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
-Info (332114): Report Metastability: Found 22 synchronizer chains.
+    Info (332119):   542.249               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):  4340.003               0.000 PLLTX|altpll_component|auto_generated|pll1|clk[1] 
+Info (332114): Report Metastability: Found 48 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 5052 megabytes
-    Info: Processing ended: Mon Mar 23 16:37:09 2026
+    Info: Processing ended: Mon Mar 23 23:45:35 2026
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:05
 

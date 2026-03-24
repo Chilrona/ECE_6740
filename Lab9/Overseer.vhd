@@ -30,7 +30,7 @@ architecture BEHAVIORAL of OVERSEER is
 
 begin
 
-    Flush: process(instruction_decode, take_branch, instruction_execute)
+    Flush: process(instruction_decode, take_branch, instruction_execute, in_buf_empty)
     begin
         if take_branch = '1' then
             flush_fetch <= '1';
@@ -46,7 +46,7 @@ begin
             flush_execute <= '0';
             take_jump <= '1';
             jump_addr <= instruction_decode(9 downto 0);
-			stall <= '0';
+				stall <= '0';
         
         elsif (instruction_execute(31 downto 26) = LW) and 
 				(instruction_execute(25 downto 21) = instruction_decode(20 downto 16)) and 
@@ -57,7 +57,7 @@ begin
             flush_execute <= '0';
             take_jump <= '0';
             jump_addr <= (others=>'0');
-			stall <= '1';
+				stall <= '1';
 
         elsif (instruction_decode(31 downto 26) = GD or instruction_decode(31 downto 26) = GDU) and in_buf_empty = '1' then
             flush_fetch <= '0';
@@ -65,7 +65,7 @@ begin
             flush_execute <= '0';
             take_jump <= '0';
             jump_addr <= (others=>'0');
-			stall <= '1';
+				stall <= '1';
 				
 		elsif (instruction_execute(31 downto 26) = LW) and 
 			(instruction_execute(25 downto 21) = instruction_decode(15 downto 11)) and 

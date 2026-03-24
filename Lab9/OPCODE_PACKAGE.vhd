@@ -83,6 +83,8 @@ package opcode_package is
 	 constant PCH   : std_logic_vector(5 downto 0) := "110001"; -- 0x31
 	 constant PD    : std_logic_vector(5 downto 0) := "110010"; -- 0x32
 	 constant PDU   : std_logic_vector(5 downto 0) := "110011"; -- 0x33
+	 constant GD	 : std_logic_vector(5 downto 0) := "110100"; -- 0x34
+	 constant GDU	 : std_logic_vector(5 downto 0) := "110101"; -- 0x35
 
     -------------------------------------------------------------
     -- Function declaration
