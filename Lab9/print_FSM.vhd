@@ -233,7 +233,7 @@ use work.opcode_package.all;
 				next_state <= DIV;
 				next_neg_flag <= '0';
 			else
-				next_state <= POP;
+				next_state <= IDLE;
 			end if;
 			
 		when DIV =>

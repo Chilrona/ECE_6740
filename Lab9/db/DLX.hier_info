@@ -1,5 +1,10 @@
 |DLX
-KEY[0] => rst_l.IN1
+KEY[0] => fetch:FETCH.rst_l
+KEY[0] => decode:DECODE.rst_l
+KEY[0] => execute:EXECUTE.rst_l
+KEY[0] => memory:MEMORY.rst_l
+KEY[0] => print_fsm:FSM.rst_l
+KEY[0] => scan_fsm:SCAN.rst_l
 KEY[0] => pll:PLLTX.areset
 KEY[1] => ~NO_FANOUT~
 ADC_CLK_10 => ~NO_FANOUT~
@@ -10,7 +15,10 @@ MAX10_CLK1_50 => execute:EXECUTE.clk
 MAX10_CLK1_50 => memory:MEMORY.clk
 MAX10_CLK1_50 => overseer:OOO.clk
 MAX10_CLK1_50 => print_fsm:FSM.clk
+MAX10_CLK1_50 => print_fsm:FSM.uart_clk
 MAX10_CLK1_50 => scan_fsm:SCAN.clk
+MAX10_CLK1_50 => scan_fsm:SCAN.uart_clk
+MAX10_CLK1_50 => scan_fsm:SCAN.uart_samp_clk
 MAX10_CLK2_50 => ~NO_FANOUT~
 GPIO[1] <> GPIO[1]
 GPIO[2] <> <UNC>

@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.opcode_package.all;
 
-entity DLX_lab8_tb is
-end DLX_lab8_tb;
+entity DLX_lab9_tb is
+end DLX_lab9_tb;
 
-architecture test of DLX_lab8_tb is
+architecture test of DLX_lab9_tb is
 
 	constant CLK_PERIOD : time := 20 ns;
 	
