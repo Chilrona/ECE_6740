@@ -9,8 +9,8 @@ start:
     ADDI R21, R0, 14
 print_loop1:
     LW R22, s1(R21)
-    BEQZ R21, end_loop
     PCH R22
+    BEQZ R21, end_loop
     SUBI R21, R21, 1
     J print_loop1
 end_loop:
@@ -22,8 +22,8 @@ end_loop:
     ADDI R21, R0, 12
 print_loop2:
     LW R22, s2(R21)
-    BEQZ R21, end
     PCH R22
+    BEQZ R21, end
     SUBI R21, R21, 1
     J print_loop2
 end:
