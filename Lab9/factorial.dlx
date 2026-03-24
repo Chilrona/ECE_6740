@@ -2,11 +2,14 @@
 
 .data
 n   1   6
-f   1   1
+st   1   1
+f 1 1
 
 .const
 s1 37 !margorp lairotcaf XLD eht ot emocleW
-s2 3 = ! 
+s2 3 = !
+s3 15 :rebmun a retnE
+ 
 
 .text
     ADDI R21, R0, 36
@@ -18,9 +21,24 @@ print_loop:
     J print_loop
 end_loop:
 
-    LW   R2, f(R0)
-    LW   R1, n(R0)
+    ADDI R23, R0, 10
+    PCH R23
+
+    
+ADDI R21, R0, 15
+
+enter_print_loop:
+    LW R22, s3(R21)
+    PCH R22
+    BEQZ R21, end_enter_loop
+    SUBI R21, R21, 1
+    J enter_print_loop
+end_enter_loop:
+
+    GD   R1
+    LW   R2, st(R0)
     PD   R1 
+
 
     ADDI R21, R0, 2
 second_loop:
@@ -56,3 +74,6 @@ loopdone:
 exit:
     PDU R2
     SW f(R0), R2
+
+infinite_nothing:
+    J infinite_nothing
