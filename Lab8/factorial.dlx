@@ -19,6 +19,8 @@ print_loop:
     J print_loop
 end_loop:
 
+    ADDI R21, R0, 10
+    PCH R21
     LW   R2, st(R0)
     LW   R1, n(R0)
     PD   R1 
