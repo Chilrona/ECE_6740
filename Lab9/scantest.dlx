@@ -6,7 +6,7 @@ s2 13  :deretne uoY
 
 .text
 start:
-    ADDI R21, R0, 15
+    ADDI R21, R0, 14
 print_loop1:
     LW R22, s1(R21)
     BEQZ R21, end_loop
@@ -16,8 +16,10 @@ print_loop1:
 end_loop:
     ADDI R20, R0, 10
     PCH R20
+    ADDI R18, R0, 13
+    PCH R18
     GD R19
-    ADDI R21, R0, 13
+    ADDI R21, R0, 12
 print_loop2:
     LW R22, s2(R21)
     BEQZ R21, end
@@ -27,5 +29,7 @@ print_loop2:
 end:
     PD R19
     PCH R20
+    PCH R18
     PCH R20
+    PCH R18
     J start
