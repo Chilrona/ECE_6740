@@ -25,14 +25,15 @@ use work.opcode_package.all;
 			take_branch : out std_logic;
             ram_we : out std_logic;
             q_2_out : out std_logic_vector(31 downto 0);
-				op1 : buffer std_logic_vector(31 downto 0) := (others=>'0')
+				op1_out : out std_logic_vector(31 downto 0) := (others=>'0')
 		);
 						
 	end entity execute;	
 					
 	architecture Behavioral of execute is     
 	
-    signal op2 : std_logic_vector(31 downto 0) := (others => '0');
+    signal op1 : std_logic_vector(31 downto 0) := (others => '0');
+	 signal op2 : std_logic_vector(31 downto 0) := (others => '0');
 	 signal instruction_in_1 : std_logic_vector(31 downto 0);
 
 
@@ -103,8 +104,10 @@ use work.opcode_package.all;
 		if rst_l = '0' then
 			instruction_out <= (others=>'0');
             q_2_out <= (others=>'0');
+				op1_out <= (others=>'0');
 		elsif rising_edge(clk) then
 				instruction_out <= instruction_in_1;
+				op1_out <= op1;
             q_2_out <= q_2;
 		end if;
 	end process;

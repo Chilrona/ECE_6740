@@ -25,19 +25,25 @@ use work.opcode_package.all;
 	architecture Behavioral of print_FSM is 
 
 	signal neg_flag : std_logic;
+	signal next_neg_flag : std_logic;
 	signal clk_count : integer:= 0;
+	signal n_clk_count : integer := 0;
 	signal instruction_FSM : std_logic_vector(37 downto 0);
 	
-	type state_type is (MAGIC, DIV, POP);
-	signal state : state_type:= POP;
+	type state_type is (IDLE, MAGIC, DIV, POP);
+	signal state : state_type:= IDLE;
+	signal next_state : state_type:= IDLE;
 	
 	signal i : integer:= 0;
+	signal next_i : integer := 0;
 	signal pos_val : std_logic_vector(31 downto 0);
+	signal next_pos_val : std_logic_vector(31 downto 0);
 	signal RS_signal : std_logic_vector(31 downto 0);
 	signal opcode_signal : std_logic_vector(5 downto 0);
 	
 	type stack_type is array (0 to 9) of std_logic_vector(7 downto 0);
-	signal stack : stack_type;
+	signal stack : stack_type; --:= (others=>(others=>'0'));
+	signal new_stack : stack_type; --:= (others=>(others=>'0'));
 	
 	--FIFO_WORD signals
 	signal rdreq_word : std_logic:= '0';
@@ -50,7 +56,8 @@ use work.opcode_package.all;
 	
 	
 	--FIFO_CHAR signals
-	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal data_char : STD_LOGIC_VECTOR (7 DOWNTO 0):= (others=>'0');
+	signal next_data_char : STD_LOGIC_VECTOR (7 DOWNTO 0):= (others=>'0');
 	signal rdreq_char : std_logic;
 	signal wrreq_char : std_logic;
 	signal rdempty_char : std_logic;
@@ -94,6 +101,7 @@ use work.opcode_package.all;
 		(
 			data	=> data_char,
 			rdclk	=> uart_clk,
+			--rdclk	=> clk,
 			rdreq	=> rdreq_char,
 			wrclk	=> clk,
 			wrreq	=> wrreq_char,
@@ -116,6 +124,7 @@ use work.opcode_package.all;
 		U : ENTITY work.UART_trans
 		PORT MAP 
 		(
+				--c1          => clk,
 				c1          => uart_clk,
             rst_l       => rst_l,
 				send       	=> send_flag,
@@ -139,6 +148,19 @@ use work.opcode_package.all;
 		end if;
 	end process;
 	
+	process (rdempty_char, uart_idle)
+	begin
+	-- add stuff for wrreq_char
+		if rdempty_char = '0' and uart_idle= '1' then
+			rdreq_char <= '1';
+			send_flag <= '1';
+		else
+			rdreq_char <= '0';
+			send_flag <= '0';
+		end if;
+	end process;
+	
+	
 	process (opcode_FSM)
 	begin
 		if (opcode_FSM = PCH) or (opcode_FSM = PD) or (opcode_FSM = PDU) then
@@ -150,101 +172,119 @@ use work.opcode_package.all;
 
 	process (clk, rst_l)
 	begin
-	if rst_l = '0' then
-		 state <= POP;
-		 clk_count <= 0;
-	elsif rising_edge(clk) then
+		if rst_l = '0' then
+			 state <= IDLE;
+			 clk_count <= 0;
+			 i <= 0;
+		elsif rising_edge(clk) then
+			state <= next_state;
+			i <= next_i;
+			stack <= new_stack;
+			clk_count <= n_clk_count;
+			pos_val <= next_pos_val;
+			-- data_char <= next_data_char;
+			neg_flag <= next_neg_flag;
 		
-		case state is
+
+		end if;
+		
+	end process;
+		
+	process(state, clk_count, i, opcode_signal, RS_signal, empty_word, almost_full, next_i, stack, pos_val, data_char, neg_flag, quotient, remain )--fill in later
+		begin
+			next_state <= state;
+			n_clk_count <= clk_count;
+			next_i <= i;
+			new_stack<= stack;
+			next_pos_val <= pos_val;
+			data_char <= (others=>'0');
+			next_neg_flag <= neg_flag;
+			rdreq_word <= '0';
+			wrreq_char <= '0';
+			
+			case state is
+		
+		when IDLE =>
+			wrreq_char <= '0';
+				if empty_word = '1' then
+					next_state <= IDLE;
+					rdreq_word <= '0';
+				else
+					next_state <= MAGIC;
+					rdreq_word <= '1';
+				end if;
 		
 		when MAGIC =>
-			
+			rdreq_word <= '0';
 			if opcode_signal = PCH then
 				wrreq_char <= '1';
 				data_char <= RS_signal(7 downto 0);
+				next_state <= IDLE;
 
-				if empty_word = '0' then -- if not empty, keep reading
-					state <= MAGIC;
-					rdreq_word <= '1';
-				else -- if empty, go back to pop
-					state <= POP;
-					rdreq_word <= '0';
-				end if;
 			elsif opcode_signal = PDU then
-				pos_val <= RS_signal;
-				state <= DIV;
-				rdreq_word <= '0';
+				next_pos_val <= RS_signal;
+				next_state <= DIV;
 			elsif opcode_signal = PD and RS_signal(31) = '1' then
-				pos_val <= std_logic_vector((unsigned(RS_signal) XOR x"FFFFFFFF") + x"00000001");
-				state <= DIV;
-				rdreq_word <= '0';
-				neg_flag <= '1';
+				next_pos_val <= std_logic_vector((unsigned(RS_signal) XOR x"FFFFFFFF") + x"00000001");
+				next_state <= DIV;
+				next_neg_flag <= '1';
 			elsif opcode_signal = PD and RS_signal(31) = '0' then
-				pos_val <= RS_signal;
-				state <= DIV;
-				rdreq_word <= '0';
-				neg_flag <= '0';
+				next_pos_val <= RS_signal;
+				next_state <= DIV;
+				next_neg_flag <= '0';
+			else
+				next_state <= POP;
 			end if;
 			
 		when DIV =>
-			if quotient = x"00000000" then
-				state <= POP;
-				i <= i - 1;
-				if neg_flag = '1' then
-					wrreq_char <= '1';
-					data_char<= x"2D";
+
+			if clk_count > 3 then 
+				
+				n_clk_count <= 0;
+				new_stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");
+				next_pos_val <= quotient;
+				
+				if quotient = x"00000000" then
+					next_state <= POP;
+					next_i <= i;
+					if neg_flag = '1' then
+						wrreq_char <= '1';
+						data_char<= x"2D";
+					end if;
+				else
+					next_state <= DIV;
+					next_i <= i + 1;
 				end if;
-			elsif clk_count = 3 then 
-				state <= DIV;
-				clk_count <= 0;
-				stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");
-				i <= i + 1;
-				pos_val <= quotient;
 			else 
-				clk_count <= clk_count + 1;
-				state <= DIV;
+				n_clk_count <= clk_count + 1;
+				next_state <= DIV;
 			end if;
 			
 			
 		when POP =>
+
+			wrreq_char<= '1';
+			data_char <= stack(i);
+			
 			if i = 0 then
-				wrreq_char<= '0';
-				if empty_word = '1' then
-					state <= POP;
-					rdreq_word <= '0';
-				else
-					state <= MAGIC;
+				if empty_word = '0' then
+					next_state <= MAGIC;
 					rdreq_word <= '1';
-				end if;
-			else
-				wrreq_char <= '1';
-				data_char <= stack(i);
-				i <= i - 1;
-				state <= POP;
-			end if;
-
-		when others =>
-					state <= POP;
-		end case;
-
-		end if;
-		
-		end process;
-
-		process (uart_clk)
-		begin
-			if rising_edge(uart_clk) then
-				if uart_idle = '1' and rdempty_char = '0' then
-					send_flag <= '1';
-					rdreq_char <= '1';
 				else
-					send_flag <= '0';
-					rdreq_char <= '0';
+					next_state <= IDLE;
 				end if;
+				
+			else
+				next_i <= i - 1;
+				next_state <= POP;
 			end if;
+			
+		when others =>
+				next_state <= IDLE;
+		end case;
 		end process;
-
-
 
 		
 	end Behavioral;	
+
+

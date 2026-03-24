@@ -10,7 +10,7 @@ architecture test of DLX_lab8_tb is
 
 	constant CLK_PERIOD : time := 20 ns;
 	
-	--Signals to connect to Lab3fetch
+	--Signals to connect to UUT
 	signal rst_l : std_logic:= '0'; 
 	signal KEY : std_logic_vector(1 downto 0);
 	signal clk : std_logic;

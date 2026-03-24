@@ -68,7 +68,7 @@ use work.opcode_package.all;
 		-- print signals
 		signal print_stall : std_logic;
 		signal print_flush_decode : std_logic;
-		signal tx : std_logic;
+		-- signal tx : std_logic;
 		
 		--pll signals
 		signal areset		: STD_LOGIC := '0';
@@ -82,9 +82,11 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	rst_l <= KEY(0) and not locked;
+	rst_l <= KEY(0) and locked;
+	--rst_l <= KEY(0);
 	clk <= MAX10_CLK1_50;
-	tx <= GPIO(1);
+	-- GPIO(1) <= tx;
+	--tx <= GPIO(1);
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
@@ -137,7 +139,7 @@ use work.opcode_package.all;
 		take_branch => take_branch,
 		ram_we => ram_we,
 		q_2_out => q_2_mem,
-		op1 => op1
+		op1_out => op1
 	);
 	MEMORY: entity work.memory
 	port map
@@ -191,11 +193,11 @@ use work.opcode_package.all;
 		(
          rst_l => rst_l,
          clk => clk,
-			opcode_FSM => instruction_execute(31 downto 26),
+			opcode_FSM => instruction_mem(31 downto 26),
 			op1 => op1,
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
-			tx => tx, 
+			tx => GPIO(1), 
 			uart_clk => c1
 		);
 		
