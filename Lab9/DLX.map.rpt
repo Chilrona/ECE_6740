@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar 24 22:06:52 2026
+Tue Mar 24 22:15:08 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -116,7 +116,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 24 22:06:52 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 24 22:15:08 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -3038,7 +3038,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Mar 24 22:06:28 2026
+    Info: Processing started: Tue Mar 24 22:14:44 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -3194,8 +3194,8 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_d5s3.tdf
     Info (12023): Found entity 1: altsyncram_d5s3 File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/db/altsyncram_d5s3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_d5s3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_d5s3:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 987 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/factorial_code.mif Line: 1
-    Warning (113027): Addresses ranging from 37 to 1023 are not initialized File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/factorial_code.mif Line: 1
+Warning (113028): 981 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 43 to 1023 are not initialized File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/factorial_code.mif Line: 1
 Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX.vhd Line: 107
 Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/Decode.vhd Line: 38
 Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/Decode.vhd Line: 51
@@ -3580,7 +3580,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2026.03.24.22:06:40 Progress: Loading sld292c2bee/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2026.03.24.22:14:56 Progress: Loading sld292c2bee/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -3734,8 +3734,8 @@ Info (21057): Implemented 5868 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
     Info: Peak virtual memory: 5045 megabytes
-    Info: Processing ended: Tue Mar 24 22:06:52 2026
+    Info: Processing ended: Tue Mar 24 22:15:08 2026
     Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Total CPU time (on all processors): 00:00:32
 
 
