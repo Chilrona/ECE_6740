@@ -86,8 +86,8 @@ use work.opcode_package.all;
 	
 	--setting up the clk and rst and tx
 	
-	--rst_l <= KEY(0) and locked;
-	rst_l <= KEY(0);
+	rst_l <= KEY(0) and locked;
+	--rst_l <= KEY(0);
 	clk <= MAX10_CLK1_50;
 	areset <= not (KEY(0));
 	
@@ -202,7 +202,7 @@ use work.opcode_package.all;
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
 			tx => GPIO(1), 
-			uart_clk => clk --c1
+			uart_clk => c1
 		);
 		
 		SCAN : entity work.scan_FSM
@@ -210,8 +210,8 @@ use work.opcode_package.all;
 		(
          rst_l => rst_l,
          clk => clk,
-			uart_clk => clk, -- c1, --115.2kHz
-			uart_samp_clk =>clk, -- c0, --921.6 kHz
+			uart_clk =>  c1, --115.2kHz
+			uart_samp_clk => c0, --921.6 kHz
          opcode_scan => instruction_decode(31 downto 26),
 			rx => GPIO(0),
 

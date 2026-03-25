@@ -17,7 +17,7 @@ use work.opcode_package.all;
 			rx : in std_logic;
 
 			data_out : out std_logic_vector(31 downto 0);
-			in_buff_empty : out STD_LOGIC := '1'
+			in_buff_empty : buffer STD_LOGIC := '1'
 		);
 						
 	end entity scan_FSM;	
@@ -48,7 +48,6 @@ use work.opcode_package.all;
 	signal data_in_next		: STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal rdreq_in_buf		: STD_LOGIC ;
 	signal wrreq_in_buf		: STD_LOGIC ;
-	signal empty_in_buf		: STD_LOGIC ;
 	signal full_in_buf		: STD_LOGIC ;
 	signal usedw_in_buf		: STD_LOGIC_VECTOR (7 DOWNTO 0);
 	
@@ -98,7 +97,7 @@ use work.opcode_package.all;
 		port map
 		(
 			c1 => uart_clk,
-			rx_sync => rx, --rx_sync_sig,
+			rx_sync => rx_sync_sig,
 			char => char_in,
 			send_flag => wrreq_uart_rf,
 			rst_l => rst_l
@@ -126,16 +125,14 @@ use work.opcode_package.all;
 	), 32));
 
 		
-	process(clk, rst_l)
+	process(in_buff_empty, rst_l)
 	begin
 		if rst_l = '0' then
 			rdreq_in_buf <= '0';
-		elsif rising_edge(clk) then
-			if empty_in_buf = '0' then
-				rdreq_in_buf <= '1';
-			else
-				rdreq_in_buf <= '0';
-			end if;
+		elsif in_buff_empty = '0' then
+			rdreq_in_buf <= '1';
+		else
+			rdreq_in_buf <= '0';
 		end if;
 	end process;
 	
@@ -181,7 +178,7 @@ use work.opcode_package.all;
 					rdreq_uart_rf <= '1';
 				end if;
 			else
-				if q_char = x"0A" and full_in_buf = '0' then 
+				if q_char = x"0D" and full_in_buf = '0' then 
 					next_state <= IDLE;
 					wrreq_in_buf <= '1';
 					if neg_flag = '1' then
