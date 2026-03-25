@@ -67,24 +67,24 @@ begin
             jump_addr <= (others=>'0');
 				stall <= '1';
 				
-		elsif (instruction_execute(31 downto 26) = LW) and 
-			(instruction_execute(25 downto 21) = instruction_decode(15 downto 11)) and 
-			(is_register_register(instruction_decode(31 downto 26))) then
-			flush_fetch <= '0';
-            flush_decode <= '1';
-            flush_execute <= '0';
-            take_jump <= '0';
-            jump_addr <= (others=>'0');
-			stall <= '1';
+			elsif (instruction_execute(31 downto 26) = LW) and 
+				(instruction_execute(25 downto 21) = instruction_decode(15 downto 11)) and 
+				(is_register_register(instruction_decode(31 downto 26))) then
+				flush_fetch <= '0';
+					flush_decode <= '1';
+					flush_execute <= '0';
+					take_jump <= '0';
+					jump_addr <= (others=>'0');
+				stall <= '1';
 		  
-        else
-            flush_fetch <= '0';
-            flush_decode <= '0';
-            flush_execute <= '0';
-            take_jump <= '0';
-            jump_addr <= (others=>'0');
-			stall <= '0';
-        end if;
+			  else
+					flush_fetch <= '0';
+					flush_decode <= '0';
+					flush_execute <= '0';
+					take_jump <= '0';
+					jump_addr <= (others=>'0');
+				stall <= '0';
+			  end if;
     end process;
 
 

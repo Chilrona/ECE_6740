@@ -10045,8 +10045,9 @@ rst_l => data_in[2].ENA
 rst_l => data_in[1].ENA
 rst_l => data_in[0].ENA
 rst_l => neg_flag.ENA
+rst_l => rdreq_uart_rf_old.ENA
 clk => fifo_uart_rf:UART_RF.rdclk
-clk => rdreq_in_buf.CLK
+clk => rdreq_uart_rf_old.CLK
 clk => neg_flag.CLK
 clk => data_in[0].CLK
 clk => data_in[1].CLK
@@ -10081,6 +10082,7 @@ clk => data_in[29].CLK
 clk => data_in[30].CLK
 clk => data_in[31].CLK
 clk => state.CLK
+clk => rdreq_in_buf.CLK
 clk => fifo_in_buf:IN_BUF.clock
 uart_clk => fifo_uart_rf:UART_RF.wrclk
 uart_clk => uart_recv:UART_RX.c1
@@ -10092,6 +10094,7 @@ opcode_scan[2] => ~NO_FANOUT~
 opcode_scan[3] => ~NO_FANOUT~
 opcode_scan[4] => ~NO_FANOUT~
 opcode_scan[5] => ~NO_FANOUT~
+rx => uart_recv:UART_RX.rx_sync
 rx => uartsampler:DA_SAMPLER.rx
 data_out[0] <= fifo_in_buf:IN_BUF.q[0]
 data_out[1] <= fifo_in_buf:IN_BUF.q[1]
@@ -10125,7 +10128,7 @@ data_out[28] <= fifo_in_buf:IN_BUF.q[28]
 data_out[29] <= fifo_in_buf:IN_BUF.q[29]
 data_out[30] <= fifo_in_buf:IN_BUF.q[30]
 data_out[31] <= fifo_in_buf:IN_BUF.q[31]
-in_buff_empty <= comb.DB_MAX_OUTPUT_PORT_TYPE
+in_buff_empty <= fifo_in_buf:IN_BUF.empty
 
 
 |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF

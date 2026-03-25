@@ -17,6 +17,9 @@ architecture test of DLX_lab9_tb is
 	signal GPIO : std_logic_vector(35 downto 0);
 	signal open_clk : std_logic;
 	signal open_clk2 : std_logic;
+	signal clk_count : integer :=0;
+	constant test_char : std_logic_vector(19 downto 0) := "10000101001001101100";		
+	signal rx : std_logic := '1';
 
 	begin
 
@@ -34,7 +37,8 @@ architecture test of DLX_lab9_tb is
 
 	KEY(0) <= rst_l;
 	
-	GPIO(0) <= '1';
+	--GPIO(0) <= '1';
+	GPIO(0) <= rx;
 
 	clk_process : process
 	begin
@@ -45,6 +49,20 @@ architecture test of DLX_lab9_tb is
 	end process;
 	
         rst_l <= '1' after 1 ps;
+		  
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			clk_count <= clk_count + 1;
+			
+			if clk_count >= 120 and clk_count < 140 then
+				rx <= test_char(clk_count - 120);
+			else
+				rx <= '1';
+			end if;
+			
+		end if;
+	end process;
 	
 	
 end test;	

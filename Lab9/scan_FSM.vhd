@@ -17,7 +17,7 @@ use work.opcode_package.all;
 			rx : in std_logic;
 
 			data_out : out std_logic_vector(31 downto 0);
-			in_buff_empty : out STD_LOGIC
+			in_buff_empty : out STD_LOGIC := '1'
 		);
 						
 	end entity scan_FSM;	
@@ -35,6 +35,7 @@ use work.opcode_package.all;
 	--FIFO_UART_RF signals
 	signal data_uart_rf		: STD_LOGIC_VECTOR (7 DOWNTO 0);
 	signal rdreq_uart_rf		: STD_LOGIC ;
+	signal rdreq_uart_rf_old : STD_LOGIC;
 	signal wrreq_uart_rf		: STD_LOGIC ;
 	signal wrreq_uart_rf_final : STD_LOGIC;
 	signal q_char			: STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -86,7 +87,7 @@ use work.opcode_package.all;
 			data => data_in,
 			rdreq => rdreq_in_buf,
 			wrreq	=> wrreq_in_buf,
-			empty	=>empty_in_buf,
+			empty	=>in_buff_empty,
 			full=> full_in_buf,
 			q => data_out,
 			usedw => usedw_in_buf
@@ -97,7 +98,7 @@ use work.opcode_package.all;
 		port map
 		(
 			c1 => uart_clk,
-			rx_sync => rx_sync_sig,
+			rx_sync => rx, --rx_sync_sig,
 			char => char_in,
 			send_flag => wrreq_uart_rf,
 			rst_l => rst_l
@@ -115,28 +116,16 @@ use work.opcode_package.all;
 		);
 		
 	wrreq_uart_rf_final <= wrreq_uart_rf and not(wrfull_uart_rf);
-	mult_out <= std_logic_vector(
+	mult_out <= std_logic_vector(resize((
 		 unsigned(std_logic_vector'(
 			  std_logic_vector(data_in(28 downto 0)) & cat1
 		 )) +
 		 unsigned(std_logic_vector'(
 			  std_logic_vector(data_in(30 downto 0)) & cat2
 		 ))
-	);
+	), 32));
 
-	process (clk, rst_l)
-	begin
-		if rst_l = '0' then
-			 state <= IDLE;
-		elsif rising_edge(clk) then
-			state <= next_state;
-			data_in <= data_in_next;
-			neg_flag <= next_neg_flag;
-
-		end if;
 		
-	end process;
-	
 	process(clk, rst_l)
 	begin
 		if rst_l = '0' then
@@ -149,7 +138,24 @@ use work.opcode_package.all;
 			end if;
 		end if;
 	end process;
+	
+	
+	-- begin state machine processes
+	
+	process (clk, rst_l)
+	begin
+		if rst_l = '0' then
+			 state <= IDLE;
+		elsif rising_edge(clk) then
+			state <= next_state;
+			data_in <= data_in_next;
+			neg_flag <= next_neg_flag;
+			rdreq_uart_rf_old <= rdreq_uart_rf;
+
+		end if;
 		
+	end process;
+
 	process(state, next_state, data_in, data_in_next, neg_flag, next_neg_flag, rdreq_uart_rf, wrreq_in_buf, wrreq_uart_rf_final, usedw_in_buf, q_char, mult_out, rdempty_uart_rf, full_in_buf)--fill in later
 		begin
 			next_state <= state;
@@ -170,23 +176,43 @@ use work.opcode_package.all;
 			end if;
 		
 		when MULT =>
-			if q_char = x"0A" and full_in_buf = '0' then
-				next_state <= IDLE;
-				wrreq_in_buf <= '1';
-				if neg_flag = '1' then
-					data_in_next <= std_logic_vector(unsigned(data_in XOR x"FFFFFFFF") + x"00000001");
-				else
-					data_in_next <= data_in;
+			if rdreq_uart_rf_old = '0' then
+				if rdempty_uart_rf = '0' then
+					rdreq_uart_rf <= '1';
 				end if;
-			elsif q_char = x"2D" and data_in = x"00000000" then
-				next_state <= MULT;
-				next_neg_flag <= '1';
-			elsif q_char >= x"30" and q_char <= x"39" then
-				data_in_next <= std_logic_vector(unsigned(mult_out) + (resize(unsigned(q_char),32) - x"00000030"));
-				rdreq_uart_rf <= '1';
-				next_state <= MULT;
 			else
-				next_state <= MULT;
+				if q_char = x"0A" and full_in_buf = '0' then 
+					next_state <= IDLE;
+					wrreq_in_buf <= '1';
+					if neg_flag = '1' then
+						data_in_next <= std_logic_vector(unsigned(data_in XOR x"FFFFFFFF") + x"00000001");
+					else
+						data_in_next <= data_in;
+					end if;
+				elsif q_char = x"2D" and data_in = x"00000000" then
+					next_state <= MULT;
+					next_neg_flag <= '1';
+					if rdempty_uart_rf = '0' then
+						rdreq_uart_rf <= '1';
+					else
+						rdreq_uart_rf <= '0';
+					end if;
+				elsif q_char >= x"30" and q_char <= x"39" then
+					data_in_next <= std_logic_vector(unsigned(mult_out) + (resize(unsigned(q_char),32) - x"00000030"));
+					if rdempty_uart_rf = '0' then
+						rdreq_uart_rf <= '1';
+					else
+						rdreq_uart_rf <= '0';
+					end if;
+					next_state <= MULT;
+				else
+					next_state <= MULT;
+					if rdempty_uart_rf = '0' then
+						rdreq_uart_rf <= '1';
+					else
+						rdreq_uart_rf <= '0';
+					end if;
+				end if;
 			end if;
 			
 		when others =>
