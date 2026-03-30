@@ -568,7 +568,16 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=55" -se
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=55" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=55" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=sld_reserved_DLX_auto_signaltap_0_1_1d51," -section_id auto_signaltap_0
-set_global_assignment -name VHDL_FILE DLX_lab9_tb.vhd
+set_global_assignment -name SOURCE_FILE FIFO_UART_RF.cmp
+set_global_assignment -name SOURCE_FILE fifo_in_buf.cmp
+set_global_assignment -name QIP_FILE UART_RF.qip
+set_global_assignment -name QIP_FILE in_buf.qip
+set_global_assignment -name VERILOG_FILE UART_RF.v
+set_global_assignment -name VERILOG_FILE in_buf.v
+set_global_assignment -name VHDL_FILE DLX_lab8_tb.vhd
+set_global_assignment -name MIF_FILE square_data.mif
+set_global_assignment -name MIF_FILE square_code.mif
+set_global_assignment -name SOURCE_FILE square.dlx
 set_global_assignment -name SOURCE_FILE fifo_word.cmp
 set_global_assignment -name SOURCE_FILE fifo_char.cmp
 set_global_assignment -name SOURCE_FILE diva.cmp
@@ -613,5 +622,6 @@ set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name VHDL_FILE scan_FSM.vhd
 set_global_assignment -name QIP_FILE FIFO_UART_RF.qip
 set_global_assignment -name QIP_FILE fifo_in_buf.qip
-set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+set_global_assignment -name VHDL_FILE Timer.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp

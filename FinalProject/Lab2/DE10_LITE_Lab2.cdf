@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/A02395949/Desktop/Lab2/") File("DE10_LITE_Lab2.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/") File("DE10_LITE_Lab2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
