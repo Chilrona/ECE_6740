@@ -13,7 +13,9 @@ use work.opcode_package.all;
 			op1 : in std_logic_vector (31 downto 0);
          op2 : in std_logic_vector (31 downto 0);
          alu_result : out std_logic_vector (31 downto 0);
-			ram_we : out std_logic			
+			ram_we : out std_logic;
+			Time_rst : in std_logic;
+			enable_time : in std_logic
 		);
 						
 	end entity ALU;	
@@ -23,6 +25,7 @@ use work.opcode_package.all;
 	begin
 	process(clk,rst_l)
 	begin
+		Time_rst <= '0';
         if rst_l = '0' then
             alu_result <= (others => '0');
         elsif rising_edge(clk) then
@@ -176,11 +179,14 @@ use work.opcode_package.all;
 					when GDU =>
 						alu_result <= got_data;
 					when TR =>
-					--Timer reset
+--Timer reset
+					Time_rst<= '1';
 					when TGO =>
-					--Timer go
+--Timer go
+					enable_time <= '1';
 					when TSP =>
-					--Timer stop
+--Timer stop
+					enable_time <= '0';
 					when others =>
 						alu_result <= (others=>'0');
 				end case;

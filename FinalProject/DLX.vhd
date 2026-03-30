@@ -10,7 +10,13 @@ use work.opcode_package.all;
 			ADC_CLK_10 : in std_logic;
 			MAX10_CLK1_50 : in std_logic;
 			MAX10_CLK2_50 : in std_logic;
-			GPIO : inout std_logic_vector(35 downto 0)
+			GPIO : inout std_logic_vector(35 downto 0);
+			HEX0 : out unsigned(7 downto 0);
+			HEX1 : out unsigned(7 downto 0);
+			HEX2 : out unsigned(7 downto 0);
+			HEX3 : out unsigned(7 downto 0);
+			HEX4 : out unsigned(7 downto 0);
+			HEX5 : out unsigned(7 downto 0)
 		);
 						
 	end entity DLX;	
@@ -79,6 +85,10 @@ use work.opcode_package.all;
 		signal c0		: STD_LOGIC :='0'; --153600 Hz
 		signal c1		: STD_LOGIC :='0'; --115.2 kHz 
 		signal locked : std_logic;
+		
+		--lil timmy
+		signal Time_rst : std_logic;
+		signal enable_time : std_logic;
 
 
 	
@@ -142,7 +152,9 @@ use work.opcode_package.all;
 		take_branch => take_branch,
 		ram_we => ram_we,
 		q_2_out => q_2_mem,
-		op1_out => op1
+		op1_out => op1,
+		Time_rst => Time_rst,
+		enable_time => enable_time
 	);
 	MEMORY: entity work.memory
 	port map
@@ -229,6 +241,22 @@ use work.opcode_package.all;
 			c1=>c1,
 			locked=>locked
 		);
+		
+		TIM: 	entity work.Timer 
+		port map
+		(
+				Time_rst => Time_rst,
+				enable_time => enable_time,
+				MAX10_CLK1_50 => MAX10_CLK1_50,
+				HEX0=>HEX0,
+				HEX1=>HEX1,
+				HEX2=>HEX2,
+				HEX3=>HEX3,
+				HEX4=>HEX4,
+				HEX5=>HEX5
+		);
+						
+	end entity Timer;	
 	
 	 
 	 stall_final <= stall or print_stall;
