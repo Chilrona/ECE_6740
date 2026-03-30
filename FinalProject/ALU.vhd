@@ -175,6 +175,12 @@ use work.opcode_package.all;
 						alu_result <= got_data;
 					when GDU =>
 						alu_result <= got_data;
+					when TR =>
+					--Timer reset
+					when TGO =>
+					--Timer go
+					when TSP =>
+					--Timer stop
 					when others =>
 						alu_result <= (others=>'0');
 				end case;
