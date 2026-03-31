@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_LITE_Lab2
-Tue Sep 23 21:01:24 2025
+Mon Mar 30 16:32:32 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -43,13 +43,13 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 23 21:01:24 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 30 16:32:32 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DE10_LITE_Lab2                                  ;
 ; Top-level Entity Name              ; DE10_LITE_Lab2                                  ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 365                                             ;
-;     Total combinational functions  ; 365                                             ;
+; Total logic elements               ; 368                                             ;
+;     Total combinational functions  ; 368                                             ;
 ;     Dedicated logic registers      ; 224                                             ;
 ; Total registers                    ; 224                                             ;
 ; Total pins                         ; 51                                              ;
@@ -153,25 +153,25 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 14          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 14          ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                              ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; DE10_LITE_Lab2.vhd               ; yes             ; User VHDL File  ; C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; DE10_LITE_Lab2.vhd               ; yes             ; User VHDL File  ; C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------+
@@ -179,16 +179,16 @@ on the Quartus Prime software download page.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 365                 ;
+; Estimated Total logic elements              ; 368                 ;
 ;                                             ;                     ;
-; Total combinational functions               ; 365                 ;
+; Total combinational functions               ; 368                 ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 115                 ;
-;     -- 3 input functions                    ; 10                  ;
-;     -- <=2 input functions                  ; 240                 ;
+;     -- 4 input functions                    ; 116                 ;
+;     -- 3 input functions                    ; 9                   ;
+;     -- <=2 input functions                  ; 243                 ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 148                 ;
+;     -- normal mode                          ; 151                 ;
 ;     -- arithmetic mode                      ; 217                 ;
 ;                                             ;                     ;
 ; Total registers                             ; 224                 ;
@@ -201,7 +201,7 @@ on the Quartus Prime software download page.
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
 ; Maximum fan-out                             ; 224                 ;
-; Total fan-out                               ; 1952                ;
+; Total fan-out                               ; 1959                ;
 ; Average fan-out                             ; 2.82                ;
 +---------------------------------------------+---------------------+
 
@@ -211,7 +211,7 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
-; |DE10_LITE_Lab2            ; 365 (365)           ; 224 (224)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 51   ; 0            ; 0          ; |DE10_LITE_Lab2     ; DE10_LITE_Lab2 ; work         ;
+; |DE10_LITE_Lab2            ; 368 (368)           ; 224 (224)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 51   ; 0            ; 0          ; |DE10_LITE_Lab2     ; DE10_LITE_Lab2 ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -239,18 +239,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 51                          ;
 ; cycloneiii_ff         ; 224                         ;
 ;     ENA CLR           ; 224                         ;
-; cycloneiii_lcell_comb ; 373                         ;
+; cycloneiii_lcell_comb ; 376                         ;
 ;     arith             ; 217                         ;
 ;         2 data inputs ; 217                         ;
-;     normal            ; 156                         ;
+;     normal            ; 159                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 115                         ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 116                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.56                        ;
+; Average LUT depth     ; 3.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -259,7 +259,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -269,40 +269,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Sep 23 21:01:18 2025
+    Info: Processing started: Mon Mar 30 16:32:21 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_LITE_Lab2 -c DE10_LITE_Lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file de10_lite_lab2.vhd
-    Info (12022): Found design unit 1: DE10_LITE_Lab2-Behavioral File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 20
-    Info (12023): Found entity 1: DE10_LITE_Lab2 File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 5
+    Info (12022): Found design unit 1: DE10_LITE_Lab2-Behavioral File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 20
+    Info (12023): Found entity 1: DE10_LITE_Lab2 File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 5
 Info (12127): Elaborating entity "DE10_LITE_Lab2" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(36): signal "KEY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 36
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(44): signal "KEY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 44
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(85): signal "hundredths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(86): signal "tenths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(87): signal "sec_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 87
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(88): signal "sec_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(89): signal "min_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 89
-Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(90): signal "min_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(36): signal "KEY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(44): signal "KEY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(85): signal "hundredths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(86): signal "tenths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(87): signal "sec_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(88): signal "sec_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(89): signal "min_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at DE10_LITE_Lab2.vhd(90): signal "min_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 90
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 9
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 10
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 11
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 12
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 13
-    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/A02395949/Desktop/Lab2/DE10_LITE_Lab2.vhd Line: 14
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 9
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 10
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 11
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 12
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 13
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/Lab2/DE10_LITE_Lab2.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 416 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 419 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 48 output pins
-    Info (21061): Implemented 365 logic cells
+    Info (21061): Implemented 368 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4938 megabytes
-    Info: Processing ended: Tue Sep 23 21:01:24 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Mon Mar 30 16:32:32 2026
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 

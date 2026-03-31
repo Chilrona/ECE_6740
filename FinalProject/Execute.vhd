@@ -27,8 +27,8 @@ use work.opcode_package.all;
             ram_we : out std_logic;
             q_2_out : out std_logic_vector(31 downto 0);
 				op1_out : out std_logic_vector(31 downto 0) := (others=>'0');
-				Time_rst : in std_logic;
-				enable_time : in std_logic
+				Time_rst : out std_logic;
+				enable_time : out std_logic
 		);
 						
 	end entity execute;	

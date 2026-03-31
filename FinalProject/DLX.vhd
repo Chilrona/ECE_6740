@@ -256,7 +256,7 @@ use work.opcode_package.all;
 				HEX5=>HEX5
 		);
 						
-	end entity Timer;	
+
 	
 	 
 	 stall_final <= stall or print_stall;
