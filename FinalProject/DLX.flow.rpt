@@ -1,5 +1,5 @@
 Flow report for DLX
-Mon Mar 30 17:48:48 2026
+Tue Mar 31 14:19:12 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 30 17:48:42 2026           ;
+; Flow Status                        ; Successful - Tue Mar 31 14:19:07 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 5,354 / 49,760 ( 11 % )                         ;
-;     Total combinational functions  ; 4,458 / 49,760 ( 9 % )                          ;
+; Total logic elements               ; 5,330 / 49,760 ( 11 % )                         ;
+;     Total combinational functions  ; 4,433 / 49,760 ( 9 % )                          ;
 ;     Dedicated logic registers      ; 2,523 / 49,760 ( 5 % )                          ;
 ; Total registers                    ; 2523                                            ;
 ; Total pins                         ; 89 / 360 ( 25 % )                               ;
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2026 17:47:20 ;
+; Start date & time ; 03/31/2026 14:18:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ on the Quartus Prime software download page.
 +-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                 ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 91242827497811.177491444017784                                        ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 84607103025491.177498829301980                                        ; --            ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                    ; --            ; --          ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                    ; --            ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                     ; --            ; --          ; --               ;
@@ -141,11 +141,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:39     ; 1.0                     ; 5033 MB             ; 00:00:48                           ;
-; Fitter               ; 00:00:31     ; 1.4                     ; 6053 MB             ; 00:00:59                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4851 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:05     ; 2.1                     ; 5015 MB             ; 00:00:09                           ;
-; Total                ; 00:01:20     ; --                      ; --                  ; 00:02:00                           ;
+; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 5045 MB             ; 00:00:33                           ;
+; Fitter               ; 00:00:20     ; 1.6                     ; 6565 MB             ; 00:00:53                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4852 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:04     ; 2.5                     ; 5068 MB             ; 00:00:06                           ;
+; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -154,10 +154,10 @@ on the Quartus Prime software download page.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

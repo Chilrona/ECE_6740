@@ -80,82 +80,122 @@ use work.opcode_package.all;
 					when SLT =>
 						if signed(op1) < signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLTI =>
 						if signed(op1) < signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLTU =>
 						if unsigned(op1) < unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLTUI =>
 						if unsigned(op1) < unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGT =>
 						if signed(op1) > signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGTI =>
 						if signed(op1) > signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGTU =>
 						if unsigned(op1) > unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGTUI =>
 						if unsigned(op1) > unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLE =>
 						if signed(op1) <= signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLEI =>
 						if signed(op1) <= signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLEU =>
 						if unsigned(op1) <= unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SLEUI =>
 						if unsigned(op1) <= unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGE =>
 						if signed(op1) >= signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGEI =>
 						if signed(op1) >= signed(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGEU =>
 						if unsigned(op1) >= unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SGEUI =>
 						if unsigned(op1) >= unsigned(op2) then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SEQ =>
 						if op1 = op2 then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SEQI =>
 						if op1 = op2 then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SNE =>
 						if op1 /= op2 then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when SNEI =>
 						if op1 /= op2 then
 							alu_result <= X"00000001";
+						else
+							alu_result <= X"00000000";
 						end if;
 					when BEQZ =>
 						alu_result <= (others=>'0');
