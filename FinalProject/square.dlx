@@ -45,6 +45,7 @@ printstr1
 	LW		R21, n(R0)
 	JAL		mult
 	SW		square(R0), R30
+	ADDI	R15, R30, 1
 	
 	;print square
 	LW		R5, n(R0)
@@ -60,7 +61,7 @@ printstr2
 	BNEZ	R1, printstr2
 	
 	LW		R4, square(R0)
-	PDU		R30
+	PDU		R15
 
 done
 	J		done
