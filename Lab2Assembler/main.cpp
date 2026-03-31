@@ -185,6 +185,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
 {
     uint16_t data_addr = 0;
     bool is_const = false;
+    printf("Number of data lines: %d\n", data_lines->len);
     for (int i = 0; i < data_lines->len; i++)
     {
         if (strcmp(data_lines->items[i].text, "const") == 0)
@@ -204,18 +205,35 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
         char* num_str = strtok_r(NULL, " ", &save);   // get size as a str
         int size = (int)strtol(num_str, NULL, 10);    // convert size to integer
         uint32_t data;
+        int k = 0;
         for (int j = 0; j < size; j++)
         {
             
             if (is_const)
             {
-                data = (uint32_t)save[j];
+                data = (uint32_t)save[k];
+                if ((k == 0 || k == size-1) && (char)data == '"')
+                {
+                    continue;
+                }
+                if ((char)data == '\\')
+                {
+                    if (save[++k] == 'n')
+                    {
+                        data = (uint32_t)'\n';
+                    }
+                    else if (save[k] == 'r')
+                    {
+                        data = (uint32_t)'\r';
+                    }
+                }
             }else
             {
                 num_str = strtok_r(NULL, " ", &save);   // 
                 data = (uint32_t)strtol(num_str, NULL, 10);
             }
             fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
+            k++;
         }
         data_addr += size;
     }
@@ -360,6 +378,10 @@ void build_mnemonic_table(mnemonic_entry** table_ptr)
 
     shput(table, "GD", PRINT);
     shput(table, "GDU", PRINT);
+
+    shput(table, "TR", JUMP);
+    shput(table, "TGO", JUMP);
+    shput(table, "TSP", JUMP);
 
     printf("Table Built!\n");
     *table_ptr=table;
