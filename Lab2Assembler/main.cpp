@@ -200,6 +200,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
         char* line = curr_line.text;
         char* var_name = strdup(strtok_r(line, " ", &save));
         shput(*data_table, var_name, data_addr);
+        printf("Var name: %s; Addr: %X\n", var_name, data_addr);
         // "m 10 0 4 0 5 6..."
         // Format for strtol(): long val = strtol(s, &end, 10);
         char* num_str = strtok_r(NULL, " ", &save);   // get size as a str
@@ -214,6 +215,8 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 data = (uint32_t)save[k];
                 if ((k == 0 || k == size-1) && (char)data == '"')
                 {
+                    printf("Found quote marks, skipping...\n");
+                    k++;
                     continue;
                 }
                 if ((char)data == '\\')
@@ -233,6 +236,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 data = (uint32_t)strtol(num_str, NULL, 10);
             }
             fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
+            printf("%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
             k++;
         }
         data_addr += size;
