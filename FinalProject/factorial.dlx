@@ -37,7 +37,7 @@ enter_print_loop:
     J enter_print_loop
 end_enter_loop:
 
-    GD   R1
+    GDU   R1
     LW   R2, st(R0)
     PCH R23
     PCH R18
