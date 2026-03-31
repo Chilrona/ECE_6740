@@ -5,8 +5,8 @@
 	square	1	0
 
 .const
-	str1	26	Enter an unsigned integer:
-	str2	10	squared is
+	str1	27	"Enter an unsigned integer: "
+	str2	12	" squared is "
 	
 .text
 
@@ -32,7 +32,7 @@ printstr1
 	LW		R3, str1(R2)
 	PCH		R3
 	ADDI	R2, R2, 1
-	SLTI	R1, R2, 26
+	SLTI	R1, R2, 27
 	BNEZ	R1, printstr1
 			
 	;get integer
@@ -55,7 +55,7 @@ printstr2
 	LW		R3, str2(R2)
 	PCH		R3
 	ADDI	R2, R2, 1
-	SLTI	R1, R2, 10
+	SLTI	R1, R2, 12
 	BNEZ	R1, printstr2
 	
 	LW		R4, square(R0)
