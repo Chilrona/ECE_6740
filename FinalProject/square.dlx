@@ -45,7 +45,7 @@ printstr1
 	LW		R21, n(R0)
 	JAL		mult
 	SW		square(R0), R30
-	ADDI	R15, R30, 1
+	ADDI	R15, R30, 0
 	
 	;print square
 	LW		R5, n(R0)
