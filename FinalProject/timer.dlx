@@ -16,6 +16,7 @@ printstr1
 
     GD      R22
     SW     	n(R0), R22 
+    NOP
     LW      R11, n(R0)
     PD      R11
     TSP
