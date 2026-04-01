@@ -23,7 +23,19 @@ port
 end entity memory;
 
 architecture Behavioral of memory is
+
+signal ram_we_2 : std_logic;
+
 begin
+
+process(instruction_in)
+begin
+	if instruction_in(31 downto 26) = SW then
+					ram_we_2 <= '1';
+				else
+					ram_we_2 <= '0';
+				end if;
+end process;
 
 RAM : entity work.my_ram
 port map

@@ -1,9 +1,5 @@
 Flow report for DLX
-<<<<<<< HEAD
-Wed Apr  1 14:18:31 2026
-=======
-Tue Mar 31 14:19:12 2026
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
+Wed Apr  1 15:23:12 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -45,28 +41,17 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-<<<<<<< HEAD
-; Flow Status                        ; Successful - Wed Apr  1 14:18:26 2026           ;
-=======
-; Flow Status                        ; Successful - Tue Mar 31 14:19:07 2026           ;
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
+; Flow Status                        ; Successful - Wed Apr  1 15:23:07 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-<<<<<<< HEAD
-; Total logic elements               ; 4,677 / 49,760 ( 9 % )                          ;
-;     Total combinational functions  ; 4,314 / 49,760 ( 9 % )                          ;
-;     Dedicated logic registers      ; 1,518 / 49,760 ( 3 % )                          ;
-; Total registers                    ; 1518                                            ;
-=======
-; Total logic elements               ; 5,330 / 49,760 ( 11 % )                         ;
-;     Total combinational functions  ; 4,433 / 49,760 ( 9 % )                          ;
-;     Dedicated logic registers      ; 2,523 / 49,760 ( 5 % )                          ;
-; Total registers                    ; 2523                                            ;
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
+; Total logic elements               ; 4,393 / 49,760 ( 9 % )                          ;
+;     Total combinational functions  ; 4,033 / 49,760 ( 8 % )                          ;
+;     Dedicated logic registers      ; 1,517 / 49,760 ( 3 % )                          ;
+; Total registers                    ; 1517                                            ;
 ; Total pins                         ; 89 / 360 ( 25 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 89,645 / 1,677,312 ( 5 % )                      ;
@@ -82,23 +67,18 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-; Start date & time ; 04/01/2026 14:17:41 ;
-=======
-; Start date & time ; 03/31/2026 14:18:13 ;
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
+; Start date & time ; 04/01/2026 15:22:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
 
 
-<<<<<<< HEAD
 +--------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                         ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 262715101823315.177507466105484        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                ; 262715101823315.177507854430848        ; --            ; --          ; --         ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                  ; Balanced      ; --          ; --         ;
 ; ENABLE_SIGNALTAP                     ; Off                                    ; --            ; --          ; --         ;
 ; FITTER_EFFORT                        ; Fast Fit                               ; Auto Fit      ; --          ; --         ;
@@ -134,69 +114,6 @@ on the Quartus Prime software download page.
 ; ROUTER_TIMING_OPTIMIZATION_LEVEL     ; MAXIMUM                                ; Normal        ; --          ; --         ;
 ; USE_SIGNALTAP_FILE                   ; stp1.stp                               ; --            ; --          ; --         ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
-=======
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                             ;
-+-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------------+
-; Assignment Name                     ; Value                                                                 ; Default Value ; Entity Name ; Section Id       ;
-+-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 84607103025491.177498829301980                                        ; --            ; --          ; --               ;
-; ENABLE_SIGNALTAP                    ; On                                                                    ; --            ; --          ; --               ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                    ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                     ; --            ; --          ; --               ;
-; MISC_FILE                           ; UART_RF_bb.v                                                          ; --            ; --          ; --               ;
-; MISC_FILE                           ; in_buf_bb.v                                                           ; --            ; --          ; --               ;
-; MISC_FILE                           ; my_fifo.cmp                                                           ; --            ; --          ; --               ;
-; MISC_FILE                           ; pll.cmp                                                               ; --            ; --          ; --               ;
-; MISC_FILE                           ; pll.ppf                                                               ; --            ; --          ; --               ;
-; MISC_FILE                           ; my_ROM.cmp                                                            ; --            ; --          ; --               ;
-; MISC_FILE                           ; my_ram.cmp                                                            ; --            ; --          ; --               ;
-; MISC_FILE                           ; my_div.cmp                                                            ; --            ; --          ; --               ;
-; MISC_FILE                           ; fifo_word.cmp                                                         ; --            ; --          ; --               ;
-; MISC_FILE                           ; fifo_char.cmp                                                         ; --            ; --          ; --               ;
-; MISC_FILE                           ; diva.cmp                                                              ; --            ; --          ; --               ;
-; MISC_FILE                           ; FIFO_UART_RF.cmp                                                      ; --            ; --          ; --               ;
-; MISC_FILE                           ; fifo_in_buf.cmp                                                       ; --            ; --          ; --               ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                     ; --            ; --          ; --               ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                     ; --            ; --          ; --               ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                            ; --            ; --          ; --               ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                            ; --            ; --          ; --               ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                ; --            ; --          ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                ; --            ; --          ; Top              ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                ; --            ; --          ; Top              ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                   ; --            ; --          ; --               ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                 ; --            ; --          ; --               ;
-; SLD_FILE                            ; db/stp1_auto_stripped.stp                                             ; --            ; --          ; --               ;
-; SLD_NODE_CREATOR_ID                 ; 110                                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                        ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                     ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                             ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                              ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=1                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=0000000000000000000000000000                       ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=28                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=16384                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=16384                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=55                                                      ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=55                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=55                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=sld_reserved_DLX_auto_signaltap_0_1_1d51, ; --            ; --          ; auto_signaltap_0 ;
-; USE_SIGNALTAP_FILE                  ; stp1.stp                                                              ; --            ; --          ; --               ;
-+-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------------+
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -204,19 +121,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 5051 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:18     ; 1.5                     ; 6029 MB             ; 00:00:31                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 5066 MB             ; 00:00:26                           ;
+; Fitter               ; 00:00:17     ; 1.5                     ; 6013 MB             ; 00:00:29                           ;
 ; Assembler            ; 00:00:03     ; 1.0                     ; 4851 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 2.2                     ; 4998 MB             ; 00:00:07                           ;
-; Total                ; 00:00:45     ; --                      ; --                  ; 00:01:08                           ;
-=======
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 5045 MB             ; 00:00:33                           ;
-; Fitter               ; 00:00:20     ; 1.6                     ; 6565 MB             ; 00:00:53                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4852 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 2.5                     ; 5068 MB             ; 00:00:06                           ;
-; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:35                           ;
->>>>>>> cb7296a231ed397e0e172a6dbf7fecf71a298f66
+; Timing Analyzer      ; 00:00:04     ; 2.1                     ; 4998 MB             ; 00:00:07                           ;
+; Total                ; 00:00:43     ; --                      ; --                  ; 00:01:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -225,10 +134,10 @@ on the Quartus Prime software download page.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ENG328-01        ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Amaya            ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

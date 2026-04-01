@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/") File("DLX.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/Amaya Francom/Documents/advanced-class/ECE_6740/FinalProject/") File("DLX.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
