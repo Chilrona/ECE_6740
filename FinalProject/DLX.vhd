@@ -215,6 +215,7 @@ use work.opcode_package.all;
 			print_flush_decode => print_flush_decode,
 			tx => GPIO(1), 
 			uart_clk => c1
+			--uart_clk => clk
 		);
 		
 		SCAN : entity work.scan_FSM
@@ -223,7 +224,9 @@ use work.opcode_package.all;
          rst_l => rst_l,
          clk => clk,
 			uart_clk =>  c1, --115.2kHz
+			--uart_clk => clk,
 			uart_samp_clk => c0, --921.6 kHz
+			--uart_samp_clk => clk,
          opcode_scan => instruction_decode(31 downto 26),
 			rx => GPIO(0),
 
