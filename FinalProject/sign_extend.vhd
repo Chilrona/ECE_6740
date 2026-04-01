@@ -23,12 +23,16 @@ begin
             imm_extended <= (others=>'0');
         elsif rising_edge(clk) then
             
-            imm_extended(15 downto 0) <= imm;
-            
-            if (imm(15) = '1' and is_signed_imm(opcode)) then
-                imm_extended(31 downto 16) <= (others=>'1');
+            if opcode = SW or opcode = LW then
+                imm_extended <= "0000000000000000000000" & imm(9 downto 0);
             else
-                imm_extended(31 downto 16) <= (others=>'0');
+                imm_extended(15 downto 0) <= imm;
+                
+                if (imm(15) = '1' and is_signed_imm(opcode)) then
+                    imm_extended(31 downto 16) <= (others=>'1');
+                else
+                    imm_extended(31 downto 16) <= (others=>'0');
+                end if;
             end if;
         end if;
     end process;
