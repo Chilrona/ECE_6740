@@ -76,8 +76,9 @@ loopdone:
     JR R31
 
 exit:
-    PDU R2
     SW f(R0), R2
+    LW R17, f(R0)
+    PDU R17
     PCH R23
     PCH R18
 
