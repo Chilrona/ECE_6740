@@ -219,15 +219,6 @@ use work.opcode_package.all;
 						alu_result <= got_data;
 					when GDU =>
 						alu_result <= got_data;
-					when TR =>
---Timer reset
-					Time_rst<= '1';
-					when TGO =>
---Timer go
-					enable_time <= '1';
-					when TSP =>
---Timer stop
-					enable_time <= '0';
 					when others =>
 						alu_result <= (others=>'0');
 				end case;
@@ -235,6 +226,17 @@ use work.opcode_package.all;
 					ram_we <= '1';
 				else
 					ram_we <= '0';
+				end if;
+				if opcode = TR then
+					Time_rst <= '1';
+				else
+					Time_rst <= '0';
+				end if;
+				if opcode = TGO then
+					enable_time <= '1';
+				end if;
+				if opcode = TSP then
+					enable_time <= '0';
 				end if;
         end if;
     end process;

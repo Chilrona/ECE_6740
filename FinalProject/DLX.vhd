@@ -251,6 +251,7 @@ use work.opcode_package.all;
 				Time_rst => Time_rst,
 				enable_time => enable_time,
 				MAX10_CLK1_50 => MAX10_CLK1_50,
+				rst_l => rst_l,
 				HEX0=>HEX0,
 				HEX1=>HEX1,
 				HEX2=>HEX2,

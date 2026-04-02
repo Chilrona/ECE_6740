@@ -114,7 +114,17 @@ use work.opcode_package.all;
 		elsif rising_edge(clk) then
 				instruction_out <= instruction_in_1;
 				op1_out <= op1;
-            q_2_out <= q_2;
+				if instruction_in(31 downto 26) = SW then
+					if not has_no_dest_reg(instruction_out(31 downto 26)) and instruction_out(25 downto 21) = instruction_in(15 downto 11) then
+						q_2_out <= alu_result;
+					elsif not has_no_dest_reg(instruction_in_wb(31 downto 26)) and instruction_in_wb(25 downto 21) = instruction_in(15 downto 11) then
+						q_2_out <= reg_data; -- Consider changing this to alu_result_wb for shorter path (faster setup and hold)
+					else
+						q_2_out <= q_2;
+					end if;
+				else
+					q_2_out <= q_2;
+				end if;
 		end if;
 	end process;
 	end Behavioral;

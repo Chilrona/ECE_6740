@@ -7,6 +7,7 @@ use ieee.numeric_std.all;
 					Time_rst : in std_logic;
 					enable_time : in std_logic;
 					MAX10_CLK1_50 : in std_logic;
+					rst_l : in std_logic;
 					HEX0 : out unsigned(7 downto 0);
 					HEX1 : out unsigned(7 downto 0);
 					HEX2 : out unsigned(7 downto 0);
@@ -32,9 +33,9 @@ use ieee.numeric_std.all;
 			signal slow_clk: unsigned(31 downto 0) :=(others=>'0'); -- variable to count up and slow our clk
 	
 		begin
-				process (MAX10_CLK1_50)
+				process (MAX10_CLK1_50, Time_rst, rst_l)
 				begin
-					if Time_rst = '1' then
+					if Time_rst = '1' or rst_l = '0' then
 						hundredths <=0;
 						tenths <= 0;
 						sec_ones <= 0;
@@ -42,8 +43,8 @@ use ieee.numeric_std.all;
 						min_ones <= 0;
 						min_tens <= 0;
 						slow_clk <= (others=> '0');
-					elsif enable_time = '1' then 
-						if rising_edge(MAX10_CLK1_50) then
+					elsif rising_edge(MAX10_CLK1_50) then
+						if enable_time = '1' then
 							if slow_clk = (500000-1) then
 						--	if slow_clk = (5-1) then
 								hundredths <= hundredths + 1;

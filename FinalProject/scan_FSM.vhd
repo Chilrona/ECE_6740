@@ -98,6 +98,7 @@ use work.opcode_package.all;
 		(
 			c1 => uart_clk,
 			rx_sync => rx_sync_sig,
+			--rx_sync => rx,
 			char => char_in,
 			send_flag => wrreq_uart_rf,
 			rst_l => rst_l

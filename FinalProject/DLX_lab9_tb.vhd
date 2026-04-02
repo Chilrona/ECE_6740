@@ -18,7 +18,7 @@ architecture test of DLX_lab9_tb is
 	signal open_clk : std_logic;
 	signal open_clk2 : std_logic;
 	signal clk_count : integer :=0;
-	constant test_char : std_logic_vector(19 downto 0) := "10000101001001101100";		
+	constant test_char : std_logic_vector(19 downto 0) := "10000110101001101100";		--1 0000 1101 01 0011 0110 0
 	signal rx : std_logic := '1';
 
 	begin
