@@ -26,6 +26,8 @@ use work.opcode_package.all;
 		--clk and rst signals
 		signal clk : std_logic;
 		signal rst_l : std_logic;
+		signal uart_clk : std_logic;
+		signal uart_samp_clk : std_logic;
 		
 		signal pc_decode : std_logic_vector(9 downto 0);
 		signal pc_execute : std_logic_vector(9 downto 0);
@@ -90,13 +92,17 @@ use work.opcode_package.all;
 		signal Time_rst : std_logic;
 		signal enable_time : std_logic;
 
-
+		signal testbench : std_logic := '0';
 	
 	begin
+	--testbench muxes to make life easier
+	testbench <= '1';
+	rst_l <= (KEY(0) and locked) when testbench = '0' else KEY(0);
+	uart_clk <= c1 when testbench = '0' else clk;
+	uart_samp_clk <= c0 when testbench = '0' else clk;
 	
 	--setting up the clk and rst and tx
-	
-	rst_l <= KEY(0) and locked;
+	--rst_l <= KEY(0) and locked;
 	--rst_l <= KEY(0);
 	clk <= MAX10_CLK1_50;
 	areset <= not (KEY(0));
@@ -214,20 +220,24 @@ use work.opcode_package.all;
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
 			tx => GPIO(1), 
-			uart_clk => c1
+			uart_clk => uart_clk
+			--uart_clk => c1
 			--uart_clk => clk
 		);
-		
+		 
 		SCAN : entity work.scan_FSM
 		port map 
 		(
          rst_l => rst_l,
          clk => clk,
-			uart_clk =>  c1, --115.2kHz
+			uart_clk => uart_clk,
+			uart_samp_clk => uart_samp_clk,
+			--uart_clk =>  c1, --115.2kHz
 			--uart_clk => clk,
-			uart_samp_clk => c0, --921.6 kHz
+			--uart_samp_clk => c0, --921.6 kHz
 			--uart_samp_clk => clk,
          opcode_scan => instruction_decode(31 downto 26),
+			flush_decode => flush_decode,
 			rx => GPIO(0),
 
 			data_out => got_data,

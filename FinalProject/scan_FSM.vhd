@@ -14,6 +14,7 @@ use work.opcode_package.all;
 			uart_clk : in std_logic; --115.2kHz
 			uart_samp_clk : in std_logic; --921.6 kHz
          opcode_scan : in std_logic_vector(5 downto 0);
+			flush_decode : in std_logic;
 			rx : in std_logic;
 
 			data_out : out std_logic_vector(31 downto 0);
@@ -97,8 +98,8 @@ use work.opcode_package.all;
 		port map
 		(
 			c1 => uart_clk,
-			rx_sync => rx_sync_sig,
-			--rx_sync => rx,
+			--rx_sync => rx_sync_sig,
+			rx_sync => rx,
 			char => char_in,
 			send_flag => wrreq_uart_rf,
 			rst_l => rst_l
@@ -126,11 +127,11 @@ use work.opcode_package.all;
 	), 32));
 
 		
-	process(in_buff_empty, rst_l)
+	process(in_buff_empty, opcode_scan, flush_decode, rst_l)
 	begin
 		if rst_l = '0' then
 			rdreq_in_buf <= '0';
-		elsif in_buff_empty = '0' then
+		elsif in_buff_empty = '0' and (opcode_scan = GD or opcode_scan = GDU) and flush_decode = '0' then
 			rdreq_in_buf <= '1';
 		else
 			rdreq_in_buf <= '0';
