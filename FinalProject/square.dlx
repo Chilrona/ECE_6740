@@ -38,18 +38,16 @@ printstr1
 	;get integer
 	GDU		R1
 	SW		n(R0), R1
-	PDU		R1
 	
 	;call function to compute square
 	LW		R20, n(R0)
 	LW		R21, n(R0)
 	JAL		mult
 	SW		square(R0), R30
-	ADDI	R15, R30, 0
 	
 	;print square
 	LW		R5, n(R0)
-	
+	PDU		R5
 	
 	ADD		R2, R0, R0
 	
@@ -61,7 +59,7 @@ printstr2
 	BNEZ	R1, printstr2
 	
 	LW		R4, square(R0)
-	PDU		R15
+	PDU		R4
 
 done
 	J		done
