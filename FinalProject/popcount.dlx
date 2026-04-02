@@ -1,0 +1,126 @@
+.data
+signed_val     1   0
+unsigned_val   1   0
+bitcount       1   0
+
+.const
+str1   23   Enter a signed number:
+str2   28   You entered (signed) =
+str3   25   Enter an unsigned number:
+str4   22   Number of 1 bits =
+
+.text
+    TGO
+
+;------------------------------------------------
+; Print prompt for signed number
+;------------------------------------------------
+    ADD     R2, R0, R0
+
+printstr1
+    LW      R3, str1(R2)
+    PCH     R3
+    ADDI    R2, R2, 1
+    SLTI    R1, R2, 23
+    BNEZ    R1, printstr1
+
+;------------------------------------------------
+; Get signed integer
+;------------------------------------------------
+    GD      R10
+    SW      signed_val(R0), R10
+
+;------------------------------------------------
+; Print "You entered ="
+;------------------------------------------------
+    ADD     R2, R0, R0
+
+printstr2
+    LW      R3, str2(R2)
+    PCH     R3
+    ADDI    R2, R2, 1
+    SLTI    R1, R2, 28
+    BNEZ    R1, printstr2
+
+; print signed number
+    LW      R11, signed_val(R0)
+    PD      R11
+
+;------------------------------------------------
+; Prompt for unsigned number
+;------------------------------------------------
+    ADD     R2, R0, R0
+
+printstr3
+    LW      R3, str3(R2)
+    PCH     R3
+    ADDI    R2, R2, 1
+    SLTI    R1, R2, 25
+    BNEZ    R1, printstr3
+
+;------------------------------------------------
+; Get unsigned integer
+;------------------------------------------------
+    GDU     R12
+    SW      unsigned_val(R0), R12
+
+;------------------------------------------------
+; Call bit counting function
+;------------------------------------------------
+    LW      R20, unsigned_val(R0)
+    JAL     bitcount_func
+    SW      bitcount(R0), R30
+
+;------------------------------------------------
+; Print result label
+;------------------------------------------------
+    ADD     R2, R0, R0
+
+printstr4
+    LW      R3, str4(R2)
+    PCH     R3
+    ADDI    R2, R2, 1
+    SLTI    R1, R2, 22
+    BNEZ    R1, printstr4
+
+; print unsigned result
+    LW      R4, bitcount(R0)
+    PDU     R4
+
+;------------------------------------------------
+; Stop program
+;------------------------------------------------
+    TSP
+
+;------------------------------------------------
+; Infinite loop
+;------------------------------------------------
+done
+    J done
+
+;================================================
+; Function: count number of 1 bits
+; Input  : R20
+; Output : R30
+;================================================
+bitcount_func
+
+    ADD     R30, R0, R0
+    ADDI    R7, R0, 0
+
+bitloop
+    SLTI    R8, R7, 32
+    BEQZ    R8, endbitloop
+
+    ANDI    R9, R20, 1
+    BEQZ    R9, skipadd
+
+    ADDI    R30, R30, 1
+
+skipadd
+    SRLI    R20, R20, 1
+    ADDI    R7, R7, 1
+    J       bitloop
+
+endbitloop
+    JR      R31
