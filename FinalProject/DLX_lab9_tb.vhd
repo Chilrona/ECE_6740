@@ -55,8 +55,8 @@ architecture test of DLX_lab9_tb is
 		if rising_edge(clk) then
 			clk_count <= clk_count + 1;
 			
-			if clk_count >= 120 and clk_count < 140 then
-				rx <= test_char(clk_count - 120);
+			if clk_count >= 264 and clk_count < 284 then
+				rx <= test_char(clk_count - 264);
 			else
 				rx <= '1';
 			end if;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Thu Apr  2 13:38:11 2026
+Tue Apr  7 13:45:42 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -25,8 +25,8 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  17. Registers Added for RAM Pass-Through Logic
  18. Registers Packed Into Inferred Megafunctions
  19. Multiplexer Restructuring Statistics (No Restructuring Performed)
- 20. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated
- 21. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated
+ 20. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated
+ 21. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated
  22. Source assignments for print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram
  23. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component
  24. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated
@@ -81,16 +81,14 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  73. dcfifo Parameter Settings by Entity Instance
  74. altpll Parameter Settings by Entity Instance
  75. altshift_taps Parameter Settings by Entity Instance
- 76. Port Connectivity Checks: "pll:PLLTX"
- 77. Port Connectivity Checks: "scan_FSM:SCAN|UARTSampler:DA_SAMPLER"
- 78. Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"
- 79. Port Connectivity Checks: "scan_FSM:SCAN|FIFO_UART_RF:UART_RF"
- 80. Port Connectivity Checks: "print_FSM:FSM|diva:DIVIDER"
- 81. Port Connectivity Checks: "print_FSM:FSM|fifo_char:FIFO2"
- 82. Port Connectivity Checks: "print_FSM:FSM|fifo_word:FIFO1"
- 83. Post-Synthesis Netlist Statistics for Top Partition
- 84. Elapsed Time Per Partition
- 85. Analysis & Synthesis Messages
+ 76. Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"
+ 77. Port Connectivity Checks: "scan_FSM:SCAN|FIFO_UART_RF:UART_RF"
+ 78. Port Connectivity Checks: "print_FSM:FSM|diva:DIVIDER"
+ 79. Port Connectivity Checks: "print_FSM:FSM|fifo_char:FIFO2"
+ 80. Port Connectivity Checks: "print_FSM:FSM|fifo_word:FIFO1"
+ 81. Post-Synthesis Netlist Statistics for Top Partition
+ 82. Elapsed Time Per Partition
+ 83. Analysis & Synthesis Messages
 
 
 
@@ -117,20 +115,20 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr  2 13:38:10 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr  7 13:45:42 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 4,434                                           ;
-;     Total combinational functions  ; 3,976                                           ;
-;     Dedicated logic registers      ; 1,379                                           ;
-; Total registers                    ; 1379                                            ;
+; Total logic elements               ; 4,631                                           ;
+;     Total combinational functions  ; 4,146                                           ;
+;     Dedicated logic registers      ; 1,518                                           ;
+; Total registers                    ; 1518                                            ;
 ; Total pins                         ; 89                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 89,637                                          ;
+; Total memory bits                  ; 89,645                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total PLLs                         ; 1                                               ;
 ; UFM blocks                         ; 0                                               ;
 ; ADC blocks                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -230,13 +228,13 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 14          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
@@ -251,8 +249,8 @@ on the Quartus Prime software download page.
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ; Library ;
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; square_data.mif                        ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_data.mif                        ;         ;
-; square_code.mif                        ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_code.mif                        ;         ;
+; prime_data.mif                         ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/prime_data.mif                         ;         ;
+; prime_code.mif                         ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/prime_code.mif                         ;         ;
 ; my_fifo.vhd                            ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd                            ;         ;
 ; pll.vhd                                ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd                                ;         ;
 ; uart_recv.vhd                          ; yes             ; User VHDL File                                        ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd                          ;         ;
@@ -291,8 +289,8 @@ on the Quartus Prime software download page.
 ; altrom.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
 ; altram.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altram.inc                                       ;         ;
 ; altdpram.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_9sr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9sr3.tdf                 ;         ;
-; db/altsyncram_uvr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_uvr3.tdf                 ;         ;
+; db/altsyncram_lor3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lor3.tdf                 ;         ;
+; db/altsyncram_asr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_asr3.tdf                 ;         ;
 ; scfifo.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/scfifo.tdf                                       ;         ;
 ; a_regfifo.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                    ;         ;
 ; a_dpfifo.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                     ;         ;
@@ -375,31 +373,34 @@ on the Quartus Prime software download page.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 4,434               ;
+; Estimated Total logic elements              ; 4,631               ;
 ;                                             ;                     ;
-; Total combinational functions               ; 3976                ;
+; Total combinational functions               ; 4146                ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 1632                ;
-;     -- 3 input functions                    ; 1582                ;
-;     -- <=2 input functions                  ; 762                 ;
+;     -- 4 input functions                    ; 1666                ;
+;     -- 3 input functions                    ; 1612                ;
+;     -- <=2 input functions                  ; 868                 ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 2707                ;
-;     -- arithmetic mode                      ; 1269                ;
+;     -- normal mode                          ; 2753                ;
+;     -- arithmetic mode                      ; 1393                ;
 ;                                             ;                     ;
-; Total registers                             ; 1379                ;
-;     -- Dedicated logic registers            ; 1379                ;
+; Total registers                             ; 1518                ;
+;     -- Dedicated logic registers            ; 1518                ;
 ;     -- I/O registers                        ; 0                   ;
 ;                                             ;                     ;
 ; I/O pins                                    ; 89                  ;
-; Total memory bits                           ; 89637               ;
+; Total memory bits                           ; 89645               ;
 ;                                             ;                     ;
 ; Embedded Multiplier 9-bit elements          ; 0                   ;
 ;                                             ;                     ;
+; Total PLLs                                  ; 1                   ;
+;     -- PLLs                                 ; 1                   ;
+;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
-; Maximum fan-out                             ; 1608                ;
-; Total fan-out                               ; 20684               ;
-; Average fan-out                             ; 3.56                ;
+; Maximum fan-out                             ; 1443                ;
+; Total fan-out                               ; 21659               ;
+; Average fan-out                             ; 3.54                ;
 +---------------------------------------------+---------------------+
 
 
@@ -408,29 +409,32 @@ on the Quartus Prime software download page.
 +----------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                       ; Entity Name         ; Library Name ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DLX                                                     ; 3976 (2)            ; 1379 (0)                  ; 89637       ; 0          ; 0            ; 0       ; 0         ; 89   ; 0            ; 0          ; |DLX                                                                                                                                                                                                                                      ; DLX                 ; work         ;
+; |DLX                                                     ; 4146 (3)            ; 1518 (0)                  ; 89645       ; 0          ; 0            ; 0       ; 0         ; 89   ; 0            ; 0          ; |DLX                                                                                                                                                                                                                                      ; DLX                 ; work         ;
 ;    |OVERSEER:OOO|                                        ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|OVERSEER:OOO                                                                                                                                                                                                                         ; OVERSEER            ; work         ;
 ;    |Timer:TIM|                                           ; 369 (369)           ; 224 (224)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Timer:TIM                                                                                                                                                                                                                            ; Timer               ; work         ;
-;    |decode:DECODE|                                       ; 91 (33)             ; 134 (31)                  ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE                                                                                                                                                                                                                        ; decode              ; work         ;
-;       |registers:R|                                      ; 44 (44)             ; 86 (86)                   ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R                                                                                                                                                                                                            ; registers           ; work         ;
+;    |decode:DECODE|                                       ; 92 (33)             ; 134 (31)                  ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE                                                                                                                                                                                                                        ; decode              ; work         ;
+;       |registers:R|                                      ; 45 (45)             ; 86 (86)                   ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R                                                                                                                                                                                                            ; registers           ; work         ;
 ;          |altsyncram:ram_block_rtl_0|                    ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_0                                                                                                                                                                                 ; altsyncram          ; work         ;
 ;             |altsyncram_23g1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_0|altsyncram_23g1:auto_generated                                                                                                                                                  ; altsyncram_23g1     ; work         ;
 ;          |altsyncram:ram_block_rtl_1|                    ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_1                                                                                                                                                                                 ; altsyncram          ; work         ;
 ;             |altsyncram_23g1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_1|altsyncram_23g1:auto_generated                                                                                                                                                  ; altsyncram_23g1     ; work         ;
 ;       |sign_extend:SE|                                   ; 14 (14)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|sign_extend:SE                                                                                                                                                                                                         ; sign_extend         ; work         ;
-;    |execute:EXECUTE|                                     ; 1621 (90)           ; 121 (75)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE                                                                                                                                                                                                                      ; execute             ; work         ;
-;       |ALU:ALU|                                          ; 1230 (1230)         ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|ALU:ALU                                                                                                                                                                                                              ; ALU                 ; work         ;
-;       |PC_mux:MUX1|                                      ; 156 (156)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|PC_mux:MUX1                                                                                                                                                                                                          ; PC_mux              ; work         ;
+;    |execute:EXECUTE|                                     ; 1621 (88)           ; 121 (75)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE                                                                                                                                                                                                                      ; execute             ; work         ;
+;       |ALU:ALU|                                          ; 1225 (1225)         ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|ALU:ALU                                                                                                                                                                                                              ; ALU                 ; work         ;
+;       |PC_mux:MUX1|                                      ; 160 (160)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|PC_mux:MUX1                                                                                                                                                                                                          ; PC_mux              ; work         ;
 ;       |Zeros:ZEROS|                                      ; 27 (27)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|Zeros:ZEROS                                                                                                                                                                                                          ; Zeros               ; work         ;
-;       |imm_mux:MUX2|                                     ; 118 (118)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|imm_mux:MUX2                                                                                                                                                                                                         ; imm_mux             ; work         ;
+;       |imm_mux:MUX2|                                     ; 121 (121)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|imm_mux:MUX2                                                                                                                                                                                                         ; imm_mux             ; work         ;
 ;    |fetch:FETCH|                                         ; 30 (30)             ; 11 (11)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH                                                                                                                                                                                                                          ; fetch               ; work         ;
 ;       |my_ROM:U1|                                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1                                                                                                                                                                                                                ; my_ROM              ; work         ;
 ;          |altsyncram:altsyncram_component|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component                                                                                                                                                                                ; altsyncram          ; work         ;
-;             |altsyncram_9sr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated                                                                                                                                                 ; altsyncram_9sr3     ; work         ;
+;             |altsyncram_lor3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated                                                                                                                                                 ; altsyncram_lor3     ; work         ;
 ;    |memory:MEMORY|                                       ; 0 (0)               ; 43 (43)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY                                                                                                                                                                                                                        ; memory              ; work         ;
 ;       |my_ram:RAM|                                       ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM                                                                                                                                                                                                             ; my_ram              ; work         ;
 ;          |altsyncram:altsyncram_component|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component                                                                                                                                                                             ; altsyncram          ; work         ;
-;             |altsyncram_uvr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated                                                                                                                                              ; altsyncram_uvr3     ; work         ;
+;             |altsyncram_asr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated                                                                                                                                              ; altsyncram_asr3     ; work         ;
+;    |pll:PLLTX|                                           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX                                                                                                                                                                                                                            ; pll                 ; work         ;
+;       |altpll:altpll_component|                          ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component                                                                                                                                                                                                    ; altpll              ; work         ;
+;          |pll_altpll:auto_generated|                     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                                                          ; pll_altpll          ; work         ;
 ;    |print_FSM:FSM|                                       ; 1501 (394)          ; 654 (181)                 ; 11813       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM                                                                                                                                                                                                                        ; print_FSM           ; work         ;
 ;       |UART_trans:U|                                     ; 51 (51)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|UART_trans:U                                                                                                                                                                                                           ; UART_trans          ; work         ;
 ;       |diva:DIVIDER|                                     ; 948 (0)             ; 306 (0)                   ; 37          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|diva:DIVIDER                                                                                                                                                                                                           ; diva                ; work         ;
@@ -471,7 +475,7 @@ on the Quartus Prime software download page.
 ;                   |altsyncram_o2m1:FIFOram|              ; 0 (0)               ; 0 (0)                     ; 9728        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram                                                                                                        ; altsyncram_o2m1     ; work         ;
 ;                   |cntr_p2b:rd_ptr_count|                ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|cntr_p2b:rd_ptr_count                                                                                                          ; cntr_p2b            ; work         ;
 ;                   |cntr_p2b:wr_ptr|                      ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|cntr_p2b:wr_ptr                                                                                                                ; cntr_p2b            ; work         ;
-;    |scan_FSM:SCAN|                                       ; 299 (154)           ; 192 (35)                  ; 10240       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN                                                                                                                                                                                                                        ; scan_FSM            ; work         ;
+;    |scan_FSM:SCAN|                                       ; 468 (154)           ; 330 (35)                  ; 10248       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN                                                                                                                                                                                                                        ; scan_FSM            ; work         ;
 ;       |FIFO_UART_RF:UART_RF|                             ; 49 (0)              ; 89 (0)                    ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF                                                                                                                                                                                                   ; FIFO_UART_RF        ; work         ;
 ;          |dcfifo:dcfifo_component|                       ; 49 (0)              ; 89 (0)                    ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component                                                                                                                                                                           ; dcfifo              ; work         ;
 ;             |dcfifo_u7e1:auto_generated|                 ; 49 (5)              ; 89 (27)                   ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated                                                                                                                                                ; dcfifo_u7e1         ; work         ;
@@ -484,6 +488,19 @@ on the Quartus Prime software download page.
 ;                |altsyncram_qj31:fifo_ram|                ; 0 (0)               ; 0 (0)                     ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|altsyncram_qj31:fifo_ram                                                                                                                       ; altsyncram_qj31     ; work         ;
 ;                |cmpr_5h5:rdempty_eq_comp|                ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|cmpr_5h5:rdempty_eq_comp                                                                                                                       ; cmpr_5h5            ; work         ;
 ;                |cmpr_5h5:wrfull_eq_comp|                 ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|cmpr_5h5:wrfull_eq_comp                                                                                                                        ; cmpr_5h5            ; work         ;
+;       |UARTSampler:DA_SAMPLER|                           ; 169 (145)           ; 138 (100)                 ; 8           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER                                                                                                                                                                                                 ; UARTSampler         ; work         ;
+;          |my_fifo:U2|                                    ; 24 (0)              ; 38 (0)                    ; 8           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2                                                                                                                                                                                      ; my_fifo             ; work         ;
+;             |dcfifo:dcfifo_component|                    ; 24 (0)              ; 38 (0)                    ; 8           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component                                                                                                                                                              ; dcfifo              ; work         ;
+;                |dcfifo_14e1:auto_generated|              ; 24 (5)              ; 38 (12)                   ; 8           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated                                                                                                                                   ; dcfifo_14e1         ; work         ;
+;                   |a_graycounter_8gb:wrptr_g1p|          ; 6 (6)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p                                                                                                       ; a_graycounter_8gb   ; work         ;
+;                   |a_graycounter_c26:rdptr_g1p|          ; 8 (8)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p                                                                                                       ; a_graycounter_c26   ; work         ;
+;                   |alt_synch_pipe_c9l:rs_dgwp|           ; 0 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp                                                                                                        ; alt_synch_pipe_c9l  ; work         ;
+;                      |dffpipe_tu8:dffpipe10|             ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10                                                                                  ; dffpipe_tu8         ; work         ;
+;                   |alt_synch_pipe_d9l:ws_dgrp|           ; 0 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp                                                                                                        ; alt_synch_pipe_d9l  ; work         ;
+;                      |dffpipe_uu8:dffpipe13|             ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13                                                                                  ; dffpipe_uu8         ; work         ;
+;                   |altsyncram_2j31:fifo_ram|             ; 0 (0)               ; 0 (0)                     ; 8           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|altsyncram_2j31:fifo_ram                                                                                                          ; altsyncram_2j31     ; work         ;
+;                   |cmpr_0h5:rdempty_eq_comp|             ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|cmpr_0h5:rdempty_eq_comp                                                                                                          ; cmpr_0h5            ; work         ;
+;                   |cmpr_0h5:wrfull_eq_comp|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|cmpr_0h5:wrfull_eq_comp                                                                                                           ; cmpr_0h5            ; work         ;
 ;       |fifo_in_buf:IN_BUF|                               ; 35 (0)              ; 26 (0)                    ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF                                                                                                                                                                                                     ; fifo_in_buf         ; work         ;
 ;          |scfifo:scfifo_component|                       ; 35 (0)              ; 26 (0)                    ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component                                                                                                                                                                             ; scfifo              ; work         ;
 ;             |scfifo_6d21:auto_generated|                 ; 35 (0)              ; 26 (0)                    ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated                                                                                                                                                  ; scfifo_6d21         ; work         ;
@@ -494,7 +511,7 @@ on the Quartus Prime software download page.
 ;                   |cntr_p2b:rd_ptr_count|                ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated|a_dpfifo_dj21:dpfifo|cntr_p2b:rd_ptr_count                                                                                                       ; cntr_p2b            ; work         ;
 ;                   |cntr_p2b:wr_ptr|                      ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated|a_dpfifo_dj21:dpfifo|cntr_p2b:wr_ptr                                                                                                             ; cntr_p2b            ; work         ;
 ;       |uart_recv:UART_RX|                                ; 61 (61)             ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX                                                                                                                                                                                                      ; uart_recv           ; work         ;
-;    |write_back:WB|                                       ; 44 (44)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|write_back:WB                                                                                                                                                                                                                        ; write_back          ; work         ;
+;    |write_back:WB|                                       ; 43 (43)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|write_back:WB                                                                                                                                                                                                                        ; write_back          ; work         ;
 +----------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -506,13 +523,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+----------------------------------------+
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_0|altsyncram_23g1:auto_generated|ALTSYNCRAM                                                                                                                                                  ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_1|altsyncram_23g1:auto_generated|ALTSYNCRAM                                                                                                                                                  ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
-; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated|ALTSYNCRAM                                                                                                                                                 ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; square_code.mif                        ;
-; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated|ALTSYNCRAM                                                                                                                                              ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; square_data.mif                        ;
+; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated|ALTSYNCRAM                                                                                                                                                 ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; prime_code.mif                         ;
+; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated|ALTSYNCRAM                                                                                                                                              ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; prime_data.mif                         ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_0|shift_taps_n1o:auto_generated|altsyncram_ol71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 7            ; 3            ; 7            ; 21    ; None                                   ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_1|shift_taps_o1o:auto_generated|altsyncram_ml71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 2            ; 8            ; 2            ; 8            ; 16    ; None                                   ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|altsyncram_qj31:fifo_ram|ALTSYNCRAM                                                                                                                            ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048  ; None                                   ;
 ; print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram|ALTSYNCRAM                                                                                                        ; AUTO ; Simple Dual Port ; 256          ; 38           ; 256          ; 38           ; 9728  ; None                                   ;
 ; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|altsyncram_qj31:fifo_ram|ALTSYNCRAM                                                                                                                       ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048  ; None                                   ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|altsyncram_2j31:fifo_ram|ALTSYNCRAM                                                                                                          ; AUTO ; Simple Dual Port ; 8            ; 1            ; 8            ; 1            ; 8     ; None                                   ;
 ; scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated|a_dpfifo_dj21:dpfifo|altsyncram_c2m1:FIFOram|ALTSYNCRAM                                                                                                     ; AUTO ; Simple Dual Port ; 256          ; 32           ; 256          ; 32           ; 8192  ; None                                   ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+----------------------------------------+
 
@@ -546,85 +564,101 @@ Encoding Type:  One-Hot
 +-------------+-----------+-----------+-------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Protected by Synthesis                                                                                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; Register Name                                                                                                                                    ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[8]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[6]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[7]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[4]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[5]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[2]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[3]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[0]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[1]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[8]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[7]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[6]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[5]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[4]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[3]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[2]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[1]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[0]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[8]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[6]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[7]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[4]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[5]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[2]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[3]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[0]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[1]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[8]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[7]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[6]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[5]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[4]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[3]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[2]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[1]     ; yes                                                              ; yes                                        ;
-; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[0]     ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[8]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[6]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[7]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[4]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[5]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[2]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[3]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[0]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[1]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[8] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[6] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[7] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[4] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[5] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[2] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[3] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[0] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[1] ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[8]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[6]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[7]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[4]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[5]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[2]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[3]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[0]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[1]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[8]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[6]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[7]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[4]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[5]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[2]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[3]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[0]  ; yes                                                              ; yes                                        ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[1]  ; yes                                                              ; yes                                        ;
-; Total number of protected registers is 72                                                                                                        ;                                                                  ;                                            ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                                                                                                               ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                                                                                                                                  ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[8]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[6]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[7]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[4]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[5]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[2]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[3]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[0]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe14a[1]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[8]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[7]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[6]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[5]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[4]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[3]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[2]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[1]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe18a[0]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[8]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[6]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[7]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[4]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[5]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[2]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[3]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[0]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_h9l:rs_dgwp|dffpipe_2v8:dffpipe12|dffe13a[1]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[8]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[7]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[6]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[5]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[4]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[3]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[2]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[1]                   ; yes                                                              ; yes                                        ;
+; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|alt_synch_pipe_i9l:ws_dgrp|dffpipe_3v8:dffpipe16|dffe17a[0]                   ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[8]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[6]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[7]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[4]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[5]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[2]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[3]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[0]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe7a[1]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[8]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[6]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[7]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[4]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[5]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[2]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[3]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[0]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe10a[1]               ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[8]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[6]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[7]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[4]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[5]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[2]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[3]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[0]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_j9l:rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a[1]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[8]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[6]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[7]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[4]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[5]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[2]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[3]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[0]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|alt_synch_pipe_k9l:ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a[1]                ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[2] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[3] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[0] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[1] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe15a[2] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe15a[3] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe15a[0] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe15a[1] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a[2] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a[3] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a[0] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a[1] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a[2] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a[3] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a[0] ; yes                                                              ; yes                                        ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a[1] ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 88                                                                                                                      ;                                                                  ;                                            ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -648,29 +682,6 @@ Encoding Type:  One-Hot
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[221..223]            ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[225,227]          ; Stuck at VCC due to stuck port data_in                                                                                                                                     ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[253..255]            ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|rdreq                                                                                                                                  ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|counter[0..31]                                                                                                                         ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|zeros[0..31]                                                                                                                           ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|ones[0..31]                                                                                                                            ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|wrreq                                                                                                                                  ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|data[0]                                                                                                                                ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|delayed_wrptr_g[0..3]                                                    ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|rdptr_g[0..3]                                                            ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|wrptr_g[0..3]                                                            ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a[0..3]           ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_d9l:ws_dgrp|dffpipe_uu8:dffpipe13|dffe15a[0..3]           ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a[0..3]           ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[0..3]           ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a0                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a1                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a2                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a3                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|parity8                                      ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a0                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a1                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a2                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a3                                   ; Lost fanout                                                                                                                                                                ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|parity6                                      ; Lost fanout                                                                                                                                                                ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|dffpipe_1v8:ws_bwp|dffe15a[8]                                                              ; Lost fanout                                                                                                                                                                ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|dffpipe_1v8:ws_brp|dffe15a[8]                                                              ; Lost fanout                                                                                                                                                                ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[0]                ; Merged with print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[2]   ;
@@ -710,7 +721,7 @@ Encoding Type:  One-Hot
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[160,162,164..190] ; Merged with print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[191] ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[192,194,196..222] ; Merged with print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[223] ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[224,226,228..254] ; Merged with print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[255] ;
-; Total Number of Removed Registers = 425                                                                                                                                     ;                                                                                                                                                                            ;
+; Total Number of Removed Registers = 288                                                                                                                                     ;                                                                                                                                                                            ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -733,18 +744,6 @@ Encoding Type:  One-Hot
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[221],    ;
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[227], ;
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[253]     ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|rdreq                                                                                                                   ; Lost Fanouts              ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|rdptr_g[3],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|rdptr_g[2],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|rdptr_g[1],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|rdptr_g[0],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[3], ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[2], ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[1], ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|alt_synch_pipe_c9l:rs_dgwp|dffpipe_tu8:dffpipe10|dffe12a[0], ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a0,                      ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a1,                      ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a2,                      ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a3                       ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[1] ; Stuck at VCC              ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[33],  ;
 ;                                                                                                                                                              ; due to stuck port data_in ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[65],  ;
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[97],  ;
@@ -766,14 +765,6 @@ Encoding Type:  One-Hot
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[190],    ;
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[222],    ;
 ;                                                                                                                                                              ;                           ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFQuotient[254]     ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|delayed_wrptr_g[3]                                        ; Lost Fanouts              ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|wrptr_g[3],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a3                       ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|delayed_wrptr_g[2]                                        ; Lost Fanouts              ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|wrptr_g[2],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a2                       ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|delayed_wrptr_g[1]                                        ; Lost Fanouts              ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|wrptr_g[1],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a1                       ;
-; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|delayed_wrptr_g[0]                                        ; Lost Fanouts              ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|wrptr_g[0],                                                  ;
-;                                                                                                                                                              ;                           ; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a0                       ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -782,12 +773,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1379  ;
-; Number of registers using Synchronous Clear  ; 127   ;
+; Total registers                              ; 1518  ;
+; Number of registers using Synchronous Clear  ; 192   ;
 ; Number of registers using Synchronous Load   ; 225   ;
-; Number of registers using Asynchronous Clear ; 547   ;
+; Number of registers using Asynchronous Clear ; 645   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 553   ;
+; Number of registers using Clock Enable       ; 627   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -799,21 +790,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[255] ; 94      ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|a_graycounter_h26:rdptr_g1p|counter5a0                                        ; 7       ;
-; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|a_graycounter_h26:rdptr_g1p|counter5a0                                   ; 8       ;
+; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|a_graycounter_h26:rdptr_g1p|counter5a0                                   ; 7       ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|a_graycounter_dgb:wrptr_g1p|counter8a0                                        ; 7       ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[223] ; 166     ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[223] ; 167     ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|a_graycounter_h26:rdptr_g1p|parity6                                           ; 4       ;
 ; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|a_graycounter_dgb:wrptr_g1p|counter8a0                                   ; 6       ;
 ; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|a_graycounter_h26:rdptr_g1p|parity6                                      ; 4       ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|a_graycounter_dgb:wrptr_g1p|parity9                                           ; 4       ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[191] ; 142     ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[191] ; 141     ;
 ; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|a_graycounter_dgb:wrptr_g1p|parity9                                      ; 4       ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[159] ; 117     ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[159] ; 118     ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[31]  ; 17      ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[63]  ; 45      ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[127] ; 93      ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_c26:rdptr_g1p|counter5a0                      ; 7       ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[127] ; 94      ;
+; scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|a_graycounter_8gb:wrptr_g1p|counter7a0                      ; 6       ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|DFFDenominator[95]  ; 69      ;
-; Total number of inverted registers = 16                                                                                                                        ;         ;
+; Total number of inverted registers = 18                                                                                                                        ;         ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -836,8 +829,8 @@ Encoding Type:  One-Hot
 ; Timer:TIM|Mux35~0_wirecell                                                                                                                                                                                                                       ; Modified         ; Timing optimization ;
 ; execute:EXECUTE|ALU:ALU|Add0~0                                                                                                                                                                                                                   ; Modified         ; Timing optimization ;
 ; execute:EXECUTE|ALU:ALU|Add1~0                                                                                                                                                                                                                   ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~25                                                                                                                                                                                                                 ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~30                                                                                                                                                                                                                 ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~26                                                                                                                                                                                                                 ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~31                                                                                                                                                                                                                 ; Modified         ; Timing optimization ;
 ; fetch:FETCH|add_out[0]~1                                                                                                                                                                                                                         ; Modified         ; Timing optimization ;
 ; fetch:FETCH|instruction[0]~0                                                                                                                                                                                                                     ; Deleted          ; Timing optimization ;
 ; fetch:FETCH|instruction[1]~1                                                                                                                                                                                                                     ; Deleted          ; Timing optimization ;
@@ -958,9 +951,9 @@ Encoding Type:  One-Hot
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|add_sub_31_result_int[1]~2                                                                            ; Modified         ; Timing optimization ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_0|shift_taps_n1o:auto_generated|cntr_s3f:cntr1|add_sub6_result_int[0]~1 ; Modified         ; Timing optimization ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_0|shift_taps_n1o:auto_generated|cntr_s3f:cntr1|trigger_mux_w[0]~0       ; Modified         ; Timing optimization ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|selnose[825]~_Duplicate_2                                                                             ; Retimed Register ; Timing optimization ;
-; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|selnose[957]~_Duplicate_1                                                                             ; Retimed Register ; Timing optimization ;
-; scan_FSM:SCAN|Add1~74                                                                                                                                                                                                                            ; Modified         ; Timing optimization ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|selnose[825]~_Duplicate_1                                                                             ; Retimed Register ; Timing optimization ;
+; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|selnose[957]~_Duplicate_2                                                                             ; Retimed Register ; Timing optimization ;
+; scan_FSM:SCAN|Add1~79                                                                                                                                                                                                                            ; Modified         ; Timing optimization ;
 ; scan_FSM:SCAN|Add3~1                                                                                                                                                                                                                             ; Modified         ; Timing optimization ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+---------------------+
 
@@ -1073,37 +1066,39 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|decode:DECODE|instruction_out[22]           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX|counter[22] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|scan_FSM:SCAN|data_in[7]                    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|execute:EXECUTE|q_2_out[3]                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|print_FSM:FSM|UART_trans:U|counter[8]       ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |DLX|fetch:FETCH|pc[9]                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|print_FSM:FSM|i[29]                         ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |DLX|print_FSM:FSM|pos_val[30]                   ;
-; 8:1                ; 29 bits   ; 145 LEs       ; 58 LEs               ; 87 LEs                 ; Yes        ; |DLX|print_FSM:FSM|pos_val[1]                    ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[12]      ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 20 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[9]       ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 63 LEs               ; 252 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[17]      ;
-; 68:1               ; 3 bits    ; 135 LEs       ; 30 LEs               ; 105 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[6]       ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 40 LEs               ; 144 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[24]      ;
-; 69:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[3]       ;
-; 70:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[28]      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|imm_mux:MUX2|op2[3]         ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DLX|print_FSM:FSM|Mux0                          ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[14]         ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[8]          ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; No         ; |DLX|print_FSM:FSM|Selector13                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|decode:DECODE|instruction_out[23]              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX|counter[10]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|zeros[22] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|ones[3]   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|scan_FSM:SCAN|data_in[7]                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|execute:EXECUTE|q_2_out[25]                    ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|print_FSM:FSM|UART_trans:U|counter[7]          ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |DLX|fetch:FETCH|pc[4]                              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|print_FSM:FSM|i[3]                             ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |DLX|print_FSM:FSM|pos_val[29]                      ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 58 LEs               ; 87 LEs                 ; Yes        ; |DLX|print_FSM:FSM|pos_val[0]                       ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[10]         ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 20 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[8]          ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 63 LEs               ; 252 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[23]         ;
+; 68:1               ; 3 bits    ; 135 LEs       ; 30 LEs               ; 105 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[4]          ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 40 LEs               ; 144 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[24]         ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[3]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[28]         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|imm_mux:MUX2|op2[30]           ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DLX|print_FSM:FSM|Mux6                             ;
+; 5:1                ; 22 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[22]            ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[5]             ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; No         ; |DLX|print_FSM:FSM|Selector10                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
-; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated ;
+; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                            ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
@@ -1112,7 +1107,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated ;
+; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -1785,7 +1780,7 @@ Encoding Type:  One-Hot
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; INIT_FILE                          ; square_code.mif      ; Untyped                                ;
+; INIT_FILE                          ; prime_code.mif       ; Untyped                                ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                         ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
@@ -1798,7 +1793,7 @@ Encoding Type:  One-Hot
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                         ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_9sr3      ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_lor3      ; Untyped                                ;
 +------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1846,7 +1841,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
-; INIT_FILE                          ; square_data.mif      ; Untyped                                   ;
+; INIT_FILE                          ; prime_data.mif       ; Untyped                                   ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                            ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
@@ -1859,7 +1854,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_uvr3      ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_asr3      ; Untyped                                   ;
 +------------------------------------+----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2708,26 +2703,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pll:PLLTX"                                                                            ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; c0     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; c1     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; locked ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "scan_FSM:SCAN|UARTSampler:DA_SAMPLER"                                                  ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; rx_sync ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"                                                    ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -2785,32 +2760,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 89                          ;
-; cycloneiii_ff         ; 1379                        ;
-;     CLR               ; 153                         ;
+; cycloneiii_ff         ; 1518                        ;
+;     CLR               ; 186                         ;
+;     CLR SCLR          ; 1                           ;
 ;     CLR SLD           ; 64                          ;
-;     ENA               ; 192                         ;
+;     ENA               ; 202                         ;
 ;     ENA CLR           ; 224                         ;
-;     ENA CLR SCLR      ; 64                          ;
+;     ENA CLR SCLR      ; 128                         ;
 ;     ENA CLR SCLR SLD  ; 32                          ;
 ;     ENA CLR SLD       ; 10                          ;
 ;     ENA SCLR          ; 31                          ;
 ;     SLD               ; 119                         ;
-;     plain             ; 490                         ;
+;     plain             ; 521                         ;
 ; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 3987                        ;
-;     arith             ; 1269                        ;
-;         2 data inputs ; 530                         ;
-;         3 data inputs ; 739                         ;
-;     normal            ; 2718                        ;
+; cycloneiii_lcell_comb ; 4157                        ;
+;     arith             ; 1393                        ;
+;         2 data inputs ; 623                         ;
+;         3 data inputs ; 770                         ;
+;     normal            ; 2764                        ;
 ;         0 data inputs ; 32                          ;
-;         1 data inputs ; 46                          ;
-;         2 data inputs ; 165                         ;
-;         3 data inputs ; 843                         ;
-;         4 data inputs ; 1632                        ;
-; cycloneiii_ram_block  ; 229                         ;
+;         1 data inputs ; 52                          ;
+;         2 data inputs ; 172                         ;
+;         3 data inputs ; 842                         ;
+;         4 data inputs ; 1666                        ;
+; cycloneiii_pll        ; 1                           ;
+; cycloneiii_ram_block  ; 230                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 19.70                       ;
-; Average LUT depth     ; 10.15                       ;
+; Max LUT depth         ; 19.60                       ;
+; Average LUT depth     ; 9.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2829,12 +2806,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Apr  2 13:37:56 2026
+    Info: Processing started: Tue Apr  7 13:45:29 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
     Info (16304): Mode behavior is affected by advanced setting Fitter Effort (default for this mode is Standard Fit)
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file dlx_lab9_tb.vhd
+    Info (12022): Found design unit 1: DLX_lab9_tb-test File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd Line: 9
+    Info (12023): Found entity 1: DLX_lab9_tb File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd Line: 6
 Warning (12019): Can't analyze file -- file UART_RF.v is missing
 Warning (12019): Can't analyze file -- file in_buf.v is missing
 Warning (12019): Can't analyze file -- file DLX_lab8_tb.vhd is missing
@@ -2957,7 +2937,7 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "square_code.mif"
+    Info (12134): Parameter "init_file" = "prime_code.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -2987,9 +2967,9 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9sr3.tdf
-    Info (12023): Found entity 1: altsyncram_9sr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9sr3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_9sr3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lor3.tdf
+    Info (12023): Found entity 1: altsyncram_lor3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lor3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_lor3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 123
 Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 38
 Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 51
@@ -3024,7 +3004,7 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "square_data.mif"
+    Info (12134): Parameter "init_file" = "prime_data.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -3054,9 +3034,9 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uvr3.tdf
-    Info (12023): Found entity 1: altsyncram_uvr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_uvr3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_uvr3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_asr3.tdf
+    Info (12023): Found entity 1: altsyncram_asr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_asr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_asr3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 179
 Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 191
 Info (12128): Elaborating entity "print_FSM" for hierarchy "print_FSM:FSM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 213
@@ -3176,7 +3156,6 @@ Warning (10540): VHDL Signal Declaration warning at scan_FSM.vhd(33): used expli
 Warning (10540): VHDL Signal Declaration warning at scan_FSM.vhd(34): used explicit default value for signal "cat2" because signal was never assigned a value File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 34
 Warning (10036): Verilog HDL or VHDL warning at scan_FSM.vhd(41): object "wrreq_uart_rf_final" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 41
 Warning (10036): Verilog HDL or VHDL warning at scan_FSM.vhd(53): object "usedw_in_buf" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 53
-Warning (10036): Verilog HDL or VHDL warning at scan_FSM.vhd(56): object "rx_sync_sig" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 56
 Warning (10492): VHDL Process Statement warning at scan_FSM.vhd(178): signal "rdreq_uart_rf_old" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 178
 Info (12128): Elaborating entity "FIFO_UART_RF" for hierarchy "scan_FSM:SCAN|FIFO_UART_RF:UART_RF" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 69
 Info (12128): Elaborating entity "dcfifo" for hierarchy "scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd Line: 97
@@ -3351,12 +3330,6 @@ Warning (10492): VHDL Process Statement warning at Timer.vhd(89): signal "sec_on
 Warning (10492): VHDL Process Statement warning at Timer.vhd(90): signal "sec_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 90
 Warning (10492): VHDL Process Statement warning at Timer.vhd(91): signal "min_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 91
 Warning (10492): VHDL Process Statement warning at Timer.vhd(92): signal "min_tens" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 92
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|altsyncram_2j31:fifo_ram|q_b[0]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_2j31.tdf Line: 41
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/pll_altpll.v Line: 93
 Info (286030): Timing-Driven Synthesis is running
 Warning (276020): Inferred RAM node "decode:DECODE|registers:R|ram_block_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "decode:DECODE|registers:R|ram_block_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
@@ -3491,7 +3464,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 17
     Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 18
     Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 19
-Info (17049): 139 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (128000): Starting physical synthesis optimizations for speed
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity dcfifo_14e1
@@ -3503,41 +3476,43 @@ Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity dcfifo_u7e1
         Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_5v8:dffpipe8|dffe9a* 
         Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_4v8:dffpipe5|dffe6a* 
-Warning (332173): Ignored filter: *ws_dgrp|dffpipe_uu8:dffpipe13|dffe14a* could not be matched with a clock or keeper or register or port or pin or cell or partition
-Warning (332048): Ignored set_false_path: Argument <to> is not an object ID
-Warning (332173): Ignored filter: *rs_dgwp|dffpipe_tu8:dffpipe10|dffe11a* could not be matched with a clock or keeper or register or port or pin or cell or partition
-Warning (332048): Ignored set_false_path: Argument <to> is not an object ID
 Info (332104): Reading SDC File: 'DLX.sdc'
+Info (332110): Deriving PLL clocks
+    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 15625 -multiply_by 288 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[0]} {PLLTX|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 15625 -multiply_by 36 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[1]} {PLLTX|altpll_component|auto_generated|pll1|clk[1]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
-Info (332111): Found 3 clocks
+Info (332111): Found 5 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):  100.000   ADC_CLK_10
     Info (332111):   20.000 MAX10_CLK1_50
     Info (332111):   20.000 MAX10_CLK2_50
+    Info (332111): 1085.069 PLLTX|altpll_component|auto_generated|pll1|clk[0]
+    Info (332111): 8680.555 PLLTX|altpll_component|auto_generated|pll1|clk[1]
 Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 130 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
 Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
 Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:01
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 9
     Warning (15610): No output dependent on input pin "ADC_CLK_10" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 10
     Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 12
-Info (21057): Implemented 4983 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5183 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 4665 logic cells
-    Info (21064): Implemented 229 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
-    Info: Peak virtual memory: 5092 megabytes
-    Info: Processing ended: Thu Apr  2 13:38:11 2026
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21061): Implemented 4863 logic cells
+    Info (21064): Implemented 230 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
+    Info: Peak virtual memory: 5091 megabytes
+    Info: Processing ended: Tue Apr  7 13:45:42 2026
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:18
 
 

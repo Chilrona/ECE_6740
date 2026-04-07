@@ -35,7 +35,7 @@ entity PC_mux is
                 op1 <= std_logic_vector(resize(unsigned(pc), 32));
             elsif (rd_mem = RS1) and not(is_not_data_hazard_1(opcode_exe)) and not(has_no_dest_reg(opcode_mem)) then
                 op1 <= alu_result;
-            elsif (rd_wb = RS1) and not(is_not_data_hazard_1(opcode_exe)) and not(has_no_dest_reg(opcode_wb)) then
+            elsif ((rd_wb = RS1) and not(is_not_data_hazard_1(opcode_exe)) and not(has_no_dest_reg(opcode_wb))) or (opcode_wb = JAL and RS1 = "11111") then
                 op1 <= reg_data;
             else
                 op1 <= q_1;
