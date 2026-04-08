@@ -1,0 +1,121 @@
+;==========================================================
+; All-in-One DLX Opcode and Hazard Test
+;==========================================================
+
+.data
+n1      1   0
+n2      1   0
+sum     1   0
+product 1   0
+
+.const
+prompt1 23 "Enter first number: "
+prompt2 24 "Enter second number: "
+newline  2  "\r\n"
+
+.text
+
+;----------------------------------------------------------
+; Prompt for first number
+;----------------------------------------------------------
+ADD R2, R0, R0
+print1_loop
+    LW  R3, prompt1(R2)
+    PCH R3
+    ADDI R2, R2, 1
+    SLTI R1, R2, 23
+    BNEZ R1, print1_loop
+
+; Get first number
+GDU R1
+SW n1(R0), R1
+
+;----------------------------------------------------------
+; Prompt for second number
+;----------------------------------------------------------
+ADD R2, R0, R0
+print2_loop
+    LW  R3, prompt2(R2)
+    PCH R3
+    ADDI R2, R2, 1
+    SLTI R1, R2, 24
+    BNEZ R1, print2_loop
+
+; Get second number
+GDU R2
+SW n2(R0), R2
+
+;----------------------------------------------------------
+; Print numbers immediately after reading
+; Check for hazards: RAW from R1 and R2
+;----------------------------------------------------------
+LW R5, n1(R0)
+PD R5
+LW R6, n2(R0)
+PD R6
+
+;----------------------------------------------------------
+; Compute sum (RAW hazard: R7 depends on R5/R6)
+;----------------------------------------------------------
+ADD R7, R5, R6
+SW sum(R0), R7
+PDU R7
+
+;----------------------------------------------------------
+; Compute product using a small mult function
+; RAW hazards: R20/R21 dependent on previous loads
+;----------------------------------------------------------
+LW R20, n1(R0)
+LW R21, n2(R0)
+JAL mult
+SW product(R0), R30
+PDU R30
+
+;----------------------------------------------------------
+; Shift test: left shift then right shift back
+; Hazards: R31 depends on R30
+;----------------------------------------------------------
+SLLI R30, R30, 1
+SRLI R30, R30, 1
+PDU R30
+
+;----------------------------------------------------------
+; Character print test
+;----------------------------------------------------------
+ADDI R3, R0, 65  ; ASCII 'A'
+PCH R3
+ADDI R3, R3, 1   ; 'B'
+PCH R3
+ADDI R3, R3, 1   ; 'C'
+PCH R3
+
+;----------------------------------------------------------
+; Trap test (TGO / TSP)
+;----------------------------------------------------------
+TGO
+TSP
+
+;----------------------------------------------------------
+; Infinite nothing loop
+;----------------------------------------------------------
+infinite_loop
+    J infinite_loop
+
+;==========================================================
+; Mult function
+;==========================================================
+mult
+    ADD R30, R0, R0     ; product = 0
+mult_loop
+    SEQI R10, R21, 0
+    BNEZ R10, end_mult
+    ANDI R11, R21, 1
+    SNEI R10, R11, 1
+    BNEZ R10, skip_add
+    ADDU R30, R30, R20
+skip_add
+    SLLI R20, R20, 1
+    SRLI R21, R21, 1
+    J mult_loop
+end_mult
+    JR R31
