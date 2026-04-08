@@ -1,0 +1,27 @@
+.data
+    n   1   0
+    f   1   0
+.const
+    str1 16 "Enter a number: "
+.text
+    TGO
+    ADD		R2, R0, R0
+    
+printstr1
+	LW		R3, str1(R2)
+	PCH		R3
+	ADDI	R2, R2, 1
+	SLTI	R1, R2, 16
+	BNEZ	R1, printstr1
+
+    GD      R22
+    SW     	n(R0), R22 
+    NOP
+    NOP
+    NOP
+    LW      R11, n(R0)
+    PD      R11
+    TSP
+
+    loopdone
+        J loopdone
