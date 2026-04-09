@@ -28,6 +28,17 @@ void strip(char *s)
     while (*src) {
         unsigned char c = (char)*src++;
 
+        if (c == '"') {
+            *dst++ = c; // keep the quote
+            while (*src) {
+                c = (char)*src++;
+                *dst++ = c; // keep everything inside quotes
+                if (c == '"') break; // end of string
+            }
+            prev_char = 1; // reset prev_char after a string
+            continue;
+        }
+
         if (c == ';') break; // comment starts: ignore rest of line
 
         if (isspace(c)) {
@@ -216,7 +227,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 if ((k == 0 || k == size-1) && (char)data == '"')
                 {
                     printf("Found quote marks, skipping...\n");
-                    k++;
+                    k++; j--;
                     continue;
                 }
                 if ((char)data == '\\')
@@ -235,8 +246,8 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 num_str = strtok_r(NULL, " ", &save);   // 
                 data = (uint32_t)strtol(num_str, NULL, 10);
             }
-            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
-            printf("%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
+            fprintf(out_data, "%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
+            printf("%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
             k++;
         }
         data_addr += size;
