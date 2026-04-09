@@ -1,5 +1,5 @@
 Flow report for DLX
-Tue Apr  7 13:46:02 2026
+Thu Apr  9 13:39:59 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,20 +41,20 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Apr  7 13:45:58 2026           ;
+; Flow Status                        ; Successful - Thu Apr  9 13:39:55 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 4,495 / 49,760 ( 9 % )                          ;
-;     Total combinational functions  ; 4,148 / 49,760 ( 8 % )                          ;
-;     Dedicated logic registers      ; 1,518 / 49,760 ( 3 % )                          ;
-; Total registers                    ; 1518                                            ;
+; Total logic elements               ; 4,492 / 49,760 ( 9 % )                          ;
+;     Total combinational functions  ; 4,113 / 49,760 ( 8 % )                          ;
+;     Dedicated logic registers      ; 1,679 / 49,760 ( 3 % )                          ;
+; Total registers                    ; 1679                                            ;
 ; Total pins                         ; 89 / 360 ( 25 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 89,645 / 1,677,312 ( 5 % )                      ;
+; Total memory bits                  ; 89,692 / 1,677,312 ( 5 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                 ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                                   ;
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/07/2026 13:45:29 ;
+; Start date & time ; 04/09/2026 13:39:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ on the Quartus Prime software download page.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 84607103025491.177559112938864         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                ; 84607103025491.177576356535292         ; --            ; --          ; --         ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                  ; Balanced      ; --          ; --         ;
 ; ENABLE_SIGNALTAP                     ; Off                                    ; --            ; --          ; --         ;
 ; FITTER_EFFORT                        ; Fast Fit                               ; Auto Fit      ; --          ; --         ;
@@ -91,12 +91,13 @@ on the Quartus Prime software download page.
 ; MISC_FILE                            ; pll.ppf                                ; --            ; --          ; --         ;
 ; MISC_FILE                            ; my_ROM.cmp                             ; --            ; --          ; --         ;
 ; MISC_FILE                            ; my_ram.cmp                             ; --            ; --          ; --         ;
-; MISC_FILE                            ; my_div.cmp                             ; --            ; --          ; --         ;
 ; MISC_FILE                            ; fifo_word.cmp                          ; --            ; --          ; --         ;
 ; MISC_FILE                            ; fifo_char.cmp                          ; --            ; --          ; --         ;
 ; MISC_FILE                            ; diva.cmp                               ; --            ; --          ; --         ;
 ; MISC_FILE                            ; FIFO_UART_RF.cmp                       ; --            ; --          ; --         ;
 ; MISC_FILE                            ; fifo_in_buf.cmp                        ; --            ; --          ; --         ;
+; MISC_FILE                            ; Turbo_Sonic.cmp                        ; --            ; --          ; --         ;
+; MISC_FILE                            ; Turbo_Sonic.ppf                        ; --            ; --          ; --         ;
 ; MUX_RESTRUCTURE                      ; Off                                    ; Auto          ; --          ; --         ;
 ; OPTIMIZATION_MODE                    ; Aggressive Performance                 ; Balanced      ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                      ; --            ; --          ; --         ;
@@ -121,11 +122,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 5091 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:11     ; 1.7                     ; 6544 MB             ; 00:00:27                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 5107 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:11     ; 1.7                     ; 6544 MB             ; 00:00:26                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4852 MB             ; 00:00:02                           ;
 ; Timing Analyzer      ; 00:00:03     ; 2.2                     ; 5036 MB             ; 00:00:05                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:52                           ;
+; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:52                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

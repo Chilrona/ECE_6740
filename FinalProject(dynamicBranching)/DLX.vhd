@@ -87,7 +87,8 @@ use work.opcode_package.all;
 		signal c0		: STD_LOGIC :='0'; --153600 Hz
 		signal c1		: STD_LOGIC :='0'; --115.2 kHz 
 		signal locked : std_logic;
-		
+		signal locked_sonic : std_logic;
+		signal clk_sonic : std_logic;
 		--lil timmy
 		signal Time_rst : std_logic;
 		signal enable_time : std_logic;
@@ -97,14 +98,15 @@ use work.opcode_package.all;
 	begin
 	--testbench muxes to make life easier
 	testbench <= '0';
+	--setting up the clk and rst and tx
 	rst_l <= (KEY(0) and locked) when testbench = '0' else KEY(0);
 	uart_clk <= c1 when testbench = '0' else clk;
 	uart_samp_clk <= c0 when testbench = '0' else clk;
 	
-	--setting up the clk and rst and tx
-	--rst_l <= KEY(0) and locked;
-	--rst_l <= KEY(0);
-	clk <= MAX10_CLK1_50;
+
+
+	--clk <= MAX10_CLK1_50;
+	clk <= clk_sonic;
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
@@ -221,8 +223,7 @@ use work.opcode_package.all;
 			print_flush_decode => print_flush_decode,
 			tx => GPIO(1), 
 			uart_clk => uart_clk
-			--uart_clk => c1
-			--uart_clk => clk
+
 		);
 		 
 		SCAN : entity work.scan_FSM
@@ -232,10 +233,6 @@ use work.opcode_package.all;
          clk => clk,
 			uart_clk => uart_clk,
 			uart_samp_clk => uart_samp_clk,
-			--uart_clk =>  c1, --115.2kHz
-			--uart_clk => clk,
-			--uart_samp_clk => c0, --921.6 kHz
-			--uart_samp_clk => clk,
          opcode_scan => instruction_decode(31 downto 26),
 			flush_decode => flush_decode,
 			rx => GPIO(0),
@@ -252,15 +249,25 @@ use work.opcode_package.all;
 			inclk0=>MAX10_CLK1_50,
 			c0=>c0,
 			c1=>c1,
+			c2 => clk_sonic,
 			locked=>locked
 		);
+		
+--		VROOM: entity work.Turbo_Sonic
+--		PORT MAP
+--			(
+--				areset=> areset,
+--				inclk0=>MAX10_CLK1_50,
+--				c0=> clk_sonic,
+--				locked=> locked_sonic 
+--			);
 		
 		TIM: 	entity work.Timer 
 		port map
 		(
 				Time_rst => Time_rst,
 				enable_time => enable_time,
-				MAX10_CLK1_50 => MAX10_CLK1_50,
+				MAX10_CLK1_50 => clk,
 				rst_l => rst_l,
 				HEX0=>HEX0,
 				HEX1=>HEX1,

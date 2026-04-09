@@ -127,7 +127,7 @@ use work.opcode_package.all;
 	), 32));
 
 		
-	process(in_buff_empty, opcode_scan, flush_decode, rst_l)
+	process(in_buff_empty, opcode_scan, flush_decode, rst_l, wrreq_uart_rf_final)
 	begin
 		if rst_l = '0' then
 			rdreq_in_buf <= '0';

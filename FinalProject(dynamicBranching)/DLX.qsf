@@ -450,7 +450,6 @@ set_global_assignment -name VHDL_FILE Decode.vhd
 set_global_assignment -name SDC_FILE DLX.SDC
 set_global_assignment -name QIP_FILE my_ROM.qip
 set_global_assignment -name QIP_FILE my_ram.qip
-set_global_assignment -name QIP_FILE my_div.qip
 set_global_assignment -name QIP_FILE fifo_word.qip
 set_global_assignment -name QIP_FILE fifo_char.qip
 set_global_assignment -name QIP_FILE diva.qip
@@ -461,4 +460,5 @@ set_global_assignment -name QIP_FILE FIFO_UART_RF.qip
 set_global_assignment -name QIP_FILE fifo_in_buf.qip
 set_global_assignment -name VHDL_FILE Timer.vhd
 set_global_assignment -name SOURCE_FILE db/DLX.cmp.rdb
+set_global_assignment -name QIP_FILE Turbo_Sonic.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
