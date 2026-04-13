@@ -172,6 +172,7 @@ package body opcode_package is
 		return 	 (opcode = NOP)  or
                 (opcode = J)    or
                 (opcode = JR)   or
+					 (opcode = JAL)  or
                 (opcode = SW)   or
 					 (opcode = PCH)  or
 					 (opcode = PD)   or

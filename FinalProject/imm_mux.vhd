@@ -34,7 +34,7 @@ entity imm_mux is
                 op2 <= imm_ex;
 				elsif (rd_mem = RS2) and is_register_register(opcode_exe) and not(has_no_dest_reg(opcode_mem)) then
                 op2 <= alu_result;
-				elsif (rd_wb = RS2) and is_register_register(opcode_exe) and not(has_no_dest_reg(opcode_wb)) then
+				elsif ((rd_wb = RS2) and is_register_register(opcode_exe) and not(has_no_dest_reg(opcode_wb))) or (opcode_wb = JAL and RS2 = "11111")  then
                 op2 <= reg_data;
             else
                 op2 <= q_2;

@@ -96,7 +96,7 @@ use work.opcode_package.all;
 	
 	begin
 	--testbench muxes to make life easier
-	testbench <= '1';
+	testbench <= '0';
 	rst_l <= (KEY(0) and locked) when testbench = '0' else KEY(0);
 	uart_clk <= c1 when testbench = '0' else clk;
 	uart_samp_clk <= c0 when testbench = '0' else clk;
