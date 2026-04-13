@@ -246,8 +246,9 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 num_str = strtok_r(NULL, " ", &save);   // 
                 data = (uint32_t)strtol(num_str, NULL, 10);
             }
-            fprintf(out_data, "%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
-            printf("%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
+            //fprintf(out_data, "%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
+            fprintf(out_data, "%03X : %08X; --%s[%d]\n", data_addr+j, data, var_name, j);
+            //printf("%03X : %08X; --%s[%d] (\'%c\')\n", data_addr+j, data, var_name, j, (char)data);
             k++;
         }
         data_addr += size;
