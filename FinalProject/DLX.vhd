@@ -277,8 +277,7 @@ use work.opcode_package.all;
 	 flush_decode_final <= flush_decode or print_flush_decode; 
 	
 	 jump_addr_final <= branch_addr when take_jump = '0' else jump_addr;
-	 sel_jump <= take_branch or take_jump;
-	 
+	 sel_jump <= take_branch or take_jump;	 
 	
 
 				

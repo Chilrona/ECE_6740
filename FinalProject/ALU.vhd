@@ -27,6 +27,7 @@ use work.opcode_package.all;
 	begin
         if rst_l = '0' then
             alu_result <= (others => '0');
+				enable_time <= '0';
         elsif rising_edge(clk) then
 				Time_rst <= '0';
 		  

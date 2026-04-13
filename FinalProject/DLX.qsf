@@ -439,7 +439,6 @@ set_global_assignment -name VHDL_FILE Zeros.vhd
 set_global_assignment -name VHDL_FILE PC_mux.vhd
 set_global_assignment -name VHDL_FILE imm_mux.vhd
 set_global_assignment -name VHDL_FILE Execute.vhd
-set_global_assignment -name VHDL_FILE ALU_1.vhd
 set_global_assignment -name VHDL_FILE ALU.vhd
 set_global_assignment -name VHDL_FILE sign_extend.vhd
 set_global_assignment -name VHDL_FILE registers.vhd

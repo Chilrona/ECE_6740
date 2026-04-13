@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Apr  7 13:45:42 2026
+Mon Apr 13 13:15:04 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -25,8 +25,8 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  17. Registers Added for RAM Pass-Through Logic
  18. Registers Packed Into Inferred Megafunctions
  19. Multiplexer Restructuring Statistics (No Restructuring Performed)
- 20. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated
- 21. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated
+ 20. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated
+ 21. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated
  22. Source assignments for print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram
  23. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component
  24. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated
@@ -115,7 +115,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr  7 13:45:42 2026           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 13 13:15:04 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
@@ -228,13 +228,13 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 14          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.2%      ;
+;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
@@ -249,8 +249,8 @@ on the Quartus Prime software download page.
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ; Library ;
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; prime_data.mif                         ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/prime_data.mif                         ;         ;
-; prime_code.mif                         ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/prime_code.mif                         ;         ;
+; square_data.mif                        ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_data.mif                        ;         ;
+; square_code.mif                        ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_code.mif                        ;         ;
 ; my_fifo.vhd                            ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd                            ;         ;
 ; pll.vhd                                ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd                                ;         ;
 ; uart_recv.vhd                          ; yes             ; User VHDL File                                        ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd                          ;         ;
@@ -289,8 +289,8 @@ on the Quartus Prime software download page.
 ; altrom.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
 ; altram.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altram.inc                                       ;         ;
 ; altdpram.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_lor3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lor3.tdf                 ;         ;
-; db/altsyncram_asr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_asr3.tdf                 ;         ;
+; db/altsyncram_9sr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9sr3.tdf                 ;         ;
+; db/altsyncram_uvr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_uvr3.tdf                 ;         ;
 ; scfifo.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/scfifo.tdf                                       ;         ;
 ; a_regfifo.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                    ;         ;
 ; a_dpfifo.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                     ;         ;
@@ -427,11 +427,11 @@ on the Quartus Prime software download page.
 ;    |fetch:FETCH|                                         ; 30 (30)             ; 11 (11)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH                                                                                                                                                                                                                          ; fetch               ; work         ;
 ;       |my_ROM:U1|                                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1                                                                                                                                                                                                                ; my_ROM              ; work         ;
 ;          |altsyncram:altsyncram_component|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component                                                                                                                                                                                ; altsyncram          ; work         ;
-;             |altsyncram_lor3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated                                                                                                                                                 ; altsyncram_lor3     ; work         ;
+;             |altsyncram_9sr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated                                                                                                                                                 ; altsyncram_9sr3     ; work         ;
 ;    |memory:MEMORY|                                       ; 0 (0)               ; 43 (43)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY                                                                                                                                                                                                                        ; memory              ; work         ;
 ;       |my_ram:RAM|                                       ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM                                                                                                                                                                                                             ; my_ram              ; work         ;
 ;          |altsyncram:altsyncram_component|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component                                                                                                                                                                             ; altsyncram          ; work         ;
-;             |altsyncram_asr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated                                                                                                                                              ; altsyncram_asr3     ; work         ;
+;             |altsyncram_uvr3:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated                                                                                                                                              ; altsyncram_uvr3     ; work         ;
 ;    |pll:PLLTX|                                           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX                                                                                                                                                                                                                            ; pll                 ; work         ;
 ;       |altpll:altpll_component|                          ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component                                                                                                                                                                                                    ; altpll              ; work         ;
 ;          |pll_altpll:auto_generated|                     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                                                          ; pll_altpll          ; work         ;
@@ -523,8 +523,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+----------------------------------------+
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_0|altsyncram_23g1:auto_generated|ALTSYNCRAM                                                                                                                                                  ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_1|altsyncram_23g1:auto_generated|ALTSYNCRAM                                                                                                                                                  ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
-; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated|ALTSYNCRAM                                                                                                                                                 ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; prime_code.mif                         ;
-; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated|ALTSYNCRAM                                                                                                                                              ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; prime_data.mif                         ;
+; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated|ALTSYNCRAM                                                                                                                                                 ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; square_code.mif                        ;
+; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated|ALTSYNCRAM                                                                                                                                              ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; square_data.mif                        ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_0|shift_taps_n1o:auto_generated|altsyncram_ol71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 7            ; 3            ; 7            ; 21    ; None                                   ;
 ; print_FSM:FSM|diva:DIVIDER|lpm_divide:LPM_DIVIDE_component|lpm_divide_sus:auto_generated|sign_div_unsign_u8i:divider|alt_u_div_h6f:divider|altshift_taps:DFFQuotient_rtl_1|shift_taps_o1o:auto_generated|altsyncram_ml71:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 2            ; 8            ; 2            ; 8            ; 16    ; None                                   ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|altsyncram_qj31:fifo_ram|ALTSYNCRAM                                                                                                                            ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048  ; None                                   ;
@@ -776,9 +776,9 @@ Encoding Type:  One-Hot
 ; Total registers                              ; 1518  ;
 ; Number of registers using Synchronous Clear  ; 192   ;
 ; Number of registers using Synchronous Load   ; 225   ;
-; Number of registers using Asynchronous Clear ; 645   ;
+; Number of registers using Asynchronous Clear ; 646   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 627   ;
+; Number of registers using Clock Enable       ; 626   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1098,7 +1098,7 @@ Encoding Type:  One-Hot
 
 
 +-------------------------------------------------------------------------------------------------------------+
-; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated ;
+; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                            ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
@@ -1107,7 +1107,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated ;
+; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -1780,7 +1780,7 @@ Encoding Type:  One-Hot
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; INIT_FILE                          ; prime_code.mif       ; Untyped                                ;
+; INIT_FILE                          ; square_code.mif      ; Untyped                                ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                         ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
@@ -1793,7 +1793,7 @@ Encoding Type:  One-Hot
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                         ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_lor3      ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_9sr3      ; Untyped                                ;
 +------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1841,7 +1841,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
-; INIT_FILE                          ; prime_data.mif       ; Untyped                                   ;
+; INIT_FILE                          ; square_data.mif      ; Untyped                                   ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                            ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
@@ -1854,7 +1854,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_asr3      ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_uvr3      ; Untyped                                   ;
 +------------------------------------+----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2761,10 +2761,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 89                          ;
 ; cycloneiii_ff         ; 1518                        ;
-;     CLR               ; 186                         ;
+;     CLR               ; 187                         ;
 ;     CLR SCLR          ; 1                           ;
 ;     CLR SLD           ; 64                          ;
-;     ENA               ; 202                         ;
+;     ENA               ; 201                         ;
 ;     ENA CLR           ; 224                         ;
 ;     ENA CLR SCLR      ; 128                         ;
 ;     ENA CLR SCLR SLD  ; 32                          ;
@@ -2806,7 +2806,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Apr  7 13:45:29 2026
+    Info: Processing started: Mon Apr 13 13:14:49 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
     Info (16304): Mode behavior is affected by advanced setting Fitter Effort (default for this mode is Standard Fit)
@@ -2856,7 +2856,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file imm_mux
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
     Info (12022): Found design unit 1: execute-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 36
     Info (12023): Found entity 1: execute File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 6
-Warning (12019): Can't analyze file -- file ALU_1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: ALU-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd Line: 23
     Info (12023): Found entity 1: ALU File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd Line: 6
@@ -2937,7 +2936,7 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "prime_code.mif"
+    Info (12134): Parameter "init_file" = "square_code.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -2967,9 +2966,11 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lor3.tdf
-    Info (12023): Found entity 1: altsyncram_lor3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lor3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_lor3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_lor3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9sr3.tdf
+    Info (12023): Found entity 1: altsyncram_9sr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9sr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_9sr3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_9sr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 990 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_code.mif Line: 1
+    Warning (113027): Addresses ranging from 34 to 1023 are not initialized File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_code.mif Line: 1
 Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 123
 Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 38
 Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 51
@@ -3004,7 +3005,7 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "prime_data.mif"
+    Info (12134): Parameter "init_file" = "square_data.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -3034,9 +3035,11 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_asr3.tdf
-    Info (12023): Found entity 1: altsyncram_asr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_asr3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_asr3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_asr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uvr3.tdf
+    Info (12023): Found entity 1: altsyncram_uvr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_uvr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_uvr3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_uvr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 981 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_data.mif Line: 1
+    Warning (113027): Addresses ranging from 43 to 1023 are not initialized File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/square_data.mif Line: 1
 Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 179
 Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 191
 Info (12128): Elaborating entity "print_FSM" for hierarchy "print_FSM:FSM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 213
@@ -3509,10 +3512,10 @@ Info (21057): Implemented 5183 device resources after synthesis - the final reso
     Info (21061): Implemented 4863 logic cells
     Info (21064): Implemented 230 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
     Info: Peak virtual memory: 5091 megabytes
-    Info: Processing ended: Tue Apr  7 13:45:42 2026
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Mon Apr 13 13:15:04 2026
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:19
 
 
