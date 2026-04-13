@@ -216,7 +216,7 @@ void pass_two_data(FILE* out_data, line_vec* data_lines, Label** data_table)
                 if ((k == 0 || k == size-1) && (char)data == '"')
                 {
                     printf("Found quote marks, skipping...\n");
-                    k++;
+                    k++; j--;
                     continue;
                 }
                 if ((char)data == '\\')
