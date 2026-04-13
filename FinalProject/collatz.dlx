@@ -31,9 +31,8 @@
 ;End
 ;********************************************************************
 
-	ADDIU	R21, R0, 3
-	ADDIU	R6, R0, 13
-	ADDIU	R7, R0, 10
+	ADDUI	R6, R0, 13
+	ADDUI	R7, R0, 10
 
 	;prompt for integer n
 	ADD		R2, R0, R0
@@ -58,7 +57,7 @@ loop
 	BNEZ	R4, endloop
 	
 	;If n is even
-	ANDI	R5, R4, 1
+	ANDI	R5, R1, 1
 	BNEZ	R5, else
 	
 	;divide n by 2
@@ -68,8 +67,9 @@ loop
 else
 	;Else n=3n+1
 	ADDU	R20, R1, R0
+	ADDUI	R21, R0, 3
 	JAL		mult
-	ADDIU	R1, R30, 1
+	ADDUI	R1, R30, 1
 	
 endif	
 	;print n
