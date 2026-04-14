@@ -112,11 +112,10 @@ use work.opcode_package.all;
 			wrusedw => wrusedw
 		);
 		
-		DIVIDER : ENTITY work.diva
+		DIVIDER : ENTITY work.diva_ten
 		PORT MAP
 		(
-			clock	=> clk,
-			denom	=> x"0000000A",
+			clk	=> clk,
 			numer	=> pos_val,
 			quotient	=> quotient,
 			remain => remain
@@ -239,7 +238,7 @@ use work.opcode_package.all;
 			
 		when DIV =>
 
-			if clk_count > 9 then 
+			if clk_count > 6 then 
 				
 				n_clk_count <= 0;
 				new_stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");
