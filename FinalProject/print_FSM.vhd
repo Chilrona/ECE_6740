@@ -17,7 +17,8 @@ use work.opcode_package.all;
 
 			print_stall : out std_logic;
 			print_flush_decode : out std_logic;
-			tx : out STD_LOGIC
+			tx : out STD_LOGIC;
+			LEDR : out std_logic_vector(9 downto 0)
 		);
 						
 	end entity print_FSM;	
@@ -283,6 +284,9 @@ use work.opcode_package.all;
 				next_state <= IDLE;
 		end case;
 		end process;
+		
+		LEDR(7 downto 0) <= wrusedw;
+		LEDR(9 downto 8) <= "00";
 
 		
 	end Behavioral;	

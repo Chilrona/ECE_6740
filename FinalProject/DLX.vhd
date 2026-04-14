@@ -16,7 +16,8 @@ use work.opcode_package.all;
 			HEX2 : out unsigned(7 downto 0);
 			HEX3 : out unsigned(7 downto 0);
 			HEX4 : out unsigned(7 downto 0);
-			HEX5 : out unsigned(7 downto 0)
+			HEX5 : out unsigned(7 downto 0);
+			LEDR : out std_logic_vector(9 downto 0)
 		);
 						
 	end entity DLX;	
@@ -220,9 +221,10 @@ use work.opcode_package.all;
 			print_stall => print_stall,
 			print_flush_decode => print_flush_decode,
 			tx => GPIO(1), 
-			uart_clk => uart_clk
+			uart_clk => uart_clk,
 			--uart_clk => c1
 			--uart_clk => clk
+			LEDR => LEDR
 		);
 		 
 		SCAN : entity work.scan_FSM
