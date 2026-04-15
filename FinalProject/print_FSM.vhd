@@ -238,7 +238,7 @@ use work.opcode_package.all;
 			
 		when DIV =>
 
-			if clk_count > 6 then 
+			if clk_count > 7 then 
 				
 				n_clk_count <= 0;
 				new_stack(i) <= std_logic_vector(unsigned(remain(7 downto 0)) + x"30");

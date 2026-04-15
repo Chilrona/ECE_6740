@@ -87,6 +87,7 @@ use work.opcode_package.all;
 		signal areset		: STD_LOGIC := '0';
 		signal c0		: STD_LOGIC :='0'; --153600 Hz
 		signal c1		: STD_LOGIC :='0'; --115.2 kHz 
+		signal c2		: STD_LOGIC :='0'; 
 		signal locked : std_logic;
 		
 		--lil timmy
@@ -105,7 +106,8 @@ use work.opcode_package.all;
 	--setting up the clk and rst and tx
 	--rst_l <= KEY(0) and locked;
 	--rst_l <= KEY(0);
-	clk <= MAX10_CLK1_50;
+	--clk <= MAX10_CLK1_50;
+	clk <= c2;
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
@@ -254,6 +256,7 @@ use work.opcode_package.all;
 			inclk0=>MAX10_CLK1_50,
 			c0=>c0,
 			c1=>c1,
+			c2=>c2,
 			locked=>locked
 		);
 		

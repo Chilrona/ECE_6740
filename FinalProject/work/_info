@@ -13,6 +13,20 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 Z2 !s12c _opt6
 R1
 R2
@@ -316,10 +330,10 @@ n@_opt6
 R15
 R9
 T_opt7
-!s110 1776109856
-V6VoQfUL`5iJ?WFCeK8F5k1
+!s110 1776216499
+Vi41HX<7^aL9;]HYdfE^kj3
 R18
-=1-b4e9b8412daa-69dd491f-22a-758e4
+=1-b4e9b8412daa-69dee9b2-2aa-2e30
 R1
 R10
 R11
@@ -335,7 +349,7 @@ Z21 DPx4 work 14 opcode_package 0 22 Fj_dJ60KX@_j]obd;bkd03
 Z22 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z23 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z24 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 3796
+!i122 4051
 Z25 dC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject
 Z26 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd
 Z27 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd
@@ -345,9 +359,9 @@ VgIRCPalD6hkzP?5fHB0Mi2
 !s100 80?7D08^G7`[Ukl5cL8YC2
 Z28 OL;C;2024.3;79
 32
-Z29 !s110 1776109835
+Z29 !s110 1776216470
 !i10b 1
-Z30 !s108 1776109835.000000
+Z30 !s108 1776216470.000000
 Z31 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd|
 Z32 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/ALU.vhd|
 !i113 0
@@ -359,7 +373,7 @@ R22
 R23
 R24
 Z35 DEx4 work 3 alu 0 22 gIRCPalD6hkzP?5fHB0Mi2
-!i122 3796
+!i122 4051
 l25
 L23 224
 VToH5Ez2P2bzfU8Lznh]GX2
@@ -404,7 +418,7 @@ R21
 R22
 R23
 R24
-!i122 3797
+!i122 4052
 R25
 Z39 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd
 Z40 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd
@@ -430,7 +444,7 @@ R22
 R23
 R24
 Z45 DEx4 work 6 decode 0 22 adgUKELjO;Q^3513N<^aM0
-!i122 3797
+!i122 4052
 l34
 L30 40
 VEPQ3eaM0k@5nkRRa_df=m0
@@ -449,7 +463,7 @@ Ediva
 Z46 w1775591101
 R23
 R24
-!i122 3798
+!i122 4053
 R25
 Z47 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd
 Z48 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd
@@ -459,30 +473,75 @@ Vo8TiGRf_k92j>UV0hz1Bj1
 !s100 BKTQ3>TM6miHA7mROKl^f3
 R28
 32
-Z50 !s110 1776109836
+Z50 !s110 1776216471
 !i10b 1
-Z51 !s108 1776109836.000000
-Z52 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd|
-Z53 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd|
+R30
+Z51 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd|
+Z52 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z54 DEx4 work 4 diva 0 22 o8TiGRf_k92j>UV0hz1Bj1
-!i122 3798
+DEx4 work 4 diva 0 22 o8TiGRf_k92j>UV0hz1Bj1
+!i122 4053
 l81
-Z55 L55 51
+Z53 L55 51
 V2=z`lHQdQIz<9_o_AKcA13
 !s100 5TB14b<X[@I3b_3@MKm`S2
 R28
 32
 R50
 !i10b 1
+R30
 R51
 R52
-R53
+!i113 0
+R33
+R34
+Ediva_ten
+Z54 w1776216377
+R21
+R22
+R23
+R24
+!i122 4054
+R25
+Z55 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva_ten.vhd
+Z56 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva_ten.vhd
+l0
+L7 1
+VTjn9m3fW0zjTZ95ejOSUo1
+!s100 mgijJ[biDL>:VB7cK4F3_1
+R28
+32
+R50
+!i10b 1
+Z57 !s108 1776216471.000000
+Z58 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva_ten.vhd|
+Z59 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva_ten.vhd|
+!i113 0
+R33
+R34
+Abehavioral
+R21
+R22
+R23
+R24
+Z60 DEx4 work 8 diva_ten 0 22 Tjn9m3fW0zjTZ95ejOSUo1
+!i122 4054
+l27
+L17 32
+VL:7j2X3ZRmXN9EnJ?XEzP3
+!s100 ^hbo7BflO??0F6YK0ln=U0
+R28
+32
+R50
+!i10b 1
+R57
+R58
+R59
 !i113 0
 R33
 R34
@@ -498,8 +557,8 @@ w1770147939
 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v
 !i122 140
 L0 6 61
-Z56 VDg1SIo80bB@j0V0VzS_@n1
-Z57 OL;L;2024.3;79
+Z61 VDg1SIo80bB@j0V0VzS_@n1
+Z62 OL;L;2024.3;79
 r1
 !s85 0
 31
@@ -507,91 +566,91 @@ r1
 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v|
 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab4Decode/DLX.v|
 !i113 0
-Z58 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z63 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R14
 n@d@l@x
 Edlx
-Z59 w1776109186
+Z64 w1776215295
 R21
 R22
 R23
 R24
-!i122 3799
+!i122 4055
 R25
-Z60 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd
-Z61 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd
+Z65 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd
+Z66 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd
 l0
 L6 1
-Vk]TA[Ig[DkU:BkT?a@B:Y3
-!s100 8V_[POT_cSO:R^8`7HV[k3
+VWEA@5U[ge_Om=VS4Z]Cc33
+!s100 ?`zj^_JEE^iTAlzO_8Chl3
 R28
 32
 R50
 !i10b 1
-R51
-Z62 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd|
-Z63 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd|
+R57
+Z67 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd|
+Z68 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-Z64 DEx4 work 5 timer 0 22 QLRIjADhb?X60P:KH8;]12
-Z65 DEx4 work 3 pll 0 22 i?bgEKA9LPg:Vnc?U?D?Z1
-Z66 DEx4 work 8 scan_fsm 0 22 NNi^BQ0k`C;hWQB4QP1C33
-Z67 DEx4 work 9 print_fsm 0 22 ]FcZ0oB:MNjb2<4JIjBe?3
-Z68 DEx4 work 8 overseer 0 22 nAd`O9NLUWNU^9>fOJiKK0
-Z69 DEx4 work 10 write_back 0 22 8Kd89o?W4EdN1mUB_T3Ak2
-Z70 DEx4 work 6 memory 0 22 <TG1deZMdTDC`cBTCQ@gf1
-Z71 DEx4 work 7 execute 0 22 eM`RJZ3Ti[DVRIA72ha_e0
+Z69 DEx4 work 5 timer 0 22 QLRIjADhb?X60P:KH8;]12
+Z70 DEx4 work 3 pll 0 22 i?bgEKA9LPg:Vnc?U?D?Z1
+Z71 DEx4 work 8 scan_fsm 0 22 NNi^BQ0k`C;hWQB4QP1C33
+Z72 DEx4 work 9 print_fsm 0 22 6]Wlz@c[DKEgYA9QzkblN3
+Z73 DEx4 work 8 overseer 0 22 nAd`O9NLUWNU^9>fOJiKK0
+Z74 DEx4 work 10 write_back 0 22 8Kd89o?W4EdN1mUB_T3Ak2
+Z75 DEx4 work 6 memory 0 22 <TG1deZMdTDC`cBTCQ@gf1
+Z76 DEx4 work 7 execute 0 22 eM`RJZ3Ti[DVRIA72ha_e0
 R45
-Z72 DEx4 work 5 fetch 0 22 Ze@CcfVAlS3RKnQIBcEkK1
+Z77 DEx4 work 5 fetch 0 22 Ze@CcfVAlS3RKnQIBcEkK1
 R21
 R22
 R23
 R24
-Z73 DEx4 work 3 dlx 0 22 k]TA[Ig[DkU:BkT?a@B:Y3
-!i122 3799
-l97
-L24 261
-VKBNUDM3aZ2?OB3S6B9Fg53
-!s100 [@nf7IENS<]^W9hGP?<@72
+Z78 DEx4 work 3 dlx 0 22 WEA@5U[ge_Om=VS4Z]Cc33
+!i122 4055
+l98
+L25 262
+VI9dzi?Xek^?2=UDFb0m:o1
+!s100 2oKN7G>]2F9nQ0bAH?hE<3
 R28
 32
 R50
 !i10b 1
-R51
-R62
-R63
+R57
+R67
+R68
 !i113 0
 R33
 R34
 Edlx_ex1_tb
-Z74 w1770950583
-Z75 DPx4 work 14 opcode_package 0 22 F@aoYSKclJXC7_9[WclDV3
+Z79 w1770950583
+Z80 DPx4 work 14 opcode_package 0 22 F@aoYSKclJXC7_9[WclDV3
 R22
 R23
 R24
 !i122 341
-Z76 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute
-Z77 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd
-Z78 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd
+Z81 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute
+Z82 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd
+Z83 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd
 l0
 L6 1
 VmKzT^^f1DlJB?R]6GME]X0
 !s100 oZ25To95Wmb`We[F7[fjM1
 R28
 32
-Z79 !s110 1770950642
+Z84 !s110 1770950642
 !i10b 1
-Z80 !s108 1770950642.000000
-Z81 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/ALU.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Decode.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Execute.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/fetch.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/imm_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/my_ROM.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/OPCODE_PACKAGE.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/PC_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/registers.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/sign_extend.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Zeros.vhd|
-Z82 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Zeros.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/sign_extend.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/registers.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/PC_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/OPCODE_PACKAGE.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/my_ROM.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/imm_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/fetch.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Execute.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Decode.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/ALU.vhd|
+Z85 !s108 1770950642.000000
+Z86 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/ALU.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Decode.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Execute.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/fetch.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/imm_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/my_ROM.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/OPCODE_PACKAGE.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/PC_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/registers.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/sign_extend.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Zeros.vhd|
+Z87 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Zeros.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/sign_extend.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/registers.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/PC_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/OPCODE_PACKAGE.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/my_ROM.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/imm_mux.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/fetch.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Execute.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX_ex1_tb.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/DLX.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/Decode.vhd|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab5Execute/ALU.vhd|
 !i113 0
 R33
 R34
 Atest
 DEx4 work 3 dlx 0 22 GGGOMkX9Tm02CI^8OgQi<2
-R75
+R80
 R22
 R23
 R24
@@ -603,87 +662,87 @@ VFIBGb@m:MF]nE:G[l`h8N3
 !s100 W?Q`Y0j41Sz5AgGA6U38b2
 R28
 32
-R79
+R84
 !i10b 1
-R80
-R81
-R82
+R85
+R86
+R87
 !i113 0
 R33
 R34
 Edlx_lab6_tb
-Z83 w1772055046
-Z84 DPx4 work 14 opcode_package 0 22 0PHN;8]5Y]N;0Y4lmO<`i0
+Z88 w1772055046
+Z89 DPx4 work 14 opcode_package 0 22 0PHN;8]5Y]N;0Y4lmO<`i0
 R22
 R23
 R24
 !i122 955
 R37
-Z85 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd
-Z86 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd
+Z90 8C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd
+Z91 FC:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd
 l0
 L6 1
 V`WzXJ3Bk^ojjT`4o^R:Zh0
 !s100 L6]KWdU]Q<`ehBR>BEi`=0
 R28
 32
-Z87 !s110 1772607171
+Z92 !s110 1772607171
 !i10b 1
-Z88 !s108 1772607171.000000
-Z89 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd|
-Z90 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd|
+Z93 !s108 1772607171.000000
+Z94 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd|
+Z95 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/Lab7Hazards/DLX_lab6_tb.vhd|
 !i113 0
 R33
 R34
 Atest
-Z91 DEx4 work 3 dlx 0 22 deGo_@?;H;@Rm?;XTn]h52
-R84
+Z96 DEx4 work 3 dlx 0 22 deGo_@?;H;@Rm?;XTn]h52
+R89
 R22
 R23
 R24
 DEx4 work 11 dlx_lab6_tb 0 22 `WzXJ3Bk^ojjT`4o^R:Zh0
 !i122 955
 l17
-Z92 L9 33
+Z97 L9 33
 VaogAg7E;o?ElVnKi_JF0]3
 !s100 BYZ>k[?Ko=]jU:Ic4kzo^2
 R28
 32
-R87
+R92
 !i10b 1
-R88
-R89
-R90
+R93
+R94
+R95
 !i113 0
 R33
 R34
 Edlx_lab8_tb
-Z93 w1774381024
-Z94 DPx4 work 14 opcode_package 0 22 ^jjGZf8Mk^o^bh?Zl?DJ93
+Z98 w1774381024
+Z99 DPx4 work 14 opcode_package 0 22 ^jjGZf8Mk^o^bh?Zl?DJ93
 R22
 R23
 R24
 !i122 2146
-Z95 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9
-Z96 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd
-Z97 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd
+Z100 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9
+Z101 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd
+Z102 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd
 l0
 L6 1
 VGDEnWof::Pem_`YcFNgGN1
 !s100 hoi74Bl:`8lZWGo<1OAaf3
 R28
 32
-Z98 !s110 1774381671
+Z103 !s110 1774381671
 !i10b 1
-Z99 !s108 1774381671.000000
-Z100 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd|
-Z101 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd|
+Z104 !s108 1774381671.000000
+Z105 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd|
+Z106 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab9/DLX_lab8_tb.vhd|
 !i113 0
 R33
 R34
 Atest
 DEx4 work 3 dlx 0 22 YSVaazYTkLK:ETDEPC0AF2
-R94
+R99
 R22
 R23
 R24
@@ -695,24 +754,24 @@ V8ReKY4XZD@?JU^NYkmGiT1
 !s100 =W6>HEl_E;cz0cfLNW:5H3
 R28
 32
-R98
+R103
 !i10b 1
-R99
-R100
-R101
+R104
+R105
+R106
 !i113 0
 R33
 R34
 Edlx_lab9_tb
-Z102 w1776109622
+Z107 w1776211744
 R21
 R22
 R23
 R24
-!i122 3800
+!i122 4056
 R25
-Z103 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd
-Z104 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd
+Z108 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd
+Z109 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd
 l0
 L6 1
 V1=dJm]i<FHk=JW<ZmJS9=1
@@ -721,60 +780,60 @@ R28
 32
 R50
 !i10b 1
-R51
-Z105 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd|
-Z106 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd|
+R57
+Z110 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd|
+Z111 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX_lab9_tb.vhd|
 !i113 0
 R33
 R34
 Atest
-R73
+R78
 R21
 R22
 R23
 R24
 DEx4 work 11 dlx_lab9_tb 0 22 1=dJm]i<FHk=JW<ZmJS9=1
-!i122 3800
-l24
-L9 60
-VKa^mTZcNl:E<0U[_0YP]<0
-!s100 7Ml^[hW]MHlY:ngWg6ahb2
+!i122 4056
+l25
+L9 62
+V<A__=EzCHSKj84Sl@@@Fn3
+!s100 `]kXO]FEWMLB285hb9eQZ3
 R28
 32
 R50
 !i10b 1
-R51
-R105
-R106
+R57
+R110
+R111
 !i113 0
 R33
 R34
 Edlx_tb
-Z107 w1771354929
+Z112 w1771354929
 R36
 R22
 R23
 R24
 !i122 377
-Z108 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory
-Z109 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd
-Z110 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd
+Z113 dC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory
+Z114 8C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd
+Z115 FC:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd
 l0
 L6 1
 VX>MEo]El]fFm?5PDVj_=[1
 !s100 8R6b3GzmE68ZzORhWnHCE0
 R28
 32
-Z111 !s110 1771355127
+Z116 !s110 1771355127
 !i10b 1
-Z112 !s108 1771355127.000000
-Z113 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd|
-Z114 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd|
+Z117 !s108 1771355127.000000
+Z118 !s90 -reportprogress|300|-work|work|C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd|
+Z119 !s107 C:/Users/A02340229/Documents/ECE_6740/ECE_6740/Lab6Memory/DLX_lab6_tb.vhd|
 !i113 0
 R33
 R34
 Atest
-R91
+R96
 R36
 R22
 R23
@@ -782,194 +841,194 @@ R24
 DEx4 work 6 dlx_tb 0 22 X>MEo]El]fFm?5PDVj_=[1
 !i122 377
 l17
-R92
+R97
 VRBom`>QT]FHR<83Jm1;Qd2
 !s100 C=5JY6o]kliV3QjCkS3H93
 R28
 32
-R111
+R116
 !i10b 1
-R112
-R113
-R114
+R117
+R118
+R119
 !i113 0
 R33
 R34
 Eexecute
-Z115 w1775104208
+Z120 w1775104208
 R21
 R22
 R23
 R24
-!i122 3801
+!i122 4057
 R25
-Z116 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd
-Z117 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd
+Z121 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd
+Z122 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd
 l0
 L6 1
 VeM`RJZ3Ti[DVRIA72ha_e0
 !s100 HYml2Ol_0DJa;2;1a<IcT0
 R28
 32
-Z118 !s110 1776109837
+Z123 !s110 1776216472
 !i10b 1
-R51
-Z119 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd|
-Z120 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd|
+R57
+Z124 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd|
+Z125 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd|
 !i113 0
 R33
 R34
 Abehavioral
 R35
-Z121 DEx4 work 5 zeros 0 22 ;c^KIN^QbnTYQRTfVQa102
-Z122 DEx4 work 7 imm_mux 0 22 IIl?U0<JePSE6CZ<K<GPn3
-Z123 DEx4 work 6 pc_mux 0 22 NOK]j[AI;hMEofEnoTJ8j1
+Z126 DEx4 work 5 zeros 0 22 ;c^KIN^QbnTYQRTfVQa102
+Z127 DEx4 work 7 imm_mux 0 22 IIl?U0<JePSE6CZ<K<GPn3
+Z128 DEx4 work 6 pc_mux 0 22 NOK]j[AI;hMEofEnoTJ8j1
 R21
 R22
 R23
 R24
-R71
-!i122 3801
+R76
+!i122 4057
 l43
 L36 95
 VXBjP;^>02ZYYB4W2Uo@513
 !s100 Ij?<g4eS:cO]6U0ZE^]IV2
 R28
 32
-R118
+R123
 !i10b 1
-R51
-R119
-R120
+R57
+R124
+R125
 !i113 0
 R33
 R34
 Efetch
-Z124 w1774980491
+Z129 w1774980491
 R21
 R22
 R23
 R24
-!i122 3802
+!i122 4058
 R25
-Z125 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd
-Z126 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd
+Z130 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd
+Z131 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd
 l0
 L6 1
 VZe@CcfVAlS3RKnQIBcEkK1
 !s100 eDNG2E3G6F]dcQ^_dPD^Q0
 R28
 32
-R118
+R123
 !i10b 1
-Z127 !s108 1776109837.000000
-Z128 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd|
-Z129 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd|
+Z132 !s108 1776216472.000000
+Z133 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd|
+Z134 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-Z130 DPx9 altera_mf 20 altera_mf_components 0 22 K2nP0Jo_3Z^LgLEDTAdJT1
-Z131 DEx4 work 6 my_rom 0 22 Qo`@2bO<SUj1SH]ViC<n73
+Z135 DPx9 altera_mf 20 altera_mf_components 0 22 K2nP0Jo_3Z^LgLEDTAdJT1
+Z136 DEx4 work 6 my_rom 0 22 Qo`@2bO<SUj1SH]ViC<n73
 R21
 R22
 R23
 R24
-R72
-!i122 3802
+R77
+!i122 4058
 l33
 L23 44
 V@f_Y80g<HlVe^2dM_i>CZ3
 !s100 3ii5IQh1>Y]MN<g<1<Rz[0
 R28
 32
-R118
+R123
 !i10b 1
-R127
-R128
-R129
+R132
+R133
+R134
 !i113 0
 R33
 R34
 Efifo_char
-R124
+R129
 R23
 R24
-!i122 3803
+!i122 4059
 R25
-Z132 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd
-Z133 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd
+Z137 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd
+Z138 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd
 l0
 R49
 V1g8@oOOSE@DmQ^VRA`eE^2
 !s100 2l;bDVTHOW9Sak8EKjkb33
 R28
 32
-R118
+R123
 !i10b 1
-R127
-Z134 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd|
-Z135 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd|
+R132
+Z139 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd|
+Z140 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_char.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z136 DEx4 work 9 fifo_char 0 22 1g8@oOOSE@DmQ^VRA`eE^2
-!i122 3803
+Z141 DEx4 work 9 fifo_char 0 22 1g8@oOOSE@DmQ^VRA`eE^2
+!i122 4059
 l95
 L59 71
 V_<oF;>ej]X=C@Eb<LSRJ71
 !s100 g@0966kCcJJ<mQ32;mzle3
 R28
 32
-R118
+R123
 !i10b 1
-R127
-R134
-R135
+R132
+R139
+R140
 !i113 0
 R33
 R34
 Efifo_in_buf
-R124
+R129
 R23
 R24
-!i122 3804
+!i122 4060
 R25
-Z137 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd
-Z138 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd
+Z142 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd
+Z143 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd
 l0
 R49
 VLmK14ThjdJW>W1KnY63E^1
 !s100 kPYAh4jlBT`MVcnUUQJWP3
 R28
 32
-Z139 !s110 1776109838
+R123
 !i10b 1
-R127
-Z140 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd|
-Z141 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd|
+R132
+Z144 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd|
+Z145 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_in_buf.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z142 DEx4 work 11 fifo_in_buf 0 22 LmK14ThjdJW>W1KnY63E^1
-!i122 3804
+Z146 DEx4 work 11 fifo_in_buf 0 22 LmK14ThjdJW>W1KnY63E^1
+!i122 4060
 l92
-Z143 L58 67
+Z147 L58 67
 VV7[ihPoAnZ6<Nf?k:j66?1
 !s100 Qc;4iJo92F@F<27XKQ4A_1
 R28
 32
-R139
+R123
 !i10b 1
-R127
-R140
-R141
+R132
+R144
+R145
 !i113 0
 R33
 R34
@@ -977,105 +1036,105 @@ Efifo_uart_rf
 R38
 R23
 R24
-!i122 3805
+!i122 4061
 R25
-Z144 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd
-Z145 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd
+Z148 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd
+Z149 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd
 l0
 R49
 VSM3T:B<WG_F0CDol<J<TA1
 !s100 KKihHdXia2]BK@XkJQC=P0
 R28
 32
-R139
+R123
 !i10b 1
-Z146 !s108 1776109838.000000
-Z147 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd|
-Z148 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd|
+R132
+Z150 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd|
+Z151 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/FIFO_UART_RF.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z149 DEx4 work 12 fifo_uart_rf 0 22 SM3T:B<WG_F0CDol<J<TA1
-!i122 3805
+Z152 DEx4 work 12 fifo_uart_rf 0 22 SM3T:B<WG_F0CDol<J<TA1
+!i122 4061
 l92
-R143
+R147
 V=L:<73iRhTCHEbSgl8ANo0
 !s100 ?[7SGPN^1:zS8MRDcAh0G3
 R28
 32
-R139
+R123
 !i10b 1
-R146
-R147
-R148
+R132
+R150
+R151
 !i113 0
 R33
 R34
 Efifo_word
-R124
+R129
 R23
 R24
-!i122 3806
+!i122 4062
 R25
-Z150 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd
-Z151 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd
+Z153 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd
+Z154 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd
 l0
 R49
 VZohm93YW1;=^3d1bVY1WY1
 !s100 noXH^K0]GWi@5`9AOZ38D0
 R28
 32
-R139
+Z155 !s110 1776216473
 !i10b 1
-R146
-Z152 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd|
-Z153 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd|
+Z156 !s108 1776216473.000000
+Z157 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd|
+Z158 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fifo_word.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z154 DEx4 work 9 fifo_word 0 22 Zohm93YW1;=^3d1bVY1WY1
-!i122 3806
+Z159 DEx4 work 9 fifo_word 0 22 Zohm93YW1;=^3d1bVY1WY1
+!i122 4062
 l96
 L59 73
 VJd6a2L32[1SB;<?UQOB@Z1
 !s100 j[A1cMC97YlWK^[fGla:n2
 R28
 32
-R139
+R155
 !i10b 1
-R146
-R152
-R153
+R156
+R157
+R158
 !i113 0
 R33
 R34
 Eimm_mux
-Z155 w1775589427
+Z160 w1775589427
 R21
 R22
 R23
 R24
-!i122 3807
+!i122 4063
 R25
-Z156 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd
-Z157 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd
+Z161 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd
+Z162 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd
 l0
 L6 1
 VIIl?U0<JePSE6CZ<K<GPn3
 !s100 P8>5Wli`nMSeI;^<Ab7hY3
 R28
 32
-R139
+R155
 !i10b 1
-R146
-Z158 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd|
-Z159 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd|
+R156
+Z163 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd|
+Z164 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/imm_mux.vhd|
 !i113 0
 R33
 R34
@@ -1084,19 +1143,19 @@ R21
 R22
 R23
 R24
-R122
-!i122 3807
+R127
+!i122 4063
 l30
 L29 15
 V1m[l9hTdO1=[idH1d@TAa1
 !s100 I`:fDTYl8aH;:@DzPJLTD3
 R28
 32
-R139
+R155
 !i10b 1
-R146
-R158
-R159
+R156
+R163
+R164
 !i113 0
 R33
 R34
@@ -1107,21 +1166,21 @@ vin_buf
 !s100 UiJhZ^@jgBRSK>]MhVAU20
 Im7Wza@JghQ`2YD6VM[@Wk0
 R25
-R124
+R129
 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/in_buf.v
 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/in_buf.v
 !i122 3079
-Z160 L0 40 56
-R56
-R57
+Z165 L0 40 56
+R61
+R62
 r1
 !s85 0
 31
-Z161 !s108 1774983499.000000
+Z166 !s108 1774983499.000000
 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/in_buf.v|
 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/in_buf.v|
 !i113 0
-R58
+R63
 R14
 Elab1uart
 w1768010671
@@ -1147,71 +1206,71 @@ R28
 R33
 R34
 Ememory
-Z162 w1775097448
+Z167 w1775097448
 R21
 R22
 R23
 R24
-!i122 3808
+!i122 4064
 R25
-Z163 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd
-Z164 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd
+Z168 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd
+Z169 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd
 l0
 L6 1
 V<TG1deZMdTDC`cBTCQ@gf1
 !s100 ;=>Ehg5ZC8FQLb3=KV<z71
 R28
 32
-Z165 !s110 1776109839
+R155
 !i10b 1
-Z166 !s108 1776109839.000000
-Z167 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd|
-Z168 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd|
+R156
+Z170 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd|
+Z171 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-R130
-Z169 DEx4 work 6 my_ram 0 22 Hz[PNA<0H;1Qk@I_8mzVm0
+R135
+Z172 DEx4 work 6 my_ram 0 22 Hz[PNA<0H;1Qk@I_8mzVm0
 R21
 R22
 R23
 R24
-R70
-!i122 3808
+R75
+!i122 4064
 l29
 L25 36
 VRYCPoN[1=?3P4SKH=bII@0
 !s100 =JXE1HWG1FiJRNo77;h^I0
 R28
 32
-R165
+R155
 !i10b 1
-R166
-R167
-R168
+R156
+R170
+R171
 !i113 0
 R33
 R34
 Emy_div
-R162
+R167
 R23
 R24
-!i122 3809
+!i122 4065
 R25
-Z170 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd
-Z171 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd
+Z173 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd
+Z174 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd
 l0
 R49
 V59hK9>YX_XQEzA]GYi1Vn3
 !s100 <m0<I0o`OeX4G@DzCkbf;2
 R28
 32
-R165
+R155
 !i10b 1
-R166
-Z172 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd|
-Z173 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd|
+R156
+Z175 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd|
+Z176 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_div.vhd|
 !i113 0
 R33
 R34
@@ -1219,145 +1278,145 @@ Asyn
 R23
 R24
 DEx4 work 6 my_div 0 22 59hK9>YX_XQEzA]GYi1Vn3
-!i122 3809
+!i122 4065
 l81
-R55
+R53
 V7CSeX41CGkAPzdF0iEPc72
 !s100 3oO>fj[[4<WV@2QNB<4k70
 R28
 32
-R165
+R155
 !i10b 1
-R166
-R172
-R173
+R156
+R175
+R176
 !i113 0
 R33
 R34
 Emy_fifo
-R124
+R129
 R23
 R24
-!i122 3810
+!i122 4066
 R25
-Z174 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd
-Z175 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd
+Z177 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd
+Z178 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd
 l0
 R49
 V1;zO10Ej:3[1ZUlUz:7n21
 !s100 J>5[9W<Ma>I6Y19TV9PSA2
 R28
 32
-R165
+Z179 !s110 1776216474
 !i10b 1
-R166
-Z176 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd|
-Z177 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd|
+R156
+Z180 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd|
+Z181 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-Z178 DEx4 work 7 my_fifo 0 22 1;zO10Ej:3[1ZUlUz:7n21
-!i122 3810
+Z182 DEx4 work 7 my_fifo 0 22 1;zO10Ej:3[1ZUlUz:7n21
+!i122 4066
 l92
-R143
+R147
 VIbjbb[MNNFJflFZU4=`U_2
 !s100 BRJjoQ84>Q<NJ7c5`zX3A1
 R28
 32
-R165
+R179
 !i10b 1
-R166
-R176
-R177
+R156
+R180
+R181
 !i113 0
 R33
 R34
 Emy_ram
-Z179 w1776109764
-R130
+Z183 w1776109764
+R135
 R23
 R24
-!i122 3811
+!i122 4067
 R25
-Z180 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd
-Z181 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd
+Z184 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd
+Z185 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd
 l0
 R49
 VHz[PNA<0H;1Qk@I_8mzVm0
 !s100 ^^f]BQ49a2?36lkhdlBWB3
 R28
 32
-Z182 !s110 1776109840
+R179
 !i10b 1
-Z183 !s108 1776109840.000000
-Z184 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd|
-Z185 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd|
+Z186 !s108 1776216474.000000
+Z187 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd|
+Z188 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd|
 !i113 0
 R33
 R34
 Asyn
-R130
+R135
 R23
 R24
-R169
-!i122 3811
+R172
+!i122 4067
 l59
 L55 36
 VX>QjT[;fLZ`^UHofaHIX23
 !s100 :?@?;4zoBE?6L95^2BWEh0
 R28
 32
-R182
+R179
 !i10b 1
-R183
-R184
-R185
+R186
+R187
+R188
 !i113 0
 R33
 R34
 Emy_rom
-Z186 w1776109783
-R130
+Z189 w1776109783
+R135
 R23
 R24
-!i122 3812
+!i122 4068
 R25
-Z187 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd
-Z188 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd
+Z190 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd
+Z191 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd
 l0
 R49
 VQo`@2bO<SUj1SH]ViC<n73
 !s100 zgL9WhBdGDEk2aO]WTc=n3
 R28
 32
-R182
+R179
 !i10b 1
-R183
-Z189 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd|
-Z190 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd|
+R186
+Z192 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd|
+Z193 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd|
 !i113 0
 R33
 R34
 Asyn
-R130
+R135
 R23
 R24
-R131
-!i122 3812
+R136
+!i122 4068
 l57
 L53 33
 ViJ`hkeP]Wa@P6RH`L8eXc0
 !s100 M8;R2SabnP@2EACYhX7Mh0
 R28
 32
-R182
+R179
 !i10b 1
-R183
-R189
-R190
+R186
+R192
+R193
 !i113 0
 R33
 R34
@@ -1365,11 +1424,11 @@ Popcode_package
 R22
 R23
 R24
-!i122 3813
-Z191 w1775589424
+!i122 4069
+Z194 w1775589424
 R25
-Z192 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd
-Z193 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd
+Z195 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd
+Z196 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd
 l0
 L5 98
 VFj_dJ60KX@_j]obd;bkd03
@@ -1377,11 +1436,11 @@ VFj_dJ60KX@_j]obd;bkd03
 R28
 32
 b1
-R182
+R179
 !i10b 1
-R183
-Z194 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd|
-Z195 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd|
+R186
+Z197 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd|
+Z198 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd|
 !i113 0
 R33
 R34
@@ -1390,18 +1449,18 @@ R21
 R22
 R23
 R24
-!i122 3813
+!i122 4069
 l0
 L104 105
 V2P:mVmWjaSLT8beR8WHP>1
 !s100 AHXcbDnBQ51`C`2hzzS@Z2
 R28
 32
-R182
+R179
 !i10b 1
-R183
-R194
-R195
+R186
+R197
+R198
 !i113 0
 R33
 R34
@@ -1411,21 +1470,21 @@ R21
 R22
 R23
 R24
-!i122 3814
+!i122 4070
 R25
-Z196 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd
-Z197 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd
+Z199 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd
+Z200 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd
 l0
 L6 1
 VnAd`O9NLUWNU^9>fOJiKK0
 !s100 T:0KQeXfmHWiR3i>=WNM<2
 R28
 32
-Z198 !s110 1776109841
+R179
 !i10b 1
-Z199 !s108 1776109841.000000
-Z200 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd|
-Z201 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd|
+R186
+Z201 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd|
+Z202 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd|
 !i113 0
 R33
 R34
@@ -1434,43 +1493,43 @@ R21
 R22
 R23
 R24
-R68
-!i122 3814
+R73
+!i122 4070
 l31
 L29 63
 V<z7L:ikWmIXh8b^hQ0o2>0
 !s100 PD_5:=J?T]DTCI6>fH1Ea3
 R28
 32
-R198
+R179
 !i10b 1
-R199
-R200
+R186
 R201
+R202
 !i113 0
 R33
 R34
 Epc_mux
-Z202 w1775589491
+Z203 w1775589491
 R21
 R22
 R23
 R24
-!i122 3815
+!i122 4071
 R25
-Z203 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd
-Z204 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd
+Z204 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd
+Z205 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd
 l0
 L6 1
 VNOK]j[AI;hMEofEnoTJ8j1
 !s100 g4E:d^FW0f]42Bgn6PnCU1
 R28
 32
-R198
+Z206 !s110 1776216475
 !i10b 1
-R199
-Z205 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd|
-Z206 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd|
+Z207 !s108 1776216475.000000
+Z208 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd|
+Z209 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/PC_mux.vhd|
 !i113 0
 R33
 R34
@@ -1479,133 +1538,133 @@ R21
 R22
 R23
 R24
-R123
-!i122 3815
+R128
+!i122 4071
 l31
 L30 15
 VFZ55o<Vee3>cfe<cLcH332
 !s100 X?UDazaXYMdk6QkN=5g2d3
 R28
 32
-R198
-!i10b 1
-R199
-R205
 R206
+!i10b 1
+R207
+R208
+R209
 !i113 0
 R33
 R34
 Epll
-R124
+R129
 R23
 R24
-!i122 3816
+!i122 4072
 R25
-Z207 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd
-Z208 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd
+Z210 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd
+Z211 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd
 l0
 R49
 Vi?bgEKA9LPg:Vnc?U?D?Z1
 !s100 f`S:2E8_EOD65dh`hEUJN2
 R28
 32
-R198
+R206
 !i10b 1
-R199
-Z209 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd|
-Z210 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd|
+R207
+Z212 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd|
+Z213 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd|
 !i113 0
 R33
 R34
 Asyn
 R23
 R24
-R65
-!i122 3816
+R70
+!i122 4072
 l138
 L55 166
 VlFzhS<@QE=2<=K:Rh35KU1
 !s100 C?W_P5`aG9AM_;?8FTdM30
 R28
 32
-R198
+R206
 !i10b 1
-R199
-R209
-R210
+R207
+R212
+R213
 !i113 0
 R33
 R34
 Eprint_fsm
-Z211 w1775590991
+Z214 w1776210725
 R21
 R22
 R23
 R24
-!i122 3817
+!i122 4073
 R25
-Z212 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd
-Z213 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd
+Z215 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd
+Z216 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd
 l0
 L9 1
-V]FcZ0oB:MNjb2<4JIjBe?3
-!s100 6Td=o0i50?e?674fezA>d3
+V6]Wlz@c[DKEgYA9QzkblN3
+!s100 JXMLP2MnZCek<7me=nY?z3
 R28
 32
-Z214 !s110 1776109842
+R206
 !i10b 1
-R199
-Z215 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd|
-Z216 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd|
+R207
+Z217 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd|
+Z218 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-Z217 DEx4 work 10 uart_trans 0 22 @Ed<;LV[cfU;lQQbbLEB30
-R54
-R136
-R154
+Z219 DEx4 work 10 uart_trans 0 22 @Ed<;LV[cfU;lQQbbLEB30
+R60
+R141
+R159
 R21
 R22
 R23
 R24
-R67
-!i122 3817
-l79
-L25 264
-VFVZ;APXIbYK>Vz@];4^^=3
-!s100 i^hBh]_;cYGRlKmPRAlmh1
+R72
+!i122 4073
+l80
+L26 266
+VPn8mKfiRhPBW]`do]5H@32
+!s100 I6^>^JAlWC;8?j0K4Ae`D0
 R28
 32
-R214
+R206
 !i10b 1
-R199
-R215
-R216
+R207
+R217
+R218
 !i113 0
 R33
 R34
 Eregisters
-R124
+R129
 R21
 R22
 R23
 R24
-!i122 3818
+!i122 4074
 R25
-Z218 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd
-Z219 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd
+Z220 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd
+Z221 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd
 l0
 L6 1
 V7@0]QmLZ4lYIWD>BE8N:P1
 !s100 _C`JZPh`?H>F5Hmdd<enR1
 R28
 32
-R214
+R206
 !i10b 1
-Z220 !s108 1776109842.000000
-Z221 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd|
-Z222 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd|
+R207
+Z222 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd|
+Z223 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/registers.vhd|
 !i113 0
 R33
 R34
@@ -1615,91 +1674,91 @@ R22
 R23
 R24
 R44
-!i122 3818
+!i122 4074
 l21
 L19 19
 V>>43DBD2?Se`AVn7O:_Aj1
 !s100 Ab^gM>4hMWK5Mgo3G_Xlo3
 R28
 32
-R214
+R206
 !i10b 1
-R220
-R221
+R207
 R222
+R223
 !i113 0
 R33
 R34
 Escan_fsm
-Z223 w1776109224
+Z224 w1776215292
 R21
 R22
 R23
 R24
-!i122 3819
+!i122 4075
 R25
-Z224 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd
-Z225 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd
+Z225 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd
+Z226 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd
 l0
 L9 1
 VNNi^BQ0k`C;hWQB4QP1C33
 !s100 Hn[VflgNo9:jdJ3<z1BTn1
 R28
 32
-R214
+Z227 !s110 1776216476
 !i10b 1
-R220
-Z226 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd|
-Z227 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd|
+Z228 !s108 1776216476.000000
+Z229 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd|
+Z230 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-Z228 DEx4 work 11 uartsampler 0 22 2bCL=1T1ZXmdfz>hWZ:[23
-Z229 DEx4 work 9 uart_recv 0 22 <O78`<HzkG=dG]nLk7a6?1
-R142
-R149
+Z231 DEx4 work 11 uartsampler 0 22 2bCL=1T1ZXmdfz>hWZ:[23
+Z232 DEx4 work 9 uart_recv 0 22 <O78`<HzkG=dG]nLk7a6?1
+R146
+R152
 R21
 R22
 R23
 R24
-R66
-!i122 3819
+R71
+!i122 4075
 l67
 L26 198
 VK1oMIjHSUYLB;d@W@oQe91
 !s100 T<mMTe;TISC?@k;Vm=E1@3
 R28
 32
-R214
-!i10b 1
-R220
-R226
 R227
+!i10b 1
+R228
+R229
+R230
 !i113 0
 R33
 R34
 Esign_extend
-R162
+R167
 R21
 R22
 R23
 R24
-!i122 3820
+!i122 4076
 R25
-Z230 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd
-Z231 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd
+Z233 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd
+Z234 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd
 l0
 L6 1
 VG:8zTQcaY4z2hibQ[DdkG0
 !s100 1gaMhA9OUGl3zAYZMdYF]0
 R28
 32
-R214
+R227
 !i10b 1
-R220
-Z232 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd|
-Z233 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd|
+R228
+Z235 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd|
+Z236 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/sign_extend.vhd|
 !i113 0
 R33
 R34
@@ -1709,41 +1768,41 @@ R22
 R23
 R24
 R43
-!i122 3820
+!i122 4076
 l19
 L17 23
 VgJ>4ldWfHi<>d==]bCfSe0
 !s100 dIkP@1PB`68OOE?jQ2BV33
 R28
 32
-R214
+R227
 !i10b 1
-R220
-R232
-R233
+R228
+R235
+R236
 !i113 0
 R33
 R34
 Etimer
-Z234 w1775105633
+Z237 w1775105633
 R22
 R23
 R24
-!i122 3821
+!i122 4077
 R25
-Z235 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd
-Z236 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd
+Z238 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd
+Z239 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd
 l0
 L5 1
 VQLRIjADhb?X60P:KH8;]12
 !s100 Wjeh3^>?8:66EoD9dGjHC3
 R28
 32
-Z237 !s110 1776109843
+R227
 !i10b 1
-Z238 !s108 1776109843.000000
-Z239 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd|
-Z240 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd|
+R228
+Z240 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd|
+Z241 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd|
 !i113 0
 R33
 R34
@@ -1751,42 +1810,42 @@ Abehavioral
 R22
 R23
 R24
-R64
-!i122 3821
+R69
+!i122 4077
 l35
 L22 75
 VdeRWZJk5JG[CoBVNj;Hz;1
 !s100 M<n^AKZFz9URNDh3]<FGI2
 R28
 32
-R237
+R227
 !i10b 1
-R238
-R239
+R228
 R240
+R241
 !i113 0
 R33
 R34
 Euart_recv
-R124
+R129
 R22
 R23
 R24
-!i122 3822
+!i122 4078
 R25
-Z241 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd
-Z242 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd
+Z242 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd
+Z243 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd
 l0
 L6 1
 V<O78`<HzkG=dG]nLk7a6?1
 !s100 1HWe_hI1eD:7Fazcz1LSM3
 R28
 32
-R237
+R227
 !i10b 1
-R238
-Z243 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd|
-Z244 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd|
+R228
+Z244 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd|
+Z245 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd|
 !i113 0
 R33
 R34
@@ -1794,19 +1853,19 @@ Abehavioral
 R22
 R23
 R24
-R229
-!i122 3822
+R232
+!i122 4078
 l25
 L18 48
 Vd0d4MVzf8UlNc@OHlHmCX1
 !s100 d=WEL[7GnRclC:Y@2CTNB3
 R28
 32
-R237
+R227
 !i10b 1
-R238
-R243
+R228
 R244
+R245
 !i113 0
 R33
 R34
@@ -1821,17 +1880,17 @@ R38
 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_RF.v
 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_RF.v
 !i122 3080
-R160
-R56
-R57
+R165
+R61
+R62
 r1
 !s85 0
 31
-R161
+R166
 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_RF.v|
 !s90 -reportprogress|300|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_RF.v|
 !i113 0
-R58
+R63
 R14
 n@u@a@r@t_@r@f
 Euart_trans
@@ -1839,21 +1898,21 @@ R38
 R22
 R23
 R24
-!i122 3823
+!i122 4079
 R25
-Z245 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd
-Z246 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd
+Z246 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd
+Z247 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd
 l0
 L6 1
 V@Ed<;LV[cfU;lQQbbLEB30
 !s100 ]]NjR;F0XIdO0BEZ6o22E2
 R28
 32
-R237
+Z248 !s110 1776216477
 !i10b 1
-R238
-Z247 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd|
-Z248 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd|
+R228
+Z249 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd|
+Z250 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UART_trans.vhd|
 !i113 0
 R33
 R34
@@ -1861,19 +1920,19 @@ Abehavioral
 R22
 R23
 R24
-R217
-!i122 3823
+R219
+!i122 4079
 l25
 L20 44
 VBVK^887XGAO<4:R`4zf2@3
 !s100 A<<T7^>Yb6k7RKS;E21KI3
 R28
 32
-R237
-!i10b 1
-R238
-R247
 R248
+!i10b 1
+R228
+R249
+R250
 !i113 0
 R33
 R34
@@ -1882,66 +1941,66 @@ R38
 R22
 R23
 R24
-!i122 3824
+!i122 4080
 R25
-Z249 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd
-Z250 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd
+Z251 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd
+Z252 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd
 l0
 L6 1
 V2bCL=1T1ZXmdfz>hWZ:[23
 !s100 =@TkJKFN?zmzk8MYo<<LE2
 R28
 32
-Z251 !s110 1776109844
+R248
 !i10b 1
-Z252 !s108 1776109844.000000
-Z253 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd|
-Z254 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd|
+Z253 !s108 1776216477.000000
+Z254 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd|
+Z255 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd|
 !i113 0
 R33
 R34
 Abehavioral
-R178
+R182
 R22
 R23
 R24
-R228
-!i122 3824
+R231
+!i122 4080
 l35
 L20 82
 V2cHdi]1eAiJ74[8GBL=>h0
 !s100 9WEBXhN7;W?_l<MN3k?ge2
 R28
 32
-R251
+R248
 !i10b 1
-R252
 R253
 R254
+R255
 !i113 0
 R33
 R34
 Ewrite_back
-Z255 w1774980497
+Z256 w1774980497
 R21
 R22
 R23
 R24
-!i122 3825
+!i122 4081
 R25
-Z256 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd
-Z257 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd
+Z257 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd
+Z258 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd
 l0
 L6 1
 V8Kd89o?W4EdN1mUB_T3Ak2
 !s100 ^kA439::k_GLP;BMi4oXS3
 R28
 32
-R251
+R248
 !i10b 1
-R252
-Z258 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd|
-Z259 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd|
+R253
+Z259 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd|
+Z260 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd|
 !i113 0
 R33
 R34
@@ -1950,19 +2009,19 @@ R21
 R22
 R23
 R24
-R69
-!i122 3825
+R74
+!i122 4081
 l21
 L20 24
 VCCOX0UUlaZKT^mH2;Mn1d1
 !s100 RVbobDVZ_gj^WOPY6JMMf1
 R28
 32
-R251
+R248
 !i10b 1
-R252
-R258
+R253
 R259
+R260
 !i113 0
 R33
 R34
@@ -1972,21 +2031,21 @@ R21
 R22
 R23
 R24
-!i122 3826
+!i122 4082
 R25
-Z260 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd
-Z261 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd
+Z261 8C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd
+Z262 FC:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd
 l0
 L7 1
 V;c^KIN^QbnTYQRTfVQa102
 !s100 nkF_gi2I4K1E`BXX9Kj9<1
 R28
 32
-R251
+R248
 !i10b 1
-R252
-Z262 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd|
-Z263 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd|
+R253
+Z263 !s90 -reportprogress|30|-work|work|C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd|
+Z264 !s107 C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Zeros.vhd|
 !i113 0
 R33
 R34
@@ -1995,19 +2054,19 @@ R21
 R22
 R23
 R24
-R121
-!i122 3826
+R126
+!i122 4082
 l27
 L22 34
 Vn1k:ggXK>5:hKUbGcP;UY0
 !s100 Ulb_jMMl`J6JlEifGJ7Y_1
 R28
 32
-R251
+R248
 !i10b 1
-R252
-R262
+R253
 R263
+R264
 !i113 0
 R33
 R34

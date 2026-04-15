@@ -18,7 +18,8 @@ architecture test of DLX_lab9_tb is
 	signal open_clk : std_logic;
 	signal open_clk2 : std_logic;
 	signal clk_count : integer :=0;
-	constant test_char : std_logic_vector(69 downto 0) := "1000011010100111001010011100101001110010100111001010011100101001110010";		--1 0000 1101 01 0011 1001 0
+	--constant test_char : std_logic_vector(69 downto 0) := "1000011010100111001010011100101001110010100111001010011100101001110010";		--1 0000 1101 01 0011 1001 0
+	constant test_char : std_logic_vector(19 downto 0) := "10000110101001101110";		--1 0000 1101 01 0011 1001 0
 	signal rx : std_logic := '1';
 
 	begin
@@ -55,7 +56,8 @@ architecture test of DLX_lab9_tb is
 		if rising_edge(clk) then
 			clk_count <= clk_count + 1;
 			
-			if clk_count >= 264 and clk_count < 334 then
+			--if clk_count >= 264 and clk_count < 334 then
+			if clk_count >= 264 and clk_count < 284 then
 				rx <= test_char(clk_count - 264);
 			else
 				rx <= '1';
