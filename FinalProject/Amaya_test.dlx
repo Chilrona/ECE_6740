@@ -20,8 +20,8 @@ printstr1
 	BNEZ	R1, printstr1
 			
 	;get integer n
-	;GD		R22
-    SUBI    R22, R0, 6
+	GD		R22
+    SUBI    R25, R0, 6
 
     ADD		R2, R0, R0
 
@@ -46,7 +46,15 @@ printstr2
     ADDI R18, R0, 13
     PCH R18 
 
-    ;J top
+    PD R25
+
+    ;newline 
+    ADDI R23, R0, 10
+    PCH R23
+    ADDI R18, R0, 13
+    PCH R18
+
+    J top
 
 done
     J done
