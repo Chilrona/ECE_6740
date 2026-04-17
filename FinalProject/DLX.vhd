@@ -26,7 +26,7 @@ use work.opcode_package.all;
 
 		--clk and rst signals
 		signal clk : std_logic;
-		signal rst_l : std_logic;
+		signal rst_l : std_logic := '0';--testing to find a way to get UART to not garble initially
 		signal uart_clk : std_logic;
 		signal uart_samp_clk : std_logic;
 		
@@ -265,7 +265,7 @@ use work.opcode_package.all;
 		(
 				Time_rst => Time_rst,
 				enable_time => enable_time,
-				MAX10_CLK1_50 => MAX10_CLK1_50,
+				clk => clk,
 				rst_l => rst_l,
 				HEX0=>HEX0,
 				HEX1=>HEX1,

@@ -1,4 +1,10 @@
 
+State Machine - |DLX|scan_FSM:SCAN|state
+Name state.WRREQ state.MULT state.IDLE 
+state.IDLE 0 0 0 
+state.MULT 0 1 1 
+state.WRREQ 1 0 1 
+
 State Machine - |DLX|print_FSM:FSM|state
 Name state.POP state.DIV state.MAGIC state.IDLE 
 state.IDLE 0 0 0 0 

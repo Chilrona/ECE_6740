@@ -249,7 +249,9 @@ use work.opcode_package.all;
 					next_i <= i;
 					if neg_flag = '1' then
 						wrreq_char <= '1';
-						data_char<= x"2D";
+						new_stack(i+1) <= x"2D";
+						next_i <= i + 1;
+						--data_char<= x"2D";
 					end if;
 				else
 					next_state <= DIV;

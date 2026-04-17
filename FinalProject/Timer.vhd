@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 		port (
 					Time_rst : in std_logic;
 					enable_time : in std_logic;
-					MAX10_CLK1_50 : in std_logic;
+					clk : in std_logic;
 					rst_l : in std_logic;
 					HEX0 : out unsigned(7 downto 0);
 					HEX1 : out unsigned(7 downto 0);
@@ -21,6 +21,8 @@ use ieee.numeric_std.all;
 						
 	architecture Behavioral of Timer is
 	
+		constant DIV_VAL : integer := 67 * 10000;
+	
 	type MY_MEM is array (0 to 15) of unsigned(7 downto 0);
 			constant table : MY_MEM := (X"C0", X"F9", X"A4", X"B0", X"99",
 			X"92", X"82", X"F8", X"80", X"98", X"88", X"83", X"A7", X"A1", X"86", X"8E");
@@ -33,7 +35,7 @@ use ieee.numeric_std.all;
 			signal slow_clk: unsigned(31 downto 0) :=(others=>'0'); -- variable to count up and slow our clk
 	
 		begin
-				process (MAX10_CLK1_50, Time_rst, rst_l)
+				process (clk, Time_rst, rst_l)
 				begin
 					if Time_rst = '1' or rst_l = '0' then
 						hundredths <=0;
@@ -43,9 +45,9 @@ use ieee.numeric_std.all;
 						min_ones <= 0;
 						min_tens <= 0;
 						slow_clk <= (others=> '0');
-					elsif rising_edge(MAX10_CLK1_50) then
+					elsif rising_edge(clk) then
 						if enable_time = '1' then
-							if slow_clk = (500000-1) then
+							if slow_clk = (DIV_VAL-1) then
 						--	if slow_clk = (5-1) then
 								hundredths <= hundredths + 1;
 								if hundredths = 9 then

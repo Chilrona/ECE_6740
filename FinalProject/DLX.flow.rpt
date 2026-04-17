@@ -1,5 +1,5 @@
 Flow report for DLX
-Tue Apr 14 19:53:52 2026
+Fri Apr 17 15:40:13 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Apr 14 19:53:48 2026           ;
+; Flow Status                        ; Successful - Fri Apr 17 15:40:10 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 3,696 / 49,760 ( 7 % )                          ;
-;     Total combinational functions  ; 3,486 / 49,760 ( 7 % )                          ;
-;     Dedicated logic registers      ; 1,735 / 49,760 ( 3 % )                          ;
-; Total registers                    ; 1735                                            ;
+; Total logic elements               ; 3,804 / 49,760 ( 8 % )                          ;
+;     Total combinational functions  ; 3,622 / 49,760 ( 7 % )                          ;
+;     Dedicated logic registers      ; 1,739 / 49,760 ( 3 % )                          ;
+; Total registers                    ; 1739                                            ;
 ; Total pins                         ; 99 / 360 ( 28 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 89,608 / 1,677,312 ( 5 % )                      ;
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/14/2026 19:53:20 ;
+; Start date & time ; 04/17/2026 15:39:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ on the Quartus Prime software download page.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 198915911658922.177621800023816        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                ; 198915911658922.177646198034032        ; --            ; --          ; --         ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                  ; Balanced      ; --          ; --         ;
 ; ENABLE_SIGNALTAP                     ; Off                                    ; --            ; --          ; --         ;
 ; FITTER_EFFORT                        ; Fast Fit                               ; Auto Fit      ; --          ; --         ;
@@ -121,11 +121,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 5043 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:11     ; 1.7                     ; 6544 MB             ; 00:00:25                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 5044 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:10     ; 1.6                     ; 6544 MB             ; 00:00:22                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4852 MB             ; 00:00:02                           ;
 ; Timing Analyzer      ; 00:00:03     ; 2.2                     ; 5036 MB             ; 00:00:05                           ;
-; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:50                           ;
+; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

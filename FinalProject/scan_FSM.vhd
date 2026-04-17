@@ -25,7 +25,7 @@ use work.opcode_package.all;
 					
 	architecture Behavioral of scan_FSM is 
 	
-	type state_type is (IDLE, MULT);
+	type state_type is (IDLE, MULT, WRREQ);
 	signal state : state_type:= IDLE;
 	signal next_state : state_type:= IDLE;
 	
@@ -156,6 +156,8 @@ use work.opcode_package.all;
 	end process;
 
 	process(state, next_state, data_in, data_in_next, neg_flag, next_neg_flag, rdreq_uart_rf, wrreq_in_buf, wrreq_uart_rf_final, usedw_in_buf, q_char, mult_out, rdempty_uart_rf, full_in_buf)--fill in later
+		
+		
 		begin
 			next_state <= state;
 			data_in_next <= data_in;
@@ -181,8 +183,7 @@ use work.opcode_package.all;
 				end if;
 			else
 				if q_char = x"0D" and full_in_buf = '0' then 
-					next_state <= IDLE;
-					wrreq_in_buf <= '1';
+					next_state <= WRREQ;
 					if neg_flag = '1' then
 						data_in_next <= std_logic_vector(unsigned(data_in XOR x"FFFFFFFF") + x"00000001");
 					else
@@ -213,6 +214,10 @@ use work.opcode_package.all;
 					end if;
 				end if;
 			end if;
+			
+		when WRREQ =>
+			next_state <= IDLE;
+			wrreq_in_buf <= '1';
 			
 		when others =>
 				next_state <= IDLE;

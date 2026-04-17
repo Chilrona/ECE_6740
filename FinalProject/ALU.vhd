@@ -27,10 +27,7 @@ use work.opcode_package.all;
 	begin
         if rst_l = '0' then
             alu_result <= (others => '0');
-				enable_time <= '0';
-        elsif rising_edge(clk) then
-				Time_rst <= '0';
-		  
+        elsif rising_edge(clk) then		  
 				case opcode is
 					when NOP =>
 						alu_result <= (others => '0');
@@ -228,19 +225,27 @@ use work.opcode_package.all;
 				else
 					ram_we <= '0';
 				end if;
-				if opcode = TR then
-					Time_rst <= '1';
-				else
-					Time_rst <= '0';
-				end if;
-				if opcode = TGO then
-					enable_time <= '1';
-				end if;
-				if opcode = TSP then
-					enable_time <= '0';
-				end if;
         end if;
     end process;
+	 
+	 process(clk,rst_l)
+	begin
+        if rst_l = '0' then
+				enable_time <= '0';
+        elsif rising_edge(clk) then
+			if opcode = TR then
+					Time_rst <= '1';
+			else
+					Time_rst <= '0';
+			end if;
+			if opcode = TGO then
+					enable_time <= '1';
+			end if;
+			if opcode = TSP then
+					enable_time <= '0';
+			end if;
+		  end if;
+	end process;
 	
 				
 	end Behavioral;
