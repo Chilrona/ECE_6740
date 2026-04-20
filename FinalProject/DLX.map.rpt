@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Fri Apr 17 15:39:55 2026
+Mon Apr 20 14:55:45 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -26,8 +26,8 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  18. Registers Added for RAM Pass-Through Logic
  19. Registers Packed Into Inferred Megafunctions
  20. Multiplexer Restructuring Statistics (No Restructuring Performed)
- 21. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_09s3:auto_generated
- 22. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_lcs3:auto_generated
+ 21. Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_khr3:auto_generated
+ 22. Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_9lr3:auto_generated
  23. Source assignments for print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram
  24. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component
  25. Source assignments for print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated
@@ -75,14 +75,15 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  67. scfifo Parameter Settings by Entity Instance
  68. dcfifo Parameter Settings by Entity Instance
  69. altpll Parameter Settings by Entity Instance
- 70. Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"
- 71. Port Connectivity Checks: "scan_FSM:SCAN|FIFO_UART_RF:UART_RF"
- 72. Port Connectivity Checks: "print_FSM:FSM|diva_ten:DIVIDER"
- 73. Port Connectivity Checks: "print_FSM:FSM|fifo_char:FIFO2"
- 74. Port Connectivity Checks: "print_FSM:FSM|fifo_word:FIFO1"
- 75. Post-Synthesis Netlist Statistics for Top Partition
- 76. Elapsed Time Per Partition
- 77. Analysis & Synthesis Messages
+ 70. Port Connectivity Checks: "pll:PLLTX"
+ 71. Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"
+ 72. Port Connectivity Checks: "scan_FSM:SCAN|FIFO_UART_RF:UART_RF"
+ 73. Port Connectivity Checks: "print_FSM:FSM|diva_ten:DIVIDER"
+ 74. Port Connectivity Checks: "print_FSM:FSM|fifo_char:FIFO2"
+ 75. Port Connectivity Checks: "print_FSM:FSM|fifo_word:FIFO1"
+ 76. Post-Synthesis Netlist Statistics for Top Partition
+ 77. Elapsed Time Per Partition
+ 78. Analysis & Synthesis Messages
 
 
 
@@ -109,15 +110,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 17 15:39:55 2026           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 20 14:55:45 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DLX                                             ;
 ; Top-level Entity Name              ; DLX                                             ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 3,886                                           ;
-;     Total combinational functions  ; 3,621                                           ;
-;     Dedicated logic registers      ; 1,739                                           ;
-; Total registers                    ; 1739                                            ;
+; Total logic elements               ; 3,900                                           ;
+;     Total combinational functions  ; 3,644                                           ;
+;     Dedicated logic registers      ; 1,701                                           ;
+; Total registers                    ; 1701                                            ;
 ; Total pins                         ; 99                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 89,608                                          ;
@@ -243,8 +244,6 @@ on the Quartus Prime software download page.
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ; Library ;
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; Amaya_test_data.mif                    ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Amaya_test_data.mif                    ;         ;
-; Amaya_test_code.mif                    ; yes             ; User Memory Initialization File                       ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Amaya_test_code.mif                    ;         ;
 ; my_fifo.vhd                            ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_fifo.vhd                            ;         ;
 ; pll.vhd                                ; yes             ; User Wizard-Generated File                            ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd                                ;         ;
 ; uart_recv.vhd                          ; yes             ; User VHDL File                                        ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/uart_recv.vhd                          ;         ;
@@ -283,8 +282,10 @@ on the Quartus Prime software download page.
 ; altrom.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
 ; altram.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altram.inc                                       ;         ;
 ; altdpram.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_09s3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_09s3.tdf                 ;         ;
-; db/altsyncram_lcs3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lcs3.tdf                 ;         ;
+; db/altsyncram_khr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_khr3.tdf                 ;         ;
+; lcm_code.mif                           ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/lcm_code.mif                           ;         ;
+; db/altsyncram_9lr3.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9lr3.tdf                 ;         ;
+; lcm_data.mif                           ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/lcm_data.mif                           ;         ;
 ; scfifo.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/scfifo.tdf                                       ;         ;
 ; a_regfifo.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                    ;         ;
 ; a_dpfifo.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                     ;         ;
@@ -345,40 +346,40 @@ on the Quartus Prime software download page.
 +----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                ;
-+---------------------------------------------+------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                        ;
-+---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,886                                                                        ;
-;                                             ;                                                                              ;
-; Total combinational functions               ; 3621                                                                         ;
-; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 1811                                                                         ;
-;     -- 3 input functions                    ; 910                                                                          ;
-;     -- <=2 input functions                  ; 900                                                                          ;
-;                                             ;                                                                              ;
-; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 2535                                                                         ;
-;     -- arithmetic mode                      ; 1086                                                                         ;
-;                                             ;                                                                              ;
-; Total registers                             ; 1739                                                                         ;
-;     -- Dedicated logic registers            ; 1739                                                                         ;
-;     -- I/O registers                        ; 0                                                                            ;
-;                                             ;                                                                              ;
-; I/O pins                                    ; 99                                                                           ;
-; Total memory bits                           ; 89608                                                                        ;
-;                                             ;                                                                              ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                            ;
-;                                             ;                                                                              ;
-; Total PLLs                                  ; 1                                                                            ;
-;     -- PLLs                                 ; 1                                                                            ;
-;                                             ;                                                                              ;
-; Maximum fan-out node                        ; pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1957                                                                         ;
-; Total fan-out                               ; 20639                                                                        ;
-; Average fan-out                             ; 3.55                                                                         ;
-+---------------------------------------------+------------------------------------------------------------------------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 3,900               ;
+;                                             ;                     ;
+; Total combinational functions               ; 3644                ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 1853                ;
+;     -- 3 input functions                    ; 874                 ;
+;     -- <=2 input functions                  ; 917                 ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 2559                ;
+;     -- arithmetic mode                      ; 1085                ;
+;                                             ;                     ;
+; Total registers                             ; 1701                ;
+;     -- Dedicated logic registers            ; 1701                ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 99                  ;
+; Total memory bits                           ; 89608               ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Total PLLs                                  ; 1                   ;
+;     -- PLLs                                 ; 1                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 1611                ;
+; Total fan-out                               ; 20604               ;
+; Average fan-out                             ; 3.56                ;
++---------------------------------------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -386,33 +387,33 @@ on the Quartus Prime software download page.
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                        ; Entity Name        ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |DLX                                             ; 3621 (3)            ; 1739 (0)                  ; 89608       ; 0          ; 0            ; 0       ; 0         ; 99   ; 0            ; 0          ; |DLX                                                                                                                                                       ; DLX                ; work         ;
-;    |OVERSEER:OOO|                                ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|OVERSEER:OOO                                                                                                                                          ; OVERSEER           ; work         ;
+; |DLX                                             ; 3644 (5)            ; 1701 (0)                  ; 89608       ; 0          ; 0            ; 0       ; 0         ; 99   ; 0            ; 0          ; |DLX                                                                                                                                                       ; DLX                ; work         ;
+;    |OVERSEER:OOO|                                ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|OVERSEER:OOO                                                                                                                                          ; OVERSEER           ; work         ;
 ;    |Timer:TIM|                                   ; 370 (370)           ; 224 (224)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Timer:TIM                                                                                                                                             ; Timer              ; work         ;
-;    |decode:DECODE|                               ; 93 (34)             ; 135 (31)                  ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE                                                                                                                                         ; decode             ; work         ;
+;    |decode:DECODE|                               ; 90 (31)             ; 135 (31)                  ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE                                                                                                                                         ; decode             ; work         ;
 ;       |registers:R|                              ; 45 (45)             ; 86 (86)                   ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R                                                                                                                             ; registers          ; work         ;
 ;          |altsyncram:ram_block_rtl_0|            ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_0                                                                                                  ; altsyncram         ; work         ;
 ;             |altsyncram_23g1:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_0|altsyncram_23g1:auto_generated                                                                   ; altsyncram_23g1    ; work         ;
 ;          |altsyncram:ram_block_rtl_1|            ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_1                                                                                                  ; altsyncram         ; work         ;
 ;             |altsyncram_23g1:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 1024        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|registers:R|altsyncram:ram_block_rtl_1|altsyncram_23g1:auto_generated                                                                   ; altsyncram_23g1    ; work         ;
 ;       |sign_extend:SE|                           ; 14 (14)             ; 18 (18)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|decode:DECODE|sign_extend:SE                                                                                                                          ; sign_extend        ; work         ;
-;    |execute:EXECUTE|                             ; 1659 (92)           ; 416 (78)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE                                                                                                                                       ; execute            ; work         ;
-;       |ALU:ALU|                                  ; 1226 (1226)         ; 326 (326)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|ALU:ALU                                                                                                                               ; ALU                ; work         ;
-;       |PC_mux:MUX1|                              ; 195 (195)           ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|PC_mux:MUX1                                                                                                                           ; PC_mux             ; work         ;
+;    |execute:EXECUTE|                             ; 1663 (92)           ; 379 (77)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE                                                                                                                                       ; execute            ; work         ;
+;       |ALU:ALU|                                  ; 1230 (1230)         ; 290 (290)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|ALU:ALU                                                                                                                               ; ALU                ; work         ;
+;       |PC_mux:MUX1|                              ; 194 (194)           ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|PC_mux:MUX1                                                                                                                           ; PC_mux             ; work         ;
 ;       |Zeros:ZEROS|                              ; 26 (26)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|Zeros:ZEROS                                                                                                                           ; Zeros              ; work         ;
-;       |imm_mux:MUX2|                             ; 120 (120)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|imm_mux:MUX2                                                                                                                          ; imm_mux            ; work         ;
-;    |fetch:FETCH|                                 ; 30 (30)             ; 11 (11)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH                                                                                                                                           ; fetch              ; work         ;
+;       |imm_mux:MUX2|                             ; 121 (121)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|execute:EXECUTE|imm_mux:MUX2                                                                                                                          ; imm_mux            ; work         ;
+;    |fetch:FETCH|                                 ; 50 (50)             ; 11 (11)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH                                                                                                                                           ; fetch              ; work         ;
 ;       |my_ROM:U1|                                ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1                                                                                                                                 ; my_ROM             ; work         ;
 ;          |altsyncram:altsyncram_component|       ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component                                                                                                 ; altsyncram         ; work         ;
-;             |altsyncram_09s3:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_09s3:auto_generated                                                                  ; altsyncram_09s3    ; work         ;
+;             |altsyncram_khr3:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_khr3:auto_generated                                                                  ; altsyncram_khr3    ; work         ;
 ;    |memory:MEMORY|                               ; 0 (0)               ; 43 (43)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY                                                                                                                                         ; memory             ; work         ;
 ;       |my_ram:RAM|                               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM                                                                                                                              ; my_ram             ; work         ;
 ;          |altsyncram:altsyncram_component|       ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component                                                                                              ; altsyncram         ; work         ;
-;             |altsyncram_lcs3:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_lcs3:auto_generated                                                               ; altsyncram_lcs3    ; work         ;
+;             |altsyncram_9lr3:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_9lr3:auto_generated                                                               ; altsyncram_9lr3    ; work         ;
 ;    |pll:PLLTX|                                   ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX                                                                                                                                             ; pll                ; work         ;
 ;       |altpll:altpll_component|                  ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component                                                                                                                     ; altpll             ; work         ;
 ;          |pll_altpll:auto_generated|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated                                                                                           ; pll_altpll         ; work         ;
-;    |print_FSM:FSM|                               ; 876 (482)           ; 572 (181)                 ; 11776       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM                                                                                                                                         ; print_FSM          ; work         ;
+;    |print_FSM:FSM|                               ; 877 (483)           ; 572 (181)                 ; 11776       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM                                                                                                                                         ; print_FSM          ; work         ;
 ;       |UART_trans:U|                             ; 51 (51)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|UART_trans:U                                                                                                                            ; UART_trans         ; work         ;
 ;       |diva_ten:DIVIDER|                         ; 235 (235)           ; 224 (224)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|diva_ten:DIVIDER                                                                                                                        ; diva_ten           ; work         ;
 ;       |fifo_char:FIFO2|                          ; 71 (0)              ; 105 (0)                   ; 2048        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|print_FSM:FSM|fifo_char:FIFO2                                                                                                                         ; fifo_char          ; work         ;
@@ -476,7 +477,7 @@ on the Quartus Prime software download page.
 ;                   |cntr_p2b:rd_ptr_count|        ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated|a_dpfifo_dj21:dpfifo|cntr_p2b:rd_ptr_count                        ; cntr_p2b           ; work         ;
 ;                   |cntr_p2b:wr_ptr|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|fifo_in_buf:IN_BUF|scfifo:scfifo_component|scfifo_6d21:auto_generated|a_dpfifo_dj21:dpfifo|cntr_p2b:wr_ptr                              ; cntr_p2b           ; work         ;
 ;       |uart_recv:UART_RX|                        ; 61 (61)             ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX                                                                                                                       ; uart_recv          ; work         ;
-;    |write_back:WB|                               ; 45 (45)             ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|write_back:WB                                                                                                                                         ; write_back         ; work         ;
+;    |write_back:WB|                               ; 45 (45)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|write_back:WB                                                                                                                                         ; write_back         ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -488,8 +489,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+----------------------------------------+
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_0|altsyncram_23g1:auto_generated|ALTSYNCRAM                                              ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
 ; decode:DECODE|registers:R|altsyncram:ram_block_rtl_1|altsyncram_23g1:auto_generated|ALTSYNCRAM                                              ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; db/DLX.ram0_registers_6989617c.hdl.mif ;
-; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_09s3:auto_generated|ALTSYNCRAM                                             ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; Amaya_test_code.mif                    ;
-; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_lcs3:auto_generated|ALTSYNCRAM                                          ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; Amaya_test_data.mif                    ;
+; fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_khr3:auto_generated|ALTSYNCRAM                                             ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; lcm_code.mif                           ;
+; memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_9lr3:auto_generated|ALTSYNCRAM                                          ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; lcm_data.mif                           ;
 ; print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|altsyncram_qj31:fifo_ram|ALTSYNCRAM                        ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048  ; None                                   ;
 ; print_FSM:FSM|fifo_word:FIFO1|scfifo:scfifo_component|scfifo_4k51:auto_generated|a_dpfifo_jj21:dpfifo|altsyncram_o2m1:FIFOram|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 256          ; 38           ; 256          ; 38           ; 9728  ; None                                   ;
 ; scan_FSM:SCAN|FIFO_UART_RF:UART_RF|dcfifo:dcfifo_component|dcfifo_u7e1:auto_generated|altsyncram_qj31:fifo_ram|ALTSYNCRAM                   ; AUTO ; Simple Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048  ; None                                   ;
@@ -664,12 +665,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1739  ;
+; Total registers                              ; 1701  ;
 ; Number of registers using Synchronous Clear  ; 161   ;
-; Number of registers using Synchronous Load   ; 74    ;
-; Number of registers using Asynchronous Clear ; 949   ;
+; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Asynchronous Clear ; 912   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 659   ;
+; Number of registers using Clock Enable       ; 648   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -693,476 +694,428 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Physical Synthesis Netlist Optimizations                                                                             ;
-+-----------------------------------------------------------------------------+------------------+---------------------+
-; Node                                                                        ; Action           ; Reason              ;
-+-----------------------------------------------------------------------------+------------------+---------------------+
-; Timer:TIM|Mux0~0                                                            ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux0~0_wirecell                                                   ; Modified         ; Timing optimization ;
-; Timer:TIM|Mux7~0                                                            ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux7~0_wirecell                                                   ; Modified         ; Timing optimization ;
-; Timer:TIM|Mux14~0                                                           ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux14~0_wirecell                                                  ; Modified         ; Timing optimization ;
-; Timer:TIM|Mux21~0                                                           ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux21~0_wirecell                                                  ; Modified         ; Timing optimization ;
-; Timer:TIM|Mux28~0                                                           ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux28~0_wirecell                                                  ; Modified         ; Timing optimization ;
-; Timer:TIM|Mux35~0                                                           ; Deleted          ; Timing optimization ;
-; Timer:TIM|Mux35~0_wirecell                                                  ; Modified         ; Timing optimization ;
-; decode:DECODE|instruction_out[26]_RTM01014                                  ; Modified         ; Timing optimization ;
-; decode:DECODE|instruction_out[26]_RTM01014                                  ; Retimed Register ; Timing optimization ;
-; decode:DECODE|registers:R|process_0~2                                       ; Modified         ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[10]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[10]_OTERM567                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[10]_OTERM569                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[11]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[11]_OTERM795                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[12]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[12]_OTERM793                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[13]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[13]_OTERM777                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[14]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[14]_OTERM769                      ; Retimed Register ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[15]                               ; Deleted          ; Timing optimization ;
-; decode:DECODE|sign_extend:SE|imm_extended[15]_OTERM785                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Add0~0                                              ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Add1~0                                              ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~46                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~46_RTM0883                                    ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~51                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~51_RTM0973                                    ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~54                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~54_RTM0815                                    ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~56                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~61                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~69                                            ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|Mux31~69_RTM01015                                   ; Modified         ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM369_OTERM519             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM369_OTERM521             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM369_OTERM523_OTERM851    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM369_OTERM523_OTERM853    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM369_OTERM523_OTERM855    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM371_OTERM561_OTERM925    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM373_OTERM531_OTERM857    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM373_OTERM531_OTERM859    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM373_OTERM535_OTERM1011   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM75_OTERM373_OTERM535_OTERM1013   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM489_OTERM881    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM491_OTERM965    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM491_OTERM967    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM491_OTERM969    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM491_OTERM971    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM493_OTERM809    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM493_OTERM811    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM339_OTERM493_OTERM813    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM77_OTERM341                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[0]_OTERM79                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM333                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM335                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM337_OTERM541             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM337_OTERM543_OTERM895    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM337_OTERM543_OTERM897    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM337_OTERM545_OTERM1127   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM21_OTERM337_OTERM545_OTERM1129   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM23_OTERM867                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM23_OTERM869                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[1]_OTERM25                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM15                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM297_OTERM453_OTERM779    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM297_OTERM453_OTERM781    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM297_OTERM453_OTERM783    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM299_OTERM1113            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM299_OTERM1115            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM17_OTERM299_OTERM1117            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[2]_OTERM19                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM99_OTERM377_OTERM603             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM99_OTERM377_OTERM605_OTERM975    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM99_OTERM377_OTERM605_OTERM977    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM99_OTERM377_OTERM607             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM101_OTERM687                     ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM101_OTERM689_OTERM1067           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM101_OTERM689_OTERM1069           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM101_OTERM689_OTERM1071           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[3]_OTERM103                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM51                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM309_OTERM459_OTERM797    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM309_OTERM459_OTERM799    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM309_OTERM459_OTERM801    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM311_OTERM1053            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM311_OTERM1055            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM53_OTERM311_OTERM1057            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[4]_OTERM55                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM159_OTERM399_OTERM675            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM159_OTERM399_OTERM677_OTERM1077  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM159_OTERM399_OTERM677_OTERM1079  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM159_OTERM399_OTERM679            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM161_OTERM593                     ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM161_OTERM595_OTERM985            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM161_OTERM595_OTERM987            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM161_OTERM595_OTERM989            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[5]_OTERM163                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM39                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM293_OTERM455_OTERM771    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM293_OTERM455_OTERM773    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM293_OTERM455_OTERM775    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM295_OTERM959             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM295_OTERM961             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM41_OTERM295_OTERM963             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[6]_OTERM43                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM153_OTERM393_OTERM639            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM153_OTERM393_OTERM641_OTERM1063  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM153_OTERM393_OTERM641_OTERM1065  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM153_OTERM393_OTERM643            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM155_OTERM583                     ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM155_OTERM585_OTERM979            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM155_OTERM585_OTERM981            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM155_OTERM585_OTERM983            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[7]_OTERM157                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM177                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM383_OTERM537_OTERM943   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM383_OTERM537_OTERM945   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM383_OTERM537_OTERM947   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM385_OTERM949            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM385_OTERM951            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM179_OTERM385_OTERM953            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[8]_OTERM181                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]                                       ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM93_OTERM375_OTERM587             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM93_OTERM375_OTERM589_OTERM955    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM93_OTERM375_OTERM589_OTERM957    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM93_OTERM375_OTERM591             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM95_OTERM431                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM95_OTERM433_OTERM709             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM95_OTERM433_OTERM711             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM95_OTERM433_OTERM713             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[9]_OTERM97                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM105                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM325_OTERM461_OTERM831  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM325_OTERM461_OTERM833  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM325_OTERM461_OTERM835  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM327_OTERM657           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM327_OTERM659_OTERM1059 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM327_OTERM659_OTERM1061 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM107_OTERM327_OTERM661           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[10]_OTERM109                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM129_OTERM391_OTERM615           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM129_OTERM391_OTERM617_OTERM1021 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM129_OTERM391_OTERM617_OTERM1023 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM129_OTERM391_OTERM619           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM131_OTERM403                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM131_OTERM405_OTERM621           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM131_OTERM405_OTERM623_OTERM1033 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM131_OTERM405_OTERM623_OTERM1035 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM131_OTERM405_OTERM625           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[11]_OTERM133                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM81                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM329_OTERM487_OTERM841   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM329_OTERM487_OTERM843   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM329_OTERM487_OTERM845   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM331_OTERM651            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM331_OTERM653_OTERM1025  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM331_OTERM653_OTERM1027  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM83_OTERM331_OTERM655            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[12]_OTERM85                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM165_OTERM401_OTERM681           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM165_OTERM401_OTERM683_OTERM1073 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM165_OTERM401_OTERM683_OTERM1075 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM165_OTERM401_OTERM685           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM167_OTERM419                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM167_OTERM421_OTERM663           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM167_OTERM421_OTERM665_OTERM1049 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM167_OTERM421_OTERM665_OTERM1051 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM167_OTERM421_OTERM667           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[13]_OTERM169                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM27                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM305_OTERM457_OTERM787   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM305_OTERM457_OTERM789   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM305_OTERM457_OTERM791   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM307_OTERM633            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM307_OTERM635_OTERM1017  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM307_OTERM635_OTERM1019  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM29_OTERM307_OTERM637            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[14]_OTERM31                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM189_OTERM413_OTERM697           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM189_OTERM413_OTERM699_OTERM1119 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM189_OTERM413_OTERM699_OTERM1121 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM189_OTERM413_OTERM701           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM191_OTERM415                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM191_OTERM417_OTERM669           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM191_OTERM417_OTERM671_OTERM1045 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM191_OTERM417_OTERM671_OTERM1047 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM191_OTERM417_OTERM673           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[15]_OTERM193                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM141                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM359_OTERM499_OTERM889  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM359_OTERM499_OTERM891  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM359_OTERM499_OTERM893  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM361_OTERM627           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM361_OTERM629_OTERM995  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM361_OTERM629_OTERM997  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM143_OTERM361_OTERM631           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[16]_OTERM145                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM195_OTERM423_OTERM703           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM195_OTERM423_OTERM705           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM195_OTERM423_OTERM707           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM197_OTERM409                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM197_OTERM411_OTERM645           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM197_OTERM411_OTERM647_OTERM1041 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM197_OTERM411_OTERM647_OTERM1043 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM197_OTERM411_OTERM649           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[17]_OTERM199                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM117                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM343_OTERM495_OTERM861  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM343_OTERM495_OTERM863  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM343_OTERM495_OTERM865  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM345_OTERM571_OTERM1105 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM345_OTERM571_OTERM1107 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM345_OTERM573_OTERM907  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM345_OTERM573_OTERM909  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM119_OTERM345_OTERM575           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[18]_OTERM121                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM183_OTERM407_OTERM691           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM183_OTERM407_OTERM693_OTERM1109 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM183_OTERM407_OTERM693_OTERM1111 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM183_OTERM407_OTERM695           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM395                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM397_OTERM577_OTERM1123 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM397_OTERM577_OTERM1125 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM397_OTERM579_OTERM927  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM397_OTERM579_OTERM929  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM185_OTERM397_OTERM581           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[19]_OTERM187                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM123                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM351_OTERM497_OTERM875  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM351_OTERM497_OTERM877  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM351_OTERM497_OTERM879  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM353_OTERM549_OTERM1087 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM353_OTERM549_OTERM1089 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM353_OTERM551_OTERM871  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM353_OTERM551_OTERM873  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM125_OTERM353_OTERM553           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[20]_OTERM127                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM171_OTERM425_OTERM715           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM171_OTERM425_OTERM717           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM171_OTERM425_OTERM719           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM387                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM389_OTERM555_OTERM1101 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM389_OTERM555_OTERM1103 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM389_OTERM557_OTERM885  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM389_OTERM557_OTERM887  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM173_OTERM389_OTERM559           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[21]_OTERM175                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM33                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM289_OTERM451_OTERM757   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM289_OTERM451_OTERM759   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM289_OTERM451_OTERM761   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM291_OTERM507_OTERM999   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM291_OTERM507_OTERM1001  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM291_OTERM509_OTERM827   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM291_OTERM509_OTERM829   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM35_OTERM291_OTERM511            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[22]_OTERM37                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM111_OTERM381_OTERM609_OTERM1091 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM111_OTERM381_OTERM609_OTERM1093 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM111_OTERM381_OTERM609_OTERM1095 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM111_OTERM381_OTERM611           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM111_OTERM381_OTERM613           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM363                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM365_OTERM525_OTERM1037 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM365_OTERM525_OTERM1039 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM365_OTERM527_OTERM847  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM365_OTERM527_OTERM849  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM113_OTERM365_OTERM529           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[23]_OTERM115                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM147                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM347_OTERM539_OTERM911  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM347_OTERM539_OTERM913  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM347_OTERM539_OTERM915  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM349_OTERM501_OTERM991  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM349_OTERM501_OTERM993  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM349_OTERM503_OTERM817  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM349_OTERM503_OTERM819  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM149_OTERM349_OTERM505           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[24]_OTERM151                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM135_OTERM429_OTERM931           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM135_OTERM429_OTERM933           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM135_OTERM429_OTERM935           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM355                    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM357_OTERM513_OTERM1029 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM357_OTERM513_OTERM1031 ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM357_OTERM515_OTERM837  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM357_OTERM515_OTERM839  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM137_OTERM357_OTERM517           ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[25]_OTERM139                             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM45                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM301_OTERM449_OTERM763   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM301_OTERM449_OTERM765   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM301_OTERM449_OTERM767   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM303_OTERM469_OTERM903   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM303_OTERM469_OTERM905   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM303_OTERM471_OTERM745   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM303_OTERM471_OTERM747   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM47_OTERM303_OTERM473            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[26]_OTERM49                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM597_OTERM1081  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM597_OTERM1083  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM597_OTERM1085  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM599_OTERM1097  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM599_OTERM1099  ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM69_OTERM379_OTERM601            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM321                     ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM323_OTERM481_OTERM917   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM323_OTERM481_OTERM919   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM323_OTERM483_OTERM753   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM323_OTERM483_OTERM755   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM71_OTERM323_OTERM485            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[27]_OTERM73                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM57                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM313_OTERM547_OTERM937   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM313_OTERM547_OTERM939   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM313_OTERM547_OTERM941   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM315_OTERM463_OTERM899   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM315_OTERM463_OTERM901   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM315_OTERM465_OTERM741   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM315_OTERM465_OTERM743   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM59_OTERM315_OTERM467            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[28]_OTERM61                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM63_OTERM427_OTERM721            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM63_OTERM427_OTERM723            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM63_OTERM427_OTERM725            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM317                     ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM319_OTERM475_OTERM921   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM319_OTERM475_OTERM923   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM319_OTERM477_OTERM749   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM319_OTERM477_OTERM751   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM65_OTERM319_OTERM479            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[29]_OTERM67                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM9                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM285_OTERM435_OTERM735   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM285_OTERM435_OTERM737   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM285_OTERM435_OTERM739   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM437_OTERM821   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM437_OTERM823   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM437_OTERM825   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM439_OTERM731   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM439_OTERM733   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM11_OTERM287_OTERM441            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[30]_OTERM13                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]                                      ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM3_OTERM367_OTERM563_OTERM1003   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM3_OTERM367_OTERM563_OTERM1005   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM3_OTERM367_OTERM563_OTERM1007   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM3_OTERM367_OTERM563_OTERM1009   ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM3_OTERM367_OTERM565             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM281                      ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM443_OTERM803    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM443_OTERM805    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM443_OTERM807    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM445_OTERM727    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM445_OTERM729    ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM5_OTERM283_OTERM447             ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|ALU:ALU|alu_result[31]_OTERM7                               ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|PC_mux:MUX1|process_0~7_OTERM1                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|PC_mux:MUX1|process_0~8_OTERM239                            ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[27]~0_RTM0882                              ; Modified         ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[27]~0_RTM0882                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[28]~1_RTM0814                              ; Modified         ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[28]~1_RTM0814                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[29]~3_RTM0972                              ; Modified         ; Timing optimization ;
-; execute:EXECUTE|instruction_in_1[29]~3_RTM0972                              ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~0_OTERM89                                        ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~0_OTERM259                                       ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~1_OTERM279                                       ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~2                                                ; Deleted          ; Timing optimization ;
-; execute:EXECUTE|pass_along~2_OTERM273                                       ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~2_RTM0275                                        ; Modified         ; Timing optimization ;
-; execute:EXECUTE|pass_along~2_RTM0275                                        ; Retimed Register ; Timing optimization ;
-; execute:EXECUTE|pass_along~3                                                ; Modified         ; Timing optimization ;
-; execute:EXECUTE|pass_along~3_RTM0274                                        ; Modified         ; Timing optimization ;
-; fetch:FETCH|add_out[0]~1                                                    ; Modified         ; Timing optimization ;
-; fetch:FETCH|instruction[0]~0                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[1]~1                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[2]~2                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[3]~3                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[4]~4                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[5]~5                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[6]~6                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[7]~7                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[8]~8                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|instruction[9]~9                                                ; Deleted          ; Timing optimization ;
-; fetch:FETCH|pc[0]~0                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[1]~1                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[2]~2                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[3]~3                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[4]~4                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[5]~5                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[6]~6                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[7]~7                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[8]~8                                                         ; Modified         ; Timing optimization ;
-; fetch:FETCH|pc[9]~9                                                         ; Modified         ; Timing optimization ;
-; print_FSM:FSM|Add2~0                                                        ; Modified         ; Timing optimization ;
-; print_FSM:FSM|Add2~1                                                        ; Modified         ; Timing optimization ;
-; print_FSM:FSM|Add4~1                                                        ; Modified         ; Timing optimization ;
-; print_FSM:FSM|Add4~96                                                       ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[0][5]~18                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[0][7]~19                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[1][5]~16                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[1][7]~17                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[2][5]~14                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[2][7]~15                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[3][5]~20                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[3][7]~21                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[4][5]~10                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[4][7]~11                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[5][5]~6                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[5][7]~7                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[6][5]~8                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[6][7]~9                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[7][5]~12                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[7][7]~13                                                ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[8][5]~4                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[8][7]~5                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[9][5]~1                                                 ; Modified         ; Timing optimization ;
-; print_FSM:FSM|stack[9][7]~3                                                 ; Modified         ; Timing optimization ;
-; scan_FSM:SCAN|Add3~1                                                        ; Modified         ; Timing optimization ;
-; scan_FSM:SCAN|Selector30~0                                                  ; Modified         ; Timing optimization ;
-; write_back:WB|Equal5~0_OTERM87                                              ; Retimed Register ; Timing optimization ;
-; write_back:WB|Equal5~0_OTERM211                                             ; Retimed Register ; Timing optimization ;
-; write_back:WB|Equal7~0_OTERM91                                              ; Retimed Register ; Timing optimization ;
-; write_back:WB|Equal7~0_OTERM213                                             ; Retimed Register ; Timing optimization ;
-; write_back:WB|Equal10~0_OTERM277                                            ; Retimed Register ; Timing optimization ;
-+-----------------------------------------------------------------------------+------------------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Physical Synthesis Netlist Optimizations                                                                                ;
++--------------------------------------------------------------------------------+------------------+---------------------+
+; Node                                                                           ; Action           ; Reason              ;
++--------------------------------------------------------------------------------+------------------+---------------------+
+; Timer:TIM|Mux0~0                                                               ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux0~0_wirecell                                                      ; Modified         ; Timing optimization ;
+; Timer:TIM|Mux7~0                                                               ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux7~0_wirecell                                                      ; Modified         ; Timing optimization ;
+; Timer:TIM|Mux14~0                                                              ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux14~0_wirecell                                                     ; Modified         ; Timing optimization ;
+; Timer:TIM|Mux21~0                                                              ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux21~0_wirecell                                                     ; Modified         ; Timing optimization ;
+; Timer:TIM|Mux28~0                                                              ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux28~0_wirecell                                                     ; Modified         ; Timing optimization ;
+; Timer:TIM|Mux35~0                                                              ; Deleted          ; Timing optimization ;
+; Timer:TIM|Mux35~0_wirecell                                                     ; Modified         ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[10]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[10]_OTERM869                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[10]_OTERM871                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[11]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[11]_OTERM903                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[12]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[12]_OTERM901                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[13]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[13]_OTERM899                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[14]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[14]_OTERM895                         ; Retimed Register ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[15]                                  ; Deleted          ; Timing optimization ;
+; decode:DECODE|sign_extend:SE|imm_extended[15]_OTERM897                         ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Add0~0                                                 ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Add1~0                                                 ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM317_OTERM575_OTERM799            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM317_OTERM575_OTERM801            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM493                     ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM647_OTERM1035  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM647_OTERM1037  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM649_OTERM879   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM649_OTERM881   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM649_OTERM883   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM319_OTERM495_OTERM651            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux0~20_OTERM205_OTERM321                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM353                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM507_OTERM643_OTERM923   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM507_OTERM643_OTERM925   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM507_OTERM643_OTERM927   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM637_OTERM1057  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM637_OTERM1059  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM637_OTERM1061  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM639_OTERM885   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM639_OTERM887   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM355_OTERM509_OTERM641            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux1~17_OTERM259_OTERM357                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM413_OTERM593_OTERM851            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM413_OTERM593_OTERM853            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM413_OTERM593_OTERM855            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM543                     ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM545_OTERM693_OTERM1187  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM545_OTERM695_OTERM957   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM545_OTERM695_OTERM959   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM545_OTERM695_OTERM961   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM415_OTERM545_OTERM697            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux2~22_OTERM223_OTERM417                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM389                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM535_OTERM679_OTERM1045  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM535_OTERM679_OTERM1047  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM535_OTERM679_OTERM1049  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM537_OTERM681_OTERM1167  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM537_OTERM681_OTERM1169  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM537_OTERM683_OTERM939   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM537_OTERM683_OTERM941   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM391_OTERM537_OTERM685            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux3~16_OTERM267_OTERM393                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM419_OTERM577_OTERM809            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM419_OTERM577_OTERM811_OTERM1179  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM419_OTERM577_OTERM811_OTERM1181  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM419_OTERM577_OTERM813            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM547                     ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM549_OTERM699_OTERM1183  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM549_OTERM699_OTERM1185  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM549_OTERM701_OTERM969   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM549_OTERM701_OTERM971   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM421_OTERM549_OTERM703            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux4~16_OTERM225_OTERM423                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM383                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM523_OTERM657_OTERM973   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM523_OTERM657_OTERM975   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM523_OTERM657_OTERM977   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM525_OTERM687_OTERM1171  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM525_OTERM687_OTERM1173  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM525_OTERM689_OTERM949   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM525_OTERM689_OTERM951   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM385_OTERM525_OTERM691            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux5~16_OTERM265_OTERM387                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM461_OTERM599_OTERM1039           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM461_OTERM599_OTERM1041           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM461_OTERM599_OTERM1043           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM463_OTERM567                     ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM463_OTERM569_OTERM759            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM463_OTERM569_OTERM761_OTERM1101  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM463_OTERM569_OTERM761_OTERM1103  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM463_OTERM569_OTERM763            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux6~17_OTERM237_OTERM465                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM401                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM527_OTERM663_OTERM1005  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM527_OTERM663_OTERM1007  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM527_OTERM663_OTERM1009  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM529_OTERM729            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM529_OTERM731            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM529_OTERM733_OTERM1063  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM403_OTERM529_OTERM733_OTERM1065  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux7~26_OTERM269_OTERM405                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM443_OTERM583_OTERM833            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM443_OTERM583_OTERM835            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM443_OTERM583_OTERM837            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM445_OTERM571                     ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM445_OTERM573_OTERM765            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM445_OTERM573_OTERM767_OTERM1105  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM445_OTERM573_OTERM767_OTERM1107  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM445_OTERM573_OTERM769            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux8~17_OTERM231_OTERM447                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM341                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM503_OTERM645_OTERM917   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM503_OTERM645_OTERM919   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM503_OTERM645_OTERM921   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM505_OTERM741            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM505_OTERM743_OTERM1071  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM505_OTERM743_OTERM1073  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM343_OTERM505_OTERM745            ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux9~17_OTERM255_OTERM345                              ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM455_OTERM591_OTERM845           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM455_OTERM591_OTERM847           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM455_OTERM591_OTERM849           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM457_OTERM587                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM457_OTERM589_OTERM783           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM457_OTERM589_OTERM785_OTERM1149 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM457_OTERM589_OTERM785_OTERM1151 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM457_OTERM589_OTERM787           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux10~17_OTERM235_OTERM459                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM365                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM515_OTERM655_OTERM943  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM515_OTERM655_OTERM945  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM515_OTERM655_OTERM947  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM517_OTERM777           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM517_OTERM779_OTERM1137 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM517_OTERM779_OTERM1139 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM367_OTERM517_OTERM781           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux11~16_OTERM263_OTERM369                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM431_OTERM579_OTERM821           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM431_OTERM579_OTERM823_OTERM1194 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM431_OTERM579_OTERM823_OTERM1196 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM431_OTERM579_OTERM825           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM433_OTERM595                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM433_OTERM597_OTERM815           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM433_OTERM597_OTERM817_OTERM1189 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM433_OTERM597_OTERM817_OTERM1191 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM433_OTERM597_OTERM819           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux12~17_OTERM227_OTERM435                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM335                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM511_OTERM653_OTERM933  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM511_OTERM653_OTERM935  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM511_OTERM653_OTERM937  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM513_OTERM803           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM513_OTERM805_OTERM1175 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM513_OTERM805_OTERM1177 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM337_OTERM513_OTERM807           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux13~17_OTERM253_OTERM339                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM449_OTERM585_OTERM839           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM449_OTERM585_OTERM841           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM449_OTERM585_OTERM843           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM451_OTERM601                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM451_OTERM603_OTERM999           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM451_OTERM603_OTERM1001          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM451_OTERM603_OTERM1003          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux14~17_OTERM233_OTERM453                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM359                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM519_OTERM659_OTERM963  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM519_OTERM659_OTERM965  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM519_OTERM659_OTERM967  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM521_OTERM983           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM521_OTERM985           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM361_OTERM521_OTERM987           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux15~16_OTERM261_OTERM363                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM437_OTERM581_OTERM827           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM437_OTERM581_OTERM829_OTERM1204 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM437_OTERM581_OTERM829_OTERM1206 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM437_OTERM581_OTERM831           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM439_OTERM715                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM439_OTERM717_OTERM1017          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM439_OTERM717_OTERM1019          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM439_OTERM717_OTERM1021          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux16~15_OTERM229_OTERM441                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM287                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM475_OTERM609_OTERM873  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM475_OTERM609_OTERM875  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM475_OTERM609_OTERM877  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM477_OTERM993           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM477_OTERM995           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM289_OTERM477_OTERM997           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux17~20_OTERM243_OTERM291                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM395_OTERM559_OTERM789           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM395_OTERM559_OTERM791_OTERM1157 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM395_OTERM559_OTERM791_OTERM1159 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM395_OTERM559_OTERM793           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM397_OTERM719                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM397_OTERM721_OTERM1029          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM397_OTERM721_OTERM1031          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM397_OTERM721_OTERM1033          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux18~15_OTERM219_OTERM399                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM311                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM483_OTERM635_OTERM905  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM483_OTERM635_OTERM907  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM483_OTERM635_OTERM909  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM485_OTERM1011          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM485_OTERM1013          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM313_OTERM485_OTERM1015          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux19~15_OTERM249_OTERM315                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM371_OTERM551_OTERM753           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM371_OTERM551_OTERM755_OTERM1129 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM371_OTERM551_OTERM755_OTERM1131 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM371_OTERM551_OTERM757           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM373_OTERM705                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM373_OTERM707_OTERM1023          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM373_OTERM707_OTERM1025          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM373_OTERM707_OTERM1027          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux20~15_OTERM217_OTERM375                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM347                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM499_OTERM633_OTERM911  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM499_OTERM633_OTERM913  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM499_OTERM633_OTERM915  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM501_OTERM1109          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM501_OTERM1111          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM349_OTERM501_OTERM1113          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux21~16_OTERM257_OTERM351                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM329_OTERM531_OTERM723           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM329_OTERM531_OTERM725_OTERM1067 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM329_OTERM531_OTERM725_OTERM1069 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM329_OTERM531_OTERM727           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM331_OTERM795                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM331_OTERM797_OTERM1161          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM331_OTERM797_OTERM1163          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM331_OTERM797_OTERM1165          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux22~15_OTERM213_OTERM333                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM425                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM539_OTERM661_OTERM1051 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM539_OTERM661_OTERM1053 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM539_OTERM661_OTERM1055 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM541_OTERM1198          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM541_OTERM1200          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM427_OTERM541_OTERM1202          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux23~16_OTERM271_OTERM429                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM377_OTERM553_OTERM771           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM377_OTERM553_OTERM773_OTERM1125 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM377_OTERM553_OTERM773_OTERM1127 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM377_OTERM553_OTERM775           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM379_OTERM929                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM379_OTERM931                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux24~15_OTERM215_OTERM381                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM299                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM301_OTERM467_OTERM607_OTERM857  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM301_OTERM467_OTERM607_OTERM859  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM301_OTERM467_OTERM607_OTERM861  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM301_OTERM469                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux25~15_OTERM245_OTERM303                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM487                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM489                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM491_OTERM665           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM491_OTERM667           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM491_OTERM669_OTERM953  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM491_OTERM669_OTERM955  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM281_OTERM491_OTERM671           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM283_OTERM989                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM283_OTERM991                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux26~15_OTERM201_OTERM285                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM305                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM307_OTERM479_OTERM611_OTERM889  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM307_OTERM479_OTERM611_OTERM891  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM307_OTERM479_OTERM611_OTERM893  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM307_OTERM481                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux27~15_OTERM247_OTERM309                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM323_OTERM533_OTERM735           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM323_OTERM533_OTERM737_OTERM1085 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM323_OTERM533_OTERM737_OTERM1087 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM323_OTERM533_OTERM739           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM325_OTERM1097                   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM325_OTERM1099                   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux28~16_OTERM211_OTERM327                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM275                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM277_OTERM471_OTERM605_OTERM863  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM277_OTERM471_OTERM605_OTERM865  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM277_OTERM471_OTERM605_OTERM867  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM277_OTERM473                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux29~15_OTERM241_OTERM279                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM293_OTERM497_OTERM673           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM293_OTERM497_OTERM675_OTERM979  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM293_OTERM497_OTERM675_OTERM981  ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM293_OTERM497_OTERM677           ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM295_OTERM1141                   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM295_OTERM1143                   ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux30~15_OTERM203_OTERM297                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~16                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~16_RTM01192                                      ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~24                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~24_RTM01155                                      ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~29                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~29_RTM01123                                      ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~32                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~32_RTM01083                                      ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~34                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~39                                               ; Modified         ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM561_OTERM1089          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM561_OTERM1091          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM561_OTERM1093          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM561_OTERM1095          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM563_OTERM749_OTERM1133 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM563_OTERM751_OTERM1145 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM563_OTERM751_OTERM1147 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM407_OTERM565_OTERM1135          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM709_OTERM1153 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM711_OTERM1115 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM711_OTERM1117 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM711_OTERM1119 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM711_OTERM1121 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM713_OTERM1075 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM713_OTERM1077 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM713_OTERM1079 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM555_OTERM713_OTERM1081 ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM409_OTERM557                    ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|Mux31~44_OTERM221_OTERM411                             ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[0]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[1]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[2]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[3]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[4]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[5]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[6]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[7]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[8]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[9]                                          ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[10]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[11]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[12]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[13]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[14]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[15]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[16]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[17]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[18]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[19]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[20]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[21]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[22]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[23]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[24]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[25]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[26]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[27]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[28]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[29]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[30]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|ALU:ALU|alu_result[31]                                         ; Deleted          ; Timing optimization ;
+; execute:EXECUTE|PC_mux:MUX1|process_0~8_OTERM239                               ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[27]~0_RTM01154                                ; Modified         ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[27]~0_RTM01154                                ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[28]~1_RTM01082                                ; Modified         ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[28]~1_RTM01082                                ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[29]~5_RTM01122                                ; Modified         ; Timing optimization ;
+; execute:EXECUTE|instruction_in_1[29]~5_RTM01122                                ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|pass_along~0_OTERM251                                          ; Retimed Register ; Timing optimization ;
+; execute:EXECUTE|pass_along~1_OTERM273                                          ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|Add1~1                                                             ; Modified         ; Timing optimization ;
+; fetch:FETCH|Add1~4                                                             ; Modified         ; Timing optimization ;
+; fetch:FETCH|pc[1]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[1]_OTERM613                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[1]_OTERM615                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[2]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[2]_OTERM617                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[3]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[3]_OTERM619                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[4]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[4]_OTERM621                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[5]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[5]_OTERM623                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[6]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[6]_OTERM625                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[7]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[7]_OTERM627                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[8]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[8]_OTERM629                                                     ; Retimed Register ; Timing optimization ;
+; fetch:FETCH|pc[9]                                                              ; Deleted          ; Timing optimization ;
+; fetch:FETCH|pc[9]_OTERM631                                                     ; Retimed Register ; Timing optimization ;
+; print_FSM:FSM|Add2~0                                                           ; Modified         ; Timing optimization ;
+; print_FSM:FSM|Add2~1                                                           ; Modified         ; Timing optimization ;
+; print_FSM:FSM|Add4~1                                                           ; Modified         ; Timing optimization ;
+; print_FSM:FSM|Add4~96                                                          ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[0][5]~18                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[0][7]~19                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[1][5]~16                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[1][7]~17                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[2][5]~14                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[2][7]~15                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[3][5]~20                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[3][7]~21                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[4][5]~10                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[4][7]~11                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[5][5]~6                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[5][7]~7                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[6][5]~8                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[6][7]~9                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[7][5]~12                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[7][7]~13                                                   ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[8][5]~4                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[8][7]~5                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[9][5]~1                                                    ; Modified         ; Timing optimization ;
+; print_FSM:FSM|stack[9][7]~3                                                    ; Modified         ; Timing optimization ;
+; scan_FSM:SCAN|Add3~1                                                           ; Modified         ; Timing optimization ;
+; scan_FSM:SCAN|Selector30~0                                                     ; Modified         ; Timing optimization ;
+; write_back:WB|Equal5~0_OTERM53                                                 ; Retimed Register ; Timing optimization ;
+; write_back:WB|Equal5~0_OTERM207                                                ; Retimed Register ; Timing optimization ;
+; write_back:WB|Equal7~0_OTERM55                                                 ; Retimed Register ; Timing optimization ;
+; write_back:WB|Equal7~0_OTERM209                                                ; Retimed Register ; Timing optimization ;
++--------------------------------------------------------------------------------+------------------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1274,43 +1227,42 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|decode:DECODE|instruction_out[24]              ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX|counter[20]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[9][0]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[8][0]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|uart_recv:UART_RX|counter[12]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[9][1]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[8][4]                      ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[7][3]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[6][0]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[5][0]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[4][0]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[3][4]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[2][4]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[1][0]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[0][3]                      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|zeros[13] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|ones[31]  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|execute:EXECUTE|q_2_out[4]                     ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|print_FSM:FSM|UART_trans:U|counter[20]         ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |DLX|fetch:FETCH|pc[3]                              ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|print_FSM:FSM|i[3]                             ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |DLX|print_FSM:FSM|pos_val[31]                      ;
-; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |DLX|print_FSM:FSM|pos_val[12]                      ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[12]         ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 20 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[9]          ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 63 LEs               ; 252 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[17]         ;
-; 68:1               ; 3 bits    ; 135 LEs       ; 30 LEs               ; 105 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[5]          ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 40 LEs               ; 144 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[26]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[6][1]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[5][2]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[4][3]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[3][1]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[2][6]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[1][7]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|print_FSM:FSM|stack[0][0]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|zeros[27] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|scan_FSM:SCAN|UARTSampler:DA_SAMPLER|ones[14]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|execute:EXECUTE|q_2_out[28]                    ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|print_FSM:FSM|UART_trans:U|counter[10]         ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|print_FSM:FSM|i[19]                            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |DLX|print_FSM:FSM|pos_val[30]                      ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |DLX|print_FSM:FSM|pos_val[20]                      ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 63 LEs               ; 252 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[22]         ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[10]         ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 20 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[8]          ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 40 LEs               ; 144 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[27]         ;
+; 68:1               ; 3 bits    ; 135 LEs       ; 30 LEs               ; 105 LEs                ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[4]          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[29]         ;
 ; 69:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[2]          ;
-; 70:1               ; 2 bits    ; 92 LEs        ; 24 LEs               ; 68 LEs                 ; Yes        ; |DLX|execute:EXECUTE|ALU:ALU|alu_result[28]         ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|scan_FSM:SCAN|data_in_next                     ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|imm_mux:MUX2|op2[22]           ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |DLX|print_FSM:FSM|Mux0                             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|imm_mux:MUX2|op2[15]           ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |DLX|print_FSM:FSM|Mux7                             ;
 ; 5:1                ; 22 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[24]            ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[0]             ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DLX|execute:EXECUTE|PC_mux:MUX1|op1[6]             ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |DLX|fetch:FETCH|std_pc[8]                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
-; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_09s3:auto_generated ;
+; Source assignments for fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_khr3:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                            ;
 +---------------------------------+--------------------+------+-----------------------------------------------+
@@ -1319,7 +1271,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_lcs3:auto_generated ;
+; Source assignments for memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_9lr3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -1709,7 +1661,7 @@ Encoding Type:  One-Hot
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; INIT_FILE                          ; Amaya_test_code.mif  ; Untyped                                ;
+; INIT_FILE                          ; lcm_code.mif         ; Untyped                                ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                         ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
@@ -1722,7 +1674,7 @@ Encoding Type:  One-Hot
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                         ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_09s3      ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_khr3      ; Untyped                                ;
 +------------------------------------+----------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1770,7 +1722,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
-; INIT_FILE                          ; Amaya_test_data.mif  ; Untyped                                   ;
+; INIT_FILE                          ; lcm_data.mif         ; Untyped                                   ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                            ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
@@ -1783,7 +1735,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_lcs3      ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_9lr3      ; Untyped                                   ;
 +------------------------------------+----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2562,6 +2514,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-----------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pll:PLLTX"                                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; c2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "scan_FSM:SCAN|fifo_in_buf:IN_BUF"                                                    ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -2614,32 +2575,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 99                          ;
-; cycloneiii_ff         ; 1741                        ;
-;     CLR               ; 492                         ;
+; cycloneiii_ff         ; 1701                        ;
+;     CLR               ; 463                         ;
 ;     CLR SCLR          ; 1                           ;
 ;     CLR SLD           ; 32                          ;
-;     ENA               ; 233                         ;
+;     ENA               ; 232                         ;
 ;     ENA CLR           ; 256                         ;
 ;     ENA CLR SCLR      ; 128                         ;
 ;     ENA CLR SCLR SLD  ; 32                          ;
-;     ENA CLR SLD       ; 10                          ;
 ;     plain             ; 557                         ;
 ; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 3622                        ;
-;     arith             ; 1086                        ;
-;         2 data inputs ; 620                         ;
-;         3 data inputs ; 466                         ;
-;     normal            ; 2536                        ;
+; cycloneiii_lcell_comb ; 3645                        ;
+;     arith             ; 1085                        ;
+;         2 data inputs ; 627                         ;
+;         3 data inputs ; 458                         ;
+;     normal            ; 2560                        ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 42                          ;
-;         2 data inputs ; 235                         ;
-;         3 data inputs ; 444                         ;
-;         4 data inputs ; 1811                        ;
+;         1 data inputs ; 43                          ;
+;         2 data inputs ; 244                         ;
+;         3 data inputs ; 416                         ;
+;         4 data inputs ; 1853                        ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 215                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 6.49                        ;
+; Average LUT depth     ; 6.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2658,7 +2618,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Apr 17 15:39:40 2026
+    Info: Processing started: Mon Apr 20 14:55:30 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
     Info (16304): Mode behavior is affected by advanced setting Fitter Effort (default for this mode is Standard Fit)
@@ -2688,7 +2648,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file uartsam
     Info (12023): Found entity 1: UARTSampler File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/UARTSampler.vhd Line: 6
 Warning (12019): Can't analyze file -- file Branch_guess.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file overseer.vhd
-    Info (12022): Found design unit 1: OVERSEER-BEHAVIORAL File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd Line: 29
+    Info (12022): Found design unit 1: OVERSEER-BEHAVIORAL File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd Line: 30
     Info (12023): Found entity 1: OVERSEER File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Overseer.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file write_back.vhd
     Info (12022): Found design unit 1: write_back-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/write_back.vhd Line: 20
@@ -2721,7 +2681,7 @@ Info (12021): Found 2 design units, including 0 entities, in source file opcode_
     Info (12022): Found design unit 1: opcode_package File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd Line: 5
     Info (12022): Found design unit 2: opcode_package-body File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/OPCODE_PACKAGE.vhd Line: 104
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: fetch-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd Line: 23
+    Info (12022): Found design unit 1: fetch-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd Line: 22
     Info (12023): Found entity 1: fetch File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
     Info (12022): Found design unit 1: DLX-Behavioral File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 25
@@ -2767,8 +2727,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file diva_te
     Info (12023): Found entity 1: diva_ten File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/diva_ten.vhd Line: 7
 Info (12021): Found 0 design units, including 0 entities, in source file timer_wrapper.vhd
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
-Info (12128): Elaborating entity "fetch" for hierarchy "fetch:FETCH" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 113
-Info (12128): Elaborating entity "my_ROM" for hierarchy "fetch:FETCH|my_ROM:U1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(89): object "c2" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 89
+Info (12128): Elaborating entity "fetch" for hierarchy "fetch:FETCH" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 112
+Info (12128): Elaborating entity "my_ROM" for hierarchy "fetch:FETCH|my_ROM:U1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/fetch.vhd Line: 32
 Info (12128): Elaborating entity "altsyncram" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd Line: 60
 Info (12130): Elaborated megafunction instantiation "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd Line: 60
 Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ROM.vhd Line: 60
@@ -2792,7 +2753,7 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "Amaya_test_code.mif"
+    Info (12134): Parameter "init_file" = "lcm_code.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -2822,18 +2783,18 @@ Info (12133): Instantiated megafunction "fetch:FETCH|my_ROM:U1|altsyncram:altsyn
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_09s3.tdf
-    Info (12023): Found entity 1: altsyncram_09s3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_09s3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_09s3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_09s3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 126
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_khr3.tdf
+    Info (12023): Found entity 1: altsyncram_khr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_khr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_khr3" for hierarchy "fetch:FETCH|my_ROM:U1|altsyncram:altsyncram_component|altsyncram_khr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "decode" for hierarchy "decode:DECODE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 124
 Info (12128): Elaborating entity "registers" for hierarchy "decode:DECODE|registers:R" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 38
 Info (12128): Elaborating entity "sign_extend" for hierarchy "decode:DECODE|sign_extend:SE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Decode.vhd Line: 51
-Info (12128): Elaborating entity "execute" for hierarchy "execute:EXECUTE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 144
+Info (12128): Elaborating entity "execute" for hierarchy "execute:EXECUTE" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 142
 Info (12128): Elaborating entity "PC_mux" for hierarchy "execute:EXECUTE|PC_mux:MUX1" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 48
 Info (12128): Elaborating entity "imm_mux" for hierarchy "execute:EXECUTE|imm_mux:MUX2" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 65
 Info (12128): Elaborating entity "Zeros" for hierarchy "execute:EXECUTE|Zeros:ZEROS" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 81
 Info (12128): Elaborating entity "ALU" for hierarchy "execute:EXECUTE|ALU:ALU" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Execute.vhd Line: 93
-Info (12128): Elaborating entity "memory" for hierarchy "memory:MEMORY" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 168
+Info (12128): Elaborating entity "memory" for hierarchy "memory:MEMORY" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 166
 Warning (10036): Verilog HDL or VHDL warning at memory.vhd(27): object "ram_we_2" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd Line: 27
 Info (12128): Elaborating entity "my_ram" for hierarchy "memory:MEMORY|my_ram:RAM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/memory.vhd Line: 40
 Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/my_ram.vhd Line: 62
@@ -2859,7 +2820,7 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "Amaya_test_data.mif"
+    Info (12134): Parameter "init_file" = "lcm_data.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -2889,12 +2850,12 @@ Info (12133): Instantiated megafunction "memory:MEMORY|my_ram:RAM|altsyncram:alt
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lcs3.tdf
-    Info (12023): Found entity 1: altsyncram_lcs3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_lcs3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_lcs3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_lcs3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 182
-Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 194
-Info (12128): Elaborating entity "print_FSM" for hierarchy "print_FSM:FSM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 216
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9lr3.tdf
+    Info (12023): Found entity 1: altsyncram_9lr3 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/altsyncram_9lr3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_9lr3" for hierarchy "memory:MEMORY|my_ram:RAM|altsyncram:altsyncram_component|altsyncram_9lr3:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "write_back" for hierarchy "write_back:WB" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 180
+Info (12128): Elaborating entity "OVERSEER" for hierarchy "OVERSEER:OOO" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 192
+Info (12128): Elaborating entity "print_FSM" for hierarchy "print_FSM:FSM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 213
 Warning (10036): Verilog HDL or VHDL warning at print_FSM.vhd(54): object "full_word" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd Line: 54
 Warning (10036): Verilog HDL or VHDL warning at print_FSM.vhd(55): object "usedw_word" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd Line: 55
 Warning (10036): Verilog HDL or VHDL warning at print_FSM.vhd(65): object "wrfull_char" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd Line: 65
@@ -2981,7 +2942,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
 Info (12128): Elaborating entity "cmpr_5h5" for hierarchy "print_FSM:FSM|fifo_char:FIFO2|dcfifo:dcfifo_component|dcfifo_f1f1:auto_generated|cmpr_5h5:rdempty_eq_comp" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/dcfifo_f1f1.tdf Line: 72
 Info (12128): Elaborating entity "diva_ten" for hierarchy "print_FSM:FSM|diva_ten:DIVIDER" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd Line: 115
 Info (12128): Elaborating entity "UART_trans" for hierarchy "print_FSM:FSM|UART_trans:U" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/print_FSM.vhd Line: 124
-Info (12128): Elaborating entity "scan_FSM" for hierarchy "scan_FSM:SCAN" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 232
+Info (12128): Elaborating entity "scan_FSM" for hierarchy "scan_FSM:SCAN" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 229
 Warning (10540): VHDL Signal Declaration warning at scan_FSM.vhd(33): used explicit default value for signal "cat1" because signal was never assigned a value File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 33
 Warning (10540): VHDL Signal Declaration warning at scan_FSM.vhd(34): used explicit default value for signal "cat2" because signal was never assigned a value File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 34
 Warning (10036): Verilog HDL or VHDL warning at scan_FSM.vhd(41): object "wrreq_uart_rf_final" assigned a value but never read File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/scan_FSM.vhd Line: 41
@@ -3087,7 +3048,7 @@ Info (12128): Elaborating entity "dffpipe_uu8" for hierarchy "scan_FSM:SCAN|UART
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_0h5.tdf
     Info (12023): Found entity 1: cmpr_0h5 File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/cmpr_0h5.tdf Line: 23
 Info (12128): Elaborating entity "cmpr_0h5" for hierarchy "scan_FSM:SCAN|UARTSampler:DA_SAMPLER|my_fifo:U2|dcfifo:dcfifo_component|dcfifo_14e1:auto_generated|cmpr_0h5:rdempty_eq_comp" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/dcfifo_14e1.tdf Line: 60
-Info (12128): Elaborating entity "pll" for hierarchy "pll:PLLTX" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 252
+Info (12128): Elaborating entity "pll" for hierarchy "pll:PLLTX" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 249
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:PLLTX|altpll:altpll_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd Line: 157
 Info (12130): Elaborated megafunction instantiation "pll:PLLTX|altpll:altpll_component" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd Line: 157
 Info (12133): Instantiated megafunction "pll:PLLTX|altpll:altpll_component" with the following parameter: File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/pll.vhd Line: 157
@@ -3157,7 +3118,7 @@ Info (12133): Instantiated megafunction "pll:PLLTX|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/pll_altpll.v Line: 31
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "Timer" for hierarchy "Timer:TIM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 263
+Info (12128): Elaborating entity "Timer" for hierarchy "Timer:TIM" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 260
 Warning (10492): VHDL Process Statement warning at Timer.vhd(89): signal "hundredths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 89
 Warning (10492): VHDL Process Statement warning at Timer.vhd(90): signal "tenths" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 90
 Warning (10492): VHDL Process Statement warning at Timer.vhd(91): signal "sec_ones" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/Timer.vhd Line: 91
@@ -3269,6 +3230,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Warning (15899): PLL "pll:PLLTX|altpll:altpll_component|pll_altpll:auto_generated|pll1" has parameters clk2_multiply_by and clk2_divide_by specified but port CLK[2] is not connected File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/db/pll_altpll.v Line: 51
 Info (128000): Starting physical synthesis optimizations for speed
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity dcfifo_14e1
@@ -3284,11 +3246,10 @@ Info (332104): Reading SDC File: 'DLX.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 15625 -multiply_by 288 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[0]} {PLLTX|altpll_component|auto_generated|pll1|clk[0]}
     Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 15625 -multiply_by 36 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[1]} {PLLTX|altpll_component|auto_generated|pll1|clk[1]}
-    Info (332110): create_generated_clock -source {PLLTX|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 50 -multiply_by 67 -duty_cycle 50.00 -name {PLLTX|altpll_component|auto_generated|pll1|clk[2]} {PLLTX|altpll_component|auto_generated|pll1|clk[2]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
-Info (332111): Found 6 clocks
+Info (332111): Found 5 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):  100.000   ADC_CLK_10
@@ -3296,7 +3257,6 @@ Info (332111): Found 6 clocks
     Info (332111):   20.000 MAX10_CLK2_50
     Info (332111): 1085.069 PLLTX|altpll_component|auto_generated|pll1|clk[0]
     Info (332111): 8680.555 PLLTX|altpll_component|auto_generated|pll1|clk[1]
-    Info (332111):   14.925 PLLTX|altpll_component|auto_generated|pll1|clk[2]
 Info (128002): Starting physical synthesis algorithm register retiming
 Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 2151 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
@@ -3308,16 +3268,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 9
     Warning (15610): No output dependent on input pin "ADC_CLK_10" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 10
     Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: C:/Users/A02395949/Documents/advanced/ECE_6740/FinalProject/DLX.vhd Line: 12
-Info (21057): Implemented 4372 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4380 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 58 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 4057 logic cells
+    Info (21061): Implemented 4065 logic cells
     Info (21064): Implemented 215 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 5044 megabytes
-    Info: Processing ended: Fri Apr 17 15:39:55 2026
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
+    Info: Peak virtual memory: 5043 megabytes
+    Info: Processing ended: Mon Apr 20 14:55:45 2026
     Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:20
 

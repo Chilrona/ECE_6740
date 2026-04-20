@@ -105,8 +105,8 @@ use work.opcode_package.all;
 	--setting up the clk and rst and tx
 	--rst_l <= KEY(0) and locked;
 	--rst_l <= KEY(0);
-	--clk <= MAX10_CLK1_50;
-	clk <= c2;
+	clk <= MAX10_CLK1_50;
+	--clk <= c2;
 	areset <= not (KEY(0));
 	
 	FETCH: entity work.fetch 
