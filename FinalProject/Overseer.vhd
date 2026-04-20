@@ -15,6 +15,8 @@ entity OVERSEER is
         take_branch : in std_logic;
         in_buf_empty : in std_logic;
 
+        predict_branch : in std_logic;
+
         flush_fetch : out std_logic;
         flush_decode : out std_logic;
         flush_execute : out std_logic;
