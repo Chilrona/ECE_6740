@@ -11,7 +11,6 @@ use work.opcode_package.all;
 			jump_addr : in std_logic_vector(9 downto 0);
 			sel_jump : in std_logic;
 
-			tag_for_flush : in std_logic;
 			stall : in std_logic;
 
 			pc : buffer std_logic_vector(9 downto 0);
@@ -24,11 +23,7 @@ use work.opcode_package.all;
 	
 		signal next_pc : std_logic_vector(9 downto 0):=(others=>'0');
 		signal add_out : std_logic_vector(9 downto 0):=(others=>'0');
-		signal std_pc : std_logic_vector(9 downto 0):=(others=>'0');
-
-		signal rom_instruction : std_logic_vector(31 downto 0):=(others=>'0');
-		signal tag_for_flush_1d : std_logic;
-        
+		signal std_pc : std_logic_vector(9 downto 0):=(others=>'0');        
 	
 	begin
 	
@@ -37,29 +32,18 @@ use work.opcode_package.all;
 	(
 		address => std_pc,
 		clock	=> clk,
-		q	=> rom_instruction
+		q	=> instruction
 	);
 		
-      add_out <= std_logic_vector(unsigned(std_pc) + 1);
-
-		next_pc <= jump_addr when sel_jump = '1' else add_out;
-
-		instruction <= (others => '0') when tag_for_flush_1d = '1' else rom_instruction;
-		std_pc <= pc when stall = '0' else std_logic_vector(unsigned(pc) - 1);
-		
+		next_pc <= std_logic_vector(unsigned(std_pc) + 1) when stall = '0' else std_pc;
+		std_pc <= pc when sel_jump = '0' else jump_addr;	
 
         process(clk, rst_l)
         begin 
-		  
 			if(rst_l = '0') then--checking for reset in pc
-				 pc <= (others=>'0');
+				pc <= (others=>'0');
 			elsif rising_edge(clk) then
-				tag_for_flush_1d <= tag_for_flush;
-				if stall = '1' then
-					pc <= pc;
-				else
-					pc <= next_pc;
-				end if;
+				pc <= next_pc;
 			end if;
         end process;
 				

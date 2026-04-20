@@ -68,7 +68,6 @@ use work.opcode_package.all;
 		signal stall_final : std_logic;
 		
 		--the flushes
-		signal flush_fetch : std_logic;
 		signal flush_decode : std_logic;
 		signal flush_execute :std_logic;
 
@@ -117,7 +116,6 @@ use work.opcode_package.all;
 		clk => clk,
       jump_addr => jump_addr_final,
       sel_jump => sel_jump,
-		tag_for_flush => flush_fetch,
 		stall => stall_final,
       pc => pc_decode,
       instruction => instruction_decode
@@ -203,7 +201,6 @@ use work.opcode_package.all;
         take_branch => take_branch,
 		  in_buf_empty => in_buf_empty,
 
-        flush_fetch => flush_fetch,
         flush_decode => flush_decode,
         flush_execute => flush_execute,
 
