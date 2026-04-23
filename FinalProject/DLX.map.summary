@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Apr 20 14:55:45 2026
+Analysis & Synthesis Status : Successful - Thu Apr 23 16:22:59 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : DLX
 Top-level Entity Name : DLX
 Family : MAX 10
-Total logic elements : 3,900
-    Total combinational functions : 3,644
-    Dedicated logic registers : 1,701
-Total registers : 1701
+Total logic elements : 3,898
+    Total combinational functions : 3,641
+    Dedicated logic registers : 1,739
+Total registers : 1739
 Total pins : 99
 Total virtual pins : 0
 Total memory bits : 89,608

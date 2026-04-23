@@ -21,7 +21,7 @@ use ieee.numeric_std.all;
 						
 	architecture Behavioral of Timer is
 	
-		constant DIV_VAL : integer := 67 * 10000;
+		constant DIV_VAL : integer := 83 * 10000;
 	
 	type MY_MEM is array (0 to 15) of unsigned(7 downto 0);
 			constant table : MY_MEM := (X"C0", X"F9", X"A4", X"B0", X"99",
