@@ -400,7 +400,13 @@ set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
 set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
-set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ROUTER_EFFORT_MULTIPLIER 1.5
+set_global_assignment -name PLACEMENT_EFFORT_MULTIPLIER 5.0
+set_global_assignment -name SEED 666
+set_global_assignment -name VHDL_FILE predictor.vhd
+set_global_assignment -name MIF_FILE unit_data.mif
+set_global_assignment -name MIF_FILE unit_code.mif
 set_global_assignment -name MIF_FILE Amaya_test_data.mif
 set_global_assignment -name MIF_FILE Amaya_test_code.mif
 set_global_assignment -name MIF_FILE prime_data.mif
@@ -430,7 +436,6 @@ set_global_assignment -name VHDL_FILE uart_recv.vhd
 set_global_assignment -name VHDL_FILE UART_trans.vhd
 set_global_assignment -name VHDL_FILE UARTSampler.vhd
 set_global_assignment -name SOURCE_FILE my_div.cmp
-set_global_assignment -name VHDL_FILE Branch_guess.vhd
 set_global_assignment -name SOURCE_FILE my_ram.cmp
 set_global_assignment -name VHDL_FILE Overseer.vhd
 set_global_assignment -name VHDL_FILE write_back.vhd
